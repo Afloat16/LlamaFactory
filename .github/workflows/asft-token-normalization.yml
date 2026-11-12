@@ -1,0 +1,63 @@
+name: Validate ASFT token normalization
+on:
+  push:
+    branches:
+      - validation/asft-token-normalization-20261112
+permissions:
+  contents: read
+jobs:
+  native-cpu:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      PYTHONPATH: src
+      OMP_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+      HF_HUB_OFFLINE: "1"
+      TRANSFORMERS_OFFLINE: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: c94dfa0b2eb7706645a266ab353f6fee0b15b70d
+          fetch-depth: 3
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install native CPU environment
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch==2.9.1 torchvision==0.24.1 torchaudio==2.9.1 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install -e . torch==2.9.1 torchvision==0.24.1 torchaudio==2.9.1 transformers==4.57.1 accelerate==1.11.0 peft==0.18.1 trl==0.24.0 datasets==4.0.0 pytest==9.0.2 ruff==0.15.9
+          python -m pip freeze > installed-dependencies.txt
+      - name: Reproduce failures on the unchanged upstream implementation
+        run: |
+          test "$(git rev-parse HEAD)" = "c94dfa0b2eb7706645a266ab353f6fee0b15b70d"
+          git diff 6d1059c727450a4f58e56ad204d01a71abad7781 -- src/llamafactory/train/sft/trainer.py src/llamafactory/train/trainer_utils.py --exit-code
+          set +e
+          python -m pytest -q tests/train/test_asft_token_normalization.py --junitxml=baseline-results.xml > baseline.log 2>&1
+          result=$?
+          set -e
+          cat baseline.log
+          test "$result" -eq 1
+          python - <<'PY'
+          import xml.etree.ElementTree as ET
+          root = ET.parse("baseline-results.xml").getroot()
+          suites = list(root.iter("testsuite"))
+          errors = sum(int(s.attrib.get("errors", 0)) for s in suites)
+          failures = sum(int(s.attrib.get("failures", 0)) for s in suites)
+          print({"errors": errors, "failures": failures})
+          assert errors == 0 and failures > 0
+          PY
+      - name: Inspect formatting
+        if: always()
+        run: |
+          ruff check tests/train/test_asft_token_normalization.py
+          ruff format --check --diff tests/train/test_asft_token_normalization.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: asft-native-baseline
+          path: |
+            *.log
+            *results.xml
+            installed-dependencies.txt
