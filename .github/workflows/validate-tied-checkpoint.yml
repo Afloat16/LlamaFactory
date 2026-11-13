@@ -1,0 +1,74 @@
+name: Validate tied standard checkpoint restoration
+on:
+  push:
+    branches:
+      - validation/v1-tied-checkpoint-resume-20261113
+permissions:
+  contents: read
+jobs:
+  native-cpu:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      PYTHONPATH: src
+      OMP_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+      HF_HUB_OFFLINE: "1"
+      TRANSFORMERS_OFFLINE: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 1985b7d6fe8b5ed7280ba55953dc85381ff35c15
+          fetch-depth: 3
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install native CPU environment
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch==2.9.1 torchvision==0.24.1 torchaudio==2.9.1 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install -e . torch==2.9.1 torchvision==0.24.1 torchaudio==2.9.1 transformers==4.57.1 accelerate==1.11.0 peft==0.18.1 trl==0.24.0 datasets==4.0.0 pytest==9.0.2 ruff==0.15.9
+          python -m pip freeze > installed-dependencies.txt
+      - name: Test exact tied checkpoints and native model updates
+        run: |
+          test "$(git rev-parse HEAD)" = "1985b7d6fe8b5ed7280ba55953dc85381ff35c15"
+          set +e
+          python -m pytest -q tests_v1/core/utils/test_standard_checkpoint_tied_weights.py --junitxml=patched-results.xml > patched.log 2>&1
+          result=$?
+          set -e
+          cat patched.log
+          test "$result" -eq 0
+      - name: Reproduce unchanged upstream checkpoint loading
+        if: always()
+        run: |
+          git checkout 6d1059c727450a4f58e56ad204d01a71abad7781 -- src/llamafactory/v1/core/utils/checkpoint.py
+          set +e
+          python -m pytest -q tests_v1/core/utils/test_standard_checkpoint_tied_weights.py --junitxml=baseline-results.xml > baseline.log 2>&1
+          result=$?
+          set -e
+          cat baseline.log
+          test "$result" -eq 1
+          python - <<'PY'
+          import xml.etree.ElementTree as ET
+          root = ET.parse("baseline-results.xml").getroot()
+          suites = list(root.iter("testsuite"))
+          errors = sum(int(s.attrib.get("errors", 0)) for s in suites)
+          failures = sum(int(s.attrib.get("failures", 0)) for s in suites)
+          print({"errors": errors, "failures": failures})
+          assert errors == 0 and failures > 0
+          PY
+      - name: Restore exact final source and check style
+        if: always()
+        run: |
+          git checkout 1985b7d6fe8b5ed7280ba55953dc85381ff35c15 -- src/llamafactory/v1/core/utils/checkpoint.py
+          ruff check src/llamafactory/v1/core/utils/checkpoint.py tests_v1/core/utils/test_standard_checkpoint_tied_weights.py
+          ruff format --check --diff src/llamafactory/v1/core/utils/checkpoint.py tests_v1/core/utils/test_standard_checkpoint_tied_weights.py
+          git diff --check 6d1059c727450a4f58e56ad204d01a71abad7781
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tied-checkpoint-native-before-after
+          path: |
+            *.log
+            *results.xml
+            installed-dependencies.txt
