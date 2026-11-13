@@ -192,6 +192,7 @@ def test_sft_updates_match_explicit_weighted_loss(tmp_path, model_name, optimize
     trainer.optimizer = optimizer_class(trainer.model.parameters(), lr=0.01)
     trainer.lr_scheduler = torch.optim.lr_scheduler.LambdaLR(trainer.optimizer, lambda _step: 1.0)
     expected_optimizer = optimizer_class(reference.parameters(), lr=0.01)
+    expected_scheduler = torch.optim.lr_scheduler.LambdaLR(expected_optimizer, lambda _step: 1.0)
     observed_losses = []
     hook = trainer.model.register_forward_hook(
         lambda _module, _args, output: observed_losses.append(output.loss is None)
@@ -207,10 +208,12 @@ def test_sft_updates_match_explicit_weighted_loss(tmp_path, model_name, optimize
             (_reference_loss(reference, batch) * count / (total + 1e-6)).backward()
         torch.nn.utils.clip_grad_norm_(reference.parameters(), trainer.args.max_grad_norm)
         expected_optimizer.step()
+        expected_scheduler.step()
         expected_optimizer.zero_grad()
     for actual, expected in zip(trainer.model.parameters(), reference.parameters()):
         torch.testing.assert_close(actual, expected, rtol=1e-5, atol=1e-6)
     torch.testing.assert_close(trainer.optimizer.state_dict(), expected_optimizer.state_dict(), rtol=1e-5, atol=1e-6)
+    assert trainer.lr_scheduler.state_dict() == expected_scheduler.state_dict()
     assert trainer.global_step == 2
     assert observed_losses == [True] * 4
 

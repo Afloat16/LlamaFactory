@@ -5,7 +5,7 @@ from pathlib import Path
 from xml.etree import ElementTree
 
 BASE = "6d1059c727450a4f58e56ad204d01a71abad7781"
-HEAD = "51c24fdb66a04e0d1076d017a1628a4d3f819d35"
+HEAD = "466428c0fcbcf0289524bde8aba6a0077ccf103f"
 SOURCE = "src/llamafactory/v1/core/base_trainer.py"
 TEST = "tests_v1/trainers/test_sft_logprob_forward.py"
 for path in (SOURCE, TEST):
