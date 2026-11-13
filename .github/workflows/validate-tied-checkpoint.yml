@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: 1985b7d6fe8b5ed7280ba55953dc85381ff35c15
-          fetch-depth: 3
+          fetch-depth: 5
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
