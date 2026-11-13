@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "repository": "hiyouga/LlamaFactory",
+  "pr": 10983,
+  "url": "https://github.com/hiyouga/LlamaFactory/pull/10983",
+  "title": "[v1] Avoid computing an unused model loss during SFT",
+  "branch": "perf/v1-sft-single-cross-entropy-20261113",
+  "base": "6d1059c727450a4f58e56ad204d01a71abad7781",
+  "head": "466428c0fcbcf0289524bde8aba6a0077ccf103f",
+  "tree": "b96fb5e938e7fad49ade2226c008ca7d587e297b",
+  "state": "open",
+  "draft": false,
+  "merged_at": null,
+  "verified_at": "2026-11-13T11:51:00Z",
+  "native_run": "https://github.com/Afloat16/LlamaFactory/actions/runs/43419756594",
+  "native_job": 131866505873,
+  "native_validation_commit": "de5391cd6e2faf2c193c85a39c4d140476daa3d5",
+  "before": {
+    "tests": 14,
+    "failures": 12,
+    "errors": 0,
+    "skipped": 0
+  },
+  "after": {
+    "tests": 14,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "existing": {
+    "tests": 8,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "environment": {
+    "torch": "2.9.1+cpu",
+    "transformers": "4.57.1",
+    "python": "3.12"
+  },
+  "scope": "Real GPT-2/Llama FP32/64 loss and gradient equivalence, masked fractional supervision, actual SFTTrainer.fit accumulated SGD/AdamW updates with optimizer/scheduler state, direct model label-loss controls.",
+  "measurements": {
+    "cross_entropy_calls": {
+      "before": 2,
+      "after": 1
+    },
+    "cumulative_log_softmax_output_allocation_bytes": {
+      "before": 1040,
+      "after": 480
+    },
+    "fixture": {
+      "batch": 2,
+      "sequence_length": 7,
+      "vocabulary": 10
+    },
+    "interpretation": "CPU profiler operator output allocation; not process peak memory or GPU throughput"
+  },
+  "peer_review": "existing_prs reviewed original complete source diff and tests; final head changes only reference scheduler setup/step/state comparison to match complete optimizer metadata.",
+  "dedup_review": {
+    "all_states": true,
+    "related_prs": [
+      10262,
+      10762,
+      10429,
+      6722,
+      10720
+    ],
+    "notes": "Actual source and related changes inspected; no existing correction of passing labels to the logits-only v1 forward. Separate DPO dropout proposal #10779 was rejected as already open."
+  },
+  "files": [
+    "src/llamafactory/v1/core/base_trainer.py",
+    "tests_v1/trainers/test_sft_logprob_forward.py"
+  ],
+  "body": "## Problem\n\n`BaseTrainer.compute_log_probs()` forwards `labels` to the causal language model, which computes its built-in loss. The trainer then ignores that loss and computes unreduced cross entropy from the logits for its own weighted SFT objective.\n\nThis performs an unnecessary second cross-entropy/log-softmax operation for every ordinary SFT microbatch.\n\n## Change\n\nExclude only `labels` from the model-forward inputs in `compute_log_probs()`. Keep the labels for the trainer's shifted token loss and preserve all other tensor inputs, including attention masks, position IDs, and the existing multimodal position handling.\n\n## Validation\n\n[Native CPU before/after run](https://github.com/Afloat16/LlamaFactory/actions/runs/43419756594) for commit `466428c0fcbcf0289524bde8aba6a0077ccf103f`, with PyTorch 2.9.1+cpu and Transformers 4.57.1:\n\n- Baseline: 12 failures and 2 passing controls. Fixed: all 14 new cases pass.\n- All 8 existing DPO precision and chunk-loss cases pass.\n- Actual GPT-2 and Llama models in FP32 and FP64, dense and sparse label masking, padding, fractional token weights, and non-default attention/position inputs.\n- Weighted loss and every parameter gradient exactly match an independent explicit weighted cross-entropy reference. The caller's batch remains unchanged.\n- Two real `SFTTrainer.fit()` updates with gradient accumulation, using both SGD and AdamW, match reference model parameters and complete optimizer/scheduler state.\n- Direct model calls with labels continue to produce their normal built-in loss.\n- Native profiler: cross-entropy calls per tested microbatch fall from **2 to 1**. For the 2 × 7-token, 10-token-vocabulary fixtures, cumulative log-softmax output allocations fall from **1,040 to 480 bytes**.\n- Ruff check, Ruff format, and diff whitespace checks pass.\n\nThe allocation measurement is the CPU profiler's operator-allocation total for the stated fixtures, rather than process peak memory or a GPU throughput benchmark."
+}
