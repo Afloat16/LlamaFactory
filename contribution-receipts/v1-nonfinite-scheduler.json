@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "repository": "hiyouga/LlamaFactory",
+  "pr": 10982,
+  "url": "https://github.com/hiyouga/LlamaFactory/pull/10982",
+  "title": "[v1] Advance the LR scheduler only after successful optimizer updates",
+  "branch": "fix/v1-nonfinite-scheduler-20261113",
+  "base": "6d1059c727450a4f58e56ad204d01a71abad7781",
+  "head": "862ea673e01fafdb9ac9c6724f6e9d0c33f21d99",
+  "tree": "e3eee6dd560445f76ae8f6de70ec79e45c431d1b",
+  "state": "open",
+  "draft": false,
+  "merged_at": null,
+  "verified_at": "2026-11-13T11:50:00Z",
+  "native_run": "https://github.com/Afloat16/LlamaFactory/actions/runs/43418835563",
+  "native_job": 131863434834,
+  "native_validation_commit": "44a89e0fd67011c7b1d3dba04b84ddeb2a8c47fd",
+  "before": {
+    "tests": 8,
+    "failures": 6,
+    "errors": 0,
+    "skipped": 0
+  },
+  "after": {
+    "tests": 8,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "existing": {
+    "tests": 8,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "environment": {
+    "torch": "2.9.1+cpu",
+    "transformers": "4.57.1",
+    "python": "3.12"
+  },
+  "scope": "Actual single-process SFTTrainer.fit with native GPT-2, tokenizer, renderer and batching; SGD/AdamW; NaN/Inf gradient injection, independent weighted-loss reference, full optimizer/scheduler state, disk checkpoint continuation.",
+  "peer_review": "existing_prs reviewed exact full diff and native training tests; no blocker in scope.",
+  "dedup_review": {
+    "all_states": true,
+    "related_prs": [
+      10738,
+      10454,
+      10483,
+      10429,
+      10262
+    ],
+    "notes": "Actual related source/patches inspected. Legacy/KTransformers non-finite handling, FSDP synchronization, and scheduler initialization changes do not fix the v1 skipped-step schedule."
+  },
+  "files": [
+    "src/llamafactory/v1/core/base_trainer.py",
+    "tests_v1/trainers/test_nonfinite_scheduler.py"
+  ],
+  "body": "## Problem\n\nThe v1 training loop skips `optimizer.step()` when the gradient norm is not finite, but still advances the learning-rate scheduler. A skipped update therefore consumes part of the schedule, so subsequent valid updates use the wrong learning rate.\n\n## Change\n\nMove `lr_scheduler.step()` into the successful-update branch, immediately after `optimizer.step()`. Gradient clearing still runs after every attempted update. The global batch/step counter and the DeepSpeed-managed path keep their existing behavior.\n\n## Validation\n\n[Native CPU before/after run](https://github.com/Afloat16/LlamaFactory/actions/runs/43418835563) for commit `862ea673e01fafdb9ac9c6724f6e9d0c33f21d99`, using PyTorch 2.9.1+cpu and Transformers 4.57.1:\n\n- Baseline: 6 failures, 2 passing controls. Fixed: all 8 new cases pass.\n- All 8 existing DPO precision and chunk-loss regression cases pass.\n- Real `SFTTrainer.fit()` with a locally initialized GPT-2, actual tokenizer/rendering/batching, five update attempts, and two microbatches per attempt.\n- SGD with momentum and AdamW, two parameter groups, clean training, first-step NaN, middle-step infinity, and consecutive non-finite updates.\n- Gradient hooks inject non-finite values after the actual model backward. An independent explicit weighted-loss loop checks the learning rate used by every successful update, model parameters, optimizer state, and complete scheduler state.\n- Saving and loading model/optimizer/scheduler state, followed by another real update, matches the reference continuation.\n- Ruff check, Ruff format, and diff whitespace checks pass.\n\nThese are native single-process CPU training checks. The change is confined to the existing non-DeepSpeed update branch."
+}

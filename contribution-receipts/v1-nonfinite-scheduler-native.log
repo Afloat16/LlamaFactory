@@ -1,0 +1,1372 @@
+﻿2026-11-13T11:39:44.0884772Z Current runner version: '2.338.2'
+2026-11-13T11:39:44.0908027Z ##[group]Runner Image Provisioner
+2026-11-13T11:39:44.0908813Z Hosted Compute Agent
+2026-11-13T11:39:44.0909416Z Version: 20261028.624
+2026-11-13T11:39:44.0909971Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-13T11:39:44.0910622Z Build Date: 2026-10-28T21:51:42Z
+2026-11-13T11:39:44.0911238Z Worker ID: {f51c7719-41d2-4fd0-acd4-5c5acb6e6433}
+2026-11-13T11:39:44.0911882Z Region: eastus2
+2026-11-13T11:39:44.0912421Z Cloud: Azure
+2026-11-13T11:39:44.0912908Z ##[endgroup]
+2026-11-13T11:39:44.0914093Z ##[group]Operating System
+2026-11-13T11:39:44.0914898Z Ubuntu
+2026-11-13T11:39:44.0915405Z 24.04.5
+2026-11-13T11:39:44.0915905Z LTS
+2026-11-13T11:39:44.0916367Z ##[endgroup]
+2026-11-13T11:39:44.0916855Z ##[group]Runner Image
+2026-11-13T11:39:44.0917433Z Image: ubuntu-24.04
+2026-11-13T11:39:44.0917962Z Version: 20261101.360.1
+2026-11-13T11:39:44.0919112Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-13T11:39:44.0920717Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+2026-11-13T11:39:44.0921576Z ##[endgroup]
+2026-11-13T11:39:44.0922588Z ##[group]GITHUB_TOKEN Permissions
+2026-11-13T11:39:44.0925103Z Contents: read
+2026-11-13T11:39:44.0925674Z Metadata: read
+2026-11-13T11:39:44.0926229Z ##[endgroup]
+2026-11-13T11:39:44.0928082Z Secret source: Actions
+2026-11-13T11:39:44.0928967Z Cache mode: write
+2026-11-13T11:39:44.0929585Z Prepare workflow directory
+2026-11-13T11:39:44.1253987Z Prepare all required actions
+2026-11-13T11:39:44.1292675Z Getting action download info
+2026-11-13T11:39:44.3512197Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-13T11:39:44.7817496Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-11-13T11:39:45.0010226Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-11-13T11:39:45.2543680Z Complete job name: native-cpu
+2026-11-13T11:39:45.3367849Z ##[group]Run actions/checkout@v4
+2026-11-13T11:39:45.3369021Z with:
+2026-11-13T11:39:45.3369735Z   fetch-depth: 4
+2026-11-13T11:39:45.3370528Z   repository: Afloat16/LlamaFactory
+2026-11-13T11:39:45.3377796Z   token: ***
+2026-11-13T11:39:45.3378548Z   ssh-strict: true
+2026-11-13T11:39:45.3379309Z   ssh-user: git
+2026-11-13T11:39:45.3380078Z   persist-credentials: true
+2026-11-13T11:39:45.3380922Z   clean: true
+2026-11-13T11:39:45.3381697Z   sparse-checkout-cone-mode: true
+2026-11-13T11:39:45.3382610Z   fetch-tags: false
+2026-11-13T11:39:45.3383391Z   show-progress: true
+2026-11-13T11:39:45.3384185Z   lfs: false
+2026-11-13T11:39:45.3384996Z   submodules: false
+2026-11-13T11:39:45.3385773Z   set-safe-directory: true
+2026-11-13T11:39:45.3386642Z   allow-unsafe-pr-checkout: false
+2026-11-13T11:39:45.3387757Z env:
+2026-11-13T11:39:45.3388457Z   PYTHONPATH: src
+2026-11-13T11:39:45.3389224Z   OMP_NUM_THREADS: 1
+2026-11-13T11:39:45.3390036Z   MKL_NUM_THREADS: 1
+2026-11-13T11:39:45.3390852Z   HF_HUB_OFFLINE: 1
+2026-11-13T11:39:45.3391627Z   TRANSFORMERS_OFFLINE: 1
+2026-11-13T11:39:45.3392438Z ##[endgroup]
+2026-11-13T11:39:45.8699385Z Syncing repository: Afloat16/LlamaFactory
+2026-11-13T11:39:45.8701577Z ##[group]Getting Git version info
+2026-11-13T11:39:45.8702795Z Working directory is '/home/runner/work/LlamaFactory/LlamaFactory'
+2026-11-13T11:39:45.9235346Z [command]/usr/bin/git version
+2026-11-13T11:39:45.9987574Z git version 2.56.0
+2026-11-13T11:39:46.0004344Z ##[endgroup]
+2026-11-13T11:39:46.0017627Z Temporarily overriding HOME='/home/runner/work/_temp/0eb3f32f-6621-46e7-82fb-09c4ab451138' before making global git config changes
+2026-11-13T11:39:46.0020974Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-13T11:39:46.0023825Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/LlamaFactory/LlamaFactory
+2026-11-13T11:39:46.0082870Z Deleting the contents of '/home/runner/work/LlamaFactory/LlamaFactory'
+2026-11-13T11:39:46.0087221Z ##[group]Initializing the repository
+2026-11-13T11:39:46.0088873Z [command]/usr/bin/git init /home/runner/work/LlamaFactory/LlamaFactory
+2026-11-13T11:39:46.0187775Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-13T11:39:46.0190464Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-13T11:39:46.0192914Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-13T11:39:46.0195001Z hint: call:
+2026-11-13T11:39:46.0196116Z hint:
+2026-11-13T11:39:46.0197481Z hint: 	git config --global init.defaultBranch <name>
+2026-11-13T11:39:46.0199076Z hint:
+2026-11-13T11:39:46.0200628Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-13T11:39:46.0203279Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-13T11:39:46.0205560Z hint:
+2026-11-13T11:39:46.0206953Z hint: 	git branch -m <name>
+2026-11-13T11:39:46.0208371Z hint:
+2026-11-13T11:39:46.0210168Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-13T11:39:46.0212996Z Initialized empty Git repository in /home/runner/work/LlamaFactory/LlamaFactory/.git/
+2026-11-13T11:39:46.0217645Z [command]/usr/bin/git remote add origin https://github.com/Afloat16/LlamaFactory
+2026-11-13T11:39:46.0317499Z ##[endgroup]
+2026-11-13T11:39:46.0319311Z ##[group]Disabling automatic garbage collection
+2026-11-13T11:39:46.0320954Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-13T11:39:46.0354835Z ##[endgroup]
+2026-11-13T11:39:46.0356585Z ##[group]Setting up auth
+2026-11-13T11:39:46.0361242Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-13T11:39:46.0401319Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-13T11:39:46.0969846Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-13T11:39:46.1013346Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-13T11:39:46.1241875Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-13T11:39:46.1283959Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-13T11:39:46.1510161Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-13T11:39:46.1558603Z ##[endgroup]
+2026-11-13T11:39:46.1559845Z ##[group]Fetching the repository
+2026-11-13T11:39:46.1569811Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=4 origin +44a89e0fd67011c7b1d3dba04b84ddeb2a8c47fd:refs/remotes/origin/validation/v1-nonfinite-scheduler-20261113
+2026-11-13T11:39:46.7507956Z From https://github.com/Afloat16/LlamaFactory
+2026-11-13T11:39:46.7509889Z  * [new ref]         44a89e0fd67011c7b1d3dba04b84ddeb2a8c47fd -> origin/validation/v1-nonfinite-scheduler-20261113
+2026-11-13T11:39:46.7511525Z ##[endgroup]
+2026-11-13T11:39:46.7512074Z ##[group]Determining the checkout info
+2026-11-13T11:39:46.7513800Z ##[endgroup]
+2026-11-13T11:39:46.7519070Z [command]/usr/bin/git sparse-checkout disable
+2026-11-13T11:39:46.7618179Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-13T11:39:46.7655880Z ##[group]Checking out the ref
+2026-11-13T11:39:46.7659197Z [command]/usr/bin/git checkout --progress --force -B validation/v1-nonfinite-scheduler-20261113 refs/remotes/origin/validation/v1-nonfinite-scheduler-20261113
+2026-11-13T11:39:46.8597880Z Switched to a new branch 'validation/v1-nonfinite-scheduler-20261113'
+2026-11-13T11:39:46.8601871Z branch 'validation/v1-nonfinite-scheduler-20261113' set up to track 'origin/validation/v1-nonfinite-scheduler-20261113'.
+2026-11-13T11:39:46.8609758Z ##[endgroup]
+2026-11-13T11:39:46.8655495Z [command]/usr/bin/git log -1 --format=%H
+2026-11-13T11:39:46.8683825Z 44a89e0fd67011c7b1d3dba04b84ddeb2a8c47fd
+2026-11-13T11:39:46.8909924Z ##[group]Run actions/setup-python@v5
+2026-11-13T11:39:46.8910215Z with:
+2026-11-13T11:39:46.8910423Z   python-version: 3.12
+2026-11-13T11:39:46.8910665Z   check-latest: false
+2026-11-13T11:39:46.8912670Z   token: ***
+2026-11-13T11:39:46.8912894Z   update-environment: true
+2026-11-13T11:39:46.8979860Z   allow-prereleases: false
+2026-11-13T11:39:46.8980282Z   freethreaded: false
+2026-11-13T11:39:46.8980611Z env:
+2026-11-13T11:39:46.8980924Z   PYTHONPATH: src
+2026-11-13T11:39:46.8981250Z   OMP_NUM_THREADS: 1
+2026-11-13T11:39:46.8981606Z   MKL_NUM_THREADS: 1
+2026-11-13T11:39:46.8981938Z   HF_HUB_OFFLINE: 1
+2026-11-13T11:39:46.8982206Z   TRANSFORMERS_OFFLINE: 1
+2026-11-13T11:39:46.8982503Z ##[endgroup]
+2026-11-13T11:39:47.0144209Z ##[group]Installed versions
+2026-11-13T11:39:47.0420930Z (node:2110) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-13T11:39:47.0421721Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-13T11:39:47.0422228Z Successfully set up CPython (3.12.16)
+2026-11-13T11:39:47.0422898Z ##[endgroup]
+2026-11-13T11:39:47.0590627Z ##[group]Run python -m pip install --upgrade pip
+2026-11-13T11:39:47.0591276Z [36;1mpython -m pip install --upgrade pip[0m
+2026-11-13T11:39:47.0592153Z [36;1mpython -m pip install torch==2.9.1 torchvision==0.24.1 torchaudio==2.9.1 --index-url https://download.pytorch.org/whl/cpu[0m
+2026-11-13T11:39:47.0593512Z [36;1mpython -m pip install -e . torch==2.9.1 torchvision==0.24.1 torchaudio==2.9.1 transformers==4.57.1 accelerate==1.11.0 peft==0.18.1 trl==0.24.0 datasets==4.0.0 pytest==9.0.2 ruff==0.15.9[0m
+2026-11-13T11:39:47.0594779Z [36;1mpython -m pip freeze > installed-dependencies.txt[0m
+2026-11-13T11:39:47.2284453Z shell: /usr/bin/bash -e {0}
+2026-11-13T11:39:47.2284944Z env:
+2026-11-13T11:39:47.2285172Z   PYTHONPATH: src
+2026-11-13T11:39:47.2285399Z   OMP_NUM_THREADS: 1
+2026-11-13T11:39:47.2285615Z   MKL_NUM_THREADS: 1
+2026-11-13T11:39:47.2285828Z   HF_HUB_OFFLINE: 1
+2026-11-13T11:39:47.2286046Z   TRANSFORMERS_OFFLINE: 1
+2026-11-13T11:39:47.2286396Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T11:39:47.2286850Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-13T11:39:47.2287257Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T11:39:47.2287612Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T11:39:47.2287958Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T11:39:47.2288308Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-13T11:39:47.2288621Z ##[endgroup]
+2026-11-13T11:39:49.1770635Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (26.2.2)
+2026-11-13T11:39:49.2536321Z Collecting pip
+2026-11-13T11:39:49.3023602Z   Downloading pip-26.3-py3-none-any.whl.metadata (4.6 kB)
+2026-11-13T11:39:49.3124604Z Downloading pip-26.3-py3-none-any.whl (2.0 MB)
+2026-11-13T11:39:49.4710929Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 12.9 MB/s  0:00:00
+2026-11-13T11:39:49.6068337Z Installing collected packages: pip
+2026-11-13T11:39:49.6069040Z   Attempting uninstall: pip
+2026-11-13T11:39:49.6084110Z     Found existing installation: pip 26.2.2
+2026-11-13T11:39:49.6660495Z     Uninstalling pip-26.2.2:
+2026-11-13T11:39:49.6712704Z       Successfully uninstalled pip-26.2.2
+2026-11-13T11:39:50.5737244Z Successfully installed pip-26.3
+2026-11-13T11:39:51.1420192Z Looking in indexes: https://download.pytorch.org/whl/cpu
+2026-11-13T11:39:51.2679851Z Collecting torch==2.9.1
+2026-11-13T11:39:51.3348432Z   Downloading torch-2.9.1%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (29 kB)
+2026-11-13T11:39:51.4005694Z Collecting torchvision==0.24.1
+2026-11-13T11:39:51.4140538Z   Downloading torchvision-0.24.1%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (5.9 kB)
+2026-11-13T11:39:51.4739341Z Collecting torchaudio==2.9.1
+2026-11-13T11:39:51.4903935Z   Downloading torchaudio-2.9.1%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (6.9 kB)
+2026-11-13T11:39:51.5202501Z Collecting filelock (from torch==2.9.1)
+2026-11-13T11:39:51.5674924Z   Downloading filelock-4.2.4-py3-none-any.whl.metadata (2.0 kB)
+2026-11-13T11:39:51.5905920Z Collecting typing-extensions>=4.10.0 (from torch==2.9.1)
+2026-11-13T11:39:51.5975343Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+2026-11-13T11:39:51.7011690Z Collecting setuptools (from torch==2.9.1)
+2026-11-13T11:39:51.7088591Z   Downloading setuptools-78.1.0-py3-none-any.whl.metadata (6.6 kB)
+2026-11-13T11:39:51.7300493Z Collecting sympy>=1.13.3 (from torch==2.9.1)
+2026-11-13T11:39:51.7378526Z   Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+2026-11-13T11:39:51.7642473Z Collecting networkx>=2.5.1 (from torch==2.9.1)
+2026-11-13T11:39:51.7710857Z   Downloading networkx-3.7-py3-none-any.whl.metadata (6.7 kB)
+2026-11-13T11:39:51.7870731Z Collecting jinja2 (from torch==2.9.1)
+2026-11-13T11:39:51.7948121Z   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+2026-11-13T11:39:51.8208564Z Collecting fsspec>=0.8.5 (from torch==2.9.1)
+2026-11-13T11:39:51.8281700Z   Downloading fsspec-2026.9.0-py3-none-any.whl.metadata (10 kB)
+2026-11-13T11:39:52.1921216Z Collecting numpy (from torchvision==0.24.1)
+2026-11-13T11:39:52.1991037Z   Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+2026-11-13T11:39:52.3835267Z Collecting pillow!=8.3.*,>=5.3.0 (from torchvision==0.24.1)
+2026-11-13T11:39:52.3905189Z   Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+2026-11-13T11:39:52.4110056Z Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch==2.9.1)
+2026-11-13T11:39:52.4178260Z   Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+2026-11-13T11:39:52.4387577Z Collecting MarkupSafe>=2.0 (from jinja2->torch==2.9.1)
+2026-11-13T11:39:52.4462651Z   Downloading markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+2026-11-13T11:39:52.4619885Z Downloading torch-2.9.1%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl (184.4 MB)
+2026-11-13T11:39:53.8671551Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 184.4/184.4 MB 132.6 MB/s  0:00:01
+2026-11-13T11:39:53.8825028Z Downloading torchvision-0.24.1%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl (1.9 MB)
+2026-11-13T11:39:53.9032531Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 95.1 MB/s  0:00:00
+2026-11-13T11:39:53.9153783Z Downloading torchaudio-2.9.1%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl (495 kB)
+2026-11-13T11:39:53.9264432Z Downloading fsspec-2026.9.0-py3-none-any.whl (221 kB)
+2026-11-13T11:39:53.9475857Z Downloading networkx-3.7-py3-none-any.whl (2.1 MB)
+2026-11-13T11:39:53.9733755Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 106.4 MB/s  0:00:00
+2026-11-13T11:39:53.9814964Z Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+2026-11-13T11:39:54.0316176Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 145.0 MB/s  0:00:00
+2026-11-13T11:39:54.0398312Z Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+2026-11-13T11:39:54.0840203Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 142.6 MB/s  0:00:00
+2026-11-13T11:39:54.0917002Z Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+2026-11-13T11:39:54.0960057Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 115.4 MB/s  0:00:00
+2026-11-13T11:39:54.1045131Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+2026-11-13T11:39:54.1134391Z Downloading filelock-4.2.4-py3-none-any.whl (162 kB)
+2026-11-13T11:39:54.1238811Z Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+2026-11-13T11:39:54.1336162Z Downloading markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+2026-11-13T11:39:54.1427090Z Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+2026-11-13T11:39:54.2668896Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 135.7 MB/s  0:00:00
+2026-11-13T11:39:54.2752632Z Downloading setuptools-78.1.0-py3-none-any.whl (1.3 MB)
+2026-11-13T11:39:54.2811305Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 265.8 MB/s  0:00:00
+2026-11-13T11:39:54.6753973Z Installing collected packages: mpmath, typing-extensions, sympy, setuptools, pillow, numpy, networkx, MarkupSafe, fsspec, filelock, jinja2, torch, torchvision, torchaudio
+2026-11-13T11:40:13.4761802Z 
+2026-11-13T11:40:13.4779358Z Successfully installed MarkupSafe-3.0.3 filelock-4.2.4 fsspec-2026.9.0 jinja2-3.1.6 mpmath-1.3.0 networkx-3.7 numpy-2.5.4 pillow-13.0.0 setuptools-78.1.0 sympy-1.14.0 torch-2.9.1+cpu torchaudio-2.9.1+cpu torchvision-0.24.1+cpu typing-extensions-4.16.0
+2026-11-13T11:40:13.9096828Z Obtaining file:///home/runner/work/LlamaFactory/LlamaFactory
+2026-11-13T11:40:13.9114453Z   Installing build dependencies: started
+2026-11-13T11:40:15.5821451Z   Installing build dependencies: finished with status 'done'
+2026-11-13T11:40:15.5826647Z   Checking if build backend supports build_editable: started
+2026-11-13T11:40:15.6191133Z   Checking if build backend supports build_editable: finished with status 'done'
+2026-11-13T11:40:15.6197501Z   Getting requirements to build editable: started
+2026-11-13T11:40:15.7601288Z   Getting requirements to build editable: finished with status 'done'
+2026-11-13T11:40:15.7621132Z   Installing backend dependencies: started
+2026-11-13T11:40:16.3557813Z   Installing backend dependencies: finished with status 'done'
+2026-11-13T11:40:16.3563497Z   Preparing editable metadata (pyproject.toml): started
+2026-11-13T11:40:16.5686648Z   Preparing editable metadata (pyproject.toml): finished with status 'done'
+2026-11-13T11:40:16.5737387Z Requirement already satisfied: torch==2.9.1 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (2.9.1+cpu)
+2026-11-13T11:40:16.5741009Z Requirement already satisfied: torchvision==0.24.1 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (0.24.1+cpu)
+2026-11-13T11:40:16.5745887Z Requirement already satisfied: torchaudio==2.9.1 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (2.9.1+cpu)
+2026-11-13T11:40:16.6523956Z Collecting transformers==4.57.1
+2026-11-13T11:40:16.6989202Z   Downloading transformers-4.57.1-py3-none-any.whl.metadata (43 kB)
+2026-11-13T11:40:16.7750936Z Collecting accelerate==1.11.0
+2026-11-13T11:40:16.7826869Z   Downloading accelerate-1.11.0-py3-none-any.whl.metadata (19 kB)
+2026-11-13T11:40:16.8034058Z Collecting peft==0.18.1
+2026-11-13T11:40:16.8106051Z   Downloading peft-0.18.1-py3-none-any.whl.metadata (14 kB)
+2026-11-13T11:40:16.8449237Z Collecting trl==0.24.0
+2026-11-13T11:40:16.8530343Z   Downloading trl-0.24.0-py3-none-any.whl.metadata (11 kB)
+2026-11-13T11:40:16.8929786Z Collecting datasets==4.0.0
+2026-11-13T11:40:16.9004680Z   Downloading datasets-4.0.0-py3-none-any.whl.metadata (19 kB)
+2026-11-13T11:40:16.9331710Z Collecting pytest==9.0.2
+2026-11-13T11:40:16.9399933Z   Downloading pytest-9.0.2-py3-none-any.whl.metadata (7.6 kB)
+2026-11-13T11:40:17.2230661Z Collecting ruff==0.15.9
+2026-11-13T11:40:17.2318461Z   Downloading ruff-0.15.9-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (26 kB)
+2026-11-13T11:40:17.2770854Z Collecting av<=16.0.0,>=10.0.0 (from llamafactory==0.9.6.dev0)
+2026-11-13T11:40:17.2842764Z   Downloading av-16.0.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (4.6 kB)
+2026-11-13T11:40:17.3073989Z Collecting einops (from llamafactory==0.9.6.dev0)
+2026-11-13T11:40:17.3139601Z   Downloading einops-0.8.2-py3-none-any.whl.metadata (13 kB)
+2026-11-13T11:40:17.3591637Z Collecting fastapi (from llamafactory==0.9.6.dev0)
+2026-11-13T11:40:17.3662723Z   Downloading fastapi-0.162.5-py3-none-any.whl.metadata (27 kB)
+2026-11-13T11:40:17.3836520Z Collecting fire (from llamafactory==0.9.6.dev0)
+2026-11-13T11:40:17.3903048Z   Downloading fire-0.7.1-py3-none-any.whl.metadata (5.8 kB)
+2026-11-13T11:40:17.4527590Z Collecting gradio<=5.50.0,>=4.38.0 (from llamafactory==0.9.6.dev0)
+2026-11-13T11:40:17.4605398Z   Downloading gradio-5.50.0-py3-none-any.whl.metadata (16 kB)
+2026-11-13T11:40:17.4893217Z Collecting hf-transfer (from llamafactory==0.9.6.dev0)
+2026-11-13T11:40:17.4984061Z   Downloading hf_transfer-0.1.9-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.7 kB)
+2026-11-13T11:40:17.6292662Z Collecting matplotlib>=3.7.0 (from llamafactory==0.9.6.dev0)
+2026-11-13T11:40:17.6360443Z   Downloading matplotlib-3.11.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (80 kB)
+2026-11-13T11:40:17.6807445Z Collecting modelscope (from llamafactory==0.9.6.dev0)
+2026-11-13T11:40:17.6873136Z   Downloading modelscope-1.40.3-py3-none-any.whl.metadata (43 kB)
+2026-11-13T11:40:17.7246161Z Requirement already satisfied: numpy in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from llamafactory==0.9.6.dev0) (2.5.4)
+2026-11-13T11:40:17.7459412Z Collecting omegaconf (from llamafactory==0.9.6.dev0)
+2026-11-13T11:40:17.7529444Z   Downloading omegaconf-2.4.0-py3-none-any.whl.metadata (4.9 kB)
+2026-11-13T11:40:17.7635889Z Collecting packaging (from llamafactory==0.9.6.dev0)
+2026-11-13T11:40:17.7646277Z   Using cached packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+2026-11-13T11:40:17.8622792Z Collecting pandas (from llamafactory==0.9.6.dev0)
+2026-11-13T11:40:17.8691261Z   Downloading pandas-3.1.1-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (16 kB)
+2026-11-13T11:40:17.9921449Z Collecting protobuf (from llamafactory==0.9.6.dev0)
+2026-11-13T11:40:17.9991819Z   Downloading protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl.metadata (595 bytes)
+2026-11-13T11:40:18.0903478Z Collecting pydantic (from llamafactory==0.9.6.dev0)
+2026-11-13T11:40:18.0972607Z   Downloading pydantic-2.14.3-py3-none-any.whl.metadata (141 kB)
+2026-11-13T11:40:18.1676032Z Collecting pyyaml (from llamafactory==0.9.6.dev0)
+2026-11-13T11:40:18.1743229Z   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+2026-11-13T11:40:18.3022278Z Collecting safetensors (from llamafactory==0.9.6.dev0)
+2026-11-13T11:40:18.3090443Z   Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.2 kB)
+2026-11-13T11:40:18.4107342Z Collecting scipy (from llamafactory==0.9.6.dev0)
+2026-11-13T11:40:18.4173836Z   Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+2026-11-13T11:40:18.4692959Z Collecting sentencepiece (from llamafactory==0.9.6.dev0)
+2026-11-13T11:40:18.4759245Z   Downloading sentencepiece-0.2.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (34 kB)
+2026-11-13T11:40:18.4967866Z Collecting sse-starlette (from llamafactory==0.9.6.dev0)
+2026-11-13T11:40:18.5031491Z   Downloading sse_starlette-3.7.0-py3-none-any.whl.metadata (15 kB)
+2026-11-13T11:40:18.5438740Z Collecting tiktoken (from llamafactory==0.9.6.dev0)
+2026-11-13T11:40:18.5504090Z   Downloading tiktoken-0.14.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (6.7 kB)
+2026-11-13T11:40:18.5683725Z Collecting torchdata<=0.11.0,>=0.10.0 (from llamafactory==0.9.6.dev0)
+2026-11-13T11:40:18.5765099Z   Downloading torchdata-0.11.0-py3-none-any.whl.metadata (6.3 kB)
+2026-11-13T11:40:18.5995739Z Collecting tyro<0.9.0 (from llamafactory==0.9.6.dev0)
+2026-11-13T11:40:18.6071163Z   Downloading tyro-0.8.14-py3-none-any.whl.metadata (8.4 kB)
+2026-11-13T11:40:18.6324962Z Collecting uvicorn (from llamafactory==0.9.6.dev0)
+2026-11-13T11:40:18.6389869Z   Downloading uvicorn-0.54.0-py3-none-any.whl.metadata (6.6 kB)
+2026-11-13T11:40:18.6433342Z Requirement already satisfied: filelock in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from transformers==4.57.1) (4.2.4)
+2026-11-13T11:40:18.6747187Z Collecting huggingface-hub<1.0,>=0.34.0 (from transformers==4.57.1)
+2026-11-13T11:40:18.6815086Z   Downloading huggingface_hub-0.36.2-py3-none-any.whl.metadata (15 kB)
+2026-11-13T11:40:19.0528883Z Collecting regex!=2019.12.17 (from transformers==4.57.1)
+2026-11-13T11:40:19.0596383Z   Downloading regex-2026.11.9-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
+2026-11-13T11:40:19.1060110Z Collecting requests (from transformers==4.57.1)
+2026-11-13T11:40:19.1130107Z   Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+2026-11-13T11:40:19.2412414Z Collecting tokenizers<=0.23.0,>=0.22.0 (from transformers==4.57.1)
+2026-11-13T11:40:19.2479446Z   Downloading tokenizers-0.22.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.3 kB)
+2026-11-13T11:40:19.2734869Z Collecting tqdm>=4.27 (from transformers==4.57.1)
+2026-11-13T11:40:19.2801362Z   Downloading tqdm-4.70.1-py3-none-any.whl.metadata (57 kB)
+2026-11-13T11:40:19.3392351Z Collecting psutil (from accelerate==1.11.0)
+2026-11-13T11:40:19.3461320Z   Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl.metadata (22 kB)
+2026-11-13T11:40:19.4309002Z Collecting pyarrow>=15.0.0 (from datasets==4.0.0)
+2026-11-13T11:40:19.4377399Z   Downloading pyarrow-26.0.1-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (3.0 kB)
+2026-11-13T11:40:19.4513099Z Collecting dill<0.3.9,>=0.3.0 (from datasets==4.0.0)
+2026-11-13T11:40:19.4583607Z   Downloading dill-0.3.8-py3-none-any.whl.metadata (10 kB)
+2026-11-13T11:40:19.6082817Z Collecting xxhash (from datasets==4.0.0)
+2026-11-13T11:40:19.6153445Z   Downloading xxhash-4.1.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (18 kB)
+2026-11-13T11:40:19.6363677Z Collecting multiprocess<0.70.17 (from datasets==4.0.0)
+2026-11-13T11:40:19.6433491Z   Downloading multiprocess-0.70.16-py312-none-any.whl.metadata (7.2 kB)
+2026-11-13T11:40:19.7193409Z Collecting fsspec<=2025.3.0,>=2023.1.0 (from fsspec[http]<=2025.3.0,>=2023.1.0->datasets==4.0.0)
+2026-11-13T11:40:19.7265266Z   Downloading fsspec-2025.3.0-py3-none-any.whl.metadata (11 kB)
+2026-11-13T11:40:19.7412750Z Requirement already satisfied: typing-extensions>=4.10.0 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from torch==2.9.1) (4.16.0)
+2026-11-13T11:40:19.7418099Z Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from torch==2.9.1) (78.1.0)
+2026-11-13T11:40:19.7422134Z Requirement already satisfied: sympy>=1.13.3 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from torch==2.9.1) (1.14.0)
+2026-11-13T11:40:19.7426322Z Requirement already satisfied: networkx>=2.5.1 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from torch==2.9.1) (3.7)
+2026-11-13T11:40:19.7429796Z Requirement already satisfied: jinja2 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from torch==2.9.1) (3.1.6)
+2026-11-13T11:40:19.7458203Z Requirement already satisfied: pillow!=8.3.*,>=5.3.0 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from torchvision==0.24.1) (13.0.0)
+2026-11-13T11:40:19.7757345Z Collecting iniconfig>=1.0.1 (from pytest==9.0.2)
+2026-11-13T11:40:19.7826101Z   Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+2026-11-13T11:40:19.7901040Z Collecting pluggy<2,>=1.5 (from pytest==9.0.2)
+2026-11-13T11:40:19.7912147Z   Using cached pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+2026-11-13T11:40:19.8074791Z Collecting pygments>=2.7.2 (from pytest==9.0.2)
+2026-11-13T11:40:19.8143745Z   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+2026-11-13T11:40:20.1861737Z Collecting aiohttp!=4.0.0a0,!=4.0.0a1 (from fsspec[http]<=2025.3.0,>=2023.1.0->datasets==4.0.0)
+2026-11-13T11:40:20.1931545Z   Downloading aiohttp-3.14.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.3 kB)
+2026-11-13T11:40:20.2080806Z Collecting aiofiles<25.0,>=22.0 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:20.2144149Z   Downloading aiofiles-24.1.0-py3-none-any.whl.metadata (10 kB)
+2026-11-13T11:40:20.2319774Z Collecting anyio<5.0,>=3.0 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:20.2385464Z   Downloading anyio-4.16.0-py3-none-any.whl.metadata (4.7 kB)
+2026-11-13T11:40:20.2698145Z Collecting brotli>=1.1.0 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:20.2764757Z   Downloading brotli-1.2.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.1 kB)
+2026-11-13T11:40:20.2954945Z Collecting ffmpy (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:20.3020653Z   Downloading ffmpy-1.0.0-py3-none-any.whl.metadata (3.0 kB)
+2026-11-13T11:40:20.3346000Z Collecting gradio-client==1.14.0 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:20.3424784Z   Downloading gradio_client-1.14.0-py3-none-any.whl.metadata (7.1 kB)
+2026-11-13T11:40:20.3562524Z Collecting groovy~=0.1 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:20.3628894Z   Downloading groovy-0.1.2-py3-none-any.whl.metadata (6.1 kB)
+2026-11-13T11:40:20.3942511Z Collecting httpx<1.0,>=0.24.1 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:20.4012302Z   Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+2026-11-13T11:40:20.4068508Z Requirement already satisfied: markupsafe<4.0,>=2.0 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0) (3.0.3)
+2026-11-13T11:40:20.6584092Z Collecting orjson~=3.0 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:20.6654417Z   Downloading orjson-3.13.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (42 kB)
+2026-11-13T11:40:20.6732119Z Collecting pandas (from llamafactory==0.9.6.dev0)
+2026-11-13T11:40:20.6802662Z   Downloading pandas-2.3.3-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (91 kB)
+2026-11-13T11:40:20.8290820Z Collecting pillow!=8.3.*,>=5.3.0 (from torchvision==0.24.1)
+2026-11-13T11:40:20.8369408Z   Downloading pillow-11.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.0 kB)
+2026-11-13T11:40:20.8441294Z Collecting pydantic (from llamafactory==0.9.6.dev0)
+2026-11-13T11:40:20.8508273Z   Downloading pydantic-2.12.3-py3-none-any.whl.metadata (87 kB)
+2026-11-13T11:40:20.8744631Z Collecting pydub (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:20.8812587Z   Downloading pydub-0.25.1-py2.py3-none-any.whl.metadata (1.4 kB)
+2026-11-13T11:40:20.8957383Z Collecting python-multipart>=0.0.18 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:20.9022624Z   Downloading python_multipart-0.0.33-py3-none-any.whl.metadata (6.3 kB)
+2026-11-13T11:40:20.9162377Z Collecting safehttpx<0.2.0,>=0.1.6 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:20.9229345Z   Downloading safehttpx-0.1.7-py3-none-any.whl.metadata (4.2 kB)
+2026-11-13T11:40:20.9381803Z Collecting semantic-version~=2.0 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:20.9451830Z   Downloading semantic_version-2.10.0-py2.py3-none-any.whl.metadata (9.7 kB)
+2026-11-13T11:40:20.9685194Z Collecting starlette<1.0,>=0.40.0 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:20.9751411Z   Downloading starlette-0.52.1-py3-none-any.whl.metadata (6.3 kB)
+2026-11-13T11:40:21.0099822Z Collecting tomlkit<0.14.0,>=0.12.0 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:21.0168808Z   Downloading tomlkit-0.13.3-py3-none-any.whl.metadata (2.8 kB)
+2026-11-13T11:40:21.0367739Z Collecting typer<1.0,>=0.12 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:21.0437074Z   Downloading typer-0.29.1-py3-none-any.whl.metadata (16 kB)
+2026-11-13T11:40:21.1763194Z Collecting websockets<16.0,>=13.0 (from gradio-client==1.14.0->gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:21.1831560Z   Downloading websockets-15.0.1-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB)
+2026-11-13T11:40:21.2003269Z Collecting idna>=2.8 (from anyio<5.0,>=3.0->gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:21.2069754Z   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+2026-11-13T11:40:21.2304169Z Collecting typing-inspection>=0.4.2 (from fastapi->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:21.2370760Z   Downloading typing_inspection-0.4.5-py3-none-any.whl.metadata (2.6 kB)
+2026-11-13T11:40:21.2494406Z Collecting annotated-doc>=0.0.2 (from fastapi->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:21.2621315Z   Downloading annotated_doc-0.0.6-py3-none-any.whl.metadata (6.5 kB)
+2026-11-13T11:40:21.2822206Z Collecting opentelemetry-api>=1.44.0 (from fastapi->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:21.2889584Z   Downloading opentelemetry_api-1.45.2-py3-none-any.whl.metadata (1.4 kB)
+2026-11-13T11:40:21.3090500Z Collecting certifi (from httpx<1.0,>=0.24.1->gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:21.3157205Z   Downloading certifi-2026.10.23-py3-none-any.whl.metadata (2.5 kB)
+2026-11-13T11:40:21.3317171Z Collecting httpcore==1.* (from httpx<1.0,>=0.24.1->gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:21.3382084Z   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+2026-11-13T11:40:21.3536110Z Collecting h11>=0.16 (from httpcore==1.*->httpx<1.0,>=0.24.1->gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:21.3602088Z   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+2026-11-13T11:40:21.4007876Z Collecting hf-xet<2.0.0,>=1.1.3 (from huggingface-hub<1.0,>=0.34.0->transformers==4.57.1)
+2026-11-13T11:40:21.4076855Z   Downloading hf_xet-1.8.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (4.9 kB)
+2026-11-13T11:40:21.5228342Z Collecting python-dateutil>=2.8.2 (from pandas->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:21.5298380Z   Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+2026-11-13T11:40:21.5589976Z Collecting pytz>=2020.1 (from pandas->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:21.5656079Z   Downloading pytz-2026.6-py2.py3-none-any.whl.metadata (22 kB)
+2026-11-13T11:40:21.5808792Z Collecting tzdata>=2022.7 (from pandas->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:21.5880481Z   Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+2026-11-13T11:40:21.6028179Z Collecting annotated-types>=0.6.0 (from pydantic->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:21.6091678Z   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+2026-11-13T11:40:22.2147020Z Collecting pydantic-core==2.41.4 (from pydantic->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:22.2215506Z   Downloading pydantic_core-2.41.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.3 kB)
+2026-11-13T11:40:22.5653987Z Collecting urllib3>=1.25 (from torchdata<=0.11.0,>=0.10.0->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:22.5721115Z   Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+2026-11-13T11:40:22.5890198Z Collecting shellingham>=1.3.0 (from typer<1.0,>=0.12->gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:22.5954900Z   Downloading shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
+2026-11-13T11:40:22.6199628Z Collecting rich>=13.8.0 (from typer<1.0,>=0.12->gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:22.6265422Z   Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+2026-11-13T11:40:22.6428210Z Collecting docstring-parser>=0.16 (from tyro<0.9.0->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:22.6491897Z   Downloading docstring_parser-0.18.0-py3-none-any.whl.metadata (3.5 kB)
+2026-11-13T11:40:22.6667050Z Collecting shtab>=1.5.6 (from tyro<0.9.0->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:22.6753757Z   Downloading shtab-1.13.0-py3-none-any.whl.metadata (7.6 kB)
+2026-11-13T11:40:22.6934115Z Collecting aiohappyeyeballs>=2.5.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.3.0,>=2023.1.0->datasets==4.0.0)
+2026-11-13T11:40:22.7000544Z   Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl.metadata (5.9 kB)
+2026-11-13T11:40:22.7122655Z Collecting aiosignal>=1.4.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.3.0,>=2023.1.0->datasets==4.0.0)
+2026-11-13T11:40:22.7186765Z   Downloading aiosignal-1.4.0-py3-none-any.whl.metadata (3.7 kB)
+2026-11-13T11:40:22.7335931Z Collecting attrs>=17.3.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.3.0,>=2023.1.0->datasets==4.0.0)
+2026-11-13T11:40:22.7401465Z   Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+2026-11-13T11:40:22.8755111Z Collecting frozenlist>=1.1.1 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.3.0,>=2023.1.0->datasets==4.0.0)
+2026-11-13T11:40:22.8823796Z   Downloading frozenlist-1.8.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (20 kB)
+2026-11-13T11:40:23.0854401Z Collecting multidict<8.0,>=4.5 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.3.0,>=2023.1.0->datasets==4.0.0)
+2026-11-13T11:40:23.0923232Z   Downloading multidict-7.2.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (6.1 kB)
+2026-11-13T11:40:23.2270625Z Collecting propcache>=0.2.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.3.0,>=2023.1.0->datasets==4.0.0)
+2026-11-13T11:40:23.2341505Z   Downloading propcache-0.5.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (25 kB)
+2026-11-13T11:40:23.5843184Z Collecting yarl<2.0,>=1.25.1 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.3.0,>=2023.1.0->datasets==4.0.0)
+2026-11-13T11:40:23.5913959Z   Downloading yarl-1.25.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (111 kB)
+2026-11-13T11:40:23.6707957Z Collecting contourpy>=1.0.1 (from matplotlib>=3.7.0->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:23.6780277Z   Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+2026-11-13T11:40:24.1232924Z Collecting cycler>=0.10 (from matplotlib>=3.7.0->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:24.1301418Z   Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+2026-11-13T11:40:24.4535196Z Collecting fonttools>=4.28.2 (from matplotlib>=3.7.0->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:24.4604621Z   Downloading fonttools-4.68.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (139 kB)
+2026-11-13T11:40:24.5273057Z Collecting kiwisolver>=1.3.1 (from matplotlib>=3.7.0->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:24.5340971Z   Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)
+2026-11-13T11:40:24.5558578Z Collecting pyparsing>=3 (from matplotlib>=3.7.0->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:24.5622295Z   Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+2026-11-13T11:40:24.6891079Z Collecting charset_normalizer<4,>=2 (from requests->transformers==4.57.1)
+2026-11-13T11:40:24.6959283Z   Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+2026-11-13T11:40:24.8417397Z Collecting markdown-it-py>=2.2.0 (from rich>=13.8.0->typer<1.0,>=0.12->gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:24.8481925Z   Downloading markdown_it_py-4.3.0-py3-none-any.whl.metadata (7.9 kB)
+2026-11-13T11:40:24.8634754Z Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=13.8.0->typer<1.0,>=0.12->gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:24.8699723Z   Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+2026-11-13T11:40:24.8771429Z Requirement already satisfied: mpmath<1.4,>=1.1.0 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from sympy>=1.13.3->torch==2.9.1) (1.3.0)
+2026-11-13T11:40:25.0985186Z Collecting click>=7.0 (from uvicorn->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:25.1052905Z   Downloading click-8.5.1-py3-none-any.whl.metadata (2.6 kB)
+2026-11-13T11:40:25.1240019Z Collecting termcolor (from fire->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:25.1306530Z   Downloading termcolor-3.3.0-py3-none-any.whl.metadata (6.5 kB)
+2026-11-13T11:40:25.1475263Z Collecting modelscope-hub>=0.7.0 (from modelscope->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:25.1540807Z   Downloading modelscope_hub-0.7.1-py3-none-any.whl.metadata (67 kB)
+2026-11-13T11:40:25.3022331Z Collecting cryptography>=41 (from modelscope-hub>=0.7.0->modelscope->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:25.3090061Z   Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (4.4 kB)
+2026-11-13T11:40:25.5174745Z Collecting cffi>=2.0.0 (from cryptography>=41->modelscope-hub>=0.7.0->modelscope->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:25.5245533Z   Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+2026-11-13T11:40:25.5400258Z Collecting pycparser (from cffi>=2.0.0->cryptography>=41->modelscope-hub>=0.7.0->modelscope->llamafactory==0.9.6.dev0)
+2026-11-13T11:40:25.5466992Z   Downloading pycparser-3.12-py3-none-any.whl.metadata (9.7 kB)
+2026-11-13T11:40:25.5757049Z Downloading transformers-4.57.1-py3-none-any.whl (12.0 MB)
+2026-11-13T11:40:25.8442903Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 46.8 MB/s  0:00:00
+2026-11-13T11:40:25.8531070Z Downloading accelerate-1.11.0-py3-none-any.whl (375 kB)
+2026-11-13T11:40:25.8677363Z Downloading peft-0.18.1-py3-none-any.whl (556 kB)
+2026-11-13T11:40:25.8738262Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 557.0/557.0 kB 80.8 MB/s  0:00:00
+2026-11-13T11:40:25.8816993Z Downloading trl-0.24.0-py3-none-any.whl (423 kB)
+2026-11-13T11:40:25.8952509Z Downloading datasets-4.0.0-py3-none-any.whl (494 kB)
+2026-11-13T11:40:25.9060533Z Downloading pytest-9.0.2-py3-none-any.whl (374 kB)
+2026-11-13T11:40:25.9157870Z Downloading ruff-0.15.9-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.3 MB)
+2026-11-13T11:40:26.0387368Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.3/11.3 MB 91.2 MB/s  0:00:00
+2026-11-13T11:40:26.0474928Z Downloading av-16.0.0-cp312-cp312-manylinux_2_28_x86_64.whl (40.5 MB)
+2026-11-13T11:40:26.5572893Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.5/40.5 MB 79.6 MB/s  0:00:00
+2026-11-13T11:40:26.5641611Z Downloading dill-0.3.8-py3-none-any.whl (116 kB)
+2026-11-13T11:40:26.5725308Z Downloading fsspec-2025.3.0-py3-none-any.whl (193 kB)
+2026-11-13T11:40:26.5829393Z Downloading gradio-5.50.0-py3-none-any.whl (63.5 MB)
+2026-11-13T11:40:27.1473533Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.5/63.5 MB 112.5 MB/s  0:00:00
+2026-11-13T11:40:27.1556201Z Downloading gradio_client-1.14.0-py3-none-any.whl (325 kB)
+2026-11-13T11:40:27.1677961Z Downloading aiofiles-24.1.0-py3-none-any.whl (15 kB)
+2026-11-13T11:40:27.1757207Z Downloading anyio-4.16.0-py3-none-any.whl (134 kB)
+2026-11-13T11:40:27.1842222Z Downloading fastapi-0.162.5-py3-none-any.whl (151 kB)
+2026-11-13T11:40:27.1927073Z Downloading groovy-0.1.2-py3-none-any.whl (14 kB)
+2026-11-13T11:40:27.2007603Z Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+2026-11-13T11:40:27.2086981Z Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+2026-11-13T11:40:27.2167416Z Downloading huggingface_hub-0.36.2-py3-none-any.whl (566 kB)
+2026-11-13T11:40:27.2208963Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 566.4/566.4 kB 136.3 MB/s  0:00:00
+2026-11-13T11:40:27.2334435Z Downloading hf_xet-1.8.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.3 MB)
+2026-11-13T11:40:27.2611367Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 159.6 MB/s  0:00:00
+2026-11-13T11:40:27.2681168Z Downloading multiprocess-0.70.16-py312-none-any.whl (146 kB)
+2026-11-13T11:40:27.2781525Z Downloading orjson-3.13.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (130 kB)
+2026-11-13T11:40:27.2866976Z Downloading pandas-2.3.3-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.4 MB)
+2026-11-13T11:40:27.3677322Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.4/12.4 MB 153.3 MB/s  0:00:00
+2026-11-13T11:40:27.3745925Z Downloading pillow-11.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.6 MB)
+2026-11-13T11:40:27.4161699Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.6/6.6 MB 161.6 MB/s  0:00:00
+2026-11-13T11:40:27.4180892Z Using cached pluggy-1.7.0-py3-none-any.whl (27 kB)
+2026-11-13T11:40:27.4238003Z Downloading pydantic-2.12.3-py3-none-any.whl (462 kB)
+2026-11-13T11:40:27.4344104Z Downloading pydantic_core-2.41.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+2026-11-13T11:40:27.4412473Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 366.7 MB/s  0:00:00
+2026-11-13T11:40:27.4488800Z Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+2026-11-13T11:40:27.4532536Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 208.6 MB/s  0:00:00
+2026-11-13T11:40:27.4601018Z Downloading safehttpx-0.1.7-py3-none-any.whl (9.0 kB)
+2026-11-13T11:40:27.4682090Z Downloading semantic_version-2.10.0-py2.py3-none-any.whl (15 kB)
+2026-11-13T11:40:27.4760670Z Downloading starlette-0.52.1-py3-none-any.whl (74 kB)
+2026-11-13T11:40:27.4845275Z Downloading tokenizers-0.22.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+2026-11-13T11:40:27.5200496Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 90.4 MB/s  0:00:00
+2026-11-13T11:40:27.5267777Z Downloading tomlkit-0.13.3-py3-none-any.whl (38 kB)
+2026-11-13T11:40:27.5350508Z Downloading torchdata-0.11.0-py3-none-any.whl (61 kB)
+2026-11-13T11:40:27.5432164Z Downloading typer-0.29.1-py3-none-any.whl (121 kB)
+2026-11-13T11:40:27.5567979Z Downloading tyro-0.8.14-py3-none-any.whl (109 kB)
+2026-11-13T11:40:27.5648882Z Downloading websockets-15.0.1-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (182 kB)
+2026-11-13T11:40:27.5782403Z Downloading aiohttp-3.14.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.9 MB)
+2026-11-13T11:40:27.5850916Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 336.1 MB/s  0:00:00
+2026-11-13T11:40:27.5917669Z Downloading multidict-7.2.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (516 kB)
+2026-11-13T11:40:27.6006623Z Downloading yarl-1.25.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (117 kB)
+2026-11-13T11:40:27.6107806Z Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl (15 kB)
+2026-11-13T11:40:27.6191748Z Downloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+2026-11-13T11:40:27.6273196Z Downloading annotated_doc-0.0.6-py3-none-any.whl (5.3 kB)
+2026-11-13T11:40:27.6360721Z Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+2026-11-13T11:40:27.6452843Z Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+2026-11-13T11:40:27.6537058Z Downloading brotli-1.2.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.4 MB)
+2026-11-13T11:40:27.6594804Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 311.4 MB/s  0:00:00
+2026-11-13T11:40:27.6667163Z Downloading docstring_parser-0.18.0-py3-none-any.whl (22 kB)
+2026-11-13T11:40:27.6750598Z Downloading frozenlist-1.8.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (242 kB)
+2026-11-13T11:40:27.6844435Z Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+2026-11-13T11:40:27.6939052Z Downloading idna-3.20-py3-none-any.whl (69 kB)
+2026-11-13T11:40:27.7377098Z Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+2026-11-13T11:40:27.7454905Z Downloading matplotlib-3.11.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.9 MB)
+2026-11-13T11:40:27.8147567Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 143.2 MB/s  0:00:00
+2026-11-13T11:40:27.8214972Z Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (383 kB)
+2026-11-13T11:40:27.8309174Z Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+2026-11-13T11:40:27.8391082Z Downloading fonttools-4.68.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.4 MB)
+2026-11-13T11:40:27.8781747Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 140.5 MB/s  0:00:00
+2026-11-13T11:40:27.8852246Z Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.5 MB)
+2026-11-13T11:40:27.8913137Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 309.6 MB/s  0:00:00
+2026-11-13T11:40:27.8981405Z Downloading opentelemetry_api-1.45.2-py3-none-any.whl (60 kB)
+2026-11-13T11:40:27.9013579Z Using cached packaging-26.3-py3-none-any.whl (129 kB)
+2026-11-13T11:40:27.9078934Z Downloading propcache-0.5.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (250 kB)
+2026-11-13T11:40:27.9232278Z Downloading pyarrow-26.0.1-cp312-cp312-manylinux_2_28_x86_64.whl (55.0 MB)
+2026-11-13T11:40:28.2698430Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 55.0/55.0 MB 159.0 MB/s  0:00:00
+2026-11-13T11:40:28.2765569Z Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+2026-11-13T11:40:28.2819918Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 271.8 MB/s  0:00:00
+2026-11-13T11:40:28.2886688Z Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+2026-11-13T11:40:28.2985996Z Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+2026-11-13T11:40:28.3067768Z Downloading python_multipart-0.0.33-py3-none-any.whl (32 kB)
+2026-11-13T11:40:28.3146334Z Downloading pytz-2026.6-py2.py3-none-any.whl (506 kB)
+2026-11-13T11:40:28.3239310Z Downloading regex-2026.11.9-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (808 kB)
+2026-11-13T11:40:28.3283950Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 808.8/808.8 kB 218.4 MB/s  0:00:00
+2026-11-13T11:40:28.3350329Z Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+2026-11-13T11:40:28.3435362Z Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (257 kB)
+2026-11-13T11:40:28.3625300Z Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+2026-11-13T11:40:28.3710733Z Downloading certifi-2026.10.23-py3-none-any.whl (135 kB)
+2026-11-13T11:40:28.3797992Z Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+2026-11-13T11:40:28.3889021Z Downloading markdown_it_py-4.3.0-py3-none-any.whl (96 kB)
+2026-11-13T11:40:28.3971911Z Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+2026-11-13T11:40:28.4064319Z Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (516 kB)
+2026-11-13T11:40:28.4673527Z Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+2026-11-13T11:40:28.4761111Z Downloading shtab-1.13.0-py3-none-any.whl (22 kB)
+2026-11-13T11:40:28.4865670Z Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
+2026-11-13T11:40:28.4958487Z Downloading typing_inspection-0.4.5-py3-none-any.whl (14 kB)
+2026-11-13T11:40:28.5042001Z Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+2026-11-13T11:40:28.5127980Z Downloading uvicorn-0.54.0-py3-none-any.whl (87 kB)
+2026-11-13T11:40:28.5210030Z Downloading click-8.5.1-py3-none-any.whl (126 kB)
+2026-11-13T11:40:28.5290565Z Downloading einops-0.8.2-py3-none-any.whl (65 kB)
+2026-11-13T11:40:28.5378474Z Downloading ffmpy-1.0.0-py3-none-any.whl (5.6 kB)
+2026-11-13T11:40:28.5457983Z Downloading fire-0.7.1-py3-none-any.whl (115 kB)
+2026-11-13T11:40:28.5595399Z Downloading hf_transfer-0.1.9-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.6 MB)
+2026-11-13T11:40:28.5800894Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.6/3.6 MB 178.0 MB/s  0:00:00
+2026-11-13T11:40:28.5904180Z Downloading modelscope-1.40.3-py3-none-any.whl (6.1 MB)
+2026-11-13T11:40:28.6398949Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.1/6.1 MB 122.1 MB/s  0:00:00
+2026-11-13T11:40:28.6480399Z Downloading modelscope_hub-0.7.1-py3-none-any.whl (304 kB)
+2026-11-13T11:40:28.6575198Z Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl (4.8 MB)
+2026-11-13T11:40:28.6906030Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.8/4.8 MB 146.0 MB/s  0:00:00
+2026-11-13T11:40:28.6976759Z Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (221 kB)
+2026-11-13T11:40:28.7168013Z Downloading omegaconf-2.4.0-py3-none-any.whl (254 kB)
+2026-11-13T11:40:28.7253666Z Downloading protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl (343 kB)
+2026-11-13T11:40:28.7899256Z Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+2026-11-13T11:40:28.8289846Z Downloading pycparser-3.12-py3-none-any.whl (62 kB)
+2026-11-13T11:40:28.8396209Z Downloading pydub-0.25.1-py2.py3-none-any.whl (32 kB)
+2026-11-13T11:40:28.8478650Z Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+2026-11-13T11:40:29.1040907Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 138.2 MB/s  0:00:00
+2026-11-13T11:40:29.1109902Z Downloading sentencepiece-0.2.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (1.7 MB)
+2026-11-13T11:40:29.1217203Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 165.5 MB/s  0:00:00
+2026-11-13T11:40:29.1287507Z Downloading sse_starlette-3.7.0-py3-none-any.whl (18 kB)
+2026-11-13T11:40:29.1370423Z Downloading termcolor-3.3.0-py3-none-any.whl (7.7 kB)
+2026-11-13T11:40:29.1455284Z Downloading tiktoken-0.14.0-cp312-cp312-manylinux_2_28_x86_64.whl (1.2 MB)
+2026-11-13T11:40:29.1692985Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 43.6 MB/s  0:00:00
+2026-11-13T11:40:29.1762023Z Downloading xxhash-4.1.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (472 kB)
+2026-11-13T11:40:29.7127483Z Building wheels for collected packages: llamafactory
+2026-11-13T11:40:29.7135148Z   Building editable for llamafactory (pyproject.toml): started
+2026-11-13T11:40:29.7487308Z   Building editable for llamafactory (pyproject.toml): finished with status 'done'
+2026-11-13T11:40:29.7508721Z   Created wheel for llamafactory: filename=llamafactory-0.9.6.dev0-py3-none-any.whl size=27476 sha256=f49a181442e44ad2bd5daebd6dcdc91bdada6ca433597a58b3f4f6a0569e1deb
+2026-11-13T11:40:29.7509971Z   Stored in directory: /tmp/pip-ephem-wheel-cache-990jgbmf/wheels/46/20/64/8cb860b6d6a299d205a4b65edbb9ab0ad7c828eff6d75a4655
+2026-11-13T11:40:29.7530664Z Successfully built llamafactory
+2026-11-13T11:40:30.0012004Z Installing collected packages: pytz, pydub, brotli, xxhash, websockets, urllib3, tzdata, typing-inspection, tqdm, tomlkit, termcolor, shtab, shellingham, sentencepiece, semantic-version, scipy, safetensors, ruff, regex, pyyaml, python-multipart, pyparsing, pygments, pydantic-core, pycparser, pyarrow, psutil, protobuf, propcache, pluggy, pillow, packaging, orjson, opentelemetry-api, multidict, mdurl, kiwisolver, iniconfig, idna, hf-xet, hf-transfer, h11, groovy, fsspec, frozenlist, fonttools, ffmpy, einops, docstring-parser, dill, cycler, contourpy, click, charset_normalizer, certifi, av, attrs, annotated-types, annotated-doc, aiohappyeyeballs, aiofiles, yarl, uvicorn, requests, python-dateutil, pytest, pydantic, omegaconf, multiprocess, markdown-it-py, httpcore, fire, cffi, anyio, aiosignal, torchdata, tiktoken, starlette, rich, pandas, matplotlib, huggingface-hub, httpx, cryptography, aiohttp, tyro, typer, tokenizers, sse-starlette, safehttpx, modelscope-hub, gradio-client, fastapi, accelerate, transformers, modelscope, gradio, datasets, trl, peft, llamafactory
+2026-11-13T11:40:36.4746394Z   Attempting uninstall: pillow
+2026-11-13T11:40:36.4767184Z     Found existing installation: pillow 13.0.0
+2026-11-13T11:40:36.4832944Z     Uninstalling pillow-13.0.0:
+2026-11-13T11:40:36.4846591Z       Successfully uninstalled pillow-13.0.0
+2026-11-13T11:40:37.2479137Z   Attempting uninstall: fsspec
+2026-11-13T11:40:37.2499932Z     Found existing installation: fsspec 2026.9.0
+2026-11-13T11:40:37.2541354Z     Uninstalling fsspec-2026.9.0:
+2026-11-13T11:40:37.2551871Z       Successfully uninstalled fsspec-2026.9.0
+2026-11-13T11:41:00.5594368Z 
+2026-11-13T11:41:00.5661272Z Successfully installed accelerate-1.11.0 aiofiles-24.1.0 aiohappyeyeballs-2.7.1 aiohttp-3.14.5 aiosignal-1.4.0 annotated-doc-0.0.6 annotated-types-0.8.0 anyio-4.16.0 attrs-26.1.0 av-16.0.0 brotli-1.2.1 certifi-2026.10.23 cffi-2.1.1 charset_normalizer-3.5.2 click-8.5.1 contourpy-1.4.0 cryptography-50.0.2 cycler-0.12.1 datasets-4.0.0 dill-0.3.8 docstring-parser-0.18.0 einops-0.8.2 fastapi-0.162.5 ffmpy-1.0.0 fire-0.7.1 fonttools-4.68.0 frozenlist-1.8.0 fsspec-2025.3.0 gradio-5.50.0 gradio-client-1.14.0 groovy-0.1.2 h11-0.16.0 hf-transfer-0.1.9 hf-xet-1.8.0 httpcore-1.0.9 httpx-0.28.1 huggingface-hub-0.36.2 idna-3.20 iniconfig-2.3.1 kiwisolver-1.5.1 llamafactory-0.9.6.dev0 markdown-it-py-4.3.0 matplotlib-3.11.2 mdurl-0.1.2 modelscope-1.40.3 modelscope-hub-0.7.1 multidict-7.2.1 multiprocess-0.70.16 omegaconf-2.4.0 opentelemetry-api-1.45.2 orjson-3.13.0 packaging-26.3 pandas-2.3.3 peft-0.18.1 pillow-11.3.0 pluggy-1.7.0 propcache-0.5.4 protobuf-7.36.2 psutil-7.2.2 pyarrow-26.0.1 pycparser-3.12 pydantic-2.12.3 pydantic-core-2.41.4 pydub-0.25.1 pygments-2.21.0 pyparsing-3.3.3 pytest-9.0.2 python-dateutil-4.0.0 python-multipart-0.0.33 pytz-2026.6 pyyaml-6.0.3 regex-2026.11.9 requests-2.34.2 rich-15.0.0 ruff-0.15.9 safehttpx-0.1.7 safetensors-0.8.0 scipy-1.18.1 semantic-version-2.10.0 sentencepiece-0.2.3 shellingham-1.5.4 shtab-1.13.0 sse-starlette-3.7.0 starlette-0.52.1 termcolor-3.3.0 tiktoken-0.14.0 tokenizers-0.22.2 tomlkit-0.13.3 torchdata-0.11.0 tqdm-4.70.1 transformers-4.57.1 trl-0.24.0 typer-0.29.1 typing-inspection-0.4.5 tyro-0.8.14 tzdata-2026.6 urllib3-2.8.0 uvicorn-0.54.0 websockets-15.0.1 xxhash-4.1.0 yarl-1.25.1
+2026-11-13T11:41:03.2247169Z ##[group]Run python validation/run_nonfinite_scheduler.py
+2026-11-13T11:41:03.2247531Z [36;1mpython validation/run_nonfinite_scheduler.py[0m
+2026-11-13T11:41:03.2265884Z shell: /usr/bin/bash -e {0}
+2026-11-13T11:41:03.2266098Z env:
+2026-11-13T11:41:03.2266271Z   PYTHONPATH: src
+2026-11-13T11:41:03.2266460Z   OMP_NUM_THREADS: 1
+2026-11-13T11:41:03.2266647Z   MKL_NUM_THREADS: 1
+2026-11-13T11:41:03.2266828Z   HF_HUB_OFFLINE: 1
+2026-11-13T11:41:03.2267014Z   TRANSFORMERS_OFFLINE: 1
+2026-11-13T11:41:03.2267261Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T11:41:03.2267809Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-13T11:41:03.2268148Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T11:41:03.2268457Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T11:41:03.2268760Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T11:41:03.2269110Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-13T11:41:03.2269379Z ##[endgroup]
+2026-11-13T11:41:10.2528107Z ..FFFFFF                                                                 [100%]
+2026-11-13T11:41:10.2528776Z =================================== FAILURES ===================================
+2026-11-13T11:41:10.2529332Z _________ test_scheduler_tracks_successful_sft_updates[bad_steps1-sgd] _________
+2026-11-13T11:41:10.2529716Z 
+2026-11-13T11:41:10.2530012Z tmp_path = PosixPath('/tmp/pytest-of-runner/pytest-0/test_scheduler_tracks_successf2')
+2026-11-13T11:41:10.2530554Z optimizer_name = 'sgd', bad_steps = {1: nan}
+2026-11-13T11:41:10.2530780Z 
+2026-11-13T11:41:10.2530917Z     @pytest.mark.runs_on(["cpu"])
+2026-11-13T11:41:10.2531339Z     @pytest.mark.parametrize("optimizer_name", ["sgd", "adamw"])
+2026-11-13T11:41:10.2532060Z     @pytest.mark.parametrize("bad_steps", [{}, {1: float("nan")}, {3: float("inf")}, {1: float("nan"), 2: float("inf")}])
+2026-11-13T11:41:10.2532857Z     def test_scheduler_tracks_successful_sft_updates(tmp_path, optimizer_name, bad_steps):
+2026-11-13T11:41:10.2533385Z         trainer = _make_trainer(tmp_path)
+2026-11-13T11:41:10.2533759Z         reference = copy.deepcopy(trainer.model).train()
+2026-11-13T11:41:10.2534232Z         trainer.optimizer = _make_optimizer(trainer.model, optimizer_name)
+2026-11-13T11:41:10.2534910Z         expected_optimizer = _make_optimizer(reference, optimizer_name)
+2026-11-13T11:41:10.2535588Z         trainer.lr_scheduler = torch.optim.lr_scheduler.StepLR(trainer.optimizer, step_size=1, gamma=0.5)
+2026-11-13T11:41:10.2536308Z         expected_scheduler = torch.optim.lr_scheduler.StepLR(expected_optimizer, step_size=1, gamma=0.5)
+2026-11-13T11:41:10.2536816Z         actual_rates = []
+2026-11-13T11:41:10.2537125Z         hook = trainer.optimizer.register_step_pre_hook(
+2026-11-13T11:41:10.2537712Z             lambda optimizer, _args, _kwargs: actual_rates.append([group["lr"] for group in optimizer.param_groups])
+2026-11-13T11:41:10.2538226Z         )
+2026-11-13T11:41:10.2538437Z     
+2026-11-13T11:41:10.2538754Z         # Inject a real non-finite gradient after the native GPT-2 backward.
+2026-11-13T11:41:10.2539186Z         parameter = next(trainer.model.parameters())
+2026-11-13T11:41:10.2539548Z         fault = parameter.register_hook(
+2026-11-13T11:41:10.2539884Z             lambda grad: (
+2026-11-13T11:41:10.2540432Z                 torch.full_like(grad, bad_steps[trainer.global_step]) if trainer.global_step in bad_steps else grad
+2026-11-13T11:41:10.2540822Z             )
+2026-11-13T11:41:10.2540984Z         )
+2026-11-13T11:41:10.2541148Z         try:
+2026-11-13T11:41:10.2541316Z             trainer.fit()
+2026-11-13T11:41:10.2541505Z         finally:
+2026-11-13T11:41:10.2541679Z             fault.remove()
+2026-11-13T11:41:10.2541862Z             hook.remove()
+2026-11-13T11:41:10.2542036Z     
+2026-11-13T11:41:10.2542200Z         expected_rates = []
+2026-11-13T11:41:10.2542430Z         for step, batches in trainer.batches.items():
+2026-11-13T11:41:10.2542974Z             if step in bad_steps:
+2026-11-13T11:41:10.2543188Z                 continue
+2026-11-13T11:41:10.2543492Z             expected_rates.append([group["lr"] for group in expected_optimizer.param_groups])
+2026-11-13T11:41:10.2543947Z             _reference_step(reference, expected_optimizer, batches, trainer.args.max_grad_norm)
+2026-11-13T11:41:10.2544315Z             expected_scheduler.step()
+2026-11-13T11:41:10.2544734Z     
+2026-11-13T11:41:10.2544987Z         assert trainer.global_step == 5
+2026-11-13T11:41:10.2545378Z >       assert actual_rates == expected_rates
+2026-11-13T11:41:10.2546020Z E       assert [[0.02, 0.005...25, 0.000625]] == [[0.04, 0.01]...005, 0.00125]]
+2026-11-13T11:41:10.2546435Z E         
+2026-11-13T11:41:10.2546719Z E         At index 0 diff: [0.02, 0.005] != [0.04, 0.01]
+2026-11-13T11:41:10.2547072Z E         
+2026-11-13T11:41:10.2547305Z E         Full diff:
+2026-11-13T11:41:10.2547559Z E           [
+2026-11-13T11:41:10.2547803Z E         -     [
+2026-11-13T11:41:10.2548070Z E         -         0.04,
+2026-11-13T11:41:10.2548346Z E         -         0.01,
+2026-11-13T11:41:10.2548612Z E         -     ],
+2026-11-13T11:41:10.2548855Z E               [
+2026-11-13T11:41:10.2549092Z E                   0.02,
+2026-11-13T11:41:10.2549353Z E                   0.005,
+2026-11-13T11:41:10.2549613Z E               ],
+2026-11-13T11:41:10.2549857Z E               [
+2026-11-13T11:41:10.2550096Z E                   0.01,
+2026-11-13T11:41:10.2550339Z E                   0.0025,
+2026-11-13T11:41:10.2550521Z E               ],
+2026-11-13T11:41:10.2550688Z E               [
+2026-11-13T11:41:10.2550860Z E                   0.005,
+2026-11-13T11:41:10.2551041Z E                   0.00125,
+2026-11-13T11:41:10.2551229Z E               ],
+2026-11-13T11:41:10.2551485Z E         +     [
+2026-11-13T11:41:10.2551679Z E         +         0.0025,
+2026-11-13T11:41:10.2551862Z E         +         0.000625,
+2026-11-13T11:41:10.2552049Z E         +     ],
+2026-11-13T11:41:10.2552210Z E           ]
+2026-11-13T11:41:10.2552308Z 
+2026-11-13T11:41:10.2552462Z tests_v1/trainers/test_nonfinite_scheduler.py:161: AssertionError
+2026-11-13T11:41:10.2552830Z ----------------------------- Captured stdout call -----------------------------
+2026-11-13T11:41:10.2553584Z [INFO|2026-11-13 11:41:08] llamafactory.v1.core.utils.batching:107 >> Init unified data loader with global batch size 2, micro batch size 1, num micro batch 2, cutoff len 16, batching workers 0, batching strategy normal.
+2026-11-13T11:41:10.2554349Z [WARNING|2026-11-13 11:41:08] llamafactory.v1.core.base_trainer:112 >> Gradient norm is not finite: nan
+2026-11-13T11:41:10.2555801Z [INFO|2026-11-13 11:41:08] llamafactory.v1.core.base_trainer:107 >> Reached max_steps (5), stopping training.
+2026-11-13T11:41:10.2556280Z ________ test_scheduler_tracks_successful_sft_updates[bad_steps1-adamw] ________
+2026-11-13T11:41:10.2556519Z 
+2026-11-13T11:41:10.2556722Z tmp_path = PosixPath('/tmp/pytest-of-runner/pytest-0/test_scheduler_tracks_successf3')
+2026-11-13T11:41:10.2557089Z optimizer_name = 'adamw', bad_steps = {1: nan}
+2026-11-13T11:41:10.2557256Z 
+2026-11-13T11:41:10.2557342Z     @pytest.mark.runs_on(["cpu"])
+2026-11-13T11:41:10.2557615Z     @pytest.mark.parametrize("optimizer_name", ["sgd", "adamw"])
+2026-11-13T11:41:10.2558346Z     @pytest.mark.parametrize("bad_steps", [{}, {1: float("nan")}, {3: float("inf")}, {1: float("nan"), 2: float("inf")}])
+2026-11-13T11:41:10.2559080Z     def test_scheduler_tracks_successful_sft_updates(tmp_path, optimizer_name, bad_steps):
+2026-11-13T11:41:10.2559604Z         trainer = _make_trainer(tmp_path)
+2026-11-13T11:41:10.2559996Z         reference = copy.deepcopy(trainer.model).train()
+2026-11-13T11:41:10.2560426Z         trainer.optimizer = _make_optimizer(trainer.model, optimizer_name)
+2026-11-13T11:41:10.2560791Z         expected_optimizer = _make_optimizer(reference, optimizer_name)
+2026-11-13T11:41:10.2561225Z         trainer.lr_scheduler = torch.optim.lr_scheduler.StepLR(trainer.optimizer, step_size=1, gamma=0.5)
+2026-11-13T11:41:10.2561929Z         expected_scheduler = torch.optim.lr_scheduler.StepLR(expected_optimizer, step_size=1, gamma=0.5)
+2026-11-13T11:41:10.2562311Z         actual_rates = []
+2026-11-13T11:41:10.2562545Z         hook = trainer.optimizer.register_step_pre_hook(
+2026-11-13T11:41:10.2562973Z             lambda optimizer, _args, _kwargs: actual_rates.append([group["lr"] for group in optimizer.param_groups])
+2026-11-13T11:41:10.2563355Z         )
+2026-11-13T11:41:10.2563515Z     
+2026-11-13T11:41:10.2563753Z         # Inject a real non-finite gradient after the native GPT-2 backward.
+2026-11-13T11:41:10.2564194Z         parameter = next(trainer.model.parameters())
+2026-11-13T11:41:10.2564456Z         fault = parameter.register_hook(
+2026-11-13T11:41:10.2564878Z             lambda grad: (
+2026-11-13T11:41:10.2565236Z                 torch.full_like(grad, bad_steps[trainer.global_step]) if trainer.global_step in bad_steps else grad
+2026-11-13T11:41:10.2565627Z             )
+2026-11-13T11:41:10.2565790Z         )
+2026-11-13T11:41:10.2565949Z         try:
+2026-11-13T11:41:10.2566122Z             trainer.fit()
+2026-11-13T11:41:10.2566309Z         finally:
+2026-11-13T11:41:10.2566476Z             fault.remove()
+2026-11-13T11:41:10.2566665Z             hook.remove()
+2026-11-13T11:41:10.2566841Z     
+2026-11-13T11:41:10.2567004Z         expected_rates = []
+2026-11-13T11:41:10.2567233Z         for step, batches in trainer.batches.items():
+2026-11-13T11:41:10.2567494Z             if step in bad_steps:
+2026-11-13T11:41:10.2567699Z                 continue
+2026-11-13T11:41:10.2567999Z             expected_rates.append([group["lr"] for group in expected_optimizer.param_groups])
+2026-11-13T11:41:10.2568452Z             _reference_step(reference, expected_optimizer, batches, trainer.args.max_grad_norm)
+2026-11-13T11:41:10.2568801Z             expected_scheduler.step()
+2026-11-13T11:41:10.2569002Z     
+2026-11-13T11:41:10.2569173Z         assert trainer.global_step == 5
+2026-11-13T11:41:10.2569420Z >       assert actual_rates == expected_rates
+2026-11-13T11:41:10.2569712Z E       assert [[0.02, 0.005...25, 0.000625]] == [[0.04, 0.01]...005, 0.00125]]
+2026-11-13T11:41:10.2569988Z E         
+2026-11-13T11:41:10.2570172Z E         At index 0 diff: [0.02, 0.005] != [0.04, 0.01]
+2026-11-13T11:41:10.2570408Z E         
+2026-11-13T11:41:10.2570572Z E         Full diff:
+2026-11-13T11:41:10.2570747Z E           [
+2026-11-13T11:41:10.2570911Z E         -     [
+2026-11-13T11:41:10.2571086Z E         -         0.04,
+2026-11-13T11:41:10.2571268Z E         -         0.01,
+2026-11-13T11:41:10.2571444Z E         -     ],
+2026-11-13T11:41:10.2571616Z E               [
+2026-11-13T11:41:10.2571779Z E                   0.02,
+2026-11-13T11:41:10.2571964Z E                   0.005,
+2026-11-13T11:41:10.2572144Z E               ],
+2026-11-13T11:41:10.2572304Z E               [
+2026-11-13T11:41:10.2572464Z E                   0.01,
+2026-11-13T11:41:10.2572642Z E                   0.0025,
+2026-11-13T11:41:10.2572823Z E               ],
+2026-11-13T11:41:10.2572985Z E               [
+2026-11-13T11:41:10.2573146Z E                   0.005,
+2026-11-13T11:41:10.2573323Z E                   0.00125,
+2026-11-13T11:41:10.2573506Z E               ],
+2026-11-13T11:41:10.2573667Z E         +     [
+2026-11-13T11:41:10.2573847Z E         +         0.0025,
+2026-11-13T11:41:10.2574040Z E         +         0.000625,
+2026-11-13T11:41:10.2574224Z E         +     ],
+2026-11-13T11:41:10.2574382Z E           ]
+2026-11-13T11:41:10.2574611Z 
+2026-11-13T11:41:10.2574774Z tests_v1/trainers/test_nonfinite_scheduler.py:161: AssertionError
+2026-11-13T11:41:10.2575140Z ----------------------------- Captured stdout call -----------------------------
+2026-11-13T11:41:10.2575854Z [INFO|2026-11-13 11:41:08] llamafactory.v1.core.utils.batching:107 >> Init unified data loader with global batch size 2, micro batch size 1, num micro batch 2, cutoff len 16, batching workers 0, batching strategy normal.
+2026-11-13T11:41:10.2576842Z [WARNING|2026-11-13 11:41:08] llamafactory.v1.core.base_trainer:112 >> Gradient norm is not finite: nan
+2026-11-13T11:41:10.2577603Z [INFO|2026-11-13 11:41:08] llamafactory.v1.core.base_trainer:107 >> Reached max_steps (5), stopping training.
+2026-11-13T11:41:10.2578279Z _________ test_scheduler_tracks_successful_sft_updates[bad_steps2-sgd] _________
+2026-11-13T11:41:10.2578637Z 
+2026-11-13T11:41:10.2578946Z tmp_path = PosixPath('/tmp/pytest-of-runner/pytest-0/test_scheduler_tracks_successf4')
+2026-11-13T11:41:10.2579495Z optimizer_name = 'sgd', bad_steps = {3: inf}
+2026-11-13T11:41:10.2579746Z 
+2026-11-13T11:41:10.2579873Z     @pytest.mark.runs_on(["cpu"])
+2026-11-13T11:41:10.2580489Z     @pytest.mark.parametrize("optimizer_name", ["sgd", "adamw"])
+2026-11-13T11:41:10.2581164Z     @pytest.mark.parametrize("bad_steps", [{}, {1: float("nan")}, {3: float("inf")}, {1: float("nan"), 2: float("inf")}])
+2026-11-13T11:41:10.2581967Z     def test_scheduler_tracks_successful_sft_updates(tmp_path, optimizer_name, bad_steps):
+2026-11-13T11:41:10.2582529Z         trainer = _make_trainer(tmp_path)
+2026-11-13T11:41:10.2582934Z         reference = copy.deepcopy(trainer.model).train()
+2026-11-13T11:41:10.2583308Z         trainer.optimizer = _make_optimizer(trainer.model, optimizer_name)
+2026-11-13T11:41:10.2583670Z         expected_optimizer = _make_optimizer(reference, optimizer_name)
+2026-11-13T11:41:10.2584102Z         trainer.lr_scheduler = torch.optim.lr_scheduler.StepLR(trainer.optimizer, step_size=1, gamma=0.5)
+2026-11-13T11:41:10.2584858Z         expected_scheduler = torch.optim.lr_scheduler.StepLR(expected_optimizer, step_size=1, gamma=0.5)
+2026-11-13T11:41:10.2585229Z         actual_rates = []
+2026-11-13T11:41:10.2585467Z         hook = trainer.optimizer.register_step_pre_hook(
+2026-11-13T11:41:10.2585888Z             lambda optimizer, _args, _kwargs: actual_rates.append([group["lr"] for group in optimizer.param_groups])
+2026-11-13T11:41:10.2586261Z         )
+2026-11-13T11:41:10.2586418Z     
+2026-11-13T11:41:10.2586666Z         # Inject a real non-finite gradient after the native GPT-2 backward.
+2026-11-13T11:41:10.2586991Z         parameter = next(trainer.model.parameters())
+2026-11-13T11:41:10.2587247Z         fault = parameter.register_hook(
+2026-11-13T11:41:10.2587469Z             lambda grad: (
+2026-11-13T11:41:10.2587820Z                 torch.full_like(grad, bad_steps[trainer.global_step]) if trainer.global_step in bad_steps else grad
+2026-11-13T11:41:10.2588198Z             )
+2026-11-13T11:41:10.2588357Z         )
+2026-11-13T11:41:10.2588506Z         try:
+2026-11-13T11:41:10.2588672Z             trainer.fit()
+2026-11-13T11:41:10.2588855Z         finally:
+2026-11-13T11:41:10.2589032Z             fault.remove()
+2026-11-13T11:41:10.2589217Z             hook.remove()
+2026-11-13T11:41:10.2589388Z     
+2026-11-13T11:41:10.2589548Z         expected_rates = []
+2026-11-13T11:41:10.2589776Z         for step, batches in trainer.batches.items():
+2026-11-13T11:41:10.2590036Z             if step in bad_steps:
+2026-11-13T11:41:10.2590241Z                 continue
+2026-11-13T11:41:10.2590541Z             expected_rates.append([group["lr"] for group in expected_optimizer.param_groups])
+2026-11-13T11:41:10.2590991Z             _reference_step(reference, expected_optimizer, batches, trainer.args.max_grad_norm)
+2026-11-13T11:41:10.2591339Z             expected_scheduler.step()
+2026-11-13T11:41:10.2591549Z     
+2026-11-13T11:41:10.2591717Z         assert trainer.global_step == 5
+2026-11-13T11:41:10.2591950Z >       assert actual_rates == expected_rates
+2026-11-13T11:41:10.2592234Z E       assert [[0.04, 0.01]...25, 0.000625]] == [[0.04, 0.01]...005, 0.00125]]
+2026-11-13T11:41:10.2592496Z E         
+2026-11-13T11:41:10.2592704Z E         At index 2 diff: [0.005, 0.00125] != [0.01, 0.0025]
+2026-11-13T11:41:10.2592937Z E         
+2026-11-13T11:41:10.2593115Z E         Full diff:
+2026-11-13T11:41:10.2593287Z E           [
+2026-11-13T11:41:10.2593444Z E               [
+2026-11-13T11:41:10.2593622Z E                   0.04,
+2026-11-13T11:41:10.2593800Z E                   0.01,
+2026-11-13T11:41:10.2594149Z E               ],
+2026-11-13T11:41:10.2594319Z E               [
+2026-11-13T11:41:10.2594631Z E                   0.02,
+2026-11-13T11:41:10.2594815Z E                   0.005,
+2026-11-13T11:41:10.2594990Z E               ],
+2026-11-13T11:41:10.2595146Z E               [
+2026-11-13T11:41:10.2595312Z E         -         0.01,
+2026-11-13T11:41:10.2595505Z E         -         0.0025,
+2026-11-13T11:41:10.2595687Z E         -     ],
+2026-11-13T11:41:10.2595851Z E         -     [
+2026-11-13T11:41:10.2596021Z E                   0.005,
+2026-11-13T11:41:10.2596200Z E                   0.00125,
+2026-11-13T11:41:10.2596502Z E               ],
+2026-11-13T11:41:10.2596662Z E         +     [
+2026-11-13T11:41:10.2596822Z E         +         0.0025,
+2026-11-13T11:41:10.2597005Z E         +         0.000625,
+2026-11-13T11:41:10.2597184Z E         +     ],
+2026-11-13T11:41:10.2597345Z E           ]
+2026-11-13T11:41:10.2597442Z 
+2026-11-13T11:41:10.2597585Z tests_v1/trainers/test_nonfinite_scheduler.py:161: AssertionError
+2026-11-13T11:41:10.2597947Z ----------------------------- Captured stdout call -----------------------------
+2026-11-13T11:41:10.2598659Z [INFO|2026-11-13 11:41:08] llamafactory.v1.core.utils.batching:107 >> Init unified data loader with global batch size 2, micro batch size 1, num micro batch 2, cutoff len 16, batching workers 0, batching strategy normal.
+2026-11-13T11:41:10.2599401Z [WARNING|2026-11-13 11:41:08] llamafactory.v1.core.base_trainer:112 >> Gradient norm is not finite: inf
+2026-11-13T11:41:10.2599904Z [INFO|2026-11-13 11:41:08] llamafactory.v1.core.base_trainer:107 >> Reached max_steps (5), stopping training.
+2026-11-13T11:41:10.2600365Z ________ test_scheduler_tracks_successful_sft_updates[bad_steps2-adamw] ________
+2026-11-13T11:41:10.2600597Z 
+2026-11-13T11:41:10.2600791Z tmp_path = PosixPath('/tmp/pytest-of-runner/pytest-0/test_scheduler_tracks_successf5')
+2026-11-13T11:41:10.2601152Z optimizer_name = 'adamw', bad_steps = {3: inf}
+2026-11-13T11:41:10.2601320Z 
+2026-11-13T11:41:10.2601417Z     @pytest.mark.runs_on(["cpu"])
+2026-11-13T11:41:10.2601691Z     @pytest.mark.parametrize("optimizer_name", ["sgd", "adamw"])
+2026-11-13T11:41:10.2602124Z     @pytest.mark.parametrize("bad_steps", [{}, {1: float("nan")}, {3: float("inf")}, {1: float("nan"), 2: float("inf")}])
+2026-11-13T11:41:10.2602613Z     def test_scheduler_tracks_successful_sft_updates(tmp_path, optimizer_name, bad_steps):
+2026-11-13T11:41:10.2602956Z         trainer = _make_trainer(tmp_path)
+2026-11-13T11:41:10.2603215Z         reference = copy.deepcopy(trainer.model).train()
+2026-11-13T11:41:10.2603540Z         trainer.optimizer = _make_optimizer(trainer.model, optimizer_name)
+2026-11-13T11:41:10.2603901Z         expected_optimizer = _make_optimizer(reference, optimizer_name)
+2026-11-13T11:41:10.2604340Z         trainer.lr_scheduler = torch.optim.lr_scheduler.StepLR(trainer.optimizer, step_size=1, gamma=0.5)
+2026-11-13T11:41:10.2605030Z         expected_scheduler = torch.optim.lr_scheduler.StepLR(expected_optimizer, step_size=1, gamma=0.5)
+2026-11-13T11:41:10.2605393Z         actual_rates = []
+2026-11-13T11:41:10.2605618Z         hook = trainer.optimizer.register_step_pre_hook(
+2026-11-13T11:41:10.2606027Z             lambda optimizer, _args, _kwargs: actual_rates.append([group["lr"] for group in optimizer.param_groups])
+2026-11-13T11:41:10.2606395Z         )
+2026-11-13T11:41:10.2606550Z     
+2026-11-13T11:41:10.2606790Z         # Inject a real non-finite gradient after the native GPT-2 backward.
+2026-11-13T11:41:10.2607128Z         parameter = next(trainer.model.parameters())
+2026-11-13T11:41:10.2607385Z         fault = parameter.register_hook(
+2026-11-13T11:41:10.2607607Z             lambda grad: (
+2026-11-13T11:41:10.2607961Z                 torch.full_like(grad, bad_steps[trainer.global_step]) if trainer.global_step in bad_steps else grad
+2026-11-13T11:41:10.2608326Z             )
+2026-11-13T11:41:10.2608485Z         )
+2026-11-13T11:41:10.2608639Z         try:
+2026-11-13T11:41:10.2608805Z             trainer.fit()
+2026-11-13T11:41:10.2609108Z         finally:
+2026-11-13T11:41:10.2609282Z             fault.remove()
+2026-11-13T11:41:10.2609473Z             hook.remove()
+2026-11-13T11:41:10.2609650Z     
+2026-11-13T11:41:10.2609808Z         expected_rates = []
+2026-11-13T11:41:10.2610031Z         for step, batches in trainer.batches.items():
+2026-11-13T11:41:10.2610277Z             if step in bad_steps:
+2026-11-13T11:41:10.2610480Z                 continue
+2026-11-13T11:41:10.2610778Z             expected_rates.append([group["lr"] for group in expected_optimizer.param_groups])
+2026-11-13T11:41:10.2611237Z             _reference_step(reference, expected_optimizer, batches, trainer.args.max_grad_norm)
+2026-11-13T11:41:10.2611771Z             expected_scheduler.step()
+2026-11-13T11:41:10.2611975Z     
+2026-11-13T11:41:10.2612155Z         assert trainer.global_step == 5
+2026-11-13T11:41:10.2612388Z >       assert actual_rates == expected_rates
+2026-11-13T11:41:10.2612681Z E       assert [[0.04, 0.01]...25, 0.000625]] == [[0.04, 0.01]...005, 0.00125]]
+2026-11-13T11:41:10.2612956Z E         
+2026-11-13T11:41:10.2613161Z E         At index 2 diff: [0.005, 0.00125] != [0.01, 0.0025]
+2026-11-13T11:41:10.2613397Z E         
+2026-11-13T11:41:10.2613553Z E         Full diff:
+2026-11-13T11:41:10.2613722Z E           [
+2026-11-13T11:41:10.2613879Z E               [
+2026-11-13T11:41:10.2614049Z E                   0.04,
+2026-11-13T11:41:10.2614227Z E                   0.01,
+2026-11-13T11:41:10.2614410Z E               ],
+2026-11-13T11:41:10.2614762Z E               [
+2026-11-13T11:41:10.2614925Z E                   0.02,
+2026-11-13T11:41:10.2615103Z E                   0.005,
+2026-11-13T11:41:10.2615278Z E               ],
+2026-11-13T11:41:10.2615439Z E               [
+2026-11-13T11:41:10.2615602Z E         -         0.01,
+2026-11-13T11:41:10.2615780Z E         -         0.0025,
+2026-11-13T11:41:10.2615962Z E         -     ],
+2026-11-13T11:41:10.2616129Z E         -     [
+2026-11-13T11:41:10.2616294Z E                   0.005,
+2026-11-13T11:41:10.2616480Z E                   0.00125,
+2026-11-13T11:41:10.2616660Z E               ],
+2026-11-13T11:41:10.2616823Z E         +     [
+2026-11-13T11:41:10.2616986Z E         +         0.0025,
+2026-11-13T11:41:10.2617171Z E         +         0.000625,
+2026-11-13T11:41:10.2617359Z E         +     ],
+2026-11-13T11:41:10.2617521Z E           ]
+2026-11-13T11:41:10.2617620Z 
+2026-11-13T11:41:10.2617773Z tests_v1/trainers/test_nonfinite_scheduler.py:161: AssertionError
+2026-11-13T11:41:10.2618127Z ----------------------------- Captured stdout call -----------------------------
+2026-11-13T11:41:10.2618843Z [INFO|2026-11-13 11:41:08] llamafactory.v1.core.utils.batching:107 >> Init unified data loader with global batch size 2, micro batch size 1, num micro batch 2, cutoff len 16, batching workers 0, batching strategy normal.
+2026-11-13T11:41:10.2619596Z [WARNING|2026-11-13 11:41:08] llamafactory.v1.core.base_trainer:112 >> Gradient norm is not finite: inf
+2026-11-13T11:41:10.2620107Z [INFO|2026-11-13 11:41:08] llamafactory.v1.core.base_trainer:107 >> Reached max_steps (5), stopping training.
+2026-11-13T11:41:10.2620563Z _________ test_scheduler_tracks_successful_sft_updates[bad_steps3-sgd] _________
+2026-11-13T11:41:10.2620801Z 
+2026-11-13T11:41:10.2620995Z tmp_path = PosixPath('/tmp/pytest-of-runner/pytest-0/test_scheduler_tracks_successf6')
+2026-11-13T11:41:10.2621355Z optimizer_name = 'sgd', bad_steps = {1: nan, 2: inf}
+2026-11-13T11:41:10.2621531Z 
+2026-11-13T11:41:10.2621614Z     @pytest.mark.runs_on(["cpu"])
+2026-11-13T11:41:10.2621888Z     @pytest.mark.parametrize("optimizer_name", ["sgd", "adamw"])
+2026-11-13T11:41:10.2622321Z     @pytest.mark.parametrize("bad_steps", [{}, {1: float("nan")}, {3: float("inf")}, {1: float("nan"), 2: float("inf")}])
+2026-11-13T11:41:10.2622810Z     def test_scheduler_tracks_successful_sft_updates(tmp_path, optimizer_name, bad_steps):
+2026-11-13T11:41:10.2623157Z         trainer = _make_trainer(tmp_path)
+2026-11-13T11:41:10.2623416Z         reference = copy.deepcopy(trainer.model).train()
+2026-11-13T11:41:10.2623853Z         trainer.optimizer = _make_optimizer(trainer.model, optimizer_name)
+2026-11-13T11:41:10.2624220Z         expected_optimizer = _make_optimizer(reference, optimizer_name)
+2026-11-13T11:41:10.2624796Z         trainer.lr_scheduler = torch.optim.lr_scheduler.StepLR(trainer.optimizer, step_size=1, gamma=0.5)
+2026-11-13T11:41:10.2625316Z         expected_scheduler = torch.optim.lr_scheduler.StepLR(expected_optimizer, step_size=1, gamma=0.5)
+2026-11-13T11:41:10.2625676Z         actual_rates = []
+2026-11-13T11:41:10.2625909Z         hook = trainer.optimizer.register_step_pre_hook(
+2026-11-13T11:41:10.2626434Z             lambda optimizer, _args, _kwargs: actual_rates.append([group["lr"] for group in optimizer.param_groups])
+2026-11-13T11:41:10.2626802Z         )
+2026-11-13T11:41:10.2626958Z     
+2026-11-13T11:41:10.2627190Z         # Inject a real non-finite gradient after the native GPT-2 backward.
+2026-11-13T11:41:10.2627510Z         parameter = next(trainer.model.parameters())
+2026-11-13T11:41:10.2627776Z         fault = parameter.register_hook(
+2026-11-13T11:41:10.2627997Z             lambda grad: (
+2026-11-13T11:41:10.2628342Z                 torch.full_like(grad, bad_steps[trainer.global_step]) if trainer.global_step in bad_steps else grad
+2026-11-13T11:41:10.2628699Z             )
+2026-11-13T11:41:10.2628858Z         )
+2026-11-13T11:41:10.2629011Z         try:
+2026-11-13T11:41:10.2629173Z             trainer.fit()
+2026-11-13T11:41:10.2629353Z         finally:
+2026-11-13T11:41:10.2629526Z             fault.remove()
+2026-11-13T11:41:10.2629710Z             hook.remove()
+2026-11-13T11:41:10.2629884Z     
+2026-11-13T11:41:10.2630051Z         expected_rates = []
+2026-11-13T11:41:10.2630282Z         for step, batches in trainer.batches.items():
+2026-11-13T11:41:10.2630531Z             if step in bad_steps:
+2026-11-13T11:41:10.2630733Z                 continue
+2026-11-13T11:41:10.2631035Z             expected_rates.append([group["lr"] for group in expected_optimizer.param_groups])
+2026-11-13T11:41:10.2631490Z             _reference_step(reference, expected_optimizer, batches, trainer.args.max_grad_norm)
+2026-11-13T11:41:10.2631840Z             expected_scheduler.step()
+2026-11-13T11:41:10.2632045Z     
+2026-11-13T11:41:10.2632214Z         assert trainer.global_step == 5
+2026-11-13T11:41:10.2632453Z >       assert actual_rates == expected_rates
+2026-11-13T11:41:10.2632740Z E       assert [[0.01, 0.002...25, 0.000625]] == [[0.04, 0.01]...0.01, 0.0025]]
+2026-11-13T11:41:10.2633007Z E         
+2026-11-13T11:41:10.2633193Z E         At index 0 diff: [0.01, 0.0025] != [0.04, 0.01]
+2026-11-13T11:41:10.2633428Z E         
+2026-11-13T11:41:10.2633587Z E         Full diff:
+2026-11-13T11:41:10.2633753Z E           [
+2026-11-13T11:41:10.2633910Z E         -     [
+2026-11-13T11:41:10.2634080Z E         -         0.04,
+2026-11-13T11:41:10.2634256Z E         -         0.01,
+2026-11-13T11:41:10.2634433Z E         -     ],
+2026-11-13T11:41:10.2634798Z E         -     [
+2026-11-13T11:41:10.2634965Z E         -         0.02,
+2026-11-13T11:41:10.2635150Z E         -         0.005,
+2026-11-13T11:41:10.2635330Z E         -     ],
+2026-11-13T11:41:10.2635495Z E               [
+2026-11-13T11:41:10.2635656Z E                   0.01,
+2026-11-13T11:41:10.2635828Z E                   0.0025,
+2026-11-13T11:41:10.2636012Z E               ],
+2026-11-13T11:41:10.2636170Z E         +     [
+2026-11-13T11:41:10.2636333Z E         +         0.005,
+2026-11-13T11:41:10.2636511Z E         +         0.00125,
+2026-11-13T11:41:10.2636704Z E         +     ],
+2026-11-13T11:41:10.2636861Z E         +     [
+2026-11-13T11:41:10.2637029Z E         +         0.0025,
+2026-11-13T11:41:10.2637211Z E         +         0.000625,
+2026-11-13T11:41:10.2637395Z E         +     ],
+2026-11-13T11:41:10.2637555Z E           ]
+2026-11-13T11:41:10.2637650Z 
+2026-11-13T11:41:10.2637792Z tests_v1/trainers/test_nonfinite_scheduler.py:161: AssertionError
+2026-11-13T11:41:10.2638144Z ----------------------------- Captured stdout call -----------------------------
+2026-11-13T11:41:10.2639057Z [INFO|2026-11-13 11:41:08] llamafactory.v1.core.utils.batching:107 >> Init unified data loader with global batch size 2, micro batch size 1, num micro batch 2, cutoff len 16, batching workers 0, batching strategy normal.
+2026-11-13T11:41:10.2639827Z [WARNING|2026-11-13 11:41:08] llamafactory.v1.core.base_trainer:112 >> Gradient norm is not finite: nan
+2026-11-13T11:41:10.2640317Z [WARNING|2026-11-13 11:41:08] llamafactory.v1.core.base_trainer:112 >> Gradient norm is not finite: inf
+2026-11-13T11:41:10.2640817Z [INFO|2026-11-13 11:41:08] llamafactory.v1.core.base_trainer:107 >> Reached max_steps (5), stopping training.
+2026-11-13T11:41:10.2641370Z ________ test_scheduler_tracks_successful_sft_updates[bad_steps3-adamw] ________
+2026-11-13T11:41:10.2641613Z 
+2026-11-13T11:41:10.2641802Z tmp_path = PosixPath('/tmp/pytest-of-runner/pytest-0/test_scheduler_tracks_successf7')
+2026-11-13T11:41:10.2642168Z optimizer_name = 'adamw', bad_steps = {1: nan, 2: inf}
+2026-11-13T11:41:10.2642345Z 
+2026-11-13T11:41:10.2642442Z     @pytest.mark.runs_on(["cpu"])
+2026-11-13T11:41:10.2642713Z     @pytest.mark.parametrize("optimizer_name", ["sgd", "adamw"])
+2026-11-13T11:41:10.2643140Z     @pytest.mark.parametrize("bad_steps", [{}, {1: float("nan")}, {3: float("inf")}, {1: float("nan"), 2: float("inf")}])
+2026-11-13T11:41:10.2643622Z     def test_scheduler_tracks_successful_sft_updates(tmp_path, optimizer_name, bad_steps):
+2026-11-13T11:41:10.2643968Z         trainer = _make_trainer(tmp_path)
+2026-11-13T11:41:10.2644224Z         reference = copy.deepcopy(trainer.model).train()
+2026-11-13T11:41:10.2644714Z         trainer.optimizer = _make_optimizer(trainer.model, optimizer_name)
+2026-11-13T11:41:10.2645079Z         expected_optimizer = _make_optimizer(reference, optimizer_name)
+2026-11-13T11:41:10.2645516Z         trainer.lr_scheduler = torch.optim.lr_scheduler.StepLR(trainer.optimizer, step_size=1, gamma=0.5)
+2026-11-13T11:41:10.2646023Z         expected_scheduler = torch.optim.lr_scheduler.StepLR(expected_optimizer, step_size=1, gamma=0.5)
+2026-11-13T11:41:10.2646384Z         actual_rates = []
+2026-11-13T11:41:10.2646609Z         hook = trainer.optimizer.register_step_pre_hook(
+2026-11-13T11:41:10.2647019Z             lambda optimizer, _args, _kwargs: actual_rates.append([group["lr"] for group in optimizer.param_groups])
+2026-11-13T11:41:10.2647384Z         )
+2026-11-13T11:41:10.2647535Z     
+2026-11-13T11:41:10.2647765Z         # Inject a real non-finite gradient after the native GPT-2 backward.
+2026-11-13T11:41:10.2648083Z         parameter = next(trainer.model.parameters())
+2026-11-13T11:41:10.2648349Z         fault = parameter.register_hook(
+2026-11-13T11:41:10.2648568Z             lambda grad: (
+2026-11-13T11:41:10.2648916Z                 torch.full_like(grad, bad_steps[trainer.global_step]) if trainer.global_step in bad_steps else grad
+2026-11-13T11:41:10.2649275Z             )
+2026-11-13T11:41:10.2649433Z         )
+2026-11-13T11:41:10.2649584Z         try:
+2026-11-13T11:41:10.2649749Z             trainer.fit()
+2026-11-13T11:41:10.2649930Z         finally:
+2026-11-13T11:41:10.2650098Z             fault.remove()
+2026-11-13T11:41:10.2650281Z             hook.remove()
+2026-11-13T11:41:10.2650461Z     
+2026-11-13T11:41:10.2650625Z         expected_rates = []
+2026-11-13T11:41:10.2650850Z         for step, batches in trainer.batches.items():
+2026-11-13T11:41:10.2651097Z             if step in bad_steps:
+2026-11-13T11:41:10.2651297Z                 continue
+2026-11-13T11:41:10.2651591Z             expected_rates.append([group["lr"] for group in expected_optimizer.param_groups])
+2026-11-13T11:41:10.2652038Z             _reference_step(reference, expected_optimizer, batches, trainer.args.max_grad_norm)
+2026-11-13T11:41:10.2652382Z             expected_scheduler.step()
+2026-11-13T11:41:10.2652594Z     
+2026-11-13T11:41:10.2652761Z         assert trainer.global_step == 5
+2026-11-13T11:41:10.2653006Z >       assert actual_rates == expected_rates
+2026-11-13T11:41:10.2653399Z E       assert [[0.01, 0.002...25, 0.000625]] == [[0.04, 0.01]...0.01, 0.0025]]
+2026-11-13T11:41:10.2653678Z E         
+2026-11-13T11:41:10.2653872Z E         At index 0 diff: [0.01, 0.0025] != [0.04, 0.01]
+2026-11-13T11:41:10.2654101Z E         
+2026-11-13T11:41:10.2654255Z E         Full diff:
+2026-11-13T11:41:10.2654428Z E           [
+2026-11-13T11:41:10.2654746Z E         -     [
+2026-11-13T11:41:10.2654915Z E         -         0.04,
+2026-11-13T11:41:10.2655094Z E         -         0.01,
+2026-11-13T11:41:10.2655277Z E         -     ],
+2026-11-13T11:41:10.2655443Z E         -     [
+2026-11-13T11:41:10.2655604Z E         -         0.02,
+2026-11-13T11:41:10.2655889Z E         -         0.005,
+2026-11-13T11:41:10.2656067Z E         -     ],
+2026-11-13T11:41:10.2656229Z E               [
+2026-11-13T11:41:10.2656387Z E                   0.01,
+2026-11-13T11:41:10.2656559Z E                   0.0025,
+2026-11-13T11:41:10.2656735Z E               ],
+2026-11-13T11:41:10.2656894Z E         +     [
+2026-11-13T11:41:10.2657053Z E         +         0.005,
+2026-11-13T11:41:10.2657242Z E         +         0.00125,
+2026-11-13T11:41:10.2657434Z E         +     ],
+2026-11-13T11:41:10.2657594Z E         +     [
+2026-11-13T11:41:10.2657753Z E         +         0.0025,
+2026-11-13T11:41:10.2657935Z E         +         0.000625,
+2026-11-13T11:41:10.2658119Z E         +     ],
+2026-11-13T11:41:10.2658277Z E           ]
+2026-11-13T11:41:10.2658373Z 
+2026-11-13T11:41:10.2658516Z tests_v1/trainers/test_nonfinite_scheduler.py:161: AssertionError
+2026-11-13T11:41:10.2658870Z ----------------------------- Captured stdout call -----------------------------
+2026-11-13T11:41:10.2659575Z [INFO|2026-11-13 11:41:08] llamafactory.v1.core.utils.batching:107 >> Init unified data loader with global batch size 2, micro batch size 1, num micro batch 2, cutoff len 16, batching workers 0, batching strategy normal.
+2026-11-13T11:41:10.2660329Z [WARNING|2026-11-13 11:41:08] llamafactory.v1.core.base_trainer:112 >> Gradient norm is not finite: nan
+2026-11-13T11:41:10.2660812Z [WARNING|2026-11-13 11:41:08] llamafactory.v1.core.base_trainer:112 >> Gradient norm is not finite: inf
+2026-11-13T11:41:10.2661303Z [INFO|2026-11-13 11:41:08] llamafactory.v1.core.base_trainer:107 >> Reached max_steps (5), stopping training.
+2026-11-13T11:41:10.2661705Z =============================== warnings summary ===============================
+2026-11-13T11:41:10.2662270Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps0-sgd]
+2026-11-13T11:41:10.2662820Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps0-adamw]
+2026-11-13T11:41:10.2663365Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps1-sgd]
+2026-11-13T11:41:10.2663896Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps1-adamw]
+2026-11-13T11:41:10.2664424Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps2-sgd]
+2026-11-13T11:41:10.2665136Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps2-adamw]
+2026-11-13T11:41:10.2665744Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps3-sgd]
+2026-11-13T11:41:10.2666293Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps3-adamw]
+2026-11-13T11:41:10.2667179Z   /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/utils/data/dataloader.py:659: UserWarning: pin_memory_device is deprecated, the current accelerator will be used as the device,ignore pin_memory_device='cpu'.
+2026-11-13T11:41:10.2667905Z     warnings.warn(
+2026-11-13T11:41:10.2668009Z 
+2026-11-13T11:41:10.2668259Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps0-sgd]
+2026-11-13T11:41:10.2668802Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps0-adamw]
+2026-11-13T11:41:10.2669453Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps1-sgd]
+2026-11-13T11:41:10.2670006Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps1-adamw]
+2026-11-13T11:41:10.2670545Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps2-sgd]
+2026-11-13T11:41:10.2671086Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps2-adamw]
+2026-11-13T11:41:10.2671626Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps3-sgd]
+2026-11-13T11:41:10.2672295Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps3-adamw]
+2026-11-13T11:41:10.2673119Z   /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/utils/data/dataloader.py:668: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+2026-11-13T11:41:10.2673770Z     warnings.warn(warn_msg)
+2026-11-13T11:41:10.2673900Z 
+2026-11-13T11:41:10.2674132Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps1-sgd]
+2026-11-13T11:41:10.2674889Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps1-adamw]
+2026-11-13T11:41:10.2675421Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps3-sgd]
+2026-11-13T11:41:10.2675950Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps3-adamw]
+2026-11-13T11:41:10.2677483Z   /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:192: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+2026-11-13T11:41:10.2678750Z     warnings.warn(
+2026-11-13T11:41:10.2678863Z 
+2026-11-13T11:41:10.2679239Z -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2026-11-13T11:41:10.2679725Z =========================== short test summary info ============================
+2026-11-13T11:41:10.2680753Z FAILED tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps1-sgd] - assert [[0.02, 0.005...25, 0.000625]] == [[0.04, 0.01]...005, 0.00125]]
+2026-11-13T11:41:10.2681603Z   
+2026-11-13T11:41:10.2681850Z   At index 0 diff: [0.02, 0.005] != [0.04, 0.01]
+2026-11-13T11:41:10.2682179Z   
+2026-11-13T11:41:10.2682398Z   Full diff:
+2026-11-13T11:41:10.2682610Z     [
+2026-11-13T11:41:10.2682815Z   -     [
+2026-11-13T11:41:10.2683041Z   -         0.04,
+2026-11-13T11:41:10.2683282Z   -         0.01,
+2026-11-13T11:41:10.2683522Z   -     ],
+2026-11-13T11:41:10.2683708Z         [
+2026-11-13T11:41:10.2683860Z             0.02,
+2026-11-13T11:41:10.2684020Z             0.005,
+2026-11-13T11:41:10.2684189Z         ],
+2026-11-13T11:41:10.2684340Z         [
+2026-11-13T11:41:10.2684665Z             0.01,
+2026-11-13T11:41:10.2684876Z             0.0025,
+2026-11-13T11:41:10.2685037Z         ],
+2026-11-13T11:41:10.2685186Z         [
+2026-11-13T11:41:10.2685336Z             0.005,
+2026-11-13T11:41:10.2685505Z             0.00125,
+2026-11-13T11:41:10.2685677Z         ],
+2026-11-13T11:41:10.2685827Z   +     [
+2026-11-13T11:41:10.2685976Z   +         0.0025,
+2026-11-13T11:41:10.2686139Z   +         0.000625,
+2026-11-13T11:41:10.2686315Z   +     ],
+2026-11-13T11:41:10.2686467Z     ]
+2026-11-13T11:41:10.2686992Z FAILED tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps1-adamw] - assert [[0.02, 0.005...25, 0.000625]] == [[0.04, 0.01]...005, 0.00125]]
+2026-11-13T11:41:10.2687694Z   
+2026-11-13T11:41:10.2687873Z   At index 0 diff: [0.02, 0.005] != [0.04, 0.01]
+2026-11-13T11:41:10.2688097Z   
+2026-11-13T11:41:10.2688255Z   Full diff:
+2026-11-13T11:41:10.2688412Z     [
+2026-11-13T11:41:10.2688562Z   -     [
+2026-11-13T11:41:10.2688716Z   -         0.04,
+2026-11-13T11:41:10.2688881Z   -         0.01,
+2026-11-13T11:41:10.2689038Z   -     ],
+2026-11-13T11:41:10.2689462Z         [
+2026-11-13T11:41:10.2689727Z             0.02,
+2026-11-13T11:41:10.2690026Z             0.005,
+2026-11-13T11:41:10.2690356Z         ],
+2026-11-13T11:41:10.2690730Z         [
+2026-11-13T11:41:10.2691019Z             0.01,
+2026-11-13T11:41:10.2739335Z             0.0025,
+2026-11-13T11:41:10.2739560Z         ],
+2026-11-13T11:41:10.2739732Z         [
+2026-11-13T11:41:10.2739901Z             0.005,
+2026-11-13T11:41:10.2740122Z             0.00125,
+2026-11-13T11:41:10.2740374Z         ],
+2026-11-13T11:41:10.2740587Z   +     [
+2026-11-13T11:41:10.2740783Z   +         0.0025,
+2026-11-13T11:41:10.2741028Z   +         0.000625,
+2026-11-13T11:41:10.2741254Z   +     ],
+2026-11-13T11:41:10.2741446Z     ]
+2026-11-13T11:41:10.2742191Z FAILED tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps2-sgd] - assert [[0.04, 0.01]...25, 0.000625]] == [[0.04, 0.01]...005, 0.00125]]
+2026-11-13T11:41:10.2743070Z   
+2026-11-13T11:41:10.2743326Z   At index 2 diff: [0.005, 0.00125] != [0.01, 0.0025]
+2026-11-13T11:41:10.2743650Z   
+2026-11-13T11:41:10.2743858Z   Full diff:
+2026-11-13T11:41:10.2744092Z     [
+2026-11-13T11:41:10.2744306Z         [
+2026-11-13T11:41:10.2744711Z             0.04,
+2026-11-13T11:41:10.2744954Z             0.01,
+2026-11-13T11:41:10.2745187Z         ],
+2026-11-13T11:41:10.2745409Z         [
+2026-11-13T11:41:10.2745628Z             0.02,
+2026-11-13T11:41:10.2745871Z             0.005,
+2026-11-13T11:41:10.2746117Z         ],
+2026-11-13T11:41:10.2746350Z         [
+2026-11-13T11:41:10.2746576Z   -         0.01,
+2026-11-13T11:41:10.2746807Z   -         0.0025,
+2026-11-13T11:41:10.2747085Z   -     ],
+2026-11-13T11:41:10.2747313Z   -     [
+2026-11-13T11:41:10.2747540Z             0.005,
+2026-11-13T11:41:10.2747779Z             0.00125,
+2026-11-13T11:41:10.2748027Z         ],
+2026-11-13T11:41:10.2748249Z   +     [
+2026-11-13T11:41:10.2748472Z   +         0.0025,
+2026-11-13T11:41:10.2748720Z   +         0.000625,
+2026-11-13T11:41:10.2748955Z   +     ],
+2026-11-13T11:41:10.2749175Z     ]
+2026-11-13T11:41:10.2750020Z FAILED tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps2-adamw] - assert [[0.04, 0.01]...25, 0.000625]] == [[0.04, 0.01]...005, 0.00125]]
+2026-11-13T11:41:10.2750910Z   
+2026-11-13T11:41:10.2751184Z   At index 2 diff: [0.005, 0.00125] != [0.01, 0.0025]
+2026-11-13T11:41:10.2751521Z   
+2026-11-13T11:41:10.2751749Z   Full diff:
+2026-11-13T11:41:10.2751987Z     [
+2026-11-13T11:41:10.2752207Z         [
+2026-11-13T11:41:10.2752435Z             0.04,
+2026-11-13T11:41:10.2752650Z             0.01,
+2026-11-13T11:41:10.2752869Z         ],
+2026-11-13T11:41:10.2753085Z         [
+2026-11-13T11:41:10.2753323Z             0.02,
+2026-11-13T11:41:10.2753570Z             0.005,
+2026-11-13T11:41:10.2753808Z         ],
+2026-11-13T11:41:10.2754046Z         [
+2026-11-13T11:41:10.2754278Z   -         0.01,
+2026-11-13T11:41:10.2754674Z   -         0.0025,
+2026-11-13T11:41:10.2754926Z   -     ],
+2026-11-13T11:41:10.2755149Z   -     [
+2026-11-13T11:41:10.2755380Z             0.005,
+2026-11-13T11:41:10.2755604Z             0.00125,
+2026-11-13T11:41:10.2755845Z         ],
+2026-11-13T11:41:10.2756065Z   +     [
+2026-11-13T11:41:10.2756305Z   +         0.0025,
+2026-11-13T11:41:10.2756558Z   +         0.000625,
+2026-11-13T11:41:10.2756829Z   +     ],
+2026-11-13T11:41:10.2757069Z     ]
+2026-11-13T11:41:10.2757909Z FAILED tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps3-sgd] - assert [[0.01, 0.002...25, 0.000625]] == [[0.04, 0.01]...0.01, 0.0025]]
+2026-11-13T11:41:10.2758800Z   
+2026-11-13T11:41:10.2759445Z   At index 0 diff: [0.01, 0.0025] != [0.04, 0.01]
+2026-11-13T11:41:10.2759802Z   
+2026-11-13T11:41:10.2760038Z   Full diff:
+2026-11-13T11:41:10.2760284Z     [
+2026-11-13T11:41:10.2760514Z   -     [
+2026-11-13T11:41:10.2760759Z   -         0.04,
+2026-11-13T11:41:10.2761038Z   -         0.01,
+2026-11-13T11:41:10.2761292Z   -     ],
+2026-11-13T11:41:10.2761536Z   -     [
+2026-11-13T11:41:10.2761771Z   -         0.02,
+2026-11-13T11:41:10.2762024Z   -         0.005,
+2026-11-13T11:41:10.2762282Z   -     ],
+2026-11-13T11:41:10.2762514Z         [
+2026-11-13T11:41:10.2762990Z             0.01,
+2026-11-13T11:41:10.2763238Z             0.0025,
+2026-11-13T11:41:10.2763491Z         ],
+2026-11-13T11:41:10.2763714Z   +     [
+2026-11-13T11:41:10.2763931Z   +         0.005,
+2026-11-13T11:41:10.2764182Z   +         0.00125,
+2026-11-13T11:41:10.2764447Z   +     ],
+2026-11-13T11:41:10.2764849Z   +     [
+2026-11-13T11:41:10.2765134Z   +         0.0025,
+2026-11-13T11:41:10.2765384Z   +         0.000625,
+2026-11-13T11:41:10.2765655Z   +     ],
+2026-11-13T11:41:10.2765889Z     ]
+2026-11-13T11:41:10.2766735Z FAILED tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps3-adamw] - assert [[0.01, 0.002...25, 0.000625]] == [[0.04, 0.01]...0.01, 0.0025]]
+2026-11-13T11:41:10.2767643Z   
+2026-11-13T11:41:10.2767925Z   At index 0 diff: [0.01, 0.0025] != [0.04, 0.01]
+2026-11-13T11:41:10.2768280Z   
+2026-11-13T11:41:10.2768522Z   Full diff:
+2026-11-13T11:41:10.2768770Z     [
+2026-11-13T11:41:10.2769005Z   -     [
+2026-11-13T11:41:10.2769250Z   -         0.04,
+2026-11-13T11:41:10.2769508Z   -         0.01,
+2026-11-13T11:41:10.2769762Z   -     ],
+2026-11-13T11:41:10.2770003Z   -     [
+2026-11-13T11:41:10.2770236Z   -         0.02,
+2026-11-13T11:41:10.2770491Z   -         0.005,
+2026-11-13T11:41:10.2770741Z   -     ],
+2026-11-13T11:41:10.2770969Z         [
+2026-11-13T11:41:10.2771173Z             0.01,
+2026-11-13T11:41:10.2771352Z             0.0025,
+2026-11-13T11:41:10.2771512Z         ],
+2026-11-13T11:41:10.2771664Z   +     [
+2026-11-13T11:41:10.2771818Z   +         0.005,
+2026-11-13T11:41:10.2771987Z   +         0.00125,
+2026-11-13T11:41:10.2772153Z   +     ],
+2026-11-13T11:41:10.2772301Z   +     [
+2026-11-13T11:41:10.2772448Z   +         0.0025,
+2026-11-13T11:41:10.2772608Z   +         0.000625,
+2026-11-13T11:41:10.2772778Z   +     ],
+2026-11-13T11:41:10.2772932Z     ]
+2026-11-13T11:41:10.2773121Z 6 failed, 2 passed, 20 warnings in 2.31s
+2026-11-13T11:41:10.2773284Z 
+2026-11-13T11:41:10.2773451Z before {'tests': 8, 'failures': 6, 'errors': 0, 'skipped': 0, 'returncode': 1}
+2026-11-13T11:41:15.6564162Z ........                                                                 [100%]
+2026-11-13T11:41:15.6564856Z =============================== warnings summary ===============================
+2026-11-13T11:41:15.6565585Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps0-sgd]
+2026-11-13T11:41:15.6566196Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps0-adamw]
+2026-11-13T11:41:15.6567001Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps1-sgd]
+2026-11-13T11:41:15.6567779Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps1-adamw]
+2026-11-13T11:41:15.6568576Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps2-sgd]
+2026-11-13T11:41:15.6569432Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps2-adamw]
+2026-11-13T11:41:15.6570319Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps3-sgd]
+2026-11-13T11:41:15.6571204Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps3-adamw]
+2026-11-13T11:41:15.6572846Z   /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/utils/data/dataloader.py:659: UserWarning: pin_memory_device is deprecated, the current accelerator will be used as the device,ignore pin_memory_device='cpu'.
+2026-11-13T11:41:15.6573955Z     warnings.warn(
+2026-11-13T11:41:15.6574121Z 
+2026-11-13T11:41:15.6574675Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps0-sgd]
+2026-11-13T11:41:15.6575526Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps0-adamw]
+2026-11-13T11:41:15.6576320Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps1-sgd]
+2026-11-13T11:41:15.6577402Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps1-adamw]
+2026-11-13T11:41:15.6578269Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps2-sgd]
+2026-11-13T11:41:15.6579170Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps2-adamw]
+2026-11-13T11:41:15.6580067Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps3-sgd]
+2026-11-13T11:41:15.6580969Z tests_v1/trainers/test_nonfinite_scheduler.py::test_scheduler_tracks_successful_sft_updates[bad_steps3-adamw]
+2026-11-13T11:41:15.6582365Z   /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/utils/data/dataloader.py:668: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+2026-11-13T11:41:15.6583456Z     warnings.warn(warn_msg)
+2026-11-13T11:41:15.6583684Z 
+2026-11-13T11:41:15.6583939Z -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2026-11-13T11:41:15.6584429Z 8 passed, 16 warnings in 2.10s
+2026-11-13T11:41:15.6584814Z 
+2026-11-13T11:41:15.6585029Z after {'tests': 8, 'failures': 0, 'errors': 0, 'skipped': 0, 'returncode': 0}
+2026-11-13T11:41:23.5946025Z ........                                                                 [100%]
+2026-11-13T11:41:23.5946448Z 8 passed in 4.07s
+2026-11-13T11:41:23.5946606Z 
+2026-11-13T11:41:23.5946875Z existing {'tests': 8, 'failures': 0, 'errors': 0, 'skipped': 0, 'returncode': 0}
+2026-11-13T11:41:23.5987293Z {"base": "6d1059c727450a4f58e56ad204d01a71abad7781", "head": "862ea673e01fafdb9ac9c6724f6e9d0c33f21d99", "before": {"tests": 8, "failures": 6, "errors": 0, "skipped": 0, "returncode": 1}, "after": {"tests": 8, "failures": 0, "errors": 0, "skipped": 0, "returncode": 0}, "existing": {"tests": 8, "failures": 0, "errors": 0, "skipped": 0, "returncode": 0}}
+2026-11-13T11:41:23.6081464Z ##[group]Run ruff check src/llamafactory/v1/core/base_trainer.py tests_v1/trainers/test_nonfinite_scheduler.py
+2026-11-13T11:41:23.6082098Z [36;1mruff check src/llamafactory/v1/core/base_trainer.py tests_v1/trainers/test_nonfinite_scheduler.py[0m
+2026-11-13T11:41:23.6082664Z [36;1mruff format --check src/llamafactory/v1/core/base_trainer.py tests_v1/trainers/test_nonfinite_scheduler.py[0m
+2026-11-13T11:41:23.6083121Z [36;1mgit diff --check 6d1059c727450a4f58e56ad204d01a71abad7781[0m
+2026-11-13T11:41:23.6101863Z shell: /usr/bin/bash -e {0}
+2026-11-13T11:41:23.6102149Z env:
+2026-11-13T11:41:23.6102332Z   PYTHONPATH: src
+2026-11-13T11:41:23.6102520Z   OMP_NUM_THREADS: 1
+2026-11-13T11:41:23.6102703Z   MKL_NUM_THREADS: 1
+2026-11-13T11:41:23.6102874Z   HF_HUB_OFFLINE: 1
+2026-11-13T11:41:23.6103064Z   TRANSFORMERS_OFFLINE: 1
+2026-11-13T11:41:23.6103310Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T11:41:23.6103698Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-13T11:41:23.6104051Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T11:41:23.6104369Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T11:41:23.6104845Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T11:41:23.6105143Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-13T11:41:23.6105402Z ##[endgroup]
+2026-11-13T11:41:23.6207635Z All checks passed!
+2026-11-13T11:41:23.6285889Z 2 files already formatted
+2026-11-13T11:41:23.7246552Z ##[group]Run actions/upload-artifact@v4
+2026-11-13T11:41:23.7246795Z with:
+2026-11-13T11:41:23.7246991Z   name: nonfinite-scheduler-before-after
+2026-11-13T11:41:23.7247304Z   path: *.log
+*.xml
+validation_result.json
+installed-dependencies.txt
+
+2026-11-13T11:41:23.7247605Z   if-no-files-found: warn
+2026-11-13T11:41:23.7247806Z   compression-level: 6
+2026-11-13T11:41:23.7247995Z   overwrite: false
+2026-11-13T11:41:23.7248178Z   include-hidden-files: false
+2026-11-13T11:41:23.7248562Z env:
+2026-11-13T11:41:23.7248731Z   PYTHONPATH: src
+2026-11-13T11:41:23.7248906Z   OMP_NUM_THREADS: 1
+2026-11-13T11:41:23.7249082Z   MKL_NUM_THREADS: 1
+2026-11-13T11:41:23.7249254Z   HF_HUB_OFFLINE: 1
+2026-11-13T11:41:23.7249434Z   TRANSFORMERS_OFFLINE: 1
+2026-11-13T11:41:23.7249673Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T11:41:23.7250011Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-13T11:41:23.7250375Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T11:41:23.7250682Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T11:41:23.7250984Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T11:41:23.7251280Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-13T11:41:23.7251540Z ##[endgroup]
+2026-11-13T11:41:23.8754164Z (node:2362) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-13T11:41:23.8755279Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-13T11:41:23.8946502Z With the provided path, there will be 8 files uploaded
+2026-11-13T11:41:23.8947134Z Artifact name is valid!
+2026-11-13T11:41:23.8947435Z Root directory input is valid!
+2026-11-13T11:41:24.0857924Z Beginning upload of artifact content to blob storage
+2026-11-13T11:41:24.3592752Z (node:2362) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-11-13T11:41:24.3872257Z Uploaded bytes 7282
+2026-11-13T11:41:24.4021942Z Finished uploading artifact content to blob storage!
+2026-11-13T11:41:24.4022751Z SHA256 digest of uploaded artifact zip is 9a9ead2335bb3095d4cf6518c140ca28e096a25fba6dd60b257a9b27b48198aa
+2026-11-13T11:41:24.4023466Z Finalizing artifact upload
+2026-11-13T11:41:24.7488430Z Artifact nonfinite-scheduler-before-after.zip successfully finalized. Artifact ID 14032727686
+2026-11-13T11:41:24.7489517Z Artifact nonfinite-scheduler-before-after has been successfully uploaded! Final size is 7282 bytes. Artifact ID is 14032727686
+2026-11-13T11:41:24.7494984Z Artifact download URL: https://github.com/Afloat16/LlamaFactory/actions/runs/43418835563/artifacts/14032727686
+2026-11-13T11:41:24.7676031Z Post job cleanup.
+2026-11-13T11:41:24.8721719Z (node:2374) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-13T11:41:24.8722294Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-13T11:41:24.8931472Z Post job cleanup.
+2026-11-13T11:41:24.9738347Z [command]/usr/bin/git version
+2026-11-13T11:41:24.9780423Z git version 2.56.0
+2026-11-13T11:41:24.9812616Z Temporarily overriding HOME='/home/runner/work/_temp/3d878aed-6832-4ac4-9286-82942ef1a891' before making global git config changes
+2026-11-13T11:41:24.9813602Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-13T11:41:24.9818029Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/LlamaFactory/LlamaFactory
+2026-11-13T11:41:24.9858281Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-13T11:41:24.9894664Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-13T11:41:25.0124907Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-13T11:41:25.0151729Z http.https://github.com/.extraheader
+2026-11-13T11:41:25.0177324Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-13T11:41:25.0219811Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-13T11:41:25.0472837Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-13T11:41:25.0519773Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-13T11:41:25.0912417Z Cleaning up orphan processes
+2026-11-13T11:41:25.1223029Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
