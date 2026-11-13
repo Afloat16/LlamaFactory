@@ -1,0 +1,1111 @@
+﻿2026-11-13T10:54:27.1240620Z Current runner version: '2.338.2'
+2026-11-13T10:54:27.1257961Z ##[group]Runner Image Provisioner
+2026-11-13T10:54:27.1258587Z Hosted Compute Agent
+2026-11-13T10:54:27.1259018Z Version: 20261103.629
+2026-11-13T10:54:27.1259470Z Commit: 15dbd9ccb5dbf34fae002b6ed1a2670f52df37bc
+2026-11-13T10:54:27.1259975Z Build Date: 2026-11-03T17:26:59Z
+2026-11-13T10:54:27.1260506Z Worker ID: {cbad59b9-4b16-412d-9c7f-63e913b91a6c}
+2026-11-13T10:54:27.1261035Z Region: centralus
+2026-11-13T10:54:27.1261417Z Cloud: Azure
+2026-11-13T10:54:27.1261791Z ##[endgroup]
+2026-11-13T10:54:27.1262604Z ##[group]Operating System
+2026-11-13T10:54:27.1263029Z Ubuntu
+2026-11-13T10:54:27.1263401Z 26.04.1
+2026-11-13T10:54:27.1263744Z LTS
+2026-11-13T10:54:27.1264351Z ##[endgroup]
+2026-11-13T10:54:27.1264744Z ##[group]Runner Image
+2026-11-13T10:54:27.1265190Z Image: ubuntu-26.04
+2026-11-13T10:54:27.1265586Z Version: 20261111.196.1
+2026-11-13T10:54:27.1266822Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261111.196/images/ubuntu/Ubuntu2604-Readme.md
+2026-11-13T10:54:27.1267906Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261111.196
+2026-11-13T10:54:27.1268558Z ##[endgroup]
+2026-11-13T10:54:27.1269360Z ##[group]GITHUB_TOKEN Permissions
+2026-11-13T10:54:27.1270991Z Contents: read
+2026-11-13T10:54:27.1271375Z Metadata: read
+2026-11-13T10:54:27.1271735Z ##[endgroup]
+2026-11-13T10:54:27.1273157Z Secret source: Actions
+2026-11-13T10:54:27.1273775Z Cache mode: write
+2026-11-13T10:54:27.1274658Z Prepare workflow directory
+2026-11-13T10:54:27.1584852Z Prepare all required actions
+2026-11-13T10:54:27.1620534Z Getting action download info
+2026-11-13T10:54:27.3928281Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-13T10:54:27.4988870Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-11-13T10:54:27.5861867Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-11-13T10:54:27.7575088Z Complete job name: native-cpu
+2026-11-13T10:54:27.8220066Z ##[group]Run actions/checkout@v4
+2026-11-13T10:54:27.8221187Z with:
+2026-11-13T10:54:27.8221680Z   ref: 20dd15a6f63097c40cf52c379cdda764f74d57dd
+2026-11-13T10:54:27.8222318Z   fetch-depth: 5
+2026-11-13T10:54:27.8222780Z   repository: Afloat16/LlamaFactory
+2026-11-13T10:54:27.8227052Z   token: ***
+2026-11-13T10:54:27.8227578Z   ssh-strict: true
+2026-11-13T10:54:27.8228030Z   ssh-user: git
+2026-11-13T10:54:27.8228536Z   persist-credentials: true
+2026-11-13T10:54:27.8229050Z   clean: true
+2026-11-13T10:54:27.8229624Z   sparse-checkout-cone-mode: true
+2026-11-13T10:54:27.8230198Z   fetch-tags: false
+2026-11-13T10:54:27.8230680Z   show-progress: true
+2026-11-13T10:54:27.8231204Z   lfs: false
+2026-11-13T10:54:27.8231645Z   submodules: false
+2026-11-13T10:54:27.8232172Z   set-safe-directory: true
+2026-11-13T10:54:27.8232746Z   allow-unsafe-pr-checkout: false
+2026-11-13T10:54:27.8233569Z env:
+2026-11-13T10:54:27.8234434Z   PYTHONPATH: src
+2026-11-13T10:54:27.8234959Z   OMP_NUM_THREADS: 1
+2026-11-13T10:54:27.8235630Z   MKL_NUM_THREADS: 1
+2026-11-13T10:54:27.8236125Z   HF_HUB_OFFLINE: 1
+2026-11-13T10:54:27.8236609Z   TRANSFORMERS_OFFLINE: 1
+2026-11-13T10:54:27.8237175Z ##[endgroup]
+2026-11-13T10:54:28.0438561Z Syncing repository: Afloat16/LlamaFactory
+2026-11-13T10:54:28.0440646Z ##[group]Getting Git version info
+2026-11-13T10:54:28.0441236Z Working directory is '/home/runner/work/LlamaFactory/LlamaFactory'
+2026-11-13T10:54:28.0442392Z [command]/usr/bin/git version
+2026-11-13T10:54:28.0446777Z git version 2.56.1
+2026-11-13T10:54:28.0459247Z ##[endgroup]
+2026-11-13T10:54:28.0470624Z Temporarily overriding HOME='/home/runner/work/_temp/7a1c5cc9-1274-484b-ac3c-581a7bbd6506' before making global git config changes
+2026-11-13T10:54:28.0472340Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-13T10:54:28.0473653Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/LlamaFactory/LlamaFactory
+2026-11-13T10:54:28.0533491Z Deleting the contents of '/home/runner/work/LlamaFactory/LlamaFactory'
+2026-11-13T10:54:28.0536560Z ##[group]Initializing the repository
+2026-11-13T10:54:28.0538775Z [command]/usr/bin/git init /home/runner/work/LlamaFactory/LlamaFactory
+2026-11-13T10:54:28.0620474Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-13T10:54:28.0623239Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-13T10:54:28.0625080Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-13T10:54:28.0626532Z hint: call:
+2026-11-13T10:54:28.0627462Z hint:
+2026-11-13T10:54:28.0628486Z hint: 	git config --global init.defaultBranch <name>
+2026-11-13T10:54:28.0629571Z hint:
+2026-11-13T10:54:28.0630569Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-13T10:54:28.0632572Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-13T10:54:28.0634561Z hint:
+2026-11-13T10:54:28.0635935Z hint: 	git branch -m <name>
+2026-11-13T10:54:28.0637262Z hint:
+2026-11-13T10:54:28.0638797Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-13T10:54:28.0641050Z Initialized empty Git repository in /home/runner/work/LlamaFactory/LlamaFactory/.git/
+2026-11-13T10:54:28.0644956Z [command]/usr/bin/git remote add origin https://github.com/Afloat16/LlamaFactory
+2026-11-13T10:54:28.0679759Z ##[endgroup]
+2026-11-13T10:54:28.0680754Z ##[group]Disabling automatic garbage collection
+2026-11-13T10:54:28.0683315Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-13T10:54:28.0707076Z ##[endgroup]
+2026-11-13T10:54:28.0707846Z ##[group]Setting up auth
+2026-11-13T10:54:28.0712350Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-13T10:54:28.0735384Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-13T10:54:28.1069569Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-13T10:54:28.1096242Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-13T10:54:28.1275117Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-13T10:54:28.1299104Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-13T10:54:28.1466784Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-13T10:54:28.1497073Z ##[endgroup]
+2026-11-13T10:54:28.1497870Z ##[group]Fetching the repository
+2026-11-13T10:54:28.1506571Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=5 origin 20dd15a6f63097c40cf52c379cdda764f74d57dd
+2026-11-13T10:54:28.8405622Z From https://github.com/Afloat16/LlamaFactory
+2026-11-13T10:54:28.8407141Z  * branch            20dd15a6f63097c40cf52c379cdda764f74d57dd -> FETCH_HEAD
+2026-11-13T10:54:28.8409745Z ##[endgroup]
+2026-11-13T10:54:28.8410725Z ##[group]Determining the checkout info
+2026-11-13T10:54:28.8412174Z ##[endgroup]
+2026-11-13T10:54:28.8418305Z [command]/usr/bin/git sparse-checkout disable
+2026-11-13T10:54:28.8466752Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-13T10:54:28.8494424Z ##[group]Checking out the ref
+2026-11-13T10:54:28.8496275Z [command]/usr/bin/git checkout --progress --force 20dd15a6f63097c40cf52c379cdda764f74d57dd
+2026-11-13T10:54:28.9063220Z Note: switching to '20dd15a6f63097c40cf52c379cdda764f74d57dd'.
+2026-11-13T10:54:28.9064419Z 
+2026-11-13T10:54:28.9065240Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-13T10:54:28.9067193Z changes and commit them, and you can discard any commits you make in this
+2026-11-13T10:54:28.9068445Z state without impacting any branches by switching back to a branch.
+2026-11-13T10:54:28.9069321Z 
+2026-11-13T10:54:28.9069838Z If you want to create a new branch to retain commits you create, you may
+2026-11-13T10:54:28.9071035Z do so (now or later) by using -c with the switch command. Example:
+2026-11-13T10:54:28.9071668Z 
+2026-11-13T10:54:28.9072010Z   git switch -c <new-branch-name>
+2026-11-13T10:54:28.9072470Z 
+2026-11-13T10:54:28.9072814Z Or undo this operation with:
+2026-11-13T10:54:28.9073323Z 
+2026-11-13T10:54:28.9073702Z   git switch -
+2026-11-13T10:54:28.9074342Z 
+2026-11-13T10:54:28.9074963Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-13T10:54:28.9075786Z 
+2026-11-13T10:54:28.9076476Z HEAD is now at 20dd15a Bound FP32 chunk reduction roundoff in the independent training reference
+2026-11-13T10:54:28.9079543Z ##[endgroup]
+2026-11-13T10:54:28.9106345Z [command]/usr/bin/git log -1 --format=%H
+2026-11-13T10:54:28.9124650Z 20dd15a6f63097c40cf52c379cdda764f74d57dd
+2026-11-13T10:54:28.9401543Z ##[group]Run actions/setup-python@v5
+2026-11-13T10:54:28.9402509Z with:
+2026-11-13T10:54:28.9403240Z   python-version: 3.12
+2026-11-13T10:54:28.9404003Z   check-latest: false
+2026-11-13T10:54:28.9410199Z   token: ***
+2026-11-13T10:54:28.9410985Z   update-environment: true
+2026-11-13T10:54:28.9411819Z   allow-prereleases: false
+2026-11-13T10:54:28.9412701Z   freethreaded: false
+2026-11-13T10:54:28.9413434Z env:
+2026-11-13T10:54:28.9414201Z   PYTHONPATH: src
+2026-11-13T10:54:28.9414988Z   OMP_NUM_THREADS: 1
+2026-11-13T10:54:28.9415742Z   MKL_NUM_THREADS: 1
+2026-11-13T10:54:28.9416489Z   HF_HUB_OFFLINE: 1
+2026-11-13T10:54:28.9417382Z   TRANSFORMERS_OFFLINE: 1
+2026-11-13T10:54:28.9418170Z ##[endgroup]
+2026-11-13T10:54:29.0410750Z ##[group]Installed versions
+2026-11-13T10:54:29.0533810Z (node:2197) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-13T10:54:29.0536402Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-13T10:54:29.0537837Z Successfully set up CPython (3.12.16)
+2026-11-13T10:54:29.0540404Z ##[endgroup]
+2026-11-13T10:54:29.0686881Z ##[group]Run python -m pip install --upgrade pip
+2026-11-13T10:54:29.0688499Z [36;1mpython -m pip install --upgrade pip[0m
+2026-11-13T10:54:29.0690683Z [36;1mpython -m pip install torch==2.9.1 torchvision==0.24.1 torchaudio==2.9.1 --index-url https://download.pytorch.org/whl/cpu[0m
+2026-11-13T10:54:29.0694371Z [36;1mpython -m pip install -e . torch==2.9.1 torchvision==0.24.1 torchaudio==2.9.1 transformers==4.57.1 accelerate==1.11.0 peft==0.18.1 trl==0.24.0 datasets==4.0.0 pytest==9.0.2 ruff==0.15.9[0m
+2026-11-13T10:54:29.0697172Z [36;1mpython -m pip freeze > installed-dependencies.txt[0m
+2026-11-13T10:54:29.0747575Z shell: /usr/bin/bash -e {0}
+2026-11-13T10:54:29.0748480Z env:
+2026-11-13T10:54:29.0749258Z   PYTHONPATH: src
+2026-11-13T10:54:29.0750007Z   OMP_NUM_THREADS: 1
+2026-11-13T10:54:29.0750741Z   MKL_NUM_THREADS: 1
+2026-11-13T10:54:29.0751500Z   HF_HUB_OFFLINE: 1
+2026-11-13T10:54:29.0752237Z   TRANSFORMERS_OFFLINE: 1
+2026-11-13T10:54:29.0753425Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T10:54:29.0754924Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-13T10:54:29.0756299Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T10:54:29.0757446Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T10:54:29.0758741Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T10:54:29.0759979Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-13T10:54:29.0760991Z ##[endgroup]
+2026-11-13T10:54:29.6280699Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (26.3)
+2026-11-13T10:54:30.2699344Z Looking in indexes: https://download.pytorch.org/whl/cpu
+2026-11-13T10:54:30.3913891Z Collecting torch==2.9.1
+2026-11-13T10:54:30.4402308Z   Downloading torch-2.9.1%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (29 kB)
+2026-11-13T10:54:30.4983834Z Collecting torchvision==0.24.1
+2026-11-13T10:54:30.5144453Z   Downloading torchvision-0.24.1%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (5.9 kB)
+2026-11-13T10:54:30.5709411Z Collecting torchaudio==2.9.1
+2026-11-13T10:54:30.5846641Z   Downloading torchaudio-2.9.1%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (6.9 kB)
+2026-11-13T10:54:30.6154433Z Collecting filelock (from torch==2.9.1)
+2026-11-13T10:54:30.6572615Z   Downloading filelock-4.2.4-py3-none-any.whl.metadata (2.0 kB)
+2026-11-13T10:54:30.6778980Z Collecting typing-extensions>=4.10.0 (from torch==2.9.1)
+2026-11-13T10:54:30.6874025Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+2026-11-13T10:54:30.7035689Z Collecting setuptools (from torch==2.9.1)
+2026-11-13T10:54:30.7143144Z   Downloading setuptools-78.1.0-py3-none-any.whl.metadata (6.6 kB)
+2026-11-13T10:54:30.7368591Z Collecting sympy>=1.13.3 (from torch==2.9.1)
+2026-11-13T10:54:30.7464359Z   Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+2026-11-13T10:54:30.7732353Z Collecting networkx>=2.5.1 (from torch==2.9.1)
+2026-11-13T10:54:30.7830314Z   Downloading networkx-3.7-py3-none-any.whl.metadata (6.7 kB)
+2026-11-13T10:54:30.8014368Z Collecting jinja2 (from torch==2.9.1)
+2026-11-13T10:54:30.8120076Z   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+2026-11-13T10:54:30.8353627Z Collecting fsspec>=0.8.5 (from torch==2.9.1)
+2026-11-13T10:54:30.8449668Z   Downloading fsspec-2026.9.0-py3-none-any.whl.metadata (10 kB)
+2026-11-13T10:54:31.0385060Z Collecting numpy (from torchvision==0.24.1)
+2026-11-13T10:54:31.0485966Z   Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+2026-11-13T10:54:31.1909281Z Collecting pillow!=8.3.*,>=5.3.0 (from torchvision==0.24.1)
+2026-11-13T10:54:31.2009636Z   Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+2026-11-13T10:54:31.2230979Z Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch==2.9.1)
+2026-11-13T10:54:31.2327471Z   Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+2026-11-13T10:54:31.2558357Z Collecting MarkupSafe>=2.0 (from jinja2->torch==2.9.1)
+2026-11-13T10:54:31.2667401Z   Downloading markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+2026-11-13T10:54:31.2839185Z Downloading torch-2.9.1%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl (184.4 MB)
+2026-11-13T10:54:32.7084870Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 184.4/184.4 MB 131.0 MB/s  0:00:01
+2026-11-13T10:54:32.7237746Z Downloading torchvision-0.24.1%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl (1.9 MB)
+2026-11-13T10:54:32.7421439Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 107.4 MB/s  0:00:00
+2026-11-13T10:54:32.7622723Z Downloading torchaudio-2.9.1%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl (495 kB)
+2026-11-13T10:54:32.7782889Z Downloading fsspec-2026.9.0-py3-none-any.whl (221 kB)
+2026-11-13T10:54:32.8107527Z Downloading networkx-3.7-py3-none-any.whl (2.1 MB)
+2026-11-13T10:54:32.8528544Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 58.6 MB/s  0:00:00
+2026-11-13T10:54:32.8624963Z Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+2026-11-13T10:54:32.9179210Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 128.1 MB/s  0:00:00
+2026-11-13T10:54:32.9276841Z Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+2026-11-13T10:54:32.9726614Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 138.9 MB/s  0:00:00
+2026-11-13T10:54:32.9824219Z Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+2026-11-13T10:54:32.9889601Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 54.4 MB/s  0:00:00
+2026-11-13T10:54:32.9987279Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+2026-11-13T10:54:33.0111158Z Downloading filelock-4.2.4-py3-none-any.whl (162 kB)
+2026-11-13T10:54:33.0252943Z Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+2026-11-13T10:54:33.0390576Z Downloading markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+2026-11-13T10:54:33.0511272Z Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+2026-11-13T10:54:33.1793770Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 130.4 MB/s  0:00:00
+2026-11-13T10:54:33.1905714Z Downloading setuptools-78.1.0-py3-none-any.whl (1.3 MB)
+2026-11-13T10:54:33.2030890Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 90.8 MB/s  0:00:00
+2026-11-13T10:54:33.5207288Z Installing collected packages: mpmath, typing-extensions, sympy, setuptools, pillow, numpy, networkx, MarkupSafe, fsspec, filelock, jinja2, torch, torchvision, torchaudio
+2026-11-13T10:54:47.6289550Z 
+2026-11-13T10:54:47.6304389Z Successfully installed MarkupSafe-3.0.3 filelock-4.2.4 fsspec-2026.9.0 jinja2-3.1.6 mpmath-1.3.0 networkx-3.7 numpy-2.5.4 pillow-13.0.0 setuptools-78.1.0 sympy-1.14.0 torch-2.9.1+cpu torchaudio-2.9.1+cpu torchvision-0.24.1+cpu typing-extensions-4.16.0
+2026-11-13T10:54:47.9354960Z Obtaining file:///home/runner/work/LlamaFactory/LlamaFactory
+2026-11-13T10:54:47.9368251Z   Installing build dependencies: started
+2026-11-13T10:54:48.6974351Z   Installing build dependencies: finished with status 'done'
+2026-11-13T10:54:48.6978777Z   Checking if build backend supports build_editable: started
+2026-11-13T10:54:48.7262093Z   Checking if build backend supports build_editable: finished with status 'done'
+2026-11-13T10:54:48.7266393Z   Getting requirements to build editable: started
+2026-11-13T10:54:48.8257124Z   Getting requirements to build editable: finished with status 'done'
+2026-11-13T10:54:48.8264973Z   Installing backend dependencies: started
+2026-11-13T10:54:49.2294847Z   Installing backend dependencies: finished with status 'done'
+2026-11-13T10:54:49.2299311Z   Preparing editable metadata (pyproject.toml): started
+2026-11-13T10:54:49.3830877Z   Preparing editable metadata (pyproject.toml): finished with status 'done'
+2026-11-13T10:54:49.3877764Z Requirement already satisfied: torch==2.9.1 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (2.9.1+cpu)
+2026-11-13T10:54:49.3881227Z Requirement already satisfied: torchvision==0.24.1 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (0.24.1+cpu)
+2026-11-13T10:54:49.3884187Z Requirement already satisfied: torchaudio==2.9.1 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (2.9.1+cpu)
+2026-11-13T10:54:49.4783566Z Collecting transformers==4.57.1
+2026-11-13T10:54:49.5278426Z   Downloading transformers-4.57.1-py3-none-any.whl.metadata (43 kB)
+2026-11-13T10:54:49.6011120Z Collecting accelerate==1.11.0
+2026-11-13T10:54:49.6150581Z   Downloading accelerate-1.11.0-py3-none-any.whl.metadata (19 kB)
+2026-11-13T10:54:49.6533180Z Collecting peft==0.18.1
+2026-11-13T10:54:49.6696578Z   Downloading peft-0.18.1-py3-none-any.whl.metadata (14 kB)
+2026-11-13T10:54:49.6973928Z Collecting trl==0.24.0
+2026-11-13T10:54:49.7111628Z   Downloading trl-0.24.0-py3-none-any.whl.metadata (11 kB)
+2026-11-13T10:54:49.7422454Z Collecting datasets==4.0.0
+2026-11-13T10:54:49.7548104Z   Downloading datasets-4.0.0-py3-none-any.whl.metadata (19 kB)
+2026-11-13T10:54:49.7916513Z Collecting pytest==9.0.2
+2026-11-13T10:54:49.8041103Z   Downloading pytest-9.0.2-py3-none-any.whl.metadata (7.6 kB)
+2026-11-13T10:54:50.0241871Z Collecting ruff==0.15.9
+2026-11-13T10:54:50.0373113Z   Downloading ruff-0.15.9-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (26 kB)
+2026-11-13T10:54:50.0820198Z Collecting av<=16.0.0,>=10.0.0 (from llamafactory==0.9.6.dev0)
+2026-11-13T10:54:50.0950391Z   Downloading av-16.0.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (4.6 kB)
+2026-11-13T10:54:50.1179175Z Collecting einops (from llamafactory==0.9.6.dev0)
+2026-11-13T10:54:50.1309618Z   Downloading einops-0.8.2-py3-none-any.whl.metadata (13 kB)
+2026-11-13T10:54:50.1743522Z Collecting fastapi (from llamafactory==0.9.6.dev0)
+2026-11-13T10:54:50.1868931Z   Downloading fastapi-0.162.5-py3-none-any.whl.metadata (27 kB)
+2026-11-13T10:54:50.2104045Z Collecting fire (from llamafactory==0.9.6.dev0)
+2026-11-13T10:54:50.2229322Z   Downloading fire-0.7.1-py3-none-any.whl.metadata (5.8 kB)
+2026-11-13T10:54:50.2747262Z Collecting gradio<=5.50.0,>=4.38.0 (from llamafactory==0.9.6.dev0)
+2026-11-13T10:54:50.2873204Z   Downloading gradio-5.50.0-py3-none-any.whl.metadata (16 kB)
+2026-11-13T10:54:50.3212328Z Collecting hf-transfer (from llamafactory==0.9.6.dev0)
+2026-11-13T10:54:50.3338285Z   Downloading hf_transfer-0.1.9-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.7 kB)
+2026-11-13T10:54:50.4369006Z Collecting matplotlib>=3.7.0 (from llamafactory==0.9.6.dev0)
+2026-11-13T10:54:50.4495468Z   Downloading matplotlib-3.11.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (80 kB)
+2026-11-13T10:54:50.4916568Z Collecting modelscope (from llamafactory==0.9.6.dev0)
+2026-11-13T10:54:50.5044596Z   Downloading modelscope-1.40.3-py3-none-any.whl.metadata (43 kB)
+2026-11-13T10:54:50.5318607Z Requirement already satisfied: numpy in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from llamafactory==0.9.6.dev0) (2.5.4)
+2026-11-13T10:54:50.5582622Z Collecting omegaconf (from llamafactory==0.9.6.dev0)
+2026-11-13T10:54:50.5708506Z   Downloading omegaconf-2.4.0-py3-none-any.whl.metadata (4.9 kB)
+2026-11-13T10:54:50.5796315Z Collecting packaging (from llamafactory==0.9.6.dev0)
+2026-11-13T10:54:50.5803785Z   Using cached packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+2026-11-13T10:54:50.6557791Z Collecting pandas (from llamafactory==0.9.6.dev0)
+2026-11-13T10:54:50.6684565Z   Downloading pandas-3.1.1-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (16 kB)
+2026-11-13T10:54:50.7631677Z Collecting protobuf (from llamafactory==0.9.6.dev0)
+2026-11-13T10:54:50.7763291Z   Downloading protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl.metadata (595 bytes)
+2026-11-13T10:54:50.8470122Z Collecting pydantic (from llamafactory==0.9.6.dev0)
+2026-11-13T10:54:50.8600803Z   Downloading pydantic-2.14.3-py3-none-any.whl.metadata (141 kB)
+2026-11-13T10:54:50.9015920Z Collecting pyyaml (from llamafactory==0.9.6.dev0)
+2026-11-13T10:54:50.9141219Z   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+2026-11-13T10:54:51.0157645Z Collecting safetensors (from llamafactory==0.9.6.dev0)
+2026-11-13T10:54:51.0287115Z   Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.2 kB)
+2026-11-13T10:54:51.1105107Z Collecting scipy (from llamafactory==0.9.6.dev0)
+2026-11-13T10:54:51.1232975Z   Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+2026-11-13T10:54:51.1727637Z Collecting sentencepiece (from llamafactory==0.9.6.dev0)
+2026-11-13T10:54:51.1852977Z   Downloading sentencepiece-0.2.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (34 kB)
+2026-11-13T10:54:51.2114002Z Collecting sse-starlette (from llamafactory==0.9.6.dev0)
+2026-11-13T10:54:51.2239761Z   Downloading sse_starlette-3.7.0-py3-none-any.whl.metadata (15 kB)
+2026-11-13T10:54:51.2609766Z Collecting tiktoken (from llamafactory==0.9.6.dev0)
+2026-11-13T10:54:51.2734842Z   Downloading tiktoken-0.14.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (6.7 kB)
+2026-11-13T10:54:51.2989145Z Collecting torchdata<=0.11.0,>=0.10.0 (from llamafactory==0.9.6.dev0)
+2026-11-13T10:54:51.3113282Z   Downloading torchdata-0.11.0-py3-none-any.whl.metadata (6.3 kB)
+2026-11-13T10:54:51.3406619Z Collecting tyro<0.9.0 (from llamafactory==0.9.6.dev0)
+2026-11-13T10:54:51.3537588Z   Downloading tyro-0.8.14-py3-none-any.whl.metadata (8.4 kB)
+2026-11-13T10:54:51.3854381Z Collecting uvicorn (from llamafactory==0.9.6.dev0)
+2026-11-13T10:54:51.3968845Z   Downloading uvicorn-0.54.0-py3-none-any.whl.metadata (6.6 kB)
+2026-11-13T10:54:51.4010081Z Requirement already satisfied: filelock in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from transformers==4.57.1) (4.2.4)
+2026-11-13T10:54:51.4352858Z Collecting huggingface-hub<1.0,>=0.34.0 (from transformers==4.57.1)
+2026-11-13T10:54:51.4482688Z   Downloading huggingface_hub-0.36.2-py3-none-any.whl.metadata (15 kB)
+2026-11-13T10:54:51.7190916Z Collecting regex!=2019.12.17 (from transformers==4.57.1)
+2026-11-13T10:54:51.7320118Z   Downloading regex-2026.11.9-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
+2026-11-13T10:54:51.7614614Z Collecting requests (from transformers==4.57.1)
+2026-11-13T10:54:51.7739737Z   Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+2026-11-13T10:54:51.8634915Z Collecting tokenizers<=0.23.0,>=0.22.0 (from transformers==4.57.1)
+2026-11-13T10:54:51.8762595Z   Downloading tokenizers-0.22.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.3 kB)
+2026-11-13T10:54:51.9070748Z Collecting tqdm>=4.27 (from transformers==4.57.1)
+2026-11-13T10:54:51.9197350Z   Downloading tqdm-4.70.1-py3-none-any.whl.metadata (57 kB)
+2026-11-13T10:54:51.9894978Z Collecting psutil (from accelerate==1.11.0)
+2026-11-13T10:54:52.0022081Z   Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl.metadata (22 kB)
+2026-11-13T10:54:52.0701785Z Collecting pyarrow>=15.0.0 (from datasets==4.0.0)
+2026-11-13T10:54:52.0828908Z   Downloading pyarrow-26.0.1-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (3.0 kB)
+2026-11-13T10:54:52.1056952Z Collecting dill<0.3.9,>=0.3.0 (from datasets==4.0.0)
+2026-11-13T10:54:52.1183475Z   Downloading dill-0.3.8-py3-none-any.whl.metadata (10 kB)
+2026-11-13T10:54:52.2775839Z Collecting xxhash (from datasets==4.0.0)
+2026-11-13T10:54:52.2905460Z   Downloading xxhash-4.1.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (18 kB)
+2026-11-13T10:54:52.3168490Z Collecting multiprocess<0.70.17 (from datasets==4.0.0)
+2026-11-13T10:54:52.3293598Z   Downloading multiprocess-0.70.16-py312-none-any.whl.metadata (7.2 kB)
+2026-11-13T10:54:52.3550783Z Collecting fsspec<=2025.3.0,>=2023.1.0 (from fsspec[http]<=2025.3.0,>=2023.1.0->datasets==4.0.0)
+2026-11-13T10:54:52.3675634Z   Downloading fsspec-2025.3.0-py3-none-any.whl.metadata (11 kB)
+2026-11-13T10:54:52.3790022Z Requirement already satisfied: typing-extensions>=4.10.0 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from torch==2.9.1) (4.16.0)
+2026-11-13T10:54:52.3793707Z Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from torch==2.9.1) (78.1.0)
+2026-11-13T10:54:52.3797294Z Requirement already satisfied: sympy>=1.13.3 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from torch==2.9.1) (1.14.0)
+2026-11-13T10:54:52.3800561Z Requirement already satisfied: networkx>=2.5.1 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from torch==2.9.1) (3.7)
+2026-11-13T10:54:52.3803252Z Requirement already satisfied: jinja2 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from torch==2.9.1) (3.1.6)
+2026-11-13T10:54:52.3829656Z Requirement already satisfied: pillow!=8.3.*,>=5.3.0 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from torchvision==0.24.1) (13.0.0)
+2026-11-13T10:54:52.4022139Z Collecting iniconfig>=1.0.1 (from pytest==9.0.2)
+2026-11-13T10:54:52.4147678Z   Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+2026-11-13T10:54:52.4202708Z Collecting pluggy<2,>=1.5 (from pytest==9.0.2)
+2026-11-13T10:54:52.4210982Z   Using cached pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+2026-11-13T10:54:52.4438416Z Collecting pygments>=2.7.2 (from pytest==9.0.2)
+2026-11-13T10:54:52.4563048Z   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+2026-11-13T10:54:52.7435352Z Collecting aiohttp!=4.0.0a0,!=4.0.0a1 (from fsspec[http]<=2025.3.0,>=2023.1.0->datasets==4.0.0)
+2026-11-13T10:54:52.7565310Z   Downloading aiohttp-3.14.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.3 kB)
+2026-11-13T10:54:52.7810208Z Collecting aiofiles<25.0,>=22.0 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:52.7935708Z   Downloading aiofiles-24.1.0-py3-none-any.whl.metadata (10 kB)
+2026-11-13T10:54:52.8188337Z Collecting anyio<5.0,>=3.0 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:52.8314454Z   Downloading anyio-4.16.0-py3-none-any.whl.metadata (4.7 kB)
+2026-11-13T10:54:52.8670886Z Collecting brotli>=1.1.0 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:52.8798064Z   Downloading brotli-1.2.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.1 kB)
+2026-11-13T10:54:52.9065933Z Collecting ffmpy (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:52.9190944Z   Downloading ffmpy-1.0.0-py3-none-any.whl.metadata (3.0 kB)
+2026-11-13T10:54:52.9461029Z Collecting gradio-client==1.14.0 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:52.9585846Z   Downloading gradio_client-1.14.0-py3-none-any.whl.metadata (7.1 kB)
+2026-11-13T10:54:52.9805137Z Collecting groovy~=0.1 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:52.9930335Z   Downloading groovy-0.1.2-py3-none-any.whl.metadata (6.1 kB)
+2026-11-13T10:54:53.0174500Z Collecting httpx<1.0,>=0.24.1 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:53.0299173Z   Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+2026-11-13T10:54:53.0349126Z Requirement already satisfied: markupsafe<4.0,>=2.0 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0) (3.0.3)
+2026-11-13T10:54:53.2172093Z Collecting orjson~=3.0 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:53.2299796Z   Downloading orjson-3.13.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (42 kB)
+2026-11-13T10:54:53.2361117Z Collecting pandas (from llamafactory==0.9.6.dev0)
+2026-11-13T10:54:53.2486930Z   Downloading pandas-2.3.3-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (91 kB)
+2026-11-13T10:54:53.3641307Z Collecting pillow!=8.3.*,>=5.3.0 (from torchvision==0.24.1)
+2026-11-13T10:54:53.3770342Z   Downloading pillow-11.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.0 kB)
+2026-11-13T10:54:53.3833782Z Collecting pydantic (from llamafactory==0.9.6.dev0)
+2026-11-13T10:54:53.3959917Z   Downloading pydantic-2.12.3-py3-none-any.whl.metadata (87 kB)
+2026-11-13T10:54:53.4235181Z Collecting pydub (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:53.4359821Z   Downloading pydub-0.25.1-py2.py3-none-any.whl.metadata (1.4 kB)
+2026-11-13T10:54:53.4588273Z Collecting python-multipart>=0.0.18 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:53.4712324Z   Downloading python_multipart-0.0.33-py3-none-any.whl.metadata (6.3 kB)
+2026-11-13T10:54:53.4956442Z Collecting safehttpx<0.2.0,>=0.1.6 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:53.5080861Z   Downloading safehttpx-0.1.7-py3-none-any.whl.metadata (4.2 kB)
+2026-11-13T10:54:53.5298747Z Collecting semantic-version~=2.0 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:53.5423055Z   Downloading semantic_version-2.10.0-py2.py3-none-any.whl.metadata (9.7 kB)
+2026-11-13T10:54:53.5705158Z Collecting starlette<1.0,>=0.40.0 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:53.5830127Z   Downloading starlette-0.52.1-py3-none-any.whl.metadata (6.3 kB)
+2026-11-13T10:54:53.5905255Z Collecting tomlkit<0.14.0,>=0.12.0 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:53.6029670Z   Downloading tomlkit-0.13.3-py3-none-any.whl.metadata (2.8 kB)
+2026-11-13T10:54:53.6283090Z Collecting typer<1.0,>=0.12 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:53.6407873Z   Downloading typer-0.29.1-py3-none-any.whl.metadata (16 kB)
+2026-11-13T10:54:53.7296701Z Collecting websockets<16.0,>=13.0 (from gradio-client==1.14.0->gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:53.7425462Z   Downloading websockets-15.0.1-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB)
+2026-11-13T10:54:53.7671482Z Collecting idna>=2.8 (from anyio<5.0,>=3.0->gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:53.7796994Z   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+2026-11-13T10:54:53.8057062Z Collecting typing-inspection>=0.4.2 (from fastapi->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:53.8181805Z   Downloading typing_inspection-0.4.5-py3-none-any.whl.metadata (2.6 kB)
+2026-11-13T10:54:53.8396307Z Collecting annotated-doc>=0.0.2 (from fastapi->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:53.8522057Z   Downloading annotated_doc-0.0.6-py3-none-any.whl.metadata (6.5 kB)
+2026-11-13T10:54:53.8771257Z Collecting opentelemetry-api>=1.44.0 (from fastapi->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:53.8896312Z   Downloading opentelemetry_api-1.45.2-py3-none-any.whl.metadata (1.4 kB)
+2026-11-13T10:54:53.9164751Z Collecting certifi (from httpx<1.0,>=0.24.1->gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:53.9289019Z   Downloading certifi-2026.10.23-py3-none-any.whl.metadata (2.5 kB)
+2026-11-13T10:54:53.9519000Z Collecting httpcore==1.* (from httpx<1.0,>=0.24.1->gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:53.9643112Z   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+2026-11-13T10:54:54.0084864Z Collecting h11>=0.16 (from httpcore==1.*->httpx<1.0,>=0.24.1->gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:54.0209165Z   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+2026-11-13T10:54:54.1105318Z Collecting hf-xet<2.0.0,>=1.1.3 (from huggingface-hub<1.0,>=0.34.0->transformers==4.57.1)
+2026-11-13T10:54:54.1232993Z   Downloading hf_xet-1.8.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (4.9 kB)
+2026-11-13T10:54:54.1520834Z Collecting python-dateutil>=2.8.2 (from pandas->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:54.1653541Z   Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+2026-11-13T10:54:54.1992039Z Collecting pytz>=2020.1 (from pandas->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:54.2117762Z   Downloading pytz-2026.6-py2.py3-none-any.whl.metadata (22 kB)
+2026-11-13T10:54:54.2354517Z Collecting tzdata>=2022.7 (from pandas->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:54.2478660Z   Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+2026-11-13T10:54:54.2712036Z Collecting annotated-types>=0.6.0 (from pydantic->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:54.2838025Z   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+2026-11-13T10:54:54.7239767Z Collecting pydantic-core==2.41.4 (from pydantic->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:54.7369451Z   Downloading pydantic_core-2.41.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.3 kB)
+2026-11-13T10:54:54.7715416Z Collecting urllib3>=1.25 (from torchdata<=0.11.0,>=0.10.0->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:54.7841299Z   Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+2026-11-13T10:54:54.8275131Z Collecting shellingham>=1.3.0 (from typer<1.0,>=0.12->gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:54.8401937Z   Downloading shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
+2026-11-13T10:54:54.8697903Z Collecting rich>=13.8.0 (from typer<1.0,>=0.12->gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:54.8823923Z   Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+2026-11-13T10:54:54.9058903Z Collecting docstring-parser>=0.16 (from tyro<0.9.0->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:54.9183352Z   Downloading docstring_parser-0.18.0-py3-none-any.whl.metadata (3.5 kB)
+2026-11-13T10:54:54.9443155Z Collecting shtab>=1.5.6 (from tyro<0.9.0->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:54.9568560Z   Downloading shtab-1.13.0-py3-none-any.whl.metadata (7.6 kB)
+2026-11-13T10:54:54.9823673Z Collecting aiohappyeyeballs>=2.5.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.3.0,>=2023.1.0->datasets==4.0.0)
+2026-11-13T10:54:54.9949032Z   Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl.metadata (5.9 kB)
+2026-11-13T10:54:55.0164929Z Collecting aiosignal>=1.4.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.3.0,>=2023.1.0->datasets==4.0.0)
+2026-11-13T10:54:55.0288910Z   Downloading aiosignal-1.4.0-py3-none-any.whl.metadata (3.7 kB)
+2026-11-13T10:54:55.0527369Z Collecting attrs>=17.3.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.3.0,>=2023.1.0->datasets==4.0.0)
+2026-11-13T10:54:55.0652552Z   Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+2026-11-13T10:54:55.1152283Z Collecting frozenlist>=1.1.1 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.3.0,>=2023.1.0->datasets==4.0.0)
+2026-11-13T10:54:55.1278660Z   Downloading frozenlist-1.8.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (20 kB)
+2026-11-13T10:54:55.2873718Z Collecting multidict<8.0,>=4.5 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.3.0,>=2023.1.0->datasets==4.0.0)
+2026-11-13T10:54:55.3003432Z   Downloading multidict-7.2.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (6.1 kB)
+2026-11-13T10:54:55.3528798Z Collecting propcache>=0.2.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.3.0,>=2023.1.0->datasets==4.0.0)
+2026-11-13T10:54:55.3655882Z   Downloading propcache-0.5.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (25 kB)
+2026-11-13T10:54:55.5170352Z Collecting yarl<2.0,>=1.25.1 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.3.0,>=2023.1.0->datasets==4.0.0)
+2026-11-13T10:54:55.5300858Z   Downloading yarl-1.25.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (111 kB)
+2026-11-13T10:54:55.5981086Z Collecting contourpy>=1.0.1 (from matplotlib>=3.7.0->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:55.6109547Z   Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+2026-11-13T10:54:55.6338079Z Collecting cycler>=0.10 (from matplotlib>=3.7.0->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:55.6463520Z   Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+2026-11-13T10:54:55.8065407Z Collecting fonttools>=4.28.2 (from matplotlib>=3.7.0->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:55.8193691Z   Downloading fonttools-4.68.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (139 kB)
+2026-11-13T10:54:55.8901445Z Collecting kiwisolver>=1.3.1 (from matplotlib>=3.7.0->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:55.9029450Z   Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)
+2026-11-13T10:54:55.9316960Z Collecting pyparsing>=3 (from matplotlib>=3.7.0->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:55.9443445Z   Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+2026-11-13T10:54:56.0381013Z Collecting charset_normalizer<4,>=2 (from requests->transformers==4.57.1)
+2026-11-13T10:54:56.0510467Z   Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+2026-11-13T10:54:56.0826204Z Collecting markdown-it-py>=2.2.0 (from rich>=13.8.0->typer<1.0,>=0.12->gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:56.0951525Z   Downloading markdown_it_py-4.3.0-py3-none-any.whl.metadata (7.9 kB)
+2026-11-13T10:54:56.1198067Z Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=13.8.0->typer<1.0,>=0.12->gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:56.1331175Z   Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+2026-11-13T10:54:56.1400783Z Requirement already satisfied: mpmath<1.4,>=1.1.0 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from sympy>=1.13.3->torch==2.9.1) (1.3.0)
+2026-11-13T10:54:56.1656648Z Collecting click>=7.0 (from uvicorn->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:56.1782225Z   Downloading click-8.5.1-py3-none-any.whl.metadata (2.6 kB)
+2026-11-13T10:54:56.2043807Z Collecting termcolor (from fire->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:56.2169469Z   Downloading termcolor-3.3.0-py3-none-any.whl.metadata (6.5 kB)
+2026-11-13T10:54:56.2442149Z Collecting modelscope-hub>=0.7.0 (from modelscope->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:56.2571090Z   Downloading modelscope_hub-0.7.1-py3-none-any.whl.metadata (67 kB)
+2026-11-13T10:54:56.3782011Z Collecting cryptography>=41 (from modelscope-hub>=0.7.0->modelscope->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:56.3911286Z   Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (4.4 kB)
+2026-11-13T10:54:56.4638077Z Collecting cffi>=2.0.0 (from cryptography>=41->modelscope-hub>=0.7.0->modelscope->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:56.4766997Z   Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+2026-11-13T10:54:56.4996871Z Collecting pycparser (from cffi>=2.0.0->cryptography>=41->modelscope-hub>=0.7.0->modelscope->llamafactory==0.9.6.dev0)
+2026-11-13T10:54:56.5126027Z   Downloading pycparser-3.12-py3-none-any.whl.metadata (9.7 kB)
+2026-11-13T10:54:56.5435415Z Downloading transformers-4.57.1-py3-none-any.whl (12.0 MB)
+2026-11-13T10:54:56.6791618Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 90.2 MB/s  0:00:00
+2026-11-13T10:54:56.6936456Z Downloading accelerate-1.11.0-py3-none-any.whl (375 kB)
+2026-11-13T10:54:56.7111932Z Downloading peft-0.18.1-py3-none-any.whl (556 kB)
+2026-11-13T10:54:56.7194862Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 557.0/557.0 kB 50.6 MB/s  0:00:00
+2026-11-13T10:54:56.7328378Z Downloading trl-0.24.0-py3-none-any.whl (423 kB)
+2026-11-13T10:54:56.7501331Z Downloading datasets-4.0.0-py3-none-any.whl (494 kB)
+2026-11-13T10:54:56.7691942Z Downloading pytest-9.0.2-py3-none-any.whl (374 kB)
+2026-11-13T10:54:56.7875632Z Downloading ruff-0.15.9-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.3 MB)
+2026-11-13T10:54:56.8748672Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.3/11.3 MB 128.9 MB/s  0:00:00
+2026-11-13T10:54:56.8881075Z Downloading av-16.0.0-cp312-cp312-manylinux_2_28_x86_64.whl (40.5 MB)
+2026-11-13T10:54:57.2892784Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.5/40.5 MB 101.0 MB/s  0:00:00
+2026-11-13T10:54:57.3023213Z Downloading dill-0.3.8-py3-none-any.whl (116 kB)
+2026-11-13T10:54:57.3175679Z Downloading fsspec-2025.3.0-py3-none-any.whl (193 kB)
+2026-11-13T10:54:57.3355746Z Downloading gradio-5.50.0-py3-none-any.whl (63.5 MB)
+2026-11-13T10:54:57.8490327Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.5/63.5 MB 123.7 MB/s  0:00:00
+2026-11-13T10:54:57.8630933Z Downloading gradio_client-1.14.0-py3-none-any.whl (325 kB)
+2026-11-13T10:54:57.8805263Z Downloading aiofiles-24.1.0-py3-none-any.whl (15 kB)
+2026-11-13T10:54:57.8947114Z Downloading anyio-4.16.0-py3-none-any.whl (134 kB)
+2026-11-13T10:54:57.9094049Z Downloading fastapi-0.162.5-py3-none-any.whl (151 kB)
+2026-11-13T10:54:57.9247846Z Downloading groovy-0.1.2-py3-none-any.whl (14 kB)
+2026-11-13T10:54:57.9392590Z Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+2026-11-13T10:54:57.9540361Z Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+2026-11-13T10:54:57.9684357Z Downloading huggingface_hub-0.36.2-py3-none-any.whl (566 kB)
+2026-11-13T10:54:57.9754823Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 566.4/566.4 kB 57.1 MB/s  0:00:00
+2026-11-13T10:54:57.9883147Z Downloading hf_xet-1.8.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.3 MB)
+2026-11-13T10:54:58.0206684Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 133.0 MB/s  0:00:00
+2026-11-13T10:54:58.0331318Z Downloading multiprocess-0.70.16-py312-none-any.whl (146 kB)
+2026-11-13T10:54:58.0484711Z Downloading orjson-3.13.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (130 kB)
+2026-11-13T10:54:58.0631845Z Downloading pandas-2.3.3-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.4 MB)
+2026-11-13T10:54:58.1542887Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.4/12.4 MB 136.1 MB/s  0:00:00
+2026-11-13T10:54:58.1673235Z Downloading pillow-11.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.6 MB)
+2026-11-13T10:54:58.2177320Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.6/6.6 MB 131.6 MB/s  0:00:00
+2026-11-13T10:54:58.2188078Z Using cached pluggy-1.7.0-py3-none-any.whl (27 kB)
+2026-11-13T10:54:58.2317088Z Downloading pydantic-2.12.3-py3-none-any.whl (462 kB)
+2026-11-13T10:54:58.2491126Z Downloading pydantic_core-2.41.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+2026-11-13T10:54:58.2655569Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 122.2 MB/s  0:00:00
+2026-11-13T10:54:58.2782731Z Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+2026-11-13T10:54:58.2864419Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 83.0 MB/s  0:00:00
+2026-11-13T10:54:58.2990367Z Downloading safehttpx-0.1.7-py3-none-any.whl (9.0 kB)
+2026-11-13T10:54:58.3132855Z Downloading semantic_version-2.10.0-py2.py3-none-any.whl (15 kB)
+2026-11-13T10:54:58.3398776Z Downloading starlette-0.52.1-py3-none-any.whl (74 kB)
+2026-11-13T10:54:58.3545143Z Downloading tokenizers-0.22.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+2026-11-13T10:54:58.3800095Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 128.0 MB/s  0:00:00
+2026-11-13T10:54:58.3926296Z Downloading tomlkit-0.13.3-py3-none-any.whl (38 kB)
+2026-11-13T10:54:58.4068589Z Downloading torchdata-0.11.0-py3-none-any.whl (61 kB)
+2026-11-13T10:54:58.4211355Z Downloading typer-0.29.1-py3-none-any.whl (121 kB)
+2026-11-13T10:54:58.4360654Z Downloading tyro-0.8.14-py3-none-any.whl (109 kB)
+2026-11-13T10:54:58.4508525Z Downloading websockets-15.0.1-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (182 kB)
+2026-11-13T10:54:58.4668408Z Downloading aiohttp-3.14.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.9 MB)
+2026-11-13T10:54:58.4964870Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 59.7 MB/s  0:00:00
+2026-11-13T10:54:58.5090690Z Downloading multidict-7.2.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (516 kB)
+2026-11-13T10:54:58.5261578Z Downloading yarl-1.25.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (117 kB)
+2026-11-13T10:54:58.5408124Z Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl (15 kB)
+2026-11-13T10:54:58.5550462Z Downloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+2026-11-13T10:54:58.5692380Z Downloading annotated_doc-0.0.6-py3-none-any.whl (5.3 kB)
+2026-11-13T10:54:58.5838167Z Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+2026-11-13T10:54:58.6039745Z Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+2026-11-13T10:54:58.6187167Z Downloading brotli-1.2.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.4 MB)
+2026-11-13T10:54:58.6311141Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 108.7 MB/s  0:00:00
+2026-11-13T10:54:58.6437689Z Downloading docstring_parser-0.18.0-py3-none-any.whl (22 kB)
+2026-11-13T10:54:58.6675431Z Downloading frozenlist-1.8.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (242 kB)
+2026-11-13T10:54:58.6828348Z Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+2026-11-13T10:54:58.6970400Z Downloading idna-3.20-py3-none-any.whl (69 kB)
+2026-11-13T10:54:58.7115825Z Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+2026-11-13T10:54:58.7254753Z Downloading matplotlib-3.11.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.9 MB)
+2026-11-13T10:54:58.7993406Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 133.7 MB/s  0:00:00
+2026-11-13T10:54:58.8126277Z Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (383 kB)
+2026-11-13T10:54:58.8304002Z Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+2026-11-13T10:54:58.8470080Z Downloading fonttools-4.68.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.4 MB)
+2026-11-13T10:54:58.8875983Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 134.2 MB/s  0:00:00
+2026-11-13T10:54:58.9004537Z Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.5 MB)
+2026-11-13T10:54:58.9136644Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 109.3 MB/s  0:00:00
+2026-11-13T10:54:58.9263323Z Downloading opentelemetry_api-1.45.2-py3-none-any.whl (60 kB)
+2026-11-13T10:54:59.0118761Z Using cached packaging-26.3-py3-none-any.whl (129 kB)
+2026-11-13T10:54:59.0247873Z Downloading propcache-0.5.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (250 kB)
+2026-11-13T10:54:59.0411134Z Downloading pyarrow-26.0.1-cp312-cp312-manylinux_2_28_x86_64.whl (55.0 MB)
+2026-11-13T10:54:59.4490796Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 55.0/55.0 MB 135.1 MB/s  0:00:00
+2026-11-13T10:54:59.4625291Z Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+2026-11-13T10:54:59.4737873Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 109.0 MB/s  0:00:00
+2026-11-13T10:54:59.4872991Z Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+2026-11-13T10:54:59.5023959Z Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+2026-11-13T10:54:59.5173425Z Downloading python_multipart-0.0.33-py3-none-any.whl (32 kB)
+2026-11-13T10:54:59.5322744Z Downloading pytz-2026.6-py2.py3-none-any.whl (506 kB)
+2026-11-13T10:54:59.5497714Z Downloading regex-2026.11.9-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (808 kB)
+2026-11-13T10:54:59.5588245Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 808.8/808.8 kB 81.5 MB/s  0:00:00
+2026-11-13T10:54:59.5715377Z Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+2026-11-13T10:54:59.5866942Z Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (257 kB)
+2026-11-13T10:54:59.6024036Z Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+2026-11-13T10:54:59.6174684Z Downloading certifi-2026.10.23-py3-none-any.whl (135 kB)
+2026-11-13T10:54:59.6327673Z Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+2026-11-13T10:54:59.6489828Z Downloading markdown_it_py-4.3.0-py3-none-any.whl (96 kB)
+2026-11-13T10:54:59.6635974Z Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+2026-11-13T10:54:59.6781306Z Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (516 kB)
+2026-11-13T10:54:59.6959219Z Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+2026-11-13T10:54:59.7101454Z Downloading shtab-1.13.0-py3-none-any.whl (22 kB)
+2026-11-13T10:54:59.7244405Z Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
+2026-11-13T10:54:59.7392989Z Downloading typing_inspection-0.4.5-py3-none-any.whl (14 kB)
+2026-11-13T10:54:59.7536336Z Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+2026-11-13T10:54:59.7697065Z Downloading uvicorn-0.54.0-py3-none-any.whl (87 kB)
+2026-11-13T10:54:59.7844575Z Downloading click-8.5.1-py3-none-any.whl (126 kB)
+2026-11-13T10:54:59.7994487Z Downloading einops-0.8.2-py3-none-any.whl (65 kB)
+2026-11-13T10:54:59.8150011Z Downloading ffmpy-1.0.0-py3-none-any.whl (5.6 kB)
+2026-11-13T10:54:59.8295100Z Downloading fire-0.7.1-py3-none-any.whl (115 kB)
+2026-11-13T10:54:59.8447206Z Downloading hf_transfer-0.1.9-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.6 MB)
+2026-11-13T10:54:59.8771218Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.6/3.6 MB 108.1 MB/s  0:00:00
+2026-11-13T10:54:59.8925315Z Downloading modelscope-1.40.3-py3-none-any.whl (6.1 MB)
+2026-11-13T10:54:59.9435702Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.1/6.1 MB 117.9 MB/s  0:00:00
+2026-11-13T10:54:59.9566747Z Downloading modelscope_hub-0.7.1-py3-none-any.whl (304 kB)
+2026-11-13T10:54:59.9732547Z Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl (4.8 MB)
+2026-11-13T10:55:00.0099211Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.8/4.8 MB 129.1 MB/s  0:00:00
+2026-11-13T10:55:00.0229337Z Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (221 kB)
+2026-11-13T10:55:00.0387050Z Downloading omegaconf-2.4.0-py3-none-any.whl (254 kB)
+2026-11-13T10:55:00.0551957Z Downloading protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl (343 kB)
+2026-11-13T10:55:00.0718313Z Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+2026-11-13T10:55:00.0869416Z Downloading pycparser-3.12-py3-none-any.whl (62 kB)
+2026-11-13T10:55:00.1016469Z Downloading pydub-0.25.1-py2.py3-none-any.whl (32 kB)
+2026-11-13T10:55:00.1164258Z Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+2026-11-13T10:55:00.3785187Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 135.1 MB/s  0:00:00
+2026-11-13T10:55:00.3947916Z Downloading sentencepiece-0.2.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (1.7 MB)
+2026-11-13T10:55:00.4094394Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 113.6 MB/s  0:00:00
+2026-11-13T10:55:00.4222499Z Downloading sse_starlette-3.7.0-py3-none-any.whl (18 kB)
+2026-11-13T10:55:00.4366602Z Downloading termcolor-3.3.0-py3-none-any.whl (7.7 kB)
+2026-11-13T10:55:00.4511374Z Downloading tiktoken-0.14.0-cp312-cp312-manylinux_2_28_x86_64.whl (1.2 MB)
+2026-11-13T10:55:00.4619671Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 104.4 MB/s  0:00:00
+2026-11-13T10:55:00.4746703Z Downloading xxhash-4.1.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (472 kB)
+2026-11-13T10:55:01.0003705Z Building wheels for collected packages: llamafactory
+2026-11-13T10:55:01.0009445Z   Building editable for llamafactory (pyproject.toml): started
+2026-11-13T10:55:01.0276009Z   Building editable for llamafactory (pyproject.toml): finished with status 'done'
+2026-11-13T10:55:01.0278347Z   Created wheel for llamafactory: filename=llamafactory-0.9.6.dev0-py3-none-any.whl size=27476 sha256=f49a181442e44ad2bd5daebd6dcdc91bdada6ca433597a58b3f4f6a0569e1deb
+2026-11-13T10:55:01.0280079Z   Stored in directory: /tmp/pip-ephem-wheel-cache-_r3l8mg1/wheels/46/20/64/8cb860b6d6a299d205a4b65edbb9ab0ad7c828eff6d75a4655
+2026-11-13T10:55:01.0309872Z Successfully built llamafactory
+2026-11-13T10:55:01.2250726Z Installing collected packages: pytz, pydub, brotli, xxhash, websockets, urllib3, tzdata, typing-inspection, tqdm, tomlkit, termcolor, shtab, shellingham, sentencepiece, semantic-version, scipy, safetensors, ruff, regex, pyyaml, python-multipart, pyparsing, pygments, pydantic-core, pycparser, pyarrow, psutil, protobuf, propcache, pluggy, pillow, packaging, orjson, opentelemetry-api, multidict, mdurl, kiwisolver, iniconfig, idna, hf-xet, hf-transfer, h11, groovy, fsspec, frozenlist, fonttools, ffmpy, einops, docstring-parser, dill, cycler, contourpy, click, charset_normalizer, certifi, av, attrs, annotated-types, annotated-doc, aiohappyeyeballs, aiofiles, yarl, uvicorn, requests, python-dateutil, pytest, pydantic, omegaconf, multiprocess, markdown-it-py, httpcore, fire, cffi, anyio, aiosignal, torchdata, tiktoken, starlette, rich, pandas, matplotlib, huggingface-hub, httpx, cryptography, aiohttp, tyro, typer, tokenizers, sse-starlette, safehttpx, modelscope-hub, gradio-client, fastapi, accelerate, transformers, modelscope, gradio, datasets, trl, peft, llamafactory
+2026-11-13T10:55:06.5086458Z   Attempting uninstall: pillow
+2026-11-13T10:55:06.5105469Z     Found existing installation: pillow 13.0.0
+2026-11-13T10:55:06.5150106Z     Uninstalling pillow-13.0.0:
+2026-11-13T10:55:06.5160580Z       Successfully uninstalled pillow-13.0.0
+2026-11-13T10:55:07.0368501Z   Attempting uninstall: fsspec
+2026-11-13T10:55:07.0383777Z     Found existing installation: fsspec 2026.9.0
+2026-11-13T10:55:07.0412086Z     Uninstalling fsspec-2026.9.0:
+2026-11-13T10:55:07.0419484Z       Successfully uninstalled fsspec-2026.9.0
+2026-11-13T10:55:25.8620225Z 
+2026-11-13T10:55:25.8671116Z Successfully installed accelerate-1.11.0 aiofiles-24.1.0 aiohappyeyeballs-2.7.1 aiohttp-3.14.5 aiosignal-1.4.0 annotated-doc-0.0.6 annotated-types-0.8.0 anyio-4.16.0 attrs-26.1.0 av-16.0.0 brotli-1.2.1 certifi-2026.10.23 cffi-2.1.1 charset_normalizer-3.5.2 click-8.5.1 contourpy-1.4.0 cryptography-50.0.2 cycler-0.12.1 datasets-4.0.0 dill-0.3.8 docstring-parser-0.18.0 einops-0.8.2 fastapi-0.162.5 ffmpy-1.0.0 fire-0.7.1 fonttools-4.68.0 frozenlist-1.8.0 fsspec-2025.3.0 gradio-5.50.0 gradio-client-1.14.0 groovy-0.1.2 h11-0.16.0 hf-transfer-0.1.9 hf-xet-1.8.0 httpcore-1.0.9 httpx-0.28.1 huggingface-hub-0.36.2 idna-3.20 iniconfig-2.3.1 kiwisolver-1.5.1 llamafactory-0.9.6.dev0 markdown-it-py-4.3.0 matplotlib-3.11.2 mdurl-0.1.2 modelscope-1.40.3 modelscope-hub-0.7.1 multidict-7.2.1 multiprocess-0.70.16 omegaconf-2.4.0 opentelemetry-api-1.45.2 orjson-3.13.0 packaging-26.3 pandas-2.3.3 peft-0.18.1 pillow-11.3.0 pluggy-1.7.0 propcache-0.5.4 protobuf-7.36.2 psutil-7.2.2 pyarrow-26.0.1 pycparser-3.12 pydantic-2.12.3 pydantic-core-2.41.4 pydub-0.25.1 pygments-2.21.0 pyparsing-3.3.3 pytest-9.0.2 python-dateutil-4.0.0 python-multipart-0.0.33 pytz-2026.6 pyyaml-6.0.3 regex-2026.11.9 requests-2.34.2 rich-15.0.0 ruff-0.15.9 safehttpx-0.1.7 safetensors-0.8.0 scipy-1.18.1 semantic-version-2.10.0 sentencepiece-0.2.3 shellingham-1.5.4 shtab-1.13.0 sse-starlette-3.7.0 starlette-0.52.1 termcolor-3.3.0 tiktoken-0.14.0 tokenizers-0.22.2 tomlkit-0.13.3 torchdata-0.11.0 tqdm-4.70.1 transformers-4.57.1 trl-0.24.0 typer-0.29.1 typing-inspection-0.4.5 tyro-0.8.14 tzdata-2026.6 urllib3-2.8.0 uvicorn-0.54.0 websockets-15.0.1 xxhash-4.1.0 yarl-1.25.1
+2026-11-13T10:55:26.5123970Z ##[group]Run test "$(git rev-parse HEAD)" = "20dd15a6f63097c40cf52c379cdda764f74d57dd"
+2026-11-13T10:55:26.5124683Z [36;1mtest "$(git rev-parse HEAD)" = "20dd15a6f63097c40cf52c379cdda764f74d57dd"[0m
+2026-11-13T10:55:26.5125037Z [36;1mset +e[0m
+2026-11-13T10:55:26.5125484Z [36;1mpython -m pytest -q tests_v1/plugins/model_plugins/test_chunk_loss_gradient_scaling.py --junitxml=patched-results.xml > patched.log 2>&1[0m
+2026-11-13T10:55:26.5126082Z [36;1mresult=$?[0m
+2026-11-13T10:55:26.5126307Z [36;1mset -e[0m
+2026-11-13T10:55:26.5126503Z [36;1mcat patched.log[0m
+2026-11-13T10:55:26.5126773Z [36;1mtest "$result" -eq 0[0m
+2026-11-13T10:55:26.5127189Z [36;1mpython -m pytest -q tests_v1/plugins/model_plugins/test_chunk_loss.py --junitxml=existing-results.xml > existing.log 2>&1[0m
+2026-11-13T10:55:26.5127670Z [36;1mcat existing.log[0m
+2026-11-13T10:55:26.5158030Z shell: /usr/bin/bash -e {0}
+2026-11-13T10:55:26.5158353Z env:
+2026-11-13T10:55:26.5158696Z   PYTHONPATH: src
+2026-11-13T10:55:26.5158928Z   OMP_NUM_THREADS: 1
+2026-11-13T10:55:26.5159153Z   MKL_NUM_THREADS: 1
+2026-11-13T10:55:26.5159397Z   HF_HUB_OFFLINE: 1
+2026-11-13T10:55:26.5159620Z   TRANSFORMERS_OFFLINE: 1
+2026-11-13T10:55:26.5159938Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T10:55:26.5160327Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-13T10:55:26.5160702Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T10:55:26.5161095Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T10:55:26.5161447Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T10:55:26.5161758Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-13T10:55:26.5162071Z ##[endgroup]
+2026-11-13T10:55:31.3627792Z ..................                                                       [100%]
+2026-11-13T10:55:31.3628347Z 18 passed in 2.30s
+2026-11-13T10:55:35.3460046Z .....                                                                    [100%]
+2026-11-13T10:55:35.3460440Z 5 passed in 1.53s
+2026-11-13T10:55:35.3689844Z ##[group]Run git checkout 6d1059c727450a4f58e56ad204d01a71abad7781 -- src/llamafactory/v1/plugins/model_plugins/chunk_loss.py
+2026-11-13T10:55:35.3690556Z [36;1mgit checkout 6d1059c727450a4f58e56ad204d01a71abad7781 -- src/llamafactory/v1/plugins/model_plugins/chunk_loss.py[0m
+2026-11-13T10:55:35.3691013Z [36;1mset +e[0m
+2026-11-13T10:55:35.3691446Z [36;1mpython -m pytest -q tests_v1/plugins/model_plugins/test_chunk_loss_gradient_scaling.py --junitxml=baseline-results.xml > baseline.log 2>&1[0m
+2026-11-13T10:55:35.3691911Z [36;1mresult=$?[0m
+2026-11-13T10:55:35.3692145Z [36;1mset -e[0m
+2026-11-13T10:55:35.3692358Z [36;1mcat baseline.log[0m
+2026-11-13T10:55:35.3692651Z [36;1mtest "$result" -eq 1[0m
+2026-11-13T10:55:35.3692887Z [36;1mpython - <<'PY'[0m
+2026-11-13T10:55:35.3693165Z [36;1mimport xml.etree.ElementTree as ET[0m
+2026-11-13T10:55:35.3693502Z [36;1mroot = ET.parse("baseline-results.xml").getroot()[0m
+2026-11-13T10:55:35.3693904Z [36;1msuites = list(root.iter("testsuite"))[0m
+2026-11-13T10:55:35.3694449Z [36;1merrors = sum(int(s.attrib.get("errors", 0)) for s in suites)[0m
+2026-11-13T10:55:35.3694826Z [36;1mfailures = sum(int(s.attrib.get("failures", 0)) for s in suites)[0m
+2026-11-13T10:55:35.3695175Z [36;1mprint({"errors": errors, "failures": failures})[0m
+2026-11-13T10:55:35.3695483Z [36;1massert errors == 0 and failures > 0[0m
+2026-11-13T10:55:35.3695737Z [36;1mPY[0m
+2026-11-13T10:55:35.3723489Z shell: /usr/bin/bash -e {0}
+2026-11-13T10:55:35.3723829Z env:
+2026-11-13T10:55:35.3724046Z   PYTHONPATH: src
+2026-11-13T10:55:35.3724390Z   OMP_NUM_THREADS: 1
+2026-11-13T10:55:35.3724668Z   MKL_NUM_THREADS: 1
+2026-11-13T10:55:35.3724883Z   HF_HUB_OFFLINE: 1
+2026-11-13T10:55:35.3725103Z   TRANSFORMERS_OFFLINE: 1
+2026-11-13T10:55:35.3725394Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T10:55:35.3725754Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-13T10:55:35.3726182Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T10:55:35.3726515Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T10:55:35.3726852Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T10:55:35.3727191Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-13T10:55:35.3727495Z ##[endgroup]
+2026-11-13T10:55:39.3099669Z .F.F.F.F.F.FF.F...                                                       [100%]
+2026-11-13T10:55:39.3100637Z =================================== FAILURES ===================================
+2026-11-13T10:55:39.3101250Z _______ test_head_gradient_is_scaled_before_fp16_cast[0.0-False-131072] ________
+2026-11-13T10:55:39.3101506Z 
+2026-11-13T10:55:39.3101661Z num_tokens = 131072, bias = False, outer_scale = 0.0
+2026-11-13T10:55:39.3102095Z 
+2026-11-13T10:55:39.3102296Z     @pytest.mark.parametrize("num_tokens", [8192, 131072])
+2026-11-13T10:55:39.3102898Z     @pytest.mark.parametrize("bias", [False, True])
+2026-11-13T10:55:39.3103474Z     @pytest.mark.parametrize("outer_scale", [0.0, 0.125, 1.0])
+2026-11-13T10:55:39.3104374Z     def test_head_gradient_is_scaled_before_fp16_cast(num_tokens, bias, outer_scale):
+2026-11-13T10:55:39.3105083Z         reference_head = nn.Linear(4, 8, bias=bias, dtype=torch.float16)
+2026-11-13T10:55:39.3105930Z         nn.init.zeros_(reference_head.weight)
+2026-11-13T10:55:39.3106373Z         if bias:
+2026-11-13T10:55:39.3106829Z             nn.init.zeros_(reference_head.bias)
+2026-11-13T10:55:39.3107297Z         actual_head = deepcopy(reference_head)
+2026-11-13T10:55:39.3108149Z         reference_hidden = torch.ones(num_tokens, 4, dtype=torch.float16, requires_grad=True)
+2026-11-13T10:55:39.3108828Z         actual_hidden = reference_hidden.detach().clone().requires_grad_()
+2026-11-13T10:55:39.3109788Z         labels = torch.zeros(num_tokens, dtype=torch.long)
+2026-11-13T10:55:39.3110447Z         weights = torch.ones(num_tokens)
+2026-11-13T10:55:39.3110959Z     
+2026-11-13T10:55:39.3112127Z         reference_loss = F.cross_entropy(reference_head(reference_hidden).float(), labels) * outer_scale
+2026-11-13T10:55:39.3112910Z         actual_sum = _ChunkedLinearCrossEntropy.apply(
+2026-11-13T10:55:39.3113636Z             actual_hidden, actual_head.weight, actual_head.bias, labels, weights, 4096
+2026-11-13T10:55:39.3114475Z         )
+2026-11-13T10:55:39.3114884Z         actual_loss = actual_sum * (outer_scale / num_tokens)
+2026-11-13T10:55:39.3115492Z         reference_loss.backward()
+2026-11-13T10:55:39.3116035Z         actual_loss.backward()
+2026-11-13T10:55:39.3116473Z     
+2026-11-13T10:55:39.3116953Z         torch.testing.assert_close(actual_loss, reference_loss)
+2026-11-13T10:55:39.3117642Z         torch.testing.assert_close(actual_hidden.grad, reference_hidden.grad, rtol=0, atol=0)
+2026-11-13T10:55:39.3118595Z         for actual, reference in zip(actual_head.parameters(), reference_head.parameters(), strict=True):
+2026-11-13T10:55:39.3119633Z             assert actual.grad.dtype == actual.dtype
+2026-11-13T10:55:39.3120326Z >           assert torch.isfinite(actual.grad).all()
+2026-11-13T10:55:39.3120789Z E           assert tensor(False)
+2026-11-13T10:55:39.3121415Z E            +  where tensor(False) = <built-in method all of Tensor object at 0x7a103ec11720>()
+2026-11-13T10:55:39.3122906Z E            +    where <built-in method all of Tensor object at 0x7a103ec11720> = tensor([[False, False, False, False],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n    ...ue],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True]]).all
+2026-11-13T10:55:39.3125827Z E            +      where tensor([[False, False, False, False],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n    ...ue],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True]]) = <built-in method isfinite of type object at 0x7a105d93a8c0>(tensor([[nan, nan, nan, nan],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.]], dtype=torch.float16))
+2026-11-13T10:55:39.3128064Z E            +        where <built-in method isfinite of type object at 0x7a105d93a8c0> = torch.isfinite
+2026-11-13T10:55:39.3130286Z E            +        and   tensor([[nan, nan, nan, nan],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.]], dtype=torch.float16) = Parameter containing:\ntensor([[0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0...        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.]], dtype=torch.float16, requires_grad=True).grad
+2026-11-13T10:55:39.3131701Z 
+2026-11-13T10:55:39.3132360Z tests_v1/plugins/model_plugins/test_chunk_loss_gradient_scaling.py:53: AssertionError
+2026-11-13T10:55:39.3133260Z ________ test_head_gradient_is_scaled_before_fp16_cast[0.0-True-131072] ________
+2026-11-13T10:55:39.3133651Z 
+2026-11-13T10:55:39.3134562Z num_tokens = 131072, bias = True, outer_scale = 0.0
+2026-11-13T10:55:39.3135007Z 
+2026-11-13T10:55:39.3135295Z     @pytest.mark.parametrize("num_tokens", [8192, 131072])
+2026-11-13T10:55:39.3135857Z     @pytest.mark.parametrize("bias", [False, True])
+2026-11-13T10:55:39.3136380Z     @pytest.mark.parametrize("outer_scale", [0.0, 0.125, 1.0])
+2026-11-13T10:55:39.3137025Z     def test_head_gradient_is_scaled_before_fp16_cast(num_tokens, bias, outer_scale):
+2026-11-13T10:55:39.3137752Z         reference_head = nn.Linear(4, 8, bias=bias, dtype=torch.float16)
+2026-11-13T10:55:39.3138408Z         nn.init.zeros_(reference_head.weight)
+2026-11-13T10:55:39.3138947Z         if bias:
+2026-11-13T10:55:39.3139361Z             nn.init.zeros_(reference_head.bias)
+2026-11-13T10:55:39.3140412Z         actual_head = deepcopy(reference_head)
+2026-11-13T10:55:39.3141563Z         reference_hidden = torch.ones(num_tokens, 4, dtype=torch.float16, requires_grad=True)
+2026-11-13T10:55:39.3142549Z         actual_hidden = reference_hidden.detach().clone().requires_grad_()
+2026-11-13T10:55:39.3143524Z         labels = torch.zeros(num_tokens, dtype=torch.long)
+2026-11-13T10:55:39.3144435Z         weights = torch.ones(num_tokens)
+2026-11-13T10:55:39.3144936Z     
+2026-11-13T10:55:39.3145622Z         reference_loss = F.cross_entropy(reference_head(reference_hidden).float(), labels) * outer_scale
+2026-11-13T10:55:39.3146474Z         actual_sum = _ChunkedLinearCrossEntropy.apply(
+2026-11-13T10:55:39.3147139Z             actual_hidden, actual_head.weight, actual_head.bias, labels, weights, 4096
+2026-11-13T10:55:39.3147752Z         )
+2026-11-13T10:55:39.3148186Z         actual_loss = actual_sum * (outer_scale / num_tokens)
+2026-11-13T10:55:39.3148744Z         reference_loss.backward()
+2026-11-13T10:55:39.3149262Z         actual_loss.backward()
+2026-11-13T10:55:39.3149667Z     
+2026-11-13T10:55:39.3150109Z         torch.testing.assert_close(actual_loss, reference_loss)
+2026-11-13T10:55:39.3150891Z         torch.testing.assert_close(actual_hidden.grad, reference_hidden.grad, rtol=0, atol=0)
+2026-11-13T10:55:39.3151999Z         for actual, reference in zip(actual_head.parameters(), reference_head.parameters(), strict=True):
+2026-11-13T10:55:39.3152755Z             assert actual.grad.dtype == actual.dtype
+2026-11-13T10:55:39.3153490Z >           assert torch.isfinite(actual.grad).all()
+2026-11-13T10:55:39.3153936Z E           assert tensor(False)
+2026-11-13T10:55:39.3154686Z E            +  where tensor(False) = <built-in method all of Tensor object at 0x7a103ec13c00>()
+2026-11-13T10:55:39.3156121Z E            +    where <built-in method all of Tensor object at 0x7a103ec13c00> = tensor([[False, False, False, False],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n    ...ue],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True]]).all
+2026-11-13T10:55:39.3160771Z E            +      where tensor([[False, False, False, False],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n    ...ue],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True]]) = <built-in method isfinite of type object at 0x7a105d93a8c0>(tensor([[nan, nan, nan, nan],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.]], dtype=torch.float16))
+2026-11-13T10:55:39.3163100Z E            +        where <built-in method isfinite of type object at 0x7a105d93a8c0> = torch.isfinite
+2026-11-13T10:55:39.3165033Z E            +        and   tensor([[nan, nan, nan, nan],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.]], dtype=torch.float16) = Parameter containing:\ntensor([[0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0...        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.]], dtype=torch.float16, requires_grad=True).grad
+2026-11-13T10:55:39.3166528Z 
+2026-11-13T10:55:39.3166965Z tests_v1/plugins/model_plugins/test_chunk_loss_gradient_scaling.py:53: AssertionError
+2026-11-13T10:55:39.3167787Z ______ test_head_gradient_is_scaled_before_fp16_cast[0.125-False-131072] _______
+2026-11-13T10:55:39.3168224Z 
+2026-11-13T10:55:39.3168463Z num_tokens = 131072, bias = False, outer_scale = 0.125
+2026-11-13T10:55:39.3168954Z 
+2026-11-13T10:55:39.3169378Z     @pytest.mark.parametrize("num_tokens", [8192, 131072])
+2026-11-13T10:55:39.3169922Z     @pytest.mark.parametrize("bias", [False, True])
+2026-11-13T10:55:39.3170725Z     @pytest.mark.parametrize("outer_scale", [0.0, 0.125, 1.0])
+2026-11-13T10:55:39.3171817Z     def test_head_gradient_is_scaled_before_fp16_cast(num_tokens, bias, outer_scale):
+2026-11-13T10:55:39.3172747Z         reference_head = nn.Linear(4, 8, bias=bias, dtype=torch.float16)
+2026-11-13T10:55:39.3173542Z         nn.init.zeros_(reference_head.weight)
+2026-11-13T10:55:39.3173997Z         if bias:
+2026-11-13T10:55:39.3174599Z             nn.init.zeros_(reference_head.bias)
+2026-11-13T10:55:39.3175093Z         actual_head = deepcopy(reference_head)
+2026-11-13T10:55:39.3175754Z         reference_hidden = torch.ones(num_tokens, 4, dtype=torch.float16, requires_grad=True)
+2026-11-13T10:55:39.3176518Z         actual_hidden = reference_hidden.detach().clone().requires_grad_()
+2026-11-13T10:55:39.3177175Z         labels = torch.zeros(num_tokens, dtype=torch.long)
+2026-11-13T10:55:39.3177790Z         weights = torch.ones(num_tokens)
+2026-11-13T10:55:39.3178214Z     
+2026-11-13T10:55:39.3178966Z         reference_loss = F.cross_entropy(reference_head(reference_hidden).float(), labels) * outer_scale
+2026-11-13T10:55:39.3179938Z         actual_sum = _ChunkedLinearCrossEntropy.apply(
+2026-11-13T10:55:39.3180883Z             actual_hidden, actual_head.weight, actual_head.bias, labels, weights, 4096
+2026-11-13T10:55:39.3181678Z         )
+2026-11-13T10:55:39.3182343Z         actual_loss = actual_sum * (outer_scale / num_tokens)
+2026-11-13T10:55:39.3183125Z         reference_loss.backward()
+2026-11-13T10:55:39.3183603Z         actual_loss.backward()
+2026-11-13T10:55:39.3184542Z     
+2026-11-13T10:55:39.3185192Z         torch.testing.assert_close(actual_loss, reference_loss)
+2026-11-13T10:55:39.3186210Z         torch.testing.assert_close(actual_hidden.grad, reference_hidden.grad, rtol=0, atol=0)
+2026-11-13T10:55:39.3187211Z         for actual, reference in zip(actual_head.parameters(), reference_head.parameters(), strict=True):
+2026-11-13T10:55:39.3188299Z             assert actual.grad.dtype == actual.dtype
+2026-11-13T10:55:39.3188808Z >           assert torch.isfinite(actual.grad).all()
+2026-11-13T10:55:39.3189308Z E           assert tensor(False)
+2026-11-13T10:55:39.3190102Z E            +  where tensor(False) = <built-in method all of Tensor object at 0x7a103ec501e0>()
+2026-11-13T10:55:39.3191704Z E            +    where <built-in method all of Tensor object at 0x7a103ec501e0> = tensor([[False, False, False, False],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n    ...ue],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True]]).all
+2026-11-13T10:55:39.3195195Z E            +      where tensor([[False, False, False, False],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n    ...ue],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True]]) = <built-in method isfinite of type object at 0x7a105d93a8c0>(tensor([[  -inf,   -inf,   -inf,   -inf],\n        [0.0156, 0.0156, 0.0156, 0.0156],\n        [0.0156, 0.0156, 0.0156, 0...156, 0.0156],\n        [0.0156, 0.0156, 0.0156, 0.0156],\n        [0.0156, 0.0156, 0.0156, 0.0156]], dtype=torch.float16))
+2026-11-13T10:55:39.3197695Z E            +        where <built-in method isfinite of type object at 0x7a105d93a8c0> = torch.isfinite
+2026-11-13T10:55:39.3199564Z E            +        and   tensor([[  -inf,   -inf,   -inf,   -inf],\n        [0.0156, 0.0156, 0.0156, 0.0156],\n        [0.0156, 0.0156, 0.0156, 0...156, 0.0156],\n        [0.0156, 0.0156, 0.0156, 0.0156],\n        [0.0156, 0.0156, 0.0156, 0.0156]], dtype=torch.float16) = Parameter containing:\ntensor([[0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0...        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.]], dtype=torch.float16, requires_grad=True).grad
+2026-11-13T10:55:39.3201038Z 
+2026-11-13T10:55:39.3201486Z tests_v1/plugins/model_plugins/test_chunk_loss_gradient_scaling.py:53: AssertionError
+2026-11-13T10:55:39.3202398Z _______ test_head_gradient_is_scaled_before_fp16_cast[0.125-True-131072] _______
+2026-11-13T10:55:39.3203201Z 
+2026-11-13T10:55:39.3203476Z num_tokens = 131072, bias = True, outer_scale = 0.125
+2026-11-13T10:55:39.3203762Z 
+2026-11-13T10:55:39.3204050Z     @pytest.mark.parametrize("num_tokens", [8192, 131072])
+2026-11-13T10:55:39.3204731Z     @pytest.mark.parametrize("bias", [False, True])
+2026-11-13T10:55:39.3205660Z     @pytest.mark.parametrize("outer_scale", [0.0, 0.125, 1.0])
+2026-11-13T10:55:39.3206445Z     def test_head_gradient_is_scaled_before_fp16_cast(num_tokens, bias, outer_scale):
+2026-11-13T10:55:39.3207233Z         reference_head = nn.Linear(4, 8, bias=bias, dtype=torch.float16)
+2026-11-13T10:55:39.3207839Z         nn.init.zeros_(reference_head.weight)
+2026-11-13T10:55:39.3208232Z         if bias:
+2026-11-13T10:55:39.3208822Z             nn.init.zeros_(reference_head.bias)
+2026-11-13T10:55:39.3209336Z         actual_head = deepcopy(reference_head)
+2026-11-13T10:55:39.3210070Z         reference_hidden = torch.ones(num_tokens, 4, dtype=torch.float16, requires_grad=True)
+2026-11-13T10:55:39.3210805Z         actual_hidden = reference_hidden.detach().clone().requires_grad_()
+2026-11-13T10:55:39.3211415Z         labels = torch.zeros(num_tokens, dtype=torch.long)
+2026-11-13T10:55:39.3212014Z         weights = torch.ones(num_tokens)
+2026-11-13T10:55:39.3212409Z     
+2026-11-13T10:55:39.3213055Z         reference_loss = F.cross_entropy(reference_head(reference_hidden).float(), labels) * outer_scale
+2026-11-13T10:55:39.3213830Z         actual_sum = _ChunkedLinearCrossEntropy.apply(
+2026-11-13T10:55:39.3214636Z             actual_hidden, actual_head.weight, actual_head.bias, labels, weights, 4096
+2026-11-13T10:55:39.3215447Z         )
+2026-11-13T10:55:39.3215840Z         actual_loss = actual_sum * (outer_scale / num_tokens)
+2026-11-13T10:55:39.3216355Z         reference_loss.backward()
+2026-11-13T10:55:39.3216939Z         actual_loss.backward()
+2026-11-13T10:55:39.3217306Z     
+2026-11-13T10:55:39.3217710Z         torch.testing.assert_close(actual_loss, reference_loss)
+2026-11-13T10:55:39.3218406Z         torch.testing.assert_close(actual_hidden.grad, reference_hidden.grad, rtol=0, atol=0)
+2026-11-13T10:55:39.3219264Z         for actual, reference in zip(actual_head.parameters(), reference_head.parameters(), strict=True):
+2026-11-13T10:55:39.3219953Z             assert actual.grad.dtype == actual.dtype
+2026-11-13T10:55:39.3220608Z >           assert torch.isfinite(actual.grad).all()
+2026-11-13T10:55:39.3221275Z E           assert tensor(False)
+2026-11-13T10:55:39.3221834Z E            +  where tensor(False) = <built-in method all of Tensor object at 0x7a103ec50b90>()
+2026-11-13T10:55:39.3223236Z E            +    where <built-in method all of Tensor object at 0x7a103ec50b90> = tensor([[False, False, False, False],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n    ...ue],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True]]).all
+2026-11-13T10:55:39.3226186Z E            +      where tensor([[False, False, False, False],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n    ...ue],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True]]) = <built-in method isfinite of type object at 0x7a105d93a8c0>(tensor([[  -inf,   -inf,   -inf,   -inf],\n        [0.0156, 0.0156, 0.0156, 0.0156],\n        [0.0156, 0.0156, 0.0156, 0...156, 0.0156],\n        [0.0156, 0.0156, 0.0156, 0.0156],\n        [0.0156, 0.0156, 0.0156, 0.0156]], dtype=torch.float16))
+2026-11-13T10:55:39.3228299Z E            +        where <built-in method isfinite of type object at 0x7a105d93a8c0> = torch.isfinite
+2026-11-13T10:55:39.3230334Z E            +        and   tensor([[  -inf,   -inf,   -inf,   -inf],\n        [0.0156, 0.0156, 0.0156, 0.0156],\n        [0.0156, 0.0156, 0.0156, 0...156, 0.0156],\n        [0.0156, 0.0156, 0.0156, 0.0156],\n        [0.0156, 0.0156, 0.0156, 0.0156]], dtype=torch.float16) = Parameter containing:\ntensor([[0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0...        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.]], dtype=torch.float16, requires_grad=True).grad
+2026-11-13T10:55:39.3231765Z 
+2026-11-13T10:55:39.3232137Z tests_v1/plugins/model_plugins/test_chunk_loss_gradient_scaling.py:53: AssertionError
+2026-11-13T10:55:39.3232921Z _______ test_head_gradient_is_scaled_before_fp16_cast[1.0-False-131072] ________
+2026-11-13T10:55:39.3233372Z 
+2026-11-13T10:55:39.3233555Z num_tokens = 131072, bias = False, outer_scale = 1.0
+2026-11-13T10:55:39.3233870Z 
+2026-11-13T10:55:39.3234323Z     @pytest.mark.parametrize("num_tokens", [8192, 131072])
+2026-11-13T10:55:39.3234993Z     @pytest.mark.parametrize("bias", [False, True])
+2026-11-13T10:55:39.3235547Z     @pytest.mark.parametrize("outer_scale", [0.0, 0.125, 1.0])
+2026-11-13T10:55:39.3236191Z     def test_head_gradient_is_scaled_before_fp16_cast(num_tokens, bias, outer_scale):
+2026-11-13T10:55:39.3236979Z         reference_head = nn.Linear(4, 8, bias=bias, dtype=torch.float16)
+2026-11-13T10:55:39.3237527Z         nn.init.zeros_(reference_head.weight)
+2026-11-13T10:55:39.3238038Z         if bias:
+2026-11-13T10:55:39.3238810Z             nn.init.zeros_(reference_head.bias)
+2026-11-13T10:55:39.3239252Z         actual_head = deepcopy(reference_head)
+2026-11-13T10:55:39.3239886Z         reference_hidden = torch.ones(num_tokens, 4, dtype=torch.float16, requires_grad=True)
+2026-11-13T10:55:39.3240657Z         actual_hidden = reference_hidden.detach().clone().requires_grad_()
+2026-11-13T10:55:39.3241239Z         labels = torch.zeros(num_tokens, dtype=torch.long)
+2026-11-13T10:55:39.3241793Z         weights = torch.ones(num_tokens)
+2026-11-13T10:55:39.3242179Z     
+2026-11-13T10:55:39.3242805Z         reference_loss = F.cross_entropy(reference_head(reference_hidden).float(), labels) * outer_scale
+2026-11-13T10:55:39.3243496Z         actual_sum = _ChunkedLinearCrossEntropy.apply(
+2026-11-13T10:55:39.3244399Z             actual_hidden, actual_head.weight, actual_head.bias, labels, weights, 4096
+2026-11-13T10:55:39.3245038Z         )
+2026-11-13T10:55:39.3245410Z         actual_loss = actual_sum * (outer_scale / num_tokens)
+2026-11-13T10:55:39.3245985Z         reference_loss.backward()
+2026-11-13T10:55:39.3246407Z         actual_loss.backward()
+2026-11-13T10:55:39.3246798Z     
+2026-11-13T10:55:39.3247420Z         torch.testing.assert_close(actual_loss, reference_loss)
+2026-11-13T10:55:39.3248286Z         torch.testing.assert_close(actual_hidden.grad, reference_hidden.grad, rtol=0, atol=0)
+2026-11-13T10:55:39.3249124Z         for actual, reference in zip(actual_head.parameters(), reference_head.parameters(), strict=True):
+2026-11-13T10:55:39.3249819Z             assert actual.grad.dtype == actual.dtype
+2026-11-13T10:55:39.3250325Z >           assert torch.isfinite(actual.grad).all()
+2026-11-13T10:55:39.3251114Z E           assert tensor(False)
+2026-11-13T10:55:39.3251670Z E            +  where tensor(False) = <built-in method all of Tensor object at 0x7a103ec514a0>()
+2026-11-13T10:55:39.3253235Z E            +    where <built-in method all of Tensor object at 0x7a103ec514a0> = tensor([[False, False, False, False],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n    ...ue],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True]]).all
+2026-11-13T10:55:39.3256097Z E            +      where tensor([[False, False, False, False],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n    ...ue],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True]]) = <built-in method isfinite of type object at 0x7a105d93a8c0>(tensor([[  -inf,   -inf,   -inf,   -inf],\n        [0.1250, 0.1250, 0.1250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0...250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0.1250]], dtype=torch.float16))
+2026-11-13T10:55:39.3258595Z E            +        where <built-in method isfinite of type object at 0x7a105d93a8c0> = torch.isfinite
+2026-11-13T10:55:39.3260508Z E            +        and   tensor([[  -inf,   -inf,   -inf,   -inf],\n        [0.1250, 0.1250, 0.1250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0...250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0.1250]], dtype=torch.float16) = Parameter containing:\ntensor([[0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0...        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.]], dtype=torch.float16, requires_grad=True).grad
+2026-11-13T10:55:39.3261952Z 
+2026-11-13T10:55:39.3262459Z tests_v1/plugins/model_plugins/test_chunk_loss_gradient_scaling.py:53: AssertionError
+2026-11-13T10:55:39.3263246Z ________ test_head_gradient_is_scaled_before_fp16_cast[1.0-True-131072] ________
+2026-11-13T10:55:39.3263612Z 
+2026-11-13T10:55:39.3264049Z num_tokens = 131072, bias = True, outer_scale = 1.0
+2026-11-13T10:55:39.3264537Z 
+2026-11-13T10:55:39.3264804Z     @pytest.mark.parametrize("num_tokens", [8192, 131072])
+2026-11-13T10:55:39.3265341Z     @pytest.mark.parametrize("bias", [False, True])
+2026-11-13T10:55:39.3265879Z     @pytest.mark.parametrize("outer_scale", [0.0, 0.125, 1.0])
+2026-11-13T10:55:39.3266657Z     def test_head_gradient_is_scaled_before_fp16_cast(num_tokens, bias, outer_scale):
+2026-11-13T10:55:39.3267434Z         reference_head = nn.Linear(4, 8, bias=bias, dtype=torch.float16)
+2026-11-13T10:55:39.3268076Z         nn.init.zeros_(reference_head.weight)
+2026-11-13T10:55:39.3268517Z         if bias:
+2026-11-13T10:55:39.3268911Z             nn.init.zeros_(reference_head.bias)
+2026-11-13T10:55:39.3269393Z         actual_head = deepcopy(reference_head)
+2026-11-13T10:55:39.3270249Z         reference_hidden = torch.ones(num_tokens, 4, dtype=torch.float16, requires_grad=True)
+2026-11-13T10:55:39.3270956Z         actual_hidden = reference_hidden.detach().clone().requires_grad_()
+2026-11-13T10:55:39.3271596Z         labels = torch.zeros(num_tokens, dtype=torch.long)
+2026-11-13T10:55:39.3272081Z         weights = torch.ones(num_tokens)
+2026-11-13T10:55:39.3272536Z     
+2026-11-13T10:55:39.3273084Z         reference_loss = F.cross_entropy(reference_head(reference_hidden).float(), labels) * outer_scale
+2026-11-13T10:55:39.3273893Z         actual_sum = _ChunkedLinearCrossEntropy.apply(
+2026-11-13T10:55:39.3275784Z             actual_hidden, actual_head.weight, actual_head.bias, labels, weights, 4096
+2026-11-13T10:55:39.3276213Z         )
+2026-11-13T10:55:39.3276576Z         actual_loss = actual_sum * (outer_scale / num_tokens)
+2026-11-13T10:55:39.3277087Z         reference_loss.backward()
+2026-11-13T10:55:39.3277381Z         actual_loss.backward()
+2026-11-13T10:55:39.3277700Z     
+2026-11-13T10:55:39.3277988Z         torch.testing.assert_close(actual_loss, reference_loss)
+2026-11-13T10:55:39.3278455Z         torch.testing.assert_close(actual_hidden.grad, reference_hidden.grad, rtol=0, atol=0)
+2026-11-13T10:55:39.3279144Z         for actual, reference in zip(actual_head.parameters(), reference_head.parameters(), strict=True):
+2026-11-13T10:55:39.3279618Z             assert actual.grad.dtype == actual.dtype
+2026-11-13T10:55:39.3279989Z >           assert torch.isfinite(actual.grad).all()
+2026-11-13T10:55:39.3280301Z E           assert tensor(False)
+2026-11-13T10:55:39.3280713Z E            +  where tensor(False) = <built-in method all of Tensor object at 0x7a103ec51bd0>()
+2026-11-13T10:55:39.3282118Z E            +    where <built-in method all of Tensor object at 0x7a103ec51bd0> = tensor([[False, False, False, False],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n    ...ue],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True]]).all
+2026-11-13T10:55:39.3284356Z E            +      where tensor([[False, False, False, False],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n    ...ue],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True]]) = <built-in method isfinite of type object at 0x7a105d93a8c0>(tensor([[  -inf,   -inf,   -inf,   -inf],\n        [0.1250, 0.1250, 0.1250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0...250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0.1250]], dtype=torch.float16))
+2026-11-13T10:55:39.3285899Z E            +        where <built-in method isfinite of type object at 0x7a105d93a8c0> = torch.isfinite
+2026-11-13T10:55:39.3287257Z E            +        and   tensor([[  -inf,   -inf,   -inf,   -inf],\n        [0.1250, 0.1250, 0.1250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0...250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0.1250]], dtype=torch.float16) = Parameter containing:\ntensor([[0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0...        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.]], dtype=torch.float16, requires_grad=True).grad
+2026-11-13T10:55:39.3288338Z 
+2026-11-13T10:55:39.3288627Z tests_v1/plugins/model_plugins/test_chunk_loss_gradient_scaling.py:53: AssertionError
+2026-11-13T10:55:39.3289164Z _ test_chunk_plugin_long_sequence_optimizer_matches_high_precision_reference[False-dtype0] _
+2026-11-13T10:55:39.3289523Z 
+2026-11-13T10:55:39.3289735Z dtype = torch.float16, bias = False
+2026-11-13T10:55:39.3289962Z 
+2026-11-13T10:55:39.3290136Z     @pytest.mark.parametrize("dtype", [torch.float16, torch.float32])
+2026-11-13T10:55:39.3290519Z     @pytest.mark.parametrize("bias", [False, True])
+2026-11-13T10:55:39.3291016Z     def test_chunk_plugin_long_sequence_optimizer_matches_high_precision_reference(dtype, bias):
+2026-11-13T10:55:39.3291731Z         reference = _LinearCausalLM(dtype, bias)
+2026-11-13T10:55:39.3292037Z         actual = deepcopy(reference)
+2026-11-13T10:55:39.3292374Z         reference.wide_head_reference = True
+2026-11-13T10:55:39.3292716Z         chunk_loss = ChunkLoss(actual, chunk_size=4096)
+2026-11-13T10:55:39.3293217Z         reference_optimizer = torch.optim.SGD(reference.parameters(), lr=0.05, momentum=0.9)
+2026-11-13T10:55:39.3293754Z         actual_optimizer = torch.optim.SGD(actual.parameters(), lr=0.05, momentum=0.9)
+2026-11-13T10:55:39.3294331Z         input_ids = torch.arange(131073).unsqueeze(0)
+2026-11-13T10:55:39.3294788Z         labels = torch.ones_like(input_ids)
+2026-11-13T10:55:39.3295141Z         weights = torch.ones_like(input_ids, dtype=torch.float32)
+2026-11-13T10:55:39.3295803Z         batch = {
+2026-11-13T10:55:39.3296104Z             "input_ids": input_ids,
+2026-11-13T10:55:39.3296428Z             "attention_mask": torch.ones_like(input_ids),
+2026-11-13T10:55:39.3296766Z             "labels": labels,
+2026-11-13T10:55:39.3297044Z             "loss_weights": weights,
+2026-11-13T10:55:39.3297301Z         }
+2026-11-13T10:55:39.3297884Z         # Each unchanged chunk computes an FP32 dot product with 4096 terms. Allow
+2026-11-13T10:55:39.3298375Z         # its accumulation roundoff relative to the independent FP64 projection.
+2026-11-13T10:55:39.3298850Z         rtol = max(4 * torch.finfo(dtype).eps, 4096 * torch.finfo(torch.float32).eps)
+2026-11-13T10:55:39.3299390Z         atol = 4 * torch.finfo(dtype).eps
+2026-11-13T10:55:39.3299722Z         for _ in range(3):
+2026-11-13T10:55:39.3300048Z             reference_optimizer.zero_grad()
+2026-11-13T10:55:39.3300348Z             actual_optimizer.zero_grad()
+2026-11-13T10:55:39.3300704Z             logits = reference(input_ids).logits[:, :-1].float()
+2026-11-13T10:55:39.3301405Z             expected_loss = F.cross_entropy(logits.reshape(-1, 8), labels[:, 1:].reshape(-1))
+2026-11-13T10:55:39.3301943Z             actual_loss = chunk_loss.compute_loss(actual, batch, device=torch.device("cpu"), uses_mrope=False)
+2026-11-13T10:55:39.3302543Z             expected_loss.backward()
+2026-11-13T10:55:39.3302839Z             actual_loss.backward()
+2026-11-13T10:55:39.3303286Z             torch.testing.assert_close(actual_loss, expected_loss, rtol=rtol, atol=atol)
+2026-11-13T10:55:39.3303681Z     
+2026-11-13T10:55:39.3304259Z             for actual_parameter, reference_parameter in zip(actual.parameters(), reference.parameters(), strict=True):
+2026-11-13T10:55:39.3304834Z >               assert torch.isfinite(actual_parameter.grad).all()
+2026-11-13T10:55:39.3305202Z E               assert tensor(False)
+2026-11-13T10:55:39.3305599Z E                +  where tensor(False) = <built-in method all of Tensor object at 0x7a103c2f7b60>()
+2026-11-13T10:55:39.3306704Z E                +    where <built-in method all of Tensor object at 0x7a103c2f7b60> = tensor([[ True,  True,  True,  True],\n        [False, False, False, False],\n        [ True,  True,  True,  True],\n    ...ue],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True]]).all
+2026-11-13T10:55:39.3308678Z E                +      where tensor([[ True,  True,  True,  True],\n        [False, False, False, False],\n        [ True,  True,  True,  True],\n    ...ue],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True]]) = <built-in method isfinite of type object at 0x7a105d93a8c0>(tensor([[0.1250, 0.1250, 0.1250, 0.1250],\n        [  -inf,   -inf,   -inf,   -inf],\n        [0.1250, 0.1250, 0.1250, 0...250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0.1250]], dtype=torch.float16))
+2026-11-13T10:55:39.3310391Z E                +        where <built-in method isfinite of type object at 0x7a105d93a8c0> = torch.isfinite
+2026-11-13T10:55:39.3311576Z E                +        and   tensor([[0.1250, 0.1250, 0.1250, 0.1250],\n        [  -inf,   -inf,   -inf,   -inf],\n        [0.1250, 0.1250, 0.1250, 0...250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0.1250]], dtype=torch.float16) = Parameter containing:\ntensor([[0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0...        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.]], dtype=torch.float16, requires_grad=True).grad
+2026-11-13T10:55:39.3312533Z 
+2026-11-13T10:55:39.3312772Z tests_v1/plugins/model_plugins/test_chunk_loss_gradient_scaling.py:118: AssertionError
+2026-11-13T10:55:39.3313409Z _ test_chunk_plugin_long_sequence_optimizer_matches_high_precision_reference[True-dtype0] _
+2026-11-13T10:55:39.3313992Z 
+2026-11-13T10:55:39.3314369Z dtype = torch.float16, bias = True
+2026-11-13T10:55:39.3314614Z 
+2026-11-13T10:55:39.3314795Z     @pytest.mark.parametrize("dtype", [torch.float16, torch.float32])
+2026-11-13T10:55:39.3315195Z     @pytest.mark.parametrize("bias", [False, True])
+2026-11-13T10:55:39.3315644Z     def test_chunk_plugin_long_sequence_optimizer_matches_high_precision_reference(dtype, bias):
+2026-11-13T10:55:39.3316367Z         reference = _LinearCausalLM(dtype, bias)
+2026-11-13T10:55:39.3316671Z         actual = deepcopy(reference)
+2026-11-13T10:55:39.3316999Z         reference.wide_head_reference = True
+2026-11-13T10:55:39.3317334Z         chunk_loss = ChunkLoss(actual, chunk_size=4096)
+2026-11-13T10:55:39.3317759Z         reference_optimizer = torch.optim.SGD(reference.parameters(), lr=0.05, momentum=0.9)
+2026-11-13T10:55:39.3318439Z         actual_optimizer = torch.optim.SGD(actual.parameters(), lr=0.05, momentum=0.9)
+2026-11-13T10:55:39.3318888Z         input_ids = torch.arange(131073).unsqueeze(0)
+2026-11-13T10:55:39.3319256Z         labels = torch.ones_like(input_ids)
+2026-11-13T10:55:39.3319608Z         weights = torch.ones_like(input_ids, dtype=torch.float32)
+2026-11-13T10:55:39.3320004Z         batch = {
+2026-11-13T10:55:39.3320287Z             "input_ids": input_ids,
+2026-11-13T10:55:39.3320602Z             "attention_mask": torch.ones_like(input_ids),
+2026-11-13T10:55:39.3320924Z             "labels": labels,
+2026-11-13T10:55:39.3321190Z             "loss_weights": weights,
+2026-11-13T10:55:39.3321445Z         }
+2026-11-13T10:55:39.3322000Z         # Each unchanged chunk computes an FP32 dot product with 4096 terms. Allow
+2026-11-13T10:55:39.3322501Z         # its accumulation roundoff relative to the independent FP64 projection.
+2026-11-13T10:55:39.3322975Z         rtol = max(4 * torch.finfo(dtype).eps, 4096 * torch.finfo(torch.float32).eps)
+2026-11-13T10:55:39.3323487Z         atol = 4 * torch.finfo(dtype).eps
+2026-11-13T10:55:39.3323775Z         for _ in range(3):
+2026-11-13T10:55:39.3324234Z             reference_optimizer.zero_grad()
+2026-11-13T10:55:39.3324636Z             actual_optimizer.zero_grad()
+2026-11-13T10:55:39.3324972Z             logits = reference(input_ids).logits[:, :-1].float()
+2026-11-13T10:55:39.3325648Z             expected_loss = F.cross_entropy(logits.reshape(-1, 8), labels[:, 1:].reshape(-1))
+2026-11-13T10:55:39.3326208Z             actual_loss = chunk_loss.compute_loss(actual, batch, device=torch.device("cpu"), uses_mrope=False)
+2026-11-13T10:55:39.3326702Z             expected_loss.backward()
+2026-11-13T10:55:39.3327072Z             actual_loss.backward()
+2026-11-13T10:55:39.3327458Z             torch.testing.assert_close(actual_loss, expected_loss, rtol=rtol, atol=atol)
+2026-11-13T10:55:39.3327846Z     
+2026-11-13T10:55:39.3328257Z             for actual_parameter, reference_parameter in zip(actual.parameters(), reference.parameters(), strict=True):
+2026-11-13T10:55:39.3329014Z >               assert torch.isfinite(actual_parameter.grad).all()
+2026-11-13T10:55:39.3329346Z E               assert tensor(False)
+2026-11-13T10:55:39.3329769Z E                +  where tensor(False) = <built-in method all of Tensor object at 0x7a103c31d7c0>()
+2026-11-13T10:55:39.3330923Z E                +    where <built-in method all of Tensor object at 0x7a103c31d7c0> = tensor([[ True,  True,  True,  True],\n        [False, False, False, False],\n        [ True,  True,  True,  True],\n    ...ue],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True]]).all
+2026-11-13T10:55:39.3332880Z E                +      where tensor([[ True,  True,  True,  True],\n        [False, False, False, False],\n        [ True,  True,  True,  True],\n    ...ue],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True]]) = <built-in method isfinite of type object at 0x7a105d93a8c0>(tensor([[0.1250, 0.1250, 0.1250, 0.1250],\n        [  -inf,   -inf,   -inf,   -inf],\n        [0.1250, 0.1250, 0.1250, 0...250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0.1250]], dtype=torch.float16))
+2026-11-13T10:55:39.3334530Z E                +        where <built-in method isfinite of type object at 0x7a105d93a8c0> = torch.isfinite
+2026-11-13T10:55:39.3335760Z E                +        and   tensor([[0.1250, 0.1250, 0.1250, 0.1250],\n        [  -inf,   -inf,   -inf,   -inf],\n        [0.1250, 0.1250, 0.1250, 0...250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0.1250]], dtype=torch.float16) = Parameter containing:\ntensor([[0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0...        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.]], dtype=torch.float16, requires_grad=True).grad
+2026-11-13T10:55:39.3336651Z 
+2026-11-13T10:55:39.3336971Z tests_v1/plugins/model_plugins/test_chunk_loss_gradient_scaling.py:118: AssertionError
+2026-11-13T10:55:39.3337450Z =========================== short test summary info ============================
+2026-11-13T10:55:39.3338300Z FAILED tests_v1/plugins/model_plugins/test_chunk_loss_gradient_scaling.py::test_head_gradient_is_scaled_before_fp16_cast[0.0-False-131072] - assert tensor(False)
+2026-11-13T10:55:39.3339005Z  +  where tensor(False) = <built-in method all of Tensor object at 0x7a103ec11720>()
+2026-11-13T10:55:39.3340136Z  +    where <built-in method all of Tensor object at 0x7a103ec11720> = tensor([[False, False, False, False],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n    ...ue],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True]]).all
+2026-11-13T10:55:39.3341962Z  +      where tensor([[False, False, False, False],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n    ...ue],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True]]) = <built-in method isfinite of type object at 0x7a105d93a8c0>(tensor([[nan, nan, nan, nan],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.]], dtype=torch.float16))
+2026-11-13T10:55:39.3343442Z  +        where <built-in method isfinite of type object at 0x7a105d93a8c0> = torch.isfinite
+2026-11-13T10:55:39.3344974Z  +        and   tensor([[nan, nan, nan, nan],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.]], dtype=torch.float16) = Parameter containing:\ntensor([[0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0...        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.]], dtype=torch.float16, requires_grad=True).grad
+2026-11-13T10:55:39.3346452Z FAILED tests_v1/plugins/model_plugins/test_chunk_loss_gradient_scaling.py::test_head_gradient_is_scaled_before_fp16_cast[0.0-True-131072] - assert tensor(False)
+2026-11-13T10:55:39.3347175Z  +  where tensor(False) = <built-in method all of Tensor object at 0x7a103ec13c00>()
+2026-11-13T10:55:39.3348243Z  +    where <built-in method all of Tensor object at 0x7a103ec13c00> = tensor([[False, False, False, False],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n    ...ue],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True]]).all
+2026-11-13T10:55:39.3350056Z  +      where tensor([[False, False, False, False],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n    ...ue],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True]]) = <built-in method isfinite of type object at 0x7a105d93a8c0>(tensor([[nan, nan, nan, nan],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.]], dtype=torch.float16))
+2026-11-13T10:55:39.3351602Z  +        where <built-in method isfinite of type object at 0x7a105d93a8c0> = torch.isfinite
+2026-11-13T10:55:39.3352653Z  +        and   tensor([[nan, nan, nan, nan],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.]], dtype=torch.float16) = Parameter containing:\ntensor([[0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0...        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.]], dtype=torch.float16, requires_grad=True).grad
+2026-11-13T10:55:39.3354065Z FAILED tests_v1/plugins/model_plugins/test_chunk_loss_gradient_scaling.py::test_head_gradient_is_scaled_before_fp16_cast[0.125-False-131072] - assert tensor(False)
+2026-11-13T10:55:39.3354935Z  +  where tensor(False) = <built-in method all of Tensor object at 0x7a103ec501e0>()
+2026-11-13T10:55:39.3356057Z  +    where <built-in method all of Tensor object at 0x7a103ec501e0> = tensor([[False, False, False, False],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n    ...ue],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True]]).all
+2026-11-13T10:55:39.3358045Z  +      where tensor([[False, False, False, False],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n    ...ue],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True]]) = <built-in method isfinite of type object at 0x7a105d93a8c0>(tensor([[  -inf,   -inf,   -inf,   -inf],\n        [0.0156, 0.0156, 0.0156, 0.0156],\n        [0.0156, 0.0156, 0.0156, 0...156, 0.0156],\n        [0.0156, 0.0156, 0.0156, 0.0156],\n        [0.0156, 0.0156, 0.0156, 0.0156]], dtype=torch.float16))
+2026-11-13T10:55:39.3359517Z  +        where <built-in method isfinite of type object at 0x7a105d93a8c0> = torch.isfinite
+2026-11-13T10:55:39.3360776Z  +        and   tensor([[  -inf,   -inf,   -inf,   -inf],\n        [0.0156, 0.0156, 0.0156, 0.0156],\n        [0.0156, 0.0156, 0.0156, 0...156, 0.0156],\n        [0.0156, 0.0156, 0.0156, 0.0156],\n        [0.0156, 0.0156, 0.0156, 0.0156]], dtype=torch.float16) = Parameter containing:\ntensor([[0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0...        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.]], dtype=torch.float16, requires_grad=True).grad
+2026-11-13T10:55:39.3362163Z FAILED tests_v1/plugins/model_plugins/test_chunk_loss_gradient_scaling.py::test_head_gradient_is_scaled_before_fp16_cast[0.125-True-131072] - assert tensor(False)
+2026-11-13T10:55:39.3362888Z  +  where tensor(False) = <built-in method all of Tensor object at 0x7a103ec50b90>()
+2026-11-13T10:55:39.3363772Z  +    where <built-in method all of Tensor object at 0x7a103ec50b90> = tensor([[False, False, False, False],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n    ...ue],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True]]).all
+2026-11-13T10:55:39.3366125Z  +      where tensor([[False, False, False, False],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n    ...ue],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True]]) = <built-in method isfinite of type object at 0x7a105d93a8c0>(tensor([[  -inf,   -inf,   -inf,   -inf],\n        [0.0156, 0.0156, 0.0156, 0.0156],\n        [0.0156, 0.0156, 0.0156, 0...156, 0.0156],\n        [0.0156, 0.0156, 0.0156, 0.0156],\n        [0.0156, 0.0156, 0.0156, 0.0156]], dtype=torch.float16))
+2026-11-13T10:55:39.3367459Z  +        where <built-in method isfinite of type object at 0x7a105d93a8c0> = torch.isfinite
+2026-11-13T10:55:39.3368742Z  +        and   tensor([[  -inf,   -inf,   -inf,   -inf],\n        [0.0156, 0.0156, 0.0156, 0.0156],\n        [0.0156, 0.0156, 0.0156, 0...156, 0.0156],\n        [0.0156, 0.0156, 0.0156, 0.0156],\n        [0.0156, 0.0156, 0.0156, 0.0156]], dtype=torch.float16) = Parameter containing:\ntensor([[0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0...        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.]], dtype=torch.float16, requires_grad=True).grad
+2026-11-13T10:55:39.3370338Z FAILED tests_v1/plugins/model_plugins/test_chunk_loss_gradient_scaling.py::test_head_gradient_is_scaled_before_fp16_cast[1.0-False-131072] - assert tensor(False)
+2026-11-13T10:55:39.3371030Z  +  where tensor(False) = <built-in method all of Tensor object at 0x7a103ec514a0>()
+2026-11-13T10:55:39.3372044Z  +    where <built-in method all of Tensor object at 0x7a103ec514a0> = tensor([[False, False, False, False],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n    ...ue],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True]]).all
+2026-11-13T10:55:39.3374155Z  +      where tensor([[False, False, False, False],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n    ...ue],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True]]) = <built-in method isfinite of type object at 0x7a105d93a8c0>(tensor([[  -inf,   -inf,   -inf,   -inf],\n        [0.1250, 0.1250, 0.1250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0...250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0.1250]], dtype=torch.float16))
+2026-11-13T10:55:39.3375500Z  +        where <built-in method isfinite of type object at 0x7a105d93a8c0> = torch.isfinite
+2026-11-13T10:55:39.3377026Z  +        and   tensor([[  -inf,   -inf,   -inf,   -inf],\n        [0.1250, 0.1250, 0.1250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0...250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0.1250]], dtype=torch.float16) = Parameter containing:\ntensor([[0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0...        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.]], dtype=torch.float16, requires_grad=True).grad
+2026-11-13T10:55:39.3378980Z FAILED tests_v1/plugins/model_plugins/test_chunk_loss_gradient_scaling.py::test_head_gradient_is_scaled_before_fp16_cast[1.0-True-131072] - assert tensor(False)
+2026-11-13T10:55:39.3380030Z  +  where tensor(False) = <built-in method all of Tensor object at 0x7a103ec51bd0>()
+2026-11-13T10:55:39.3380970Z  +    where <built-in method all of Tensor object at 0x7a103ec51bd0> = tensor([[False, False, False, False],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n    ...ue],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True]]).all
+2026-11-13T10:55:39.3382899Z  +      where tensor([[False, False, False, False],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n    ...ue],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True]]) = <built-in method isfinite of type object at 0x7a105d93a8c0>(tensor([[  -inf,   -inf,   -inf,   -inf],\n        [0.1250, 0.1250, 0.1250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0...250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0.1250]], dtype=torch.float16))
+2026-11-13T10:55:39.3384618Z  +        where <built-in method isfinite of type object at 0x7a105d93a8c0> = torch.isfinite
+2026-11-13T10:55:39.3385753Z  +        and   tensor([[  -inf,   -inf,   -inf,   -inf],\n        [0.1250, 0.1250, 0.1250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0...250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0.1250]], dtype=torch.float16) = Parameter containing:\ntensor([[0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0...        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.]], dtype=torch.float16, requires_grad=True).grad
+2026-11-13T10:55:39.3387721Z FAILED tests_v1/plugins/model_plugins/test_chunk_loss_gradient_scaling.py::test_chunk_plugin_long_sequence_optimizer_matches_high_precision_reference[False-dtype0] - assert tensor(False)
+2026-11-13T10:55:39.3388508Z  +  where tensor(False) = <built-in method all of Tensor object at 0x7a103c2f7b60>()
+2026-11-13T10:55:39.3389525Z  +    where <built-in method all of Tensor object at 0x7a103c2f7b60> = tensor([[ True,  True,  True,  True],\n        [False, False, False, False],\n        [ True,  True,  True,  True],\n    ...ue],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True]]).all
+2026-11-13T10:55:39.3391482Z  +      where tensor([[ True,  True,  True,  True],\n        [False, False, False, False],\n        [ True,  True,  True,  True],\n    ...ue],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True]]) = <built-in method isfinite of type object at 0x7a105d93a8c0>(tensor([[0.1250, 0.1250, 0.1250, 0.1250],\n        [  -inf,   -inf,   -inf,   -inf],\n        [0.1250, 0.1250, 0.1250, 0...250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0.1250]], dtype=torch.float16))
+2026-11-13T10:55:39.3392972Z  +        where <built-in method isfinite of type object at 0x7a105d93a8c0> = torch.isfinite
+2026-11-13T10:55:39.3394318Z  +        and   tensor([[0.1250, 0.1250, 0.1250, 0.1250],\n        [  -inf,   -inf,   -inf,   -inf],\n        [0.1250, 0.1250, 0.1250, 0...250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0.1250]], dtype=torch.float16) = Parameter containing:\ntensor([[0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0...        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.]], dtype=torch.float16, requires_grad=True).grad
+2026-11-13T10:55:39.3395695Z FAILED tests_v1/plugins/model_plugins/test_chunk_loss_gradient_scaling.py::test_chunk_plugin_long_sequence_optimizer_matches_high_precision_reference[True-dtype0] - assert tensor(False)
+2026-11-13T10:55:39.3396631Z  +  where tensor(False) = <built-in method all of Tensor object at 0x7a103c31d7c0>()
+2026-11-13T10:55:39.3397570Z  +    where <built-in method all of Tensor object at 0x7a103c31d7c0> = tensor([[ True,  True,  True,  True],\n        [False, False, False, False],\n        [ True,  True,  True,  True],\n    ...ue],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True]]).all
+2026-11-13T10:55:39.3399450Z  +      where tensor([[ True,  True,  True,  True],\n        [False, False, False, False],\n        [ True,  True,  True,  True],\n    ...ue],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True],\n        [ True,  True,  True,  True]]) = <built-in method isfinite of type object at 0x7a105d93a8c0>(tensor([[0.1250, 0.1250, 0.1250, 0.1250],\n        [  -inf,   -inf,   -inf,   -inf],\n        [0.1250, 0.1250, 0.1250, 0...250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0.1250]], dtype=torch.float16))
+2026-11-13T10:55:39.3400805Z  +        where <built-in method isfinite of type object at 0x7a105d93a8c0> = torch.isfinite
+2026-11-13T10:55:39.3402145Z  +        and   tensor([[0.1250, 0.1250, 0.1250, 0.1250],\n        [  -inf,   -inf,   -inf,   -inf],\n        [0.1250, 0.1250, 0.1250, 0...250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0.1250],\n        [0.1250, 0.1250, 0.1250, 0.1250]], dtype=torch.float16) = Parameter containing:\ntensor([[0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0...        [0., 0., 0., 0.],\n        [0., 0., 0., 0.],\n        [0., 0., 0., 0.]], dtype=torch.float16, requires_grad=True).grad
+2026-11-13T10:55:39.3403252Z 8 failed, 10 passed in 1.69s
+2026-11-13T10:55:39.3403742Z {'errors': 0, 'failures': 8}
+2026-11-13T10:55:39.3435907Z ##[group]Run git checkout 20dd15a6f63097c40cf52c379cdda764f74d57dd -- src/llamafactory/v1/plugins/model_plugins/chunk_loss.py
+2026-11-13T10:55:39.3436720Z [36;1mgit checkout 20dd15a6f63097c40cf52c379cdda764f74d57dd -- src/llamafactory/v1/plugins/model_plugins/chunk_loss.py[0m
+2026-11-13T10:55:39.3437467Z [36;1mruff check src/llamafactory/v1/plugins/model_plugins/chunk_loss.py tests_v1/plugins/model_plugins/test_chunk_loss_gradient_scaling.py[0m
+2026-11-13T10:55:39.3438304Z [36;1mruff format --check --diff src/llamafactory/v1/plugins/model_plugins/chunk_loss.py tests_v1/plugins/model_plugins/test_chunk_loss_gradient_scaling.py[0m
+2026-11-13T10:55:39.3438954Z [36;1mgit diff --check 6d1059c727450a4f58e56ad204d01a71abad7781[0m
+2026-11-13T10:55:39.3470779Z shell: /usr/bin/bash -e {0}
+2026-11-13T10:55:39.3471154Z env:
+2026-11-13T10:55:39.3471410Z   PYTHONPATH: src
+2026-11-13T10:55:39.3471674Z   OMP_NUM_THREADS: 1
+2026-11-13T10:55:39.3471934Z   MKL_NUM_THREADS: 1
+2026-11-13T10:55:39.3472308Z   HF_HUB_OFFLINE: 1
+2026-11-13T10:55:39.3472580Z   TRANSFORMERS_OFFLINE: 1
+2026-11-13T10:55:39.3472899Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T10:55:39.3473304Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-13T10:55:39.3473736Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T10:55:39.3474297Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T10:55:39.3474748Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T10:55:39.3475117Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-13T10:55:39.3475436Z ##[endgroup]
+2026-11-13T10:55:39.3621279Z All checks passed!
+2026-11-13T10:55:39.3677303Z 2 files already formatted
+2026-11-13T10:55:39.3766789Z ##[group]Run actions/upload-artifact@v4
+2026-11-13T10:55:39.3767099Z with:
+2026-11-13T10:55:39.3767369Z   name: chunk-loss-gradient-native-before-after
+2026-11-13T10:55:39.3767781Z   path: *.log
+*results.xml
+installed-dependencies.txt
+
+2026-11-13T10:55:39.3768155Z   if-no-files-found: warn
+2026-11-13T10:55:39.3768431Z   compression-level: 6
+2026-11-13T10:55:39.3768700Z   overwrite: false
+2026-11-13T10:55:39.3768958Z   include-hidden-files: false
+2026-11-13T10:55:39.3769283Z env:
+2026-11-13T10:55:39.3769517Z   PYTHONPATH: src
+2026-11-13T10:55:39.3769760Z   OMP_NUM_THREADS: 1
+2026-11-13T10:55:39.3770009Z   MKL_NUM_THREADS: 1
+2026-11-13T10:55:39.3770258Z   HF_HUB_OFFLINE: 1
+2026-11-13T10:55:39.3770521Z   TRANSFORMERS_OFFLINE: 1
+2026-11-13T10:55:39.3770863Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T10:55:39.3771272Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-13T10:55:39.3771832Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T10:55:39.3772181Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T10:55:39.3772627Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T10:55:39.3773001Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-13T10:55:39.3773334Z ##[endgroup]
+2026-11-13T10:55:39.5031170Z (node:2414) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-13T10:55:39.5032059Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-13T10:55:39.5110619Z With the provided path, there will be 7 files uploaded
+2026-11-13T10:55:39.5115976Z Artifact name is valid!
+2026-11-13T10:55:39.5116320Z Root directory input is valid!
+2026-11-13T10:55:39.7718516Z Beginning upload of artifact content to blob storage
+2026-11-13T10:55:39.7965701Z (node:2414) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-11-13T10:55:39.9408958Z Uploaded bytes 7530
+2026-11-13T10:55:39.9801363Z Finished uploading artifact content to blob storage!
+2026-11-13T10:55:39.9802160Z SHA256 digest of uploaded artifact zip is 035934856505602fd925d04ca5b21722f8b1c7bd67e89d3b7084271d57250238
+2026-11-13T10:55:39.9802745Z Finalizing artifact upload
+2026-11-13T10:55:40.3025495Z Artifact chunk-loss-gradient-native-before-after.zip successfully finalized. Artifact ID 14030950404
+2026-11-13T10:55:40.3026252Z Artifact chunk-loss-gradient-native-before-after has been successfully uploaded! Final size is 7530 bytes. Artifact ID is 14030950404
+2026-11-13T10:55:40.3031437Z Artifact download URL: https://github.com/Afloat16/LlamaFactory/actions/runs/43412732860/artifacts/14030950404
+2026-11-13T10:55:40.3183884Z Post job cleanup.
+2026-11-13T10:55:40.4098493Z (node:2426) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-13T10:55:40.4099340Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-13T10:55:40.4223017Z Post job cleanup.
+2026-11-13T10:55:40.4877792Z [command]/usr/bin/git version
+2026-11-13T10:55:40.4911568Z git version 2.56.1
+2026-11-13T10:55:40.4937915Z Temporarily overriding HOME='/home/runner/work/_temp/bb0b0973-7bc9-44ec-8733-08ca149a1663' before making global git config changes
+2026-11-13T10:55:40.4938757Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-13T10:55:40.4942581Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/LlamaFactory/LlamaFactory
+2026-11-13T10:55:40.4973978Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-13T10:55:40.5002162Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-13T10:55:40.5225241Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-13T10:55:40.5255389Z http.https://github.com/.extraheader
+2026-11-13T10:55:40.5315406Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-13T10:55:40.5317432Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-13T10:55:40.5527208Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-13T10:55:40.5547055Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-13T10:55:40.5949347Z Cleaning up orphan processes
+2026-11-13T10:55:40.6372378Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
