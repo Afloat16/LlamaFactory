@@ -18,8 +18,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: 8620b3dfde2f787434a386c4a2ed181c44b427f4
-          fetch-depth: 3
+          ref: 2a797e30400ef633e9945ef53ab208897b326a6b
+          fetch-depth: 4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -31,7 +31,7 @@ jobs:
           python -m pip freeze > installed-dependencies.txt
       - name: Test exact chunked and eager training
         run: |
-          test "$(git rev-parse HEAD)" = "8620b3dfde2f787434a386c4a2ed181c44b427f4"
+          test "$(git rev-parse HEAD)" = "2a797e30400ef633e9945ef53ab208897b326a6b"
           set +e
           python -m pytest -q tests_v1/plugins/model_plugins/test_chunk_loss_gradient_scaling.py --junitxml=patched-results.xml > patched.log 2>&1
           result=$?
@@ -62,7 +62,7 @@ jobs:
       - name: Restore exact final source and check style
         if: always()
         run: |
-          git checkout 8620b3dfde2f787434a386c4a2ed181c44b427f4 -- src/llamafactory/v1/plugins/model_plugins/chunk_loss.py
+          git checkout 2a797e30400ef633e9945ef53ab208897b326a6b -- src/llamafactory/v1/plugins/model_plugins/chunk_loss.py
           ruff check src/llamafactory/v1/plugins/model_plugins/chunk_loss.py tests_v1/plugins/model_plugins/test_chunk_loss_gradient_scaling.py
           ruff format --check --diff src/llamafactory/v1/plugins/model_plugins/chunk_loss.py tests_v1/plugins/model_plugins/test_chunk_loss_gradient_scaling.py
           git diff --check 6d1059c727450a4f58e56ad204d01a71abad7781
