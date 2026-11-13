@@ -18,8 +18,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: c94dfa0b2eb7706645a266ab353f6fee0b15b70d
-          fetch-depth: 3
+          ref: 2edf25649d171ddeee768f1042a93d705a812bd7
+          fetch-depth: 4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -29,10 +29,15 @@ jobs:
           python -m pip install torch==2.9.1 torchvision==0.24.1 torchaudio==2.9.1 --index-url https://download.pytorch.org/whl/cpu
           python -m pip install -e . torch==2.9.1 torchvision==0.24.1 torchaudio==2.9.1 transformers==4.57.1 accelerate==1.11.0 peft==0.18.1 trl==0.24.0 datasets==4.0.0 pytest==9.0.2 ruff==0.15.9
           python -m pip freeze > installed-dependencies.txt
-      - name: Reproduce failures on the unchanged upstream implementation
+      - name: Test the exact patched source with native Trainer and two-rank Gloo
         run: |
-          test "$(git rev-parse HEAD)" = "c94dfa0b2eb7706645a266ab353f6fee0b15b70d"
-          git diff 6d1059c727450a4f58e56ad204d01a71abad7781 -- src/llamafactory/train/sft/trainer.py src/llamafactory/train/trainer_utils.py --exit-code
+          test "$(git rev-parse HEAD)" = "2edf25649d171ddeee768f1042a93d705a812bd7"
+          python -m pytest -q tests/train/test_asft_token_normalization.py --junitxml=patched-results.xml > patched.log 2>&1
+          cat patched.log
+      - name: Reproduce unchanged upstream normalization with the identical tests
+        if: always()
+        run: |
+          git checkout 6d1059c727450a4f58e56ad204d01a71abad7781 -- src/llamafactory/train/sft/trainer.py src/llamafactory/train/trainer_utils.py
           set +e
           python -m pytest -q tests/train/test_asft_token_normalization.py --junitxml=baseline-results.xml > baseline.log 2>&1
           result=$?
@@ -48,15 +53,17 @@ jobs:
           print({"errors": errors, "failures": failures})
           assert errors == 0 and failures > 0
           PY
-      - name: Inspect formatting
+      - name: Restore exact final source and check style
         if: always()
         run: |
-          ruff check tests/train/test_asft_token_normalization.py
-          ruff format --check --diff tests/train/test_asft_token_normalization.py
+          git checkout 2edf25649d171ddeee768f1042a93d705a812bd7 -- src/llamafactory/train/sft/trainer.py src/llamafactory/train/trainer_utils.py
+          ruff check src/llamafactory/train/sft/trainer.py src/llamafactory/train/trainer_utils.py tests/train/test_asft_token_normalization.py
+          ruff format --check --diff src/llamafactory/train/sft/trainer.py src/llamafactory/train/trainer_utils.py tests/train/test_asft_token_normalization.py
+          git diff --check 6d1059c727450a4f58e56ad204d01a71abad7781
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: asft-native-baseline
+          name: asft-native-before-after
           path: |
             *.log
             *results.xml
