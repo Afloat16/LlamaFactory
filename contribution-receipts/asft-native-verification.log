@@ -1,0 +1,2026 @@
+﻿2026-11-13T09:28:49.8189146Z Current runner version: '2.338.2'
+2026-11-13T09:28:49.8225205Z ##[group]Runner Image Provisioner
+2026-11-13T09:28:49.8226748Z Hosted Compute Agent
+2026-11-13T09:28:49.8227724Z Version: 20261028.624
+2026-11-13T09:28:49.8228986Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-13T09:28:49.8230570Z Build Date: 2026-10-28T21:51:42Z
+2026-11-13T09:28:49.8231803Z Worker ID: {67f5a029-a760-4c5b-963a-1e11548afde1}
+2026-11-13T09:28:49.8233753Z Region: centralus
+2026-11-13T09:28:49.8234702Z Cloud: Azure
+2026-11-13T09:28:49.8235344Z ##[endgroup]
+2026-11-13T09:28:49.8237073Z ##[group]Operating System
+2026-11-13T09:28:49.8237874Z Ubuntu
+2026-11-13T09:28:49.8238534Z 26.04.1
+2026-11-13T09:28:49.8239054Z LTS
+2026-11-13T09:28:49.8239554Z ##[endgroup]
+2026-11-13T09:28:49.8240168Z ##[group]Runner Image
+2026-11-13T09:28:49.8240770Z Image: ubuntu-26.04
+2026-11-13T09:28:49.8241837Z Version: 20261101.186.1
+2026-11-13T09:28:49.8243384Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261101.186/images/ubuntu/Ubuntu2604-Readme.md
+2026-11-13T09:28:49.8245081Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261101.186
+2026-11-13T09:28:49.8246074Z ##[endgroup]
+2026-11-13T09:28:49.8247284Z ##[group]GITHUB_TOKEN Permissions
+2026-11-13T09:28:49.8249499Z Contents: read
+2026-11-13T09:28:49.8250190Z Metadata: read
+2026-11-13T09:28:49.8250755Z ##[endgroup]
+2026-11-13T09:28:49.8253093Z Secret source: Actions
+2026-11-13T09:28:49.8254213Z Cache mode: write
+2026-11-13T09:28:49.8255226Z Prepare workflow directory
+2026-11-13T09:28:49.8662047Z Prepare all required actions
+2026-11-13T09:28:49.8710521Z Getting action download info
+2026-11-13T09:28:50.1256262Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-13T09:28:50.3567406Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-11-13T09:28:50.5647638Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-11-13T09:28:50.8197157Z Complete job name: native-cpu
+2026-11-13T09:28:50.9251692Z ##[group]Run actions/checkout@v4
+2026-11-13T09:28:50.9253506Z with:
+2026-11-13T09:28:50.9254394Z   ref: 1ed526d55e90de9dcca5916f6eba25a2de4e9272
+2026-11-13T09:28:50.9255608Z   fetch-depth: 6
+2026-11-13T09:28:50.9256463Z   repository: Afloat16/LlamaFactory
+2026-11-13T09:28:50.9266127Z   token: ***
+2026-11-13T09:28:50.9266945Z   ssh-strict: true
+2026-11-13T09:28:50.9267746Z   ssh-user: git
+2026-11-13T09:28:50.9268575Z   persist-credentials: true
+2026-11-13T09:28:50.9269494Z   clean: true
+2026-11-13T09:28:50.9270311Z   sparse-checkout-cone-mode: true
+2026-11-13T09:28:50.9271304Z   fetch-tags: false
+2026-11-13T09:28:50.9272144Z   show-progress: true
+2026-11-13T09:28:50.9273211Z   lfs: false
+2026-11-13T09:28:50.9273998Z   submodules: false
+2026-11-13T09:28:50.9274840Z   set-safe-directory: true
+2026-11-13T09:28:50.9275797Z   allow-unsafe-pr-checkout: false
+2026-11-13T09:28:50.9277139Z env:
+2026-11-13T09:28:50.9277912Z   PYTHONPATH: src
+2026-11-13T09:28:50.9278725Z   OMP_NUM_THREADS: 1
+2026-11-13T09:28:50.9279587Z   MKL_NUM_THREADS: 1
+2026-11-13T09:28:50.9280407Z   HF_HUB_OFFLINE: 1
+2026-11-13T09:28:50.9281232Z   TRANSFORMERS_OFFLINE: 1
+2026-11-13T09:28:50.9282110Z ##[endgroup]
+2026-11-13T09:28:51.3595131Z Syncing repository: Afloat16/LlamaFactory
+2026-11-13T09:28:51.3599801Z ##[group]Getting Git version info
+2026-11-13T09:28:51.3602422Z Working directory is '/home/runner/work/LlamaFactory/LlamaFactory'
+2026-11-13T09:28:51.3606462Z [command]/usr/bin/git version
+2026-11-13T09:28:51.3608316Z git version 2.56.0
+2026-11-13T09:28:51.3631423Z ##[endgroup]
+2026-11-13T09:28:51.3641288Z Temporarily overriding HOME='/home/runner/work/_temp/7c1a496a-d019-4e89-86a5-76917353a9f8' before making global git config changes
+2026-11-13T09:28:51.3646653Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-13T09:28:51.3650931Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/LlamaFactory/LlamaFactory
+2026-11-13T09:28:51.3998031Z Deleting the contents of '/home/runner/work/LlamaFactory/LlamaFactory'
+2026-11-13T09:28:51.4002303Z ##[group]Initializing the repository
+2026-11-13T09:28:51.4008154Z [command]/usr/bin/git init /home/runner/work/LlamaFactory/LlamaFactory
+2026-11-13T09:28:51.4117935Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-13T09:28:51.4121517Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-13T09:28:51.4125105Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-13T09:28:51.4128174Z hint: call:
+2026-11-13T09:28:51.4129769Z hint:
+2026-11-13T09:28:51.4131990Z hint: 	git config --global init.defaultBranch <name>
+2026-11-13T09:28:51.4134371Z hint:
+2026-11-13T09:28:51.4136620Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-13T09:28:51.4139975Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-13T09:28:51.4143291Z hint:
+2026-11-13T09:28:51.4145348Z hint: 	git branch -m <name>
+2026-11-13T09:28:51.4147105Z hint:
+2026-11-13T09:28:51.4149648Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-13T09:28:51.4153309Z Initialized empty Git repository in /home/runner/work/LlamaFactory/LlamaFactory/.git/
+2026-11-13T09:28:51.4158202Z [command]/usr/bin/git remote add origin https://github.com/Afloat16/LlamaFactory
+2026-11-13T09:28:51.4227110Z ##[endgroup]
+2026-11-13T09:28:51.4230791Z ##[group]Disabling automatic garbage collection
+2026-11-13T09:28:51.4233594Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-13T09:28:51.4275270Z ##[endgroup]
+2026-11-13T09:28:51.4277790Z ##[group]Setting up auth
+2026-11-13T09:28:51.4283813Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-13T09:28:51.4330517Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-13T09:28:51.4870647Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-13T09:28:51.4907230Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-13T09:28:51.5182396Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-13T09:28:51.5218675Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-13T09:28:51.5503562Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-13T09:28:51.5545335Z ##[endgroup]
+2026-11-13T09:28:51.5546978Z ##[group]Fetching the repository
+2026-11-13T09:28:51.5556144Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=6 origin 1ed526d55e90de9dcca5916f6eba25a2de4e9272
+2026-11-13T09:28:52.2020632Z From https://github.com/Afloat16/LlamaFactory
+2026-11-13T09:28:52.2021530Z  * branch            1ed526d55e90de9dcca5916f6eba25a2de4e9272 -> FETCH_HEAD
+2026-11-13T09:28:52.2026859Z ##[endgroup]
+2026-11-13T09:28:52.2027658Z ##[group]Determining the checkout info
+2026-11-13T09:28:52.2029846Z ##[endgroup]
+2026-11-13T09:28:52.2036288Z [command]/usr/bin/git sparse-checkout disable
+2026-11-13T09:28:52.2090681Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-13T09:28:52.2124696Z ##[group]Checking out the ref
+2026-11-13T09:28:52.2128465Z [command]/usr/bin/git checkout --progress --force 1ed526d55e90de9dcca5916f6eba25a2de4e9272
+2026-11-13T09:28:52.3234675Z Note: switching to '1ed526d55e90de9dcca5916f6eba25a2de4e9272'.
+2026-11-13T09:28:52.3235438Z 
+2026-11-13T09:28:52.3236017Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-13T09:28:52.3237601Z changes and commit them, and you can discard any commits you make in this
+2026-11-13T09:28:52.3238504Z state without impacting any branches by switching back to a branch.
+2026-11-13T09:28:52.3238935Z 
+2026-11-13T09:28:52.3239255Z If you want to create a new branch to retain commits you create, you may
+2026-11-13T09:28:52.3239954Z do so (now or later) by using -c with the switch command. Example:
+2026-11-13T09:28:52.3240353Z 
+2026-11-13T09:28:52.3240569Z   git switch -c <new-branch-name>
+2026-11-13T09:28:52.3240854Z 
+2026-11-13T09:28:52.3241063Z Or undo this operation with:
+2026-11-13T09:28:52.3241337Z 
+2026-11-13T09:28:52.3241513Z   git switch -
+2026-11-13T09:28:52.3241761Z 
+2026-11-13T09:28:52.3242145Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-13T09:28:52.3242587Z 
+2026-11-13T09:28:52.3243288Z HEAD is now at 1ed526d Use the reference probability distribution directly in the independent KL oracle
+2026-11-13T09:28:52.3248591Z ##[endgroup]
+2026-11-13T09:28:52.3299871Z [command]/usr/bin/git log -1 --format=%H
+2026-11-13T09:28:52.3326800Z 1ed526d55e90de9dcca5916f6eba25a2de4e9272
+2026-11-13T09:28:52.3786017Z ##[group]Run actions/setup-python@v5
+2026-11-13T09:28:52.3786582Z with:
+2026-11-13T09:28:52.3787001Z   python-version: 3.12
+2026-11-13T09:28:52.3787443Z   check-latest: false
+2026-11-13T09:28:52.3790805Z   token: ***
+2026-11-13T09:28:52.3791370Z   update-environment: true
+2026-11-13T09:28:52.3791962Z   allow-prereleases: false
+2026-11-13T09:28:52.3792413Z   freethreaded: false
+2026-11-13T09:28:52.3793171Z env:
+2026-11-13T09:28:52.3793590Z   PYTHONPATH: src
+2026-11-13T09:28:52.3794133Z   OMP_NUM_THREADS: 1
+2026-11-13T09:28:52.3794559Z   MKL_NUM_THREADS: 1
+2026-11-13T09:28:52.3795099Z   HF_HUB_OFFLINE: 1
+2026-11-13T09:28:52.3795606Z   TRANSFORMERS_OFFLINE: 1
+2026-11-13T09:28:52.3796086Z ##[endgroup]
+2026-11-13T09:28:52.5207133Z ##[group]Installed versions
+2026-11-13T09:28:52.6302842Z (node:2377) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-13T09:28:52.6304887Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-13T09:28:52.6314568Z Successfully set up CPython (3.12.16)
+2026-11-13T09:28:52.6329940Z ##[endgroup]
+2026-11-13T09:28:52.6482734Z ##[group]Run python -m pip install --upgrade pip
+2026-11-13T09:28:52.6483736Z [36;1mpython -m pip install --upgrade pip[0m
+2026-11-13T09:28:52.6484662Z [36;1mpython -m pip install torch==2.9.1 torchvision==0.24.1 torchaudio==2.9.1 --index-url https://download.pytorch.org/whl/cpu[0m
+2026-11-13T09:28:52.6485986Z [36;1mpython -m pip install -e . torch==2.9.1 torchvision==0.24.1 torchaudio==2.9.1 transformers==4.57.1 accelerate==1.11.0 peft==0.18.1 trl==0.24.0 datasets==4.0.0 pytest==9.0.2 ruff==0.15.9[0m
+2026-11-13T09:28:52.6487075Z [36;1mpython -m pip freeze > installed-dependencies.txt[0m
+2026-11-13T09:28:52.6661069Z shell: /usr/bin/bash -e {0}
+2026-11-13T09:28:52.6661630Z env:
+2026-11-13T09:28:52.6662057Z   PYTHONPATH: src
+2026-11-13T09:28:52.6662521Z   OMP_NUM_THREADS: 1
+2026-11-13T09:28:52.6663302Z   MKL_NUM_THREADS: 1
+2026-11-13T09:28:52.6663751Z   HF_HUB_OFFLINE: 1
+2026-11-13T09:28:52.6664180Z   TRANSFORMERS_OFFLINE: 1
+2026-11-13T09:28:52.6664768Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T09:28:52.6665482Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-13T09:28:52.6666161Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T09:28:52.6666768Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T09:28:52.6667386Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T09:28:52.6668016Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-13T09:28:52.6668591Z ##[endgroup]
+2026-11-13T09:28:55.9573841Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (26.2.2)
+2026-11-13T09:28:56.0434240Z Collecting pip
+2026-11-13T09:28:56.1175227Z   Downloading pip-26.3-py3-none-any.whl.metadata (4.6 kB)
+2026-11-13T09:28:56.1379847Z Downloading pip-26.3-py3-none-any.whl (2.0 MB)
+2026-11-13T09:28:56.2169830Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 41.2 MB/s  0:00:00
+2026-11-13T09:28:56.3733920Z Installing collected packages: pip
+2026-11-13T09:28:56.3735299Z   Attempting uninstall: pip
+2026-11-13T09:28:56.3756665Z     Found existing installation: pip 26.2.2
+2026-11-13T09:28:56.4782325Z     Uninstalling pip-26.2.2:
+2026-11-13T09:28:56.4850258Z       Successfully uninstalled pip-26.2.2
+2026-11-13T09:28:57.5209645Z Successfully installed pip-26.3
+2026-11-13T09:28:58.6966204Z Looking in indexes: https://download.pytorch.org/whl/cpu
+2026-11-13T09:28:58.8604172Z Collecting torch==2.9.1
+2026-11-13T09:28:58.9155467Z   Downloading torch-2.9.1%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (29 kB)
+2026-11-13T09:28:59.0092203Z Collecting torchvision==0.24.1
+2026-11-13T09:28:59.0263116Z   Downloading torchvision-0.24.1%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (5.9 kB)
+2026-11-13T09:28:59.1056567Z Collecting torchaudio==2.9.1
+2026-11-13T09:28:59.1221449Z   Downloading torchaudio-2.9.1%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (6.9 kB)
+2026-11-13T09:28:59.1639429Z Collecting filelock (from torch==2.9.1)
+2026-11-13T09:28:59.2060994Z   Downloading filelock-4.2.4-py3-none-any.whl.metadata (2.0 kB)
+2026-11-13T09:28:59.2327005Z Collecting typing-extensions>=4.10.0 (from torch==2.9.1)
+2026-11-13T09:28:59.2432161Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+2026-11-13T09:28:59.2625402Z Collecting setuptools (from torch==2.9.1)
+2026-11-13T09:28:59.2738467Z   Downloading setuptools-78.1.0-py3-none-any.whl.metadata (6.6 kB)
+2026-11-13T09:28:59.3031206Z Collecting sympy>=1.13.3 (from torch==2.9.1)
+2026-11-13T09:28:59.3186416Z   Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+2026-11-13T09:28:59.3546550Z Collecting networkx>=2.5.1 (from torch==2.9.1)
+2026-11-13T09:28:59.3655946Z   Downloading networkx-3.7-py3-none-any.whl.metadata (6.7 kB)
+2026-11-13T09:28:59.3875721Z Collecting jinja2 (from torch==2.9.1)
+2026-11-13T09:28:59.3991114Z   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+2026-11-13T09:28:59.4305533Z Collecting fsspec>=0.8.5 (from torch==2.9.1)
+2026-11-13T09:28:59.4414692Z   Downloading fsspec-2026.9.0-py3-none-any.whl.metadata (10 kB)
+2026-11-13T09:28:59.7748246Z Collecting numpy (from torchvision==0.24.1)
+2026-11-13T09:28:59.7858078Z   Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+2026-11-13T09:29:00.0320076Z Collecting pillow!=8.3.*,>=5.3.0 (from torchvision==0.24.1)
+2026-11-13T09:29:00.0431518Z   Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+2026-11-13T09:29:00.0703232Z Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch==2.9.1)
+2026-11-13T09:29:00.0810132Z   Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+2026-11-13T09:29:00.1132388Z Collecting MarkupSafe>=2.0 (from jinja2->torch==2.9.1)
+2026-11-13T09:29:00.1249597Z   Downloading markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+2026-11-13T09:29:00.1451166Z Downloading torch-2.9.1%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl (184.4 MB)
+2026-11-13T09:29:01.0085525Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 184.4/184.4 MB 218.2 MB/s  0:00:00
+2026-11-13T09:29:01.0245863Z Downloading torchvision-0.24.1%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl (1.9 MB)
+2026-11-13T09:29:01.0385693Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 146.6 MB/s  0:00:00
+2026-11-13T09:29:01.0563684Z Downloading torchaudio-2.9.1%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl (495 kB)
+2026-11-13T09:29:01.0718219Z Downloading fsspec-2026.9.0-py3-none-any.whl (221 kB)
+2026-11-13T09:29:01.1060773Z Downloading networkx-3.7-py3-none-any.whl (2.1 MB)
+2026-11-13T09:29:01.1397743Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 83.4 MB/s  0:00:00
+2026-11-13T09:29:01.1510345Z Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+2026-11-13T09:29:01.1779611Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 281.0 MB/s  0:00:00
+2026-11-13T09:29:01.1887670Z Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+2026-11-13T09:29:01.2114795Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 299.0 MB/s  0:00:00
+2026-11-13T09:29:01.2223116Z Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+2026-11-13T09:29:01.2275157Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 96.2 MB/s  0:00:00
+2026-11-13T09:29:01.2386377Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+2026-11-13T09:29:01.2519482Z Downloading filelock-4.2.4-py3-none-any.whl (162 kB)
+2026-11-13T09:29:01.2670365Z Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+2026-11-13T09:29:01.2832442Z Downloading markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+2026-11-13T09:29:01.2967053Z Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+2026-11-13T09:29:01.3482655Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 337.6 MB/s  0:00:00
+2026-11-13T09:29:01.3605250Z Downloading setuptools-78.1.0-py3-none-any.whl (1.3 MB)
+2026-11-13T09:29:01.3687162Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 172.2 MB/s  0:00:00
+2026-11-13T09:29:01.8517768Z Installing collected packages: mpmath, typing-extensions, sympy, setuptools, pillow, numpy, networkx, MarkupSafe, fsspec, filelock, jinja2, torch, torchvision, torchaudio
+2026-11-13T09:29:23.9356623Z 
+2026-11-13T09:29:23.9379507Z Successfully installed MarkupSafe-3.0.3 filelock-4.2.4 fsspec-2026.9.0 jinja2-3.1.6 mpmath-1.3.0 networkx-3.7 numpy-2.5.4 pillow-13.0.0 setuptools-78.1.0 sympy-1.14.0 torch-2.9.1+cpu torchaudio-2.9.1+cpu torchvision-0.24.1+cpu typing-extensions-4.16.0
+2026-11-13T09:29:25.1081797Z Obtaining file:///home/runner/work/LlamaFactory/LlamaFactory
+2026-11-13T09:29:25.1101479Z   Installing build dependencies: started
+2026-11-13T09:29:26.3853977Z   Installing build dependencies: finished with status 'done'
+2026-11-13T09:29:26.3859879Z   Checking if build backend supports build_editable: started
+2026-11-13T09:29:26.4271018Z   Checking if build backend supports build_editable: finished with status 'done'
+2026-11-13T09:29:26.4279417Z   Getting requirements to build editable: started
+2026-11-13T09:29:26.5850751Z   Getting requirements to build editable: finished with status 'done'
+2026-11-13T09:29:26.5863998Z   Installing backend dependencies: started
+2026-11-13T09:29:27.1215809Z   Installing backend dependencies: finished with status 'done'
+2026-11-13T09:29:27.1222320Z   Preparing editable metadata (pyproject.toml): started
+2026-11-13T09:29:27.3794767Z   Preparing editable metadata (pyproject.toml): finished with status 'done'
+2026-11-13T09:29:27.3859509Z Requirement already satisfied: torch==2.9.1 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (2.9.1+cpu)
+2026-11-13T09:29:27.3864878Z Requirement already satisfied: torchvision==0.24.1 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (0.24.1+cpu)
+2026-11-13T09:29:27.3869385Z Requirement already satisfied: torchaudio==2.9.1 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (2.9.1+cpu)
+2026-11-13T09:29:27.4646537Z Collecting transformers==4.57.1
+2026-11-13T09:29:27.5162723Z   Downloading transformers-4.57.1-py3-none-any.whl.metadata (43 kB)
+2026-11-13T09:29:27.6259323Z Collecting accelerate==1.11.0
+2026-11-13T09:29:27.6405392Z   Downloading accelerate-1.11.0-py3-none-any.whl.metadata (19 kB)
+2026-11-13T09:29:27.6784145Z Collecting peft==0.18.1
+2026-11-13T09:29:27.6916697Z   Downloading peft-0.18.1-py3-none-any.whl.metadata (14 kB)
+2026-11-13T09:29:27.7195583Z Collecting trl==0.24.0
+2026-11-13T09:29:27.7338734Z   Downloading trl-0.24.0-py3-none-any.whl.metadata (11 kB)
+2026-11-13T09:29:27.7660428Z Collecting datasets==4.0.0
+2026-11-13T09:29:27.7799408Z   Downloading datasets-4.0.0-py3-none-any.whl.metadata (19 kB)
+2026-11-13T09:29:27.8235466Z Collecting pytest==9.0.2
+2026-11-13T09:29:27.8375817Z   Downloading pytest-9.0.2-py3-none-any.whl.metadata (7.6 kB)
+2026-11-13T09:29:28.1845926Z Collecting ruff==0.15.9
+2026-11-13T09:29:28.1981788Z   Downloading ruff-0.15.9-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (26 kB)
+2026-11-13T09:29:28.2551133Z Collecting av<=16.0.0,>=10.0.0 (from llamafactory==0.9.6.dev0)
+2026-11-13T09:29:28.2691673Z   Downloading av-16.0.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (4.6 kB)
+2026-11-13T09:29:28.2897570Z Collecting einops (from llamafactory==0.9.6.dev0)
+2026-11-13T09:29:28.3031383Z   Downloading einops-0.8.2-py3-none-any.whl.metadata (13 kB)
+2026-11-13T09:29:28.3679880Z Collecting fastapi (from llamafactory==0.9.6.dev0)
+2026-11-13T09:29:28.3815199Z   Downloading fastapi-0.162.5-py3-none-any.whl.metadata (27 kB)
+2026-11-13T09:29:28.4030270Z Collecting fire (from llamafactory==0.9.6.dev0)
+2026-11-13T09:29:28.4159214Z   Downloading fire-0.7.1-py3-none-any.whl.metadata (5.8 kB)
+2026-11-13T09:29:28.4906935Z Collecting gradio<=5.50.0,>=4.38.0 (from llamafactory==0.9.6.dev0)
+2026-11-13T09:29:28.5043068Z   Downloading gradio-5.50.0-py3-none-any.whl.metadata (16 kB)
+2026-11-13T09:29:28.5421489Z Collecting hf-transfer (from llamafactory==0.9.6.dev0)
+2026-11-13T09:29:28.5555955Z   Downloading hf_transfer-0.1.9-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.7 kB)
+2026-11-13T09:29:28.7100908Z Collecting matplotlib>=3.7.0 (from llamafactory==0.9.6.dev0)
+2026-11-13T09:29:28.7238969Z   Downloading matplotlib-3.11.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (80 kB)
+2026-11-13T09:29:28.7697086Z Collecting modelscope (from llamafactory==0.9.6.dev0)
+2026-11-13T09:29:28.7831390Z   Downloading modelscope-1.40.3-py3-none-any.whl.metadata (43 kB)
+2026-11-13T09:29:28.8367233Z Requirement already satisfied: numpy in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from llamafactory==0.9.6.dev0) (2.5.4)
+2026-11-13T09:29:28.8670572Z Collecting omegaconf (from llamafactory==0.9.6.dev0)
+2026-11-13T09:29:28.8803613Z   Downloading omegaconf-2.4.0-py3-none-any.whl.metadata (4.9 kB)
+2026-11-13T09:29:28.8932776Z Collecting packaging (from llamafactory==0.9.6.dev0)
+2026-11-13T09:29:28.8945123Z   Using cached packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+2026-11-13T09:29:29.0177463Z Collecting pandas (from llamafactory==0.9.6.dev0)
+2026-11-13T09:29:29.0312687Z   Downloading pandas-3.1.1-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (16 kB)
+2026-11-13T09:29:29.1916103Z Collecting protobuf (from llamafactory==0.9.6.dev0)
+2026-11-13T09:29:29.2050646Z   Downloading protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl.metadata (595 bytes)
+2026-11-13T09:29:29.3186877Z Collecting pydantic (from llamafactory==0.9.6.dev0)
+2026-11-13T09:29:29.3322748Z   Downloading pydantic-2.14.3-py3-none-any.whl.metadata (141 kB)
+2026-11-13T09:29:29.3831825Z Collecting pyyaml (from llamafactory==0.9.6.dev0)
+2026-11-13T09:29:29.3967681Z   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+2026-11-13T09:29:29.5466902Z Collecting safetensors (from llamafactory==0.9.6.dev0)
+2026-11-13T09:29:29.5601037Z   Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.2 kB)
+2026-11-13T09:29:29.6980643Z Collecting scipy (from llamafactory==0.9.6.dev0)
+2026-11-13T09:29:29.7120691Z   Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+2026-11-13T09:29:29.7800880Z Collecting sentencepiece (from llamafactory==0.9.6.dev0)
+2026-11-13T09:29:29.7938901Z   Downloading sentencepiece-0.2.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (34 kB)
+2026-11-13T09:29:29.8215695Z Collecting sse-starlette (from llamafactory==0.9.6.dev0)
+2026-11-13T09:29:29.8352334Z   Downloading sse_starlette-3.7.0-py3-none-any.whl.metadata (15 kB)
+2026-11-13T09:29:29.8821169Z Collecting tiktoken (from llamafactory==0.9.6.dev0)
+2026-11-13T09:29:29.8954056Z   Downloading tiktoken-0.14.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (6.7 kB)
+2026-11-13T09:29:29.9202681Z Collecting torchdata<=0.11.0,>=0.10.0 (from llamafactory==0.9.6.dev0)
+2026-11-13T09:29:29.9334555Z   Downloading torchdata-0.11.0-py3-none-any.whl.metadata (6.3 kB)
+2026-11-13T09:29:29.9680970Z Collecting tyro<0.9.0 (from llamafactory==0.9.6.dev0)
+2026-11-13T09:29:29.9819448Z   Downloading tyro-0.8.14-py3-none-any.whl.metadata (8.4 kB)
+2026-11-13T09:29:30.0171545Z Collecting uvicorn (from llamafactory==0.9.6.dev0)
+2026-11-13T09:29:30.0306922Z   Downloading uvicorn-0.54.0-py3-none-any.whl.metadata (6.6 kB)
+2026-11-13T09:29:30.0364878Z Requirement already satisfied: filelock in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from transformers==4.57.1) (4.2.4)
+2026-11-13T09:29:30.0811586Z Collecting huggingface-hub<1.0,>=0.34.0 (from transformers==4.57.1)
+2026-11-13T09:29:30.0948754Z   Downloading huggingface_hub-0.36.2-py3-none-any.whl.metadata (15 kB)
+2026-11-13T09:29:30.5484175Z Collecting regex!=2019.12.17 (from transformers==4.57.1)
+2026-11-13T09:29:30.5622560Z   Downloading regex-2026.11.9-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
+2026-11-13T09:29:30.5952862Z Collecting requests (from transformers==4.57.1)
+2026-11-13T09:29:30.6088288Z   Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+2026-11-13T09:29:30.7521615Z Collecting tokenizers<=0.23.0,>=0.22.0 (from transformers==4.57.1)
+2026-11-13T09:29:30.7659305Z   Downloading tokenizers-0.22.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.3 kB)
+2026-11-13T09:29:30.8021895Z Collecting tqdm>=4.27 (from transformers==4.57.1)
+2026-11-13T09:29:30.8160228Z   Downloading tqdm-4.70.1-py3-none-any.whl.metadata (57 kB)
+2026-11-13T09:29:30.8953895Z Collecting psutil (from accelerate==1.11.0)
+2026-11-13T09:29:30.9090843Z   Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl.metadata (22 kB)
+2026-11-13T09:29:31.0137325Z Collecting pyarrow>=15.0.0 (from datasets==4.0.0)
+2026-11-13T09:29:31.0272054Z   Downloading pyarrow-26.0.1-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (3.0 kB)
+2026-11-13T09:29:31.0459882Z Collecting dill<0.3.9,>=0.3.0 (from datasets==4.0.0)
+2026-11-13T09:29:31.0595984Z   Downloading dill-0.3.8-py3-none-any.whl.metadata (10 kB)
+2026-11-13T09:29:31.3222790Z Collecting xxhash (from datasets==4.0.0)
+2026-11-13T09:29:31.3358069Z   Downloading xxhash-4.1.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (18 kB)
+2026-11-13T09:29:31.3639339Z Collecting multiprocess<0.70.17 (from datasets==4.0.0)
+2026-11-13T09:29:31.3776374Z   Downloading multiprocess-0.70.16-py312-none-any.whl.metadata (7.2 kB)
+2026-11-13T09:29:31.4034451Z Collecting fsspec<=2025.3.0,>=2023.1.0 (from fsspec[http]<=2025.3.0,>=2023.1.0->datasets==4.0.0)
+2026-11-13T09:29:31.4168488Z   Downloading fsspec-2025.3.0-py3-none-any.whl.metadata (11 kB)
+2026-11-13T09:29:31.4348689Z Requirement already satisfied: typing-extensions>=4.10.0 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from torch==2.9.1) (4.16.0)
+2026-11-13T09:29:31.4353916Z Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from torch==2.9.1) (78.1.0)
+2026-11-13T09:29:31.4358520Z Requirement already satisfied: sympy>=1.13.3 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from torch==2.9.1) (1.14.0)
+2026-11-13T09:29:31.4363380Z Requirement already satisfied: networkx>=2.5.1 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from torch==2.9.1) (3.7)
+2026-11-13T09:29:31.4367633Z Requirement already satisfied: jinja2 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from torch==2.9.1) (3.1.6)
+2026-11-13T09:29:31.4407884Z Requirement already satisfied: pillow!=8.3.*,>=5.3.0 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from torchvision==0.24.1) (13.0.0)
+2026-11-13T09:29:31.4574542Z Collecting iniconfig>=1.0.1 (from pytest==9.0.2)
+2026-11-13T09:29:31.4712308Z   Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+2026-11-13T09:29:31.4806115Z Collecting pluggy<2,>=1.5 (from pytest==9.0.2)
+2026-11-13T09:29:31.4819559Z   Using cached pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+2026-11-13T09:29:31.5067243Z Collecting pygments>=2.7.2 (from pytest==9.0.2)
+2026-11-13T09:29:31.5203800Z   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+2026-11-13T09:29:32.0301935Z Collecting aiohttp!=4.0.0a0,!=4.0.0a1 (from fsspec[http]<=2025.3.0,>=2023.1.0->datasets==4.0.0)
+2026-11-13T09:29:32.0437772Z   Downloading aiohttp-3.14.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.3 kB)
+2026-11-13T09:29:32.0646668Z Collecting aiofiles<25.0,>=22.0 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:32.0781088Z   Downloading aiofiles-24.1.0-py3-none-any.whl.metadata (10 kB)
+2026-11-13T09:29:32.1036111Z Collecting anyio<5.0,>=3.0 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:32.1170219Z   Downloading anyio-4.16.0-py3-none-any.whl.metadata (4.7 kB)
+2026-11-13T09:29:32.1612232Z Collecting brotli>=1.1.0 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:32.1747611Z   Downloading brotli-1.2.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.1 kB)
+2026-11-13T09:29:32.2013117Z Collecting ffmpy (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:32.2149498Z   Downloading ffmpy-1.0.0-py3-none-any.whl.metadata (3.0 kB)
+2026-11-13T09:29:32.2426707Z Collecting gradio-client==1.14.0 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:32.2560608Z   Downloading gradio_client-1.14.0-py3-none-any.whl.metadata (7.1 kB)
+2026-11-13T09:29:32.2766149Z Collecting groovy~=0.1 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:32.2902285Z   Downloading groovy-0.1.2-py3-none-any.whl.metadata (6.1 kB)
+2026-11-13T09:29:32.3142701Z Collecting httpx<1.0,>=0.24.1 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:32.3276707Z   Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+2026-11-13T09:29:32.3350904Z Requirement already satisfied: markupsafe<4.0,>=2.0 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0) (3.0.3)
+2026-11-13T09:29:32.6341991Z Collecting orjson~=3.0 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:32.6479579Z   Downloading orjson-3.13.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (42 kB)
+2026-11-13T09:29:32.6563996Z Collecting pandas (from llamafactory==0.9.6.dev0)
+2026-11-13T09:29:32.6701742Z   Downloading pandas-2.3.3-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (91 kB)
+2026-11-13T09:29:32.8676814Z Collecting pillow!=8.3.*,>=5.3.0 (from torchvision==0.24.1)
+2026-11-13T09:29:32.8816451Z   Downloading pillow-11.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.0 kB)
+2026-11-13T09:29:32.8911555Z Collecting pydantic (from llamafactory==0.9.6.dev0)
+2026-11-13T09:29:32.9054462Z   Downloading pydantic-2.12.3-py3-none-any.whl.metadata (87 kB)
+2026-11-13T09:29:32.9322161Z Collecting pydub (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:32.9460554Z   Downloading pydub-0.25.1-py2.py3-none-any.whl.metadata (1.4 kB)
+2026-11-13T09:29:32.9670415Z Collecting python-multipart>=0.0.18 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:32.9809265Z   Downloading python_multipart-0.0.33-py3-none-any.whl.metadata (6.3 kB)
+2026-11-13T09:29:33.0025768Z Collecting safehttpx<0.2.0,>=0.1.6 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:33.0161927Z   Downloading safehttpx-0.1.7-py3-none-any.whl.metadata (4.2 kB)
+2026-11-13T09:29:33.0357447Z Collecting semantic-version~=2.0 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:33.0493868Z   Downloading semantic_version-2.10.0-py2.py3-none-any.whl.metadata (9.7 kB)
+2026-11-13T09:29:33.0846394Z Collecting starlette<1.0,>=0.40.0 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:33.0985201Z   Downloading starlette-0.52.1-py3-none-any.whl.metadata (6.3 kB)
+2026-11-13T09:29:33.1103899Z Collecting tomlkit<0.14.0,>=0.12.0 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:33.1240864Z   Downloading tomlkit-0.13.3-py3-none-any.whl.metadata (2.8 kB)
+2026-11-13T09:29:33.1515251Z Collecting typer<1.0,>=0.12 (from gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:33.1653515Z   Downloading typer-0.29.1-py3-none-any.whl.metadata (16 kB)
+2026-11-13T09:29:33.3079445Z Collecting websockets<16.0,>=13.0 (from gradio-client==1.14.0->gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:33.3219526Z   Downloading websockets-15.0.1-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB)
+2026-11-13T09:29:33.3456011Z Collecting idna>=2.8 (from anyio<5.0,>=3.0->gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:33.3592490Z   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+2026-11-13T09:29:33.3839158Z Collecting typing-inspection>=0.4.2 (from fastapi->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:33.3974351Z   Downloading typing_inspection-0.4.5-py3-none-any.whl.metadata (2.6 kB)
+2026-11-13T09:29:33.4167876Z Collecting annotated-doc>=0.0.2 (from fastapi->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:33.4307726Z   Downloading annotated_doc-0.0.6-py3-none-any.whl.metadata (6.5 kB)
+2026-11-13T09:29:33.4558912Z Collecting opentelemetry-api>=1.44.0 (from fastapi->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:33.4692479Z   Downloading opentelemetry_api-1.45.2-py3-none-any.whl.metadata (1.4 kB)
+2026-11-13T09:29:33.4968477Z Collecting certifi (from httpx<1.0,>=0.24.1->gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:33.5102415Z   Downloading certifi-2026.10.23-py3-none-any.whl.metadata (2.5 kB)
+2026-11-13T09:29:33.5335613Z Collecting httpcore==1.* (from httpx<1.0,>=0.24.1->gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:33.5468828Z   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+2026-11-13T09:29:33.5678173Z Collecting h11>=0.16 (from httpcore==1.*->httpx<1.0,>=0.24.1->gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:33.5811930Z   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+2026-11-13T09:29:33.7008528Z Collecting hf-xet<2.0.0,>=1.1.3 (from huggingface-hub<1.0,>=0.34.0->transformers==4.57.1)
+2026-11-13T09:29:33.7144638Z   Downloading hf_xet-1.8.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (4.9 kB)
+2026-11-13T09:29:33.7453487Z Collecting python-dateutil>=2.8.2 (from pandas->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:33.7587728Z   Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+2026-11-13T09:29:33.8035646Z Collecting pytz>=2020.1 (from pandas->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:33.8170276Z   Downloading pytz-2026.6-py2.py3-none-any.whl.metadata (22 kB)
+2026-11-13T09:29:33.8387697Z Collecting tzdata>=2022.7 (from pandas->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:33.8522188Z   Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+2026-11-13T09:29:33.8735119Z Collecting annotated-types>=0.6.0 (from pydantic->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:33.8869863Z   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+2026-11-13T09:29:34.6455980Z Collecting pydantic-core==2.41.4 (from pydantic->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:34.6608116Z   Downloading pydantic_core-2.41.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.3 kB)
+2026-11-13T09:29:34.7001668Z Collecting urllib3>=1.25 (from torchdata<=0.11.0,>=0.10.0->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:34.7136833Z   Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+2026-11-13T09:29:34.7375808Z Collecting shellingham>=1.3.0 (from typer<1.0,>=0.12->gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:34.7511121Z   Downloading shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
+2026-11-13T09:29:34.7852799Z Collecting rich>=13.8.0 (from typer<1.0,>=0.12->gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:34.7986531Z   Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+2026-11-13T09:29:34.8201996Z Collecting docstring-parser>=0.16 (from tyro<0.9.0->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:34.8335802Z   Downloading docstring_parser-0.18.0-py3-none-any.whl.metadata (3.5 kB)
+2026-11-13T09:29:34.8582281Z Collecting shtab>=1.5.6 (from tyro<0.9.0->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:34.8713802Z   Downloading shtab-1.13.0-py3-none-any.whl.metadata (7.6 kB)
+2026-11-13T09:29:34.8947507Z Collecting aiohappyeyeballs>=2.5.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.3.0,>=2023.1.0->datasets==4.0.0)
+2026-11-13T09:29:34.9081186Z   Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl.metadata (5.9 kB)
+2026-11-13T09:29:34.9253474Z Collecting aiosignal>=1.4.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.3.0,>=2023.1.0->datasets==4.0.0)
+2026-11-13T09:29:34.9387269Z   Downloading aiosignal-1.4.0-py3-none-any.whl.metadata (3.7 kB)
+2026-11-13T09:29:34.9605441Z Collecting attrs>=17.3.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.3.0,>=2023.1.0->datasets==4.0.0)
+2026-11-13T09:29:34.9738674Z   Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+2026-11-13T09:29:35.0424649Z Collecting frozenlist>=1.1.1 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.3.0,>=2023.1.0->datasets==4.0.0)
+2026-11-13T09:29:35.0558826Z   Downloading frozenlist-1.8.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (20 kB)
+2026-11-13T09:29:35.3252489Z Collecting multidict<8.0,>=4.5 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.3.0,>=2023.1.0->datasets==4.0.0)
+2026-11-13T09:29:35.3388244Z   Downloading multidict-7.2.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (6.1 kB)
+2026-11-13T09:29:35.4132259Z Collecting propcache>=0.2.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.3.0,>=2023.1.0->datasets==4.0.0)
+2026-11-13T09:29:35.4268874Z   Downloading propcache-0.5.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (25 kB)
+2026-11-13T09:29:35.6775293Z Collecting yarl<2.0,>=1.25.1 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.3.0,>=2023.1.0->datasets==4.0.0)
+2026-11-13T09:29:35.6911760Z   Downloading yarl-1.25.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (111 kB)
+2026-11-13T09:29:35.7901978Z Collecting contourpy>=1.0.1 (from matplotlib>=3.7.0->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:35.8040179Z   Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+2026-11-13T09:29:35.8226211Z Collecting cycler>=0.10 (from matplotlib>=3.7.0->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:35.8362757Z   Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+2026-11-13T09:29:36.0807141Z Collecting fonttools>=4.28.2 (from matplotlib>=3.7.0->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:36.0941813Z   Downloading fonttools-4.68.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (139 kB)
+2026-11-13T09:29:36.1784258Z Collecting kiwisolver>=1.3.1 (from matplotlib>=3.7.0->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:36.1922466Z   Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)
+2026-11-13T09:29:36.2235280Z Collecting pyparsing>=3 (from matplotlib>=3.7.0->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:36.2367923Z   Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+2026-11-13T09:29:36.3875413Z Collecting charset_normalizer<4,>=2 (from requests->transformers==4.57.1)
+2026-11-13T09:29:36.4015579Z   Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+2026-11-13T09:29:36.4353966Z Collecting markdown-it-py>=2.2.0 (from rich>=13.8.0->typer<1.0,>=0.12->gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:36.4486276Z   Downloading markdown_it_py-4.3.0-py3-none-any.whl.metadata (7.9 kB)
+2026-11-13T09:29:36.4705545Z Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=13.8.0->typer<1.0,>=0.12->gradio<=5.50.0,>=4.38.0->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:36.4838321Z   Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+2026-11-13T09:29:36.4933127Z Requirement already satisfied: mpmath<1.4,>=1.1.0 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from sympy>=1.13.3->torch==2.9.1) (1.3.0)
+2026-11-13T09:29:36.5200604Z Collecting click>=7.0 (from uvicorn->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:36.5346890Z   Downloading click-8.5.1-py3-none-any.whl.metadata (2.6 kB)
+2026-11-13T09:29:36.5593155Z Collecting termcolor (from fire->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:36.5727374Z   Downloading termcolor-3.3.0-py3-none-any.whl.metadata (6.5 kB)
+2026-11-13T09:29:36.5961120Z Collecting modelscope-hub>=0.7.0 (from modelscope->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:36.6108273Z   Downloading modelscope_hub-0.7.1-py3-none-any.whl.metadata (67 kB)
+2026-11-13T09:29:36.8101489Z Collecting cryptography>=41 (from modelscope-hub>=0.7.0->modelscope->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:36.8237343Z   Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (4.4 kB)
+2026-11-13T09:29:36.9347640Z Collecting cffi>=2.0.0 (from cryptography>=41->modelscope-hub>=0.7.0->modelscope->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:36.9483948Z   Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+2026-11-13T09:29:36.9683920Z Collecting pycparser (from cffi>=2.0.0->cryptography>=41->modelscope-hub>=0.7.0->modelscope->llamafactory==0.9.6.dev0)
+2026-11-13T09:29:36.9816445Z   Downloading pycparser-3.12-py3-none-any.whl.metadata (9.7 kB)
+2026-11-13T09:29:37.0211190Z Downloading transformers-4.57.1-py3-none-any.whl (12.0 MB)
+2026-11-13T09:29:37.1058797Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 148.9 MB/s  0:00:00
+2026-11-13T09:29:37.1194768Z Downloading accelerate-1.11.0-py3-none-any.whl (375 kB)
+2026-11-13T09:29:37.1359948Z Downloading peft-0.18.1-py3-none-any.whl (556 kB)
+2026-11-13T09:29:37.1408242Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 557.0/557.0 kB 113.4 MB/s  0:00:00
+2026-11-13T09:29:37.1543536Z Downloading trl-0.24.0-py3-none-any.whl (423 kB)
+2026-11-13T09:29:37.1708303Z Downloading datasets-4.0.0-py3-none-any.whl (494 kB)
+2026-11-13T09:29:37.1868160Z Downloading pytest-9.0.2-py3-none-any.whl (374 kB)
+2026-11-13T09:29:37.2121048Z Downloading ruff-0.15.9-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.3 MB)
+2026-11-13T09:29:37.2490282Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.3/11.3 MB 319.9 MB/s  0:00:00
+2026-11-13T09:29:37.2644256Z Downloading av-16.0.0-cp312-cp312-manylinux_2_28_x86_64.whl (40.5 MB)
+2026-11-13T09:29:37.4814124Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.5/40.5 MB 187.9 MB/s  0:00:00
+2026-11-13T09:29:37.4949208Z Downloading dill-0.3.8-py3-none-any.whl (116 kB)
+2026-11-13T09:29:37.5125161Z Downloading fsspec-2025.3.0-py3-none-any.whl (193 kB)
+2026-11-13T09:29:37.5287881Z Downloading gradio-5.50.0-py3-none-any.whl (63.5 MB)
+2026-11-13T09:29:37.7314790Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.5/63.5 MB 316.3 MB/s  0:00:00
+2026-11-13T09:29:37.7450643Z Downloading gradio_client-1.14.0-py3-none-any.whl (325 kB)
+2026-11-13T09:29:37.7616353Z Downloading aiofiles-24.1.0-py3-none-any.whl (15 kB)
+2026-11-13T09:29:37.7765708Z Downloading anyio-4.16.0-py3-none-any.whl (134 kB)
+2026-11-13T09:29:37.7923449Z Downloading fastapi-0.162.5-py3-none-any.whl (151 kB)
+2026-11-13T09:29:37.8077527Z Downloading groovy-0.1.2-py3-none-any.whl (14 kB)
+2026-11-13T09:29:37.8244685Z Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+2026-11-13T09:29:37.8399292Z Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+2026-11-13T09:29:37.8557116Z Downloading huggingface_hub-0.36.2-py3-none-any.whl (566 kB)
+2026-11-13T09:29:37.8608980Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 566.4/566.4 kB 109.0 MB/s  0:00:00
+2026-11-13T09:29:37.8743507Z Downloading hf_xet-1.8.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.3 MB)
+2026-11-13T09:29:37.8908968Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 292.8 MB/s  0:00:00
+2026-11-13T09:29:37.9041829Z Downloading multiprocess-0.70.16-py312-none-any.whl (146 kB)
+2026-11-13T09:29:37.9199577Z Downloading orjson-3.13.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (130 kB)
+2026-11-13T09:29:37.9353625Z Downloading pandas-2.3.3-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.4 MB)
+2026-11-13T09:29:37.9863240Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.4/12.4 MB 249.6 MB/s  0:00:00
+2026-11-13T09:29:37.9998220Z Downloading pillow-11.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.6 MB)
+2026-11-13T09:29:38.0207533Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.6/6.6 MB 344.8 MB/s  0:00:00
+2026-11-13T09:29:38.0219718Z Using cached pluggy-1.7.0-py3-none-any.whl (27 kB)
+2026-11-13T09:29:38.0353611Z Downloading pydantic-2.12.3-py3-none-any.whl (462 kB)
+2026-11-13T09:29:38.0519317Z Downloading pydantic_core-2.41.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+2026-11-13T09:29:38.0615096Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 254.0 MB/s  0:00:00
+2026-11-13T09:29:38.0748496Z Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+2026-11-13T09:29:38.0801347Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 176.1 MB/s  0:00:00
+2026-11-13T09:29:38.0932428Z Downloading safehttpx-0.1.7-py3-none-any.whl (9.0 kB)
+2026-11-13T09:29:38.1104171Z Downloading semantic_version-2.10.0-py2.py3-none-any.whl (15 kB)
+2026-11-13T09:29:38.1253428Z Downloading starlette-0.52.1-py3-none-any.whl (74 kB)
+2026-11-13T09:29:38.1410957Z Downloading tokenizers-0.22.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+2026-11-13T09:29:38.1528455Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 327.0 MB/s  0:00:00
+2026-11-13T09:29:38.1659696Z Downloading tomlkit-0.13.3-py3-none-any.whl (38 kB)
+2026-11-13T09:29:38.1808319Z Downloading torchdata-0.11.0-py3-none-any.whl (61 kB)
+2026-11-13T09:29:38.1958630Z Downloading typer-0.29.1-py3-none-any.whl (121 kB)
+2026-11-13T09:29:38.2116310Z Downloading tyro-0.8.14-py3-none-any.whl (109 kB)
+2026-11-13T09:29:38.2269414Z Downloading websockets-15.0.1-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (182 kB)
+2026-11-13T09:29:38.2425584Z Downloading aiohttp-3.14.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.9 MB)
+2026-11-13T09:29:38.2508396Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 282.9 MB/s  0:00:00
+2026-11-13T09:29:38.2641171Z Downloading multidict-7.2.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (516 kB)
+2026-11-13T09:29:38.2807879Z Downloading yarl-1.25.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (117 kB)
+2026-11-13T09:29:38.2959800Z Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl (15 kB)
+2026-11-13T09:29:38.3234534Z Downloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+2026-11-13T09:29:38.3385873Z Downloading annotated_doc-0.0.6-py3-none-any.whl (5.3 kB)
+2026-11-13T09:29:38.3539630Z Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+2026-11-13T09:29:38.3690992Z Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+2026-11-13T09:29:38.3844117Z Downloading brotli-1.2.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.4 MB)
+2026-11-13T09:29:38.3915476Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 246.0 MB/s  0:00:00
+2026-11-13T09:29:38.4044588Z Downloading docstring_parser-0.18.0-py3-none-any.whl (22 kB)
+2026-11-13T09:29:38.4194485Z Downloading frozenlist-1.8.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (242 kB)
+2026-11-13T09:29:38.4353156Z Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+2026-11-13T09:29:38.4503814Z Downloading idna-3.20-py3-none-any.whl (69 kB)
+2026-11-13T09:29:38.4655692Z Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+2026-11-13T09:29:38.4810351Z Downloading matplotlib-3.11.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.9 MB)
+2026-11-13T09:29:38.5345256Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 188.5 MB/s  0:00:00
+2026-11-13T09:29:38.5477630Z Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (383 kB)
+2026-11-13T09:29:38.5659295Z Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+2026-11-13T09:29:38.5810427Z Downloading fonttools-4.68.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.4 MB)
+2026-11-13T09:29:38.5995237Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 323.3 MB/s  0:00:00
+2026-11-13T09:29:38.6132243Z Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.5 MB)
+2026-11-13T09:29:38.6206277Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 247.2 MB/s  0:00:00
+2026-11-13T09:29:38.6338445Z Downloading opentelemetry_api-1.45.2-py3-none-any.whl (60 kB)
+2026-11-13T09:29:38.6369520Z Using cached packaging-26.3-py3-none-any.whl (129 kB)
+2026-11-13T09:29:38.6508217Z Downloading propcache-0.5.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (250 kB)
+2026-11-13T09:29:38.6671645Z Downloading pyarrow-26.0.1-cp312-cp312-manylinux_2_28_x86_64.whl (55.0 MB)
+2026-11-13T09:29:38.8538181Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 55.0/55.0 MB 297.7 MB/s  0:00:00
+2026-11-13T09:29:38.8670591Z Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+2026-11-13T09:29:38.8735826Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 232.6 MB/s  0:00:00
+2026-11-13T09:29:38.8867295Z Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+2026-11-13T09:29:38.9018153Z Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+2026-11-13T09:29:38.9170061Z Downloading python_multipart-0.0.33-py3-none-any.whl (32 kB)
+2026-11-13T09:29:38.9319645Z Downloading pytz-2026.6-py2.py3-none-any.whl (506 kB)
+2026-11-13T09:29:38.9490417Z Downloading regex-2026.11.9-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (808 kB)
+2026-11-13T09:29:38.9547002Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 808.8/808.8 kB 166.7 MB/s  0:00:00
+2026-11-13T09:29:38.9678342Z Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+2026-11-13T09:29:38.9833237Z Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (257 kB)
+2026-11-13T09:29:38.9984889Z Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+2026-11-13T09:29:39.0170172Z Downloading certifi-2026.10.23-py3-none-any.whl (135 kB)
+2026-11-13T09:29:39.0327323Z Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+2026-11-13T09:29:39.0486371Z Downloading markdown_it_py-4.3.0-py3-none-any.whl (96 kB)
+2026-11-13T09:29:39.0638566Z Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+2026-11-13T09:29:39.0788899Z Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (516 kB)
+2026-11-13T09:29:39.0948682Z Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+2026-11-13T09:29:39.1095466Z Downloading shtab-1.13.0-py3-none-any.whl (22 kB)
+2026-11-13T09:29:39.1242251Z Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
+2026-11-13T09:29:39.1392815Z Downloading typing_inspection-0.4.5-py3-none-any.whl (14 kB)
+2026-11-13T09:29:39.1548154Z Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+2026-11-13T09:29:39.1703587Z Downloading uvicorn-0.54.0-py3-none-any.whl (87 kB)
+2026-11-13T09:29:39.1858723Z Downloading click-8.5.1-py3-none-any.whl (126 kB)
+2026-11-13T09:29:39.2030294Z Downloading einops-0.8.2-py3-none-any.whl (65 kB)
+2026-11-13T09:29:39.2179931Z Downloading ffmpy-1.0.0-py3-none-any.whl (5.6 kB)
+2026-11-13T09:29:39.2330024Z Downloading fire-0.7.1-py3-none-any.whl (115 kB)
+2026-11-13T09:29:39.2480702Z Downloading hf_transfer-0.1.9-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.6 MB)
+2026-11-13T09:29:39.2658155Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.6/3.6 MB 239.9 MB/s  0:00:00
+2026-11-13T09:29:39.2795221Z Downloading modelscope-1.40.3-py3-none-any.whl (6.1 MB)
+2026-11-13T09:29:39.3038140Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.1/6.1 MB 267.3 MB/s  0:00:00
+2026-11-13T09:29:39.3178224Z Downloading modelscope_hub-0.7.1-py3-none-any.whl (304 kB)
+2026-11-13T09:29:39.3333867Z Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl (4.8 MB)
+2026-11-13T09:29:39.3503225Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.8/4.8 MB 306.0 MB/s  0:00:00
+2026-11-13T09:29:39.3637244Z Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (221 kB)
+2026-11-13T09:29:39.3794735Z Downloading omegaconf-2.4.0-py3-none-any.whl (254 kB)
+2026-11-13T09:29:39.3952061Z Downloading protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl (343 kB)
+2026-11-13T09:29:39.4110512Z Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+2026-11-13T09:29:39.4265308Z Downloading pycparser-3.12-py3-none-any.whl (62 kB)
+2026-11-13T09:29:39.4413566Z Downloading pydub-0.25.1-py2.py3-none-any.whl (32 kB)
+2026-11-13T09:29:39.4565551Z Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+2026-11-13T09:29:39.5747718Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 304.2 MB/s  0:00:00
+2026-11-13T09:29:39.5883512Z Downloading sentencepiece-0.2.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (1.7 MB)
+2026-11-13T09:29:39.5975343Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 218.7 MB/s  0:00:00
+2026-11-13T09:29:39.6109789Z Downloading sse_starlette-3.7.0-py3-none-any.whl (18 kB)
+2026-11-13T09:29:39.6260831Z Downloading termcolor-3.3.0-py3-none-any.whl (7.7 kB)
+2026-11-13T09:29:39.6415686Z Downloading tiktoken-0.14.0-cp312-cp312-manylinux_2_28_x86_64.whl (1.2 MB)
+2026-11-13T09:29:39.6480451Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 230.5 MB/s  0:00:00
+2026-11-13T09:29:39.6614224Z Downloading xxhash-4.1.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (472 kB)
+2026-11-13T09:29:40.3906626Z Building wheels for collected packages: llamafactory
+2026-11-13T09:29:40.3915646Z   Building editable for llamafactory (pyproject.toml): started
+2026-11-13T09:29:40.4285228Z   Building editable for llamafactory (pyproject.toml): finished with status 'done'
+2026-11-13T09:29:40.4291604Z   Created wheel for llamafactory: filename=llamafactory-0.9.6.dev0-py3-none-any.whl size=27476 sha256=f49a181442e44ad2bd5daebd6dcdc91bdada6ca433597a58b3f4f6a0569e1deb
+2026-11-13T09:29:40.4293418Z   Stored in directory: /tmp/pip-ephem-wheel-cache-4nl0rcou/wheels/46/20/64/8cb860b6d6a299d205a4b65edbb9ab0ad7c828eff6d75a4655
+2026-11-13T09:29:40.4337353Z Successfully built llamafactory
+2026-11-13T09:29:40.7434809Z Installing collected packages: pytz, pydub, brotli, xxhash, websockets, urllib3, tzdata, typing-inspection, tqdm, tomlkit, termcolor, shtab, shellingham, sentencepiece, semantic-version, scipy, safetensors, ruff, regex, pyyaml, python-multipart, pyparsing, pygments, pydantic-core, pycparser, pyarrow, psutil, protobuf, propcache, pluggy, pillow, packaging, orjson, opentelemetry-api, multidict, mdurl, kiwisolver, iniconfig, idna, hf-xet, hf-transfer, h11, groovy, fsspec, frozenlist, fonttools, ffmpy, einops, docstring-parser, dill, cycler, contourpy, click, charset_normalizer, certifi, av, attrs, annotated-types, annotated-doc, aiohappyeyeballs, aiofiles, yarl, uvicorn, requests, python-dateutil, pytest, pydantic, omegaconf, multiprocess, markdown-it-py, httpcore, fire, cffi, anyio, aiosignal, torchdata, tiktoken, starlette, rich, pandas, matplotlib, huggingface-hub, httpx, cryptography, aiohttp, tyro, typer, tokenizers, sse-starlette, safehttpx, modelscope-hub, gradio-client, fastapi, accelerate, transformers, modelscope, gradio, datasets, trl, peft, llamafactory
+2026-11-13T09:29:48.2644040Z   Attempting uninstall: pillow
+2026-11-13T09:29:48.2678798Z     Found existing installation: pillow 13.0.0
+2026-11-13T09:29:48.2770289Z     Uninstalling pillow-13.0.0:
+2026-11-13T09:29:48.2788044Z       Successfully uninstalled pillow-13.0.0
+2026-11-13T09:29:48.9713257Z   Attempting uninstall: fsspec
+2026-11-13T09:29:48.9737988Z     Found existing installation: fsspec 2026.9.0
+2026-11-13T09:29:48.9793421Z     Uninstalling fsspec-2026.9.0:
+2026-11-13T09:29:48.9806577Z       Successfully uninstalled fsspec-2026.9.0
+2026-11-13T09:30:16.3683772Z 
+2026-11-13T09:30:16.3771843Z Successfully installed accelerate-1.11.0 aiofiles-24.1.0 aiohappyeyeballs-2.7.1 aiohttp-3.14.5 aiosignal-1.4.0 annotated-doc-0.0.6 annotated-types-0.8.0 anyio-4.16.0 attrs-26.1.0 av-16.0.0 brotli-1.2.1 certifi-2026.10.23 cffi-2.1.1 charset_normalizer-3.5.2 click-8.5.1 contourpy-1.4.0 cryptography-50.0.2 cycler-0.12.1 datasets-4.0.0 dill-0.3.8 docstring-parser-0.18.0 einops-0.8.2 fastapi-0.162.5 ffmpy-1.0.0 fire-0.7.1 fonttools-4.68.0 frozenlist-1.8.0 fsspec-2025.3.0 gradio-5.50.0 gradio-client-1.14.0 groovy-0.1.2 h11-0.16.0 hf-transfer-0.1.9 hf-xet-1.8.0 httpcore-1.0.9 httpx-0.28.1 huggingface-hub-0.36.2 idna-3.20 iniconfig-2.3.1 kiwisolver-1.5.1 llamafactory-0.9.6.dev0 markdown-it-py-4.3.0 matplotlib-3.11.2 mdurl-0.1.2 modelscope-1.40.3 modelscope-hub-0.7.1 multidict-7.2.1 multiprocess-0.70.16 omegaconf-2.4.0 opentelemetry-api-1.45.2 orjson-3.13.0 packaging-26.3 pandas-2.3.3 peft-0.18.1 pillow-11.3.0 pluggy-1.7.0 propcache-0.5.4 protobuf-7.36.2 psutil-7.2.2 pyarrow-26.0.1 pycparser-3.12 pydantic-2.12.3 pydantic-core-2.41.4 pydub-0.25.1 pygments-2.21.0 pyparsing-3.3.3 pytest-9.0.2 python-dateutil-4.0.0 python-multipart-0.0.33 pytz-2026.6 pyyaml-6.0.3 regex-2026.11.9 requests-2.34.2 rich-15.0.0 ruff-0.15.9 safehttpx-0.1.7 safetensors-0.8.0 scipy-1.18.1 semantic-version-2.10.0 sentencepiece-0.2.3 shellingham-1.5.4 shtab-1.13.0 sse-starlette-3.7.0 starlette-0.52.1 termcolor-3.3.0 tiktoken-0.14.0 tokenizers-0.22.2 tomlkit-0.13.3 torchdata-0.11.0 tqdm-4.70.1 transformers-4.57.1 trl-0.24.0 typer-0.29.1 typing-inspection-0.4.5 tyro-0.8.14 tzdata-2026.6 urllib3-2.8.0 uvicorn-0.54.0 websockets-15.0.1 xxhash-4.1.0 yarl-1.25.1
+2026-11-13T09:30:17.3462497Z ##[group]Run test "$(git rev-parse HEAD)" = "1ed526d55e90de9dcca5916f6eba25a2de4e9272"
+2026-11-13T09:30:17.3463380Z [36;1mtest "$(git rev-parse HEAD)" = "1ed526d55e90de9dcca5916f6eba25a2de4e9272"[0m
+2026-11-13T09:30:17.3463778Z [36;1mset +e[0m
+2026-11-13T09:30:17.3464263Z [36;1mpython -m pytest -q tests/train/test_asft_token_normalization.py --junitxml=patched-results.xml > patched.log 2>&1[0m
+2026-11-13T09:30:17.3464804Z [36;1mresult=$?[0m
+2026-11-13T09:30:17.3465007Z [36;1mset -e[0m
+2026-11-13T09:30:17.3465214Z [36;1mcat patched.log[0m
+2026-11-13T09:30:17.3465448Z [36;1mtest "$result" -eq 0[0m
+2026-11-13T09:30:17.3516252Z shell: /usr/bin/bash -e {0}
+2026-11-13T09:30:17.3516519Z env:
+2026-11-13T09:30:17.3516713Z   PYTHONPATH: src
+2026-11-13T09:30:17.3516921Z   OMP_NUM_THREADS: 1
+2026-11-13T09:30:17.3517129Z   MKL_NUM_THREADS: 1
+2026-11-13T09:30:17.3517325Z   HF_HUB_OFFLINE: 1
+2026-11-13T09:30:17.3517534Z   TRANSFORMERS_OFFLINE: 1
+2026-11-13T09:30:17.3517864Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T09:30:17.3518307Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-13T09:30:17.3518733Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T09:30:17.3519122Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T09:30:17.3519521Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T09:30:17.3519903Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-13T09:30:17.3520221Z ##[endgroup]
+2026-11-13T09:30:57.9829097Z .................................                                        [100%]
+2026-11-13T09:30:57.9829700Z 33 passed in 32.04s
+2026-11-13T09:30:57.9872723Z ##[group]Run git checkout 6d1059c727450a4f58e56ad204d01a71abad7781 -- src/llamafactory/train/sft/trainer.py src/llamafactory/train/trainer_utils.py
+2026-11-13T09:30:57.9874198Z [36;1mgit checkout 6d1059c727450a4f58e56ad204d01a71abad7781 -- src/llamafactory/train/sft/trainer.py src/llamafactory/train/trainer_utils.py[0m
+2026-11-13T09:30:57.9874812Z [36;1mset +e[0m
+2026-11-13T09:30:57.9875302Z [36;1mpython -m pytest -q tests/train/test_asft_token_normalization.py --junitxml=baseline-results.xml > baseline.log 2>&1[0m
+2026-11-13T09:30:57.9875857Z [36;1mresult=$?[0m
+2026-11-13T09:30:57.9876065Z [36;1mset -e[0m
+2026-11-13T09:30:57.9876266Z [36;1mcat baseline.log[0m
+2026-11-13T09:30:57.9876500Z [36;1mtest "$result" -eq 1[0m
+2026-11-13T09:30:57.9876737Z [36;1mpython - <<'PY'[0m
+2026-11-13T09:30:57.9876994Z [36;1mimport xml.etree.ElementTree as ET[0m
+2026-11-13T09:30:57.9877347Z [36;1mroot = ET.parse("baseline-results.xml").getroot()[0m
+2026-11-13T09:30:57.9877724Z [36;1msuites = list(root.iter("testsuite"))[0m
+2026-11-13T09:30:57.9878111Z [36;1merrors = sum(int(s.attrib.get("errors", 0)) for s in suites)[0m
+2026-11-13T09:30:57.9878558Z [36;1mfailures = sum(int(s.attrib.get("failures", 0)) for s in suites)[0m
+2026-11-13T09:30:57.9878972Z [36;1mprint({"errors": errors, "failures": failures})[0m
+2026-11-13T09:30:57.9879299Z [36;1massert errors == 0 and failures > 0[0m
+2026-11-13T09:30:57.9879569Z [36;1mPY[0m
+2026-11-13T09:30:57.9929509Z shell: /usr/bin/bash -e {0}
+2026-11-13T09:30:57.9929761Z env:
+2026-11-13T09:30:57.9929962Z   PYTHONPATH: src
+2026-11-13T09:30:57.9930184Z   OMP_NUM_THREADS: 1
+2026-11-13T09:30:57.9930401Z   MKL_NUM_THREADS: 1
+2026-11-13T09:30:57.9930620Z   HF_HUB_OFFLINE: 1
+2026-11-13T09:30:57.9930833Z   TRANSFORMERS_OFFLINE: 1
+2026-11-13T09:30:57.9931136Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T09:30:57.9931580Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-13T09:30:57.9932048Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T09:30:57.9932655Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T09:30:57.9933358Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T09:30:57.9933761Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-13T09:30:57.9934099Z ##[endgroup]
+2026-11-13T09:31:34.5983738Z ...FFFFFF...FFFFFF...FFFF....FFFF                                        [100%]
+2026-11-13T09:31:34.5984632Z =================================== FAILURES ===================================
+2026-11-13T09:31:34.5985640Z _ test_asft_compute_loss_uses_supplied_token_count[rows0-accumulated_int-0.0] __
+2026-11-13T09:31:34.5986244Z 
+2026-11-13T09:31:34.5986764Z tmp_path = PosixPath('/tmp/pytest-of-runner/pytest-1/test_asft_compute_loss_uses_su3')
+2026-11-13T09:31:34.5987872Z alpha = 0.0, denominator_kind = 'accumulated_int', rows = [0]
+2026-11-13T09:31:34.5988426Z 
+2026-11-13T09:31:34.5988783Z     @pytest.mark.parametrize("alpha", [0.0, 0.1, 0.7])
+2026-11-13T09:31:34.5989956Z     @pytest.mark.parametrize("denominator_kind", ["local", "accumulated_int", "accumulated_tensor"])
+2026-11-13T09:31:34.5991145Z     @pytest.mark.parametrize("rows", [[0], [1, 2]])
+2026-11-13T09:31:34.5992239Z     def test_asft_compute_loss_uses_supplied_token_count(tmp_path, alpha, denominator_kind, rows):
+2026-11-13T09:31:34.5993511Z         trainer = _trainer(tmp_path, alpha)
+2026-11-13T09:31:34.5994133Z         full_batch = _batch()
+2026-11-13T09:31:34.5994821Z         batch = {key: value[rows] for key, value in full_batch.items()}
+2026-11-13T09:31:34.5995708Z         count = (full_batch["labels"][:, 1:] != -100).sum()
+2026-11-13T09:31:34.5996621Z         denominator = None if denominator_kind == "local" else count.item()
+2026-11-13T09:31:34.5997292Z         if denominator_kind == "accumulated_tensor":
+2026-11-13T09:31:34.5997598Z             denominator = count
+2026-11-13T09:31:34.5997881Z         expected_model = deepcopy(trainer.model)
+2026-11-13T09:31:34.5998543Z         with torch.no_grad():
+2026-11-13T09:31:34.5998871Z             ref_logits = trainer.ref_model(**batch).logits
+2026-11-13T09:31:34.5999392Z         expected = _oracle(expected_model(**batch).logits, batch["labels"], ref_logits, alpha, denominator)
+2026-11-13T09:31:34.6000012Z         actual = trainer.compute_loss(trainer.model, batch, num_items_in_batch=denominator)
+2026-11-13T09:31:34.6000532Z >       torch.testing.assert_close(actual, expected, rtol=1e-5, atol=1e-7)
+2026-11-13T09:31:34.6000923Z E       AssertionError: Scalars are not close!
+2026-11-13T09:31:34.6001197Z E       
+2026-11-13T09:31:34.6001449Z E       Expected 0.009045972488820553 but got 0.14473555982112885.
+2026-11-13T09:31:34.6001846Z E       Absolute difference: 0.1356895873323083 (up to 1e-07 allowed)
+2026-11-13T09:31:34.6002217Z E       Relative difference: 15.0 (up to 1e-05 allowed)
+2026-11-13T09:31:34.6002431Z 
+2026-11-13T09:31:34.6002607Z tests/train/test_asft_token_normalization.py:131: AssertionError
+2026-11-13T09:31:34.6003444Z _ test_asft_compute_loss_uses_supplied_token_count[rows0-accumulated_int-0.1] __
+2026-11-13T09:31:34.6004499Z 
+2026-11-13T09:31:34.6004977Z tmp_path = PosixPath('/tmp/pytest-of-runner/pytest-1/test_asft_compute_loss_uses_su4')
+2026-11-13T09:31:34.6006197Z alpha = 0.1, denominator_kind = 'accumulated_int', rows = [0]
+2026-11-13T09:31:34.6006603Z 
+2026-11-13T09:31:34.6006742Z     @pytest.mark.parametrize("alpha", [0.0, 0.1, 0.7])
+2026-11-13T09:31:34.6007236Z     @pytest.mark.parametrize("denominator_kind", ["local", "accumulated_int", "accumulated_tensor"])
+2026-11-13T09:31:34.6007727Z     @pytest.mark.parametrize("rows", [[0], [1, 2]])
+2026-11-13T09:31:34.6008195Z     def test_asft_compute_loss_uses_supplied_token_count(tmp_path, alpha, denominator_kind, rows):
+2026-11-13T09:31:34.6008653Z         trainer = _trainer(tmp_path, alpha)
+2026-11-13T09:31:34.6008925Z         full_batch = _batch()
+2026-11-13T09:31:34.6009234Z         batch = {key: value[rows] for key, value in full_batch.items()}
+2026-11-13T09:31:34.6009858Z         count = (full_batch["labels"][:, 1:] != -100).sum()
+2026-11-13T09:31:34.6010261Z         denominator = None if denominator_kind == "local" else count.item()
+2026-11-13T09:31:34.6010654Z         if denominator_kind == "accumulated_tensor":
+2026-11-13T09:31:34.6010948Z             denominator = count
+2026-11-13T09:31:34.6011219Z         expected_model = deepcopy(trainer.model)
+2026-11-13T09:31:34.6011502Z         with torch.no_grad():
+2026-11-13T09:31:34.6011775Z             ref_logits = trainer.ref_model(**batch).logits
+2026-11-13T09:31:34.6012271Z         expected = _oracle(expected_model(**batch).logits, batch["labels"], ref_logits, alpha, denominator)
+2026-11-13T09:31:34.6013100Z         actual = trainer.compute_loss(trainer.model, batch, num_items_in_batch=denominator)
+2026-11-13T09:31:34.6013638Z >       torch.testing.assert_close(actual, expected, rtol=1e-5, atol=1e-7)
+2026-11-13T09:31:34.6014024Z E       AssertionError: Scalars are not close!
+2026-11-13T09:31:34.6014307Z E       
+2026-11-13T09:31:34.6014565Z E       Expected 0.009096461348235607 but got 0.14554338157176971.
+2026-11-13T09:31:34.6014958Z E       Absolute difference: 0.1364469202235341 (up to 1e-07 allowed)
+2026-11-13T09:31:34.6015330Z E       Relative difference: 15.0 (up to 1e-05 allowed)
+2026-11-13T09:31:34.6015535Z 
+2026-11-13T09:31:34.6015725Z tests/train/test_asft_token_normalization.py:131: AssertionError
+2026-11-13T09:31:34.6016197Z _ test_asft_compute_loss_uses_supplied_token_count[rows0-accumulated_int-0.7] __
+2026-11-13T09:31:34.6016508Z 
+2026-11-13T09:31:34.6016741Z tmp_path = PosixPath('/tmp/pytest-of-runner/pytest-1/test_asft_compute_loss_uses_su5')
+2026-11-13T09:31:34.6017231Z alpha = 0.7, denominator_kind = 'accumulated_int', rows = [0]
+2026-11-13T09:31:34.6017475Z 
+2026-11-13T09:31:34.6017610Z     @pytest.mark.parametrize("alpha", [0.0, 0.1, 0.7])
+2026-11-13T09:31:34.6018090Z     @pytest.mark.parametrize("denominator_kind", ["local", "accumulated_int", "accumulated_tensor"])
+2026-11-13T09:31:34.6018750Z     @pytest.mark.parametrize("rows", [[0], [1, 2]])
+2026-11-13T09:31:34.6019226Z     def test_asft_compute_loss_uses_supplied_token_count(tmp_path, alpha, denominator_kind, rows):
+2026-11-13T09:31:34.6019688Z         trainer = _trainer(tmp_path, alpha)
+2026-11-13T09:31:34.6019954Z         full_batch = _batch()
+2026-11-13T09:31:34.6020258Z         batch = {key: value[rows] for key, value in full_batch.items()}
+2026-11-13T09:31:34.6020629Z         count = (full_batch["labels"][:, 1:] != -100).sum()
+2026-11-13T09:31:34.6021106Z         denominator = None if denominator_kind == "local" else count.item()
+2026-11-13T09:31:34.6021526Z         if denominator_kind == "accumulated_tensor":
+2026-11-13T09:31:34.6021826Z             denominator = count
+2026-11-13T09:31:34.6022088Z         expected_model = deepcopy(trainer.model)
+2026-11-13T09:31:34.6022372Z         with torch.no_grad():
+2026-11-13T09:31:34.6022642Z             ref_logits = trainer.ref_model(**batch).logits
+2026-11-13T09:31:34.6023488Z         expected = _oracle(expected_model(**batch).logits, batch["labels"], ref_logits, alpha, denominator)
+2026-11-13T09:31:34.6024132Z         actual = trainer.compute_loss(trainer.model, batch, num_items_in_batch=denominator)
+2026-11-13T09:31:34.6024646Z >       torch.testing.assert_close(actual, expected, rtol=1e-5, atol=1e-7)
+2026-11-13T09:31:34.6025033Z E       AssertionError: Scalars are not close!
+2026-11-13T09:31:34.6025308Z E       
+2026-11-13T09:31:34.6025550Z E       Expected 0.009399393573403358 but got 0.15039026737213135.
+2026-11-13T09:31:34.6025939Z E       Absolute difference: 0.140990873798728 (up to 1e-07 allowed)
+2026-11-13T09:31:34.6026327Z E       Relative difference: 14.999996829335622 (up to 1e-05 allowed)
+2026-11-13T09:31:34.6026576Z 
+2026-11-13T09:31:34.6026744Z tests/train/test_asft_token_normalization.py:131: AssertionError
+2026-11-13T09:31:34.6027263Z _ test_asft_compute_loss_uses_supplied_token_count[rows0-accumulated_tensor-0.0] _
+2026-11-13T09:31:34.6027578Z 
+2026-11-13T09:31:34.6027824Z tmp_path = PosixPath('/tmp/pytest-of-runner/pytest-1/test_asft_compute_loss_uses_su6')
+2026-11-13T09:31:34.6028467Z alpha = 0.0, denominator_kind = 'accumulated_tensor', rows = [0]
+2026-11-13T09:31:34.6028707Z 
+2026-11-13T09:31:34.6028850Z     @pytest.mark.parametrize("alpha", [0.0, 0.1, 0.7])
+2026-11-13T09:31:34.6029334Z     @pytest.mark.parametrize("denominator_kind", ["local", "accumulated_int", "accumulated_tensor"])
+2026-11-13T09:31:34.6029818Z     @pytest.mark.parametrize("rows", [[0], [1, 2]])
+2026-11-13T09:31:34.6030281Z     def test_asft_compute_loss_uses_supplied_token_count(tmp_path, alpha, denominator_kind, rows):
+2026-11-13T09:31:34.6030751Z         trainer = _trainer(tmp_path, alpha)
+2026-11-13T09:31:34.6031023Z         full_batch = _batch()
+2026-11-13T09:31:34.6031335Z         batch = {key: value[rows] for key, value in full_batch.items()}
+2026-11-13T09:31:34.6031710Z         count = (full_batch["labels"][:, 1:] != -100).sum()
+2026-11-13T09:31:34.6032145Z         denominator = None if denominator_kind == "local" else count.item()
+2026-11-13T09:31:34.6032541Z         if denominator_kind == "accumulated_tensor":
+2026-11-13T09:31:34.6032830Z             denominator = count
+2026-11-13T09:31:34.6033277Z         expected_model = deepcopy(trainer.model)
+2026-11-13T09:31:34.6033565Z         with torch.no_grad():
+2026-11-13T09:31:34.6033839Z             ref_logits = trainer.ref_model(**batch).logits
+2026-11-13T09:31:34.6034328Z         expected = _oracle(expected_model(**batch).logits, batch["labels"], ref_logits, alpha, denominator)
+2026-11-13T09:31:34.6034940Z         actual = trainer.compute_loss(trainer.model, batch, num_items_in_batch=denominator)
+2026-11-13T09:31:34.6035449Z >       torch.testing.assert_close(actual, expected, rtol=1e-5, atol=1e-7)
+2026-11-13T09:31:34.6035831Z E       AssertionError: Scalars are not close!
+2026-11-13T09:31:34.6036100Z E       
+2026-11-13T09:31:34.6036340Z E       Expected 0.009045972488820553 but got 0.14473555982112885.
+2026-11-13T09:31:34.6036922Z E       Absolute difference: 0.1356895873323083 (up to 1e-07 allowed)
+2026-11-13T09:31:34.6037305Z E       Relative difference: 15.0 (up to 1e-05 allowed)
+2026-11-13T09:31:34.6037519Z 
+2026-11-13T09:31:34.6037692Z tests/train/test_asft_token_normalization.py:131: AssertionError
+2026-11-13T09:31:34.6038165Z _ test_asft_compute_loss_uses_supplied_token_count[rows0-accumulated_tensor-0.1] _
+2026-11-13T09:31:34.6038477Z 
+2026-11-13T09:31:34.6038711Z tmp_path = PosixPath('/tmp/pytest-of-runner/pytest-1/test_asft_compute_loss_uses_su7')
+2026-11-13T09:31:34.6039188Z alpha = 0.1, denominator_kind = 'accumulated_tensor', rows = [0]
+2026-11-13T09:31:34.6039431Z 
+2026-11-13T09:31:34.6039559Z     @pytest.mark.parametrize("alpha", [0.0, 0.1, 0.7])
+2026-11-13T09:31:34.6040032Z     @pytest.mark.parametrize("denominator_kind", ["local", "accumulated_int", "accumulated_tensor"])
+2026-11-13T09:31:34.6040520Z     @pytest.mark.parametrize("rows", [[0], [1, 2]])
+2026-11-13T09:31:34.6040996Z     def test_asft_compute_loss_uses_supplied_token_count(tmp_path, alpha, denominator_kind, rows):
+2026-11-13T09:31:34.6041458Z         trainer = _trainer(tmp_path, alpha)
+2026-11-13T09:31:34.6041729Z         full_batch = _batch()
+2026-11-13T09:31:34.6042033Z         batch = {key: value[rows] for key, value in full_batch.items()}
+2026-11-13T09:31:34.6042406Z         count = (full_batch["labels"][:, 1:] != -100).sum()
+2026-11-13T09:31:34.6042798Z         denominator = None if denominator_kind == "local" else count.item()
+2026-11-13T09:31:34.6043398Z         if denominator_kind == "accumulated_tensor":
+2026-11-13T09:31:34.6043692Z             denominator = count
+2026-11-13T09:31:34.6043964Z         expected_model = deepcopy(trainer.model)
+2026-11-13T09:31:34.6044254Z         with torch.no_grad():
+2026-11-13T09:31:34.6044524Z             ref_logits = trainer.ref_model(**batch).logits
+2026-11-13T09:31:34.6045014Z         expected = _oracle(expected_model(**batch).logits, batch["labels"], ref_logits, alpha, denominator)
+2026-11-13T09:31:34.6045623Z         actual = trainer.compute_loss(trainer.model, batch, num_items_in_batch=denominator)
+2026-11-13T09:31:34.6046275Z >       torch.testing.assert_close(actual, expected, rtol=1e-5, atol=1e-7)
+2026-11-13T09:31:34.6046660Z E       AssertionError: Scalars are not close!
+2026-11-13T09:31:34.6046930Z E       
+2026-11-13T09:31:34.6047172Z E       Expected 0.009096461348235607 but got 0.14554338157176971.
+2026-11-13T09:31:34.6047564Z E       Absolute difference: 0.1364469202235341 (up to 1e-07 allowed)
+2026-11-13T09:31:34.6047930Z E       Relative difference: 15.0 (up to 1e-05 allowed)
+2026-11-13T09:31:34.6048139Z 
+2026-11-13T09:31:34.6048313Z tests/train/test_asft_token_normalization.py:131: AssertionError
+2026-11-13T09:31:34.6048785Z _ test_asft_compute_loss_uses_supplied_token_count[rows0-accumulated_tensor-0.7] _
+2026-11-13T09:31:34.6049103Z 
+2026-11-13T09:31:34.6049332Z tmp_path = PosixPath('/tmp/pytest-of-runner/pytest-1/test_asft_compute_loss_uses_su8')
+2026-11-13T09:31:34.6049815Z alpha = 0.7, denominator_kind = 'accumulated_tensor', rows = [0]
+2026-11-13T09:31:34.6050061Z 
+2026-11-13T09:31:34.6050189Z     @pytest.mark.parametrize("alpha", [0.0, 0.1, 0.7])
+2026-11-13T09:31:34.6050669Z     @pytest.mark.parametrize("denominator_kind", ["local", "accumulated_int", "accumulated_tensor"])
+2026-11-13T09:31:34.6051147Z     @pytest.mark.parametrize("rows", [[0], [1, 2]])
+2026-11-13T09:31:34.6051607Z     def test_asft_compute_loss_uses_supplied_token_count(tmp_path, alpha, denominator_kind, rows):
+2026-11-13T09:31:34.6052061Z         trainer = _trainer(tmp_path, alpha)
+2026-11-13T09:31:34.6052327Z         full_batch = _batch()
+2026-11-13T09:31:34.6052625Z         batch = {key: value[rows] for key, value in full_batch.items()}
+2026-11-13T09:31:34.6053183Z         count = (full_batch["labels"][:, 1:] != -100).sum()
+2026-11-13T09:31:34.6053572Z         denominator = None if denominator_kind == "local" else count.item()
+2026-11-13T09:31:34.6053967Z         if denominator_kind == "accumulated_tensor":
+2026-11-13T09:31:34.6054378Z             denominator = count
+2026-11-13T09:31:34.6054647Z         expected_model = deepcopy(trainer.model)
+2026-11-13T09:31:34.6054928Z         with torch.no_grad():
+2026-11-13T09:31:34.6055191Z             ref_logits = trainer.ref_model(**batch).logits
+2026-11-13T09:31:34.6055675Z         expected = _oracle(expected_model(**batch).logits, batch["labels"], ref_logits, alpha, denominator)
+2026-11-13T09:31:34.6056288Z         actual = trainer.compute_loss(trainer.model, batch, num_items_in_batch=denominator)
+2026-11-13T09:31:34.6056802Z >       torch.testing.assert_close(actual, expected, rtol=1e-5, atol=1e-7)
+2026-11-13T09:31:34.6057250Z E       AssertionError: Scalars are not close!
+2026-11-13T09:31:34.6057526Z E       
+2026-11-13T09:31:34.6057766Z E       Expected 0.009399393573403358 but got 0.15039026737213135.
+2026-11-13T09:31:34.6058146Z E       Absolute difference: 0.140990873798728 (up to 1e-07 allowed)
+2026-11-13T09:31:34.6058536Z E       Relative difference: 14.999996829335622 (up to 1e-05 allowed)
+2026-11-13T09:31:34.6058790Z 
+2026-11-13T09:31:34.6058956Z tests/train/test_asft_token_normalization.py:131: AssertionError
+2026-11-13T09:31:34.6059414Z _ test_asft_compute_loss_uses_supplied_token_count[rows1-accumulated_int-0.0] __
+2026-11-13T09:31:34.6059723Z 
+2026-11-13T09:31:34.6059955Z tmp_path = PosixPath('/tmp/pytest-of-runner/pytest-1/test_asft_compute_loss_uses_su12')
+2026-11-13T09:31:34.6060436Z alpha = 0.0, denominator_kind = 'accumulated_int', rows = [1, 2]
+2026-11-13T09:31:34.6060676Z 
+2026-11-13T09:31:34.6060809Z     @pytest.mark.parametrize("alpha", [0.0, 0.1, 0.7])
+2026-11-13T09:31:34.6061286Z     @pytest.mark.parametrize("denominator_kind", ["local", "accumulated_int", "accumulated_tensor"])
+2026-11-13T09:31:34.6061766Z     @pytest.mark.parametrize("rows", [[0], [1, 2]])
+2026-11-13T09:31:34.6062222Z     def test_asft_compute_loss_uses_supplied_token_count(tmp_path, alpha, denominator_kind, rows):
+2026-11-13T09:31:34.6062675Z         trainer = _trainer(tmp_path, alpha)
+2026-11-13T09:31:34.6063159Z         full_batch = _batch()
+2026-11-13T09:31:34.6063631Z         batch = {key: value[rows] for key, value in full_batch.items()}
+2026-11-13T09:31:34.6064014Z         count = (full_batch["labels"][:, 1:] != -100).sum()
+2026-11-13T09:31:34.6064403Z         denominator = None if denominator_kind == "local" else count.item()
+2026-11-13T09:31:34.6064792Z         if denominator_kind == "accumulated_tensor":
+2026-11-13T09:31:34.6065079Z             denominator = count
+2026-11-13T09:31:34.6065339Z         expected_model = deepcopy(trainer.model)
+2026-11-13T09:31:34.6065619Z         with torch.no_grad():
+2026-11-13T09:31:34.6065887Z             ref_logits = trainer.ref_model(**batch).logits
+2026-11-13T09:31:34.6066366Z         expected = _oracle(expected_model(**batch).logits, batch["labels"], ref_logits, alpha, denominator)
+2026-11-13T09:31:34.6066976Z         actual = trainer.compute_loss(trainer.model, batch, num_items_in_batch=denominator)
+2026-11-13T09:31:34.6067493Z >       torch.testing.assert_close(actual, expected, rtol=1e-5, atol=1e-7)
+2026-11-13T09:31:34.6067877Z E       AssertionError: Scalars are not close!
+2026-11-13T09:31:34.6068140Z E       
+2026-11-13T09:31:34.6068376Z E       Expected 0.05262695625424385 but got 0.14033855497837067.
+2026-11-13T09:31:34.6068759Z E       Absolute difference: 0.08771159872412682 (up to 1e-07 allowed)
+2026-11-13T09:31:34.6069154Z E       Relative difference: 1.6666667610489774 (up to 1e-05 allowed)
+2026-11-13T09:31:34.6069402Z 
+2026-11-13T09:31:34.6069569Z tests/train/test_asft_token_normalization.py:131: AssertionError
+2026-11-13T09:31:34.6070026Z _ test_asft_compute_loss_uses_supplied_token_count[rows1-accumulated_int-0.1] __
+2026-11-13T09:31:34.6070337Z 
+2026-11-13T09:31:34.6070569Z tmp_path = PosixPath('/tmp/pytest-of-runner/pytest-1/test_asft_compute_loss_uses_su13')
+2026-11-13T09:31:34.6071049Z alpha = 0.1, denominator_kind = 'accumulated_int', rows = [1, 2]
+2026-11-13T09:31:34.6071285Z 
+2026-11-13T09:31:34.6071539Z     @pytest.mark.parametrize("alpha", [0.0, 0.1, 0.7])
+2026-11-13T09:31:34.6072033Z     @pytest.mark.parametrize("denominator_kind", ["local", "accumulated_int", "accumulated_tensor"])
+2026-11-13T09:31:34.6072520Z     @pytest.mark.parametrize("rows", [[0], [1, 2]])
+2026-11-13T09:31:34.6073210Z     def test_asft_compute_loss_uses_supplied_token_count(tmp_path, alpha, denominator_kind, rows):
+2026-11-13T09:31:34.6073672Z         trainer = _trainer(tmp_path, alpha)
+2026-11-13T09:31:34.6073946Z         full_batch = _batch()
+2026-11-13T09:31:34.6074272Z         batch = {key: value[rows] for key, value in full_batch.items()}
+2026-11-13T09:31:34.6074651Z         count = (full_batch["labels"][:, 1:] != -100).sum()
+2026-11-13T09:31:34.6075036Z         denominator = None if denominator_kind == "local" else count.item()
+2026-11-13T09:31:34.6075423Z         if denominator_kind == "accumulated_tensor":
+2026-11-13T09:31:34.6075719Z             denominator = count
+2026-11-13T09:31:34.6075981Z         expected_model = deepcopy(trainer.model)
+2026-11-13T09:31:34.6076273Z         with torch.no_grad():
+2026-11-13T09:31:34.6076544Z             ref_logits = trainer.ref_model(**batch).logits
+2026-11-13T09:31:34.6077030Z         expected = _oracle(expected_model(**batch).logits, batch["labels"], ref_logits, alpha, denominator)
+2026-11-13T09:31:34.6077633Z         actual = trainer.compute_loss(trainer.model, batch, num_items_in_batch=denominator)
+2026-11-13T09:31:34.6078143Z >       torch.testing.assert_close(actual, expected, rtol=1e-5, atol=1e-7)
+2026-11-13T09:31:34.6078528Z E       AssertionError: Scalars are not close!
+2026-11-13T09:31:34.6078801Z E       
+2026-11-13T09:31:34.6079040Z E       Expected 0.05281660333275795 but got 0.14084428548812866.
+2026-11-13T09:31:34.6079427Z E       Absolute difference: 0.08802768215537071 (up to 1e-07 allowed)
+2026-11-13T09:31:34.6079826Z E       Relative difference: 1.6666668547534962 (up to 1e-05 allowed)
+2026-11-13T09:31:34.6080071Z 
+2026-11-13T09:31:34.6080242Z tests/train/test_asft_token_normalization.py:131: AssertionError
+2026-11-13T09:31:34.6080703Z _ test_asft_compute_loss_uses_supplied_token_count[rows1-accumulated_int-0.7] __
+2026-11-13T09:31:34.6081144Z 
+2026-11-13T09:31:34.6081378Z tmp_path = PosixPath('/tmp/pytest-of-runner/pytest-1/test_asft_compute_loss_uses_su14')
+2026-11-13T09:31:34.6081852Z alpha = 0.7, denominator_kind = 'accumulated_int', rows = [1, 2]
+2026-11-13T09:31:34.6082095Z 
+2026-11-13T09:31:34.6082232Z     @pytest.mark.parametrize("alpha", [0.0, 0.1, 0.7])
+2026-11-13T09:31:34.6082717Z     @pytest.mark.parametrize("denominator_kind", ["local", "accumulated_int", "accumulated_tensor"])
+2026-11-13T09:31:34.6083398Z     @pytest.mark.parametrize("rows", [[0], [1, 2]])
+2026-11-13T09:31:34.6083866Z     def test_asft_compute_loss_uses_supplied_token_count(tmp_path, alpha, denominator_kind, rows):
+2026-11-13T09:31:34.6084326Z         trainer = _trainer(tmp_path, alpha)
+2026-11-13T09:31:34.6084594Z         full_batch = _batch()
+2026-11-13T09:31:34.6084894Z         batch = {key: value[rows] for key, value in full_batch.items()}
+2026-11-13T09:31:34.6085276Z         count = (full_batch["labels"][:, 1:] != -100).sum()
+2026-11-13T09:31:34.6085664Z         denominator = None if denominator_kind == "local" else count.item()
+2026-11-13T09:31:34.6086048Z         if denominator_kind == "accumulated_tensor":
+2026-11-13T09:31:34.6086340Z             denominator = count
+2026-11-13T09:31:34.6086599Z         expected_model = deepcopy(trainer.model)
+2026-11-13T09:31:34.6086879Z         with torch.no_grad():
+2026-11-13T09:31:34.6087140Z             ref_logits = trainer.ref_model(**batch).logits
+2026-11-13T09:31:34.6087620Z         expected = _oracle(expected_model(**batch).logits, batch["labels"], ref_logits, alpha, denominator)
+2026-11-13T09:31:34.6088220Z         actual = trainer.compute_loss(trainer.model, batch, num_items_in_batch=denominator)
+2026-11-13T09:31:34.6088735Z >       torch.testing.assert_close(actual, expected, rtol=1e-5, atol=1e-7)
+2026-11-13T09:31:34.6089117Z E       AssertionError: Scalars are not close!
+2026-11-13T09:31:34.6089503Z E       
+2026-11-13T09:31:34.6089754Z E       Expected 0.05395448952913284 but got 0.14387863874435425.
+2026-11-13T09:31:34.6090135Z E       Absolute difference: 0.0899241492152214 (up to 1e-07 allowed)
+2026-11-13T09:31:34.6090528Z E       Relative difference: 1.6666666666666667 (up to 1e-05 allowed)
+2026-11-13T09:31:34.6090772Z 
+2026-11-13T09:31:34.6090939Z tests/train/test_asft_token_normalization.py:131: AssertionError
+2026-11-13T09:31:34.6091409Z _ test_asft_compute_loss_uses_supplied_token_count[rows1-accumulated_tensor-0.0] _
+2026-11-13T09:31:34.6091727Z 
+2026-11-13T09:31:34.6091964Z tmp_path = PosixPath('/tmp/pytest-of-runner/pytest-1/test_asft_compute_loss_uses_su15')
+2026-11-13T09:31:34.6092457Z alpha = 0.0, denominator_kind = 'accumulated_tensor', rows = [1, 2]
+2026-11-13T09:31:34.6092705Z 
+2026-11-13T09:31:34.6092840Z     @pytest.mark.parametrize("alpha", [0.0, 0.1, 0.7])
+2026-11-13T09:31:34.6093527Z     @pytest.mark.parametrize("denominator_kind", ["local", "accumulated_int", "accumulated_tensor"])
+2026-11-13T09:31:34.6094018Z     @pytest.mark.parametrize("rows", [[0], [1, 2]])
+2026-11-13T09:31:34.6094478Z     def test_asft_compute_loss_uses_supplied_token_count(tmp_path, alpha, denominator_kind, rows):
+2026-11-13T09:31:34.6094929Z         trainer = _trainer(tmp_path, alpha)
+2026-11-13T09:31:34.6095196Z         full_batch = _batch()
+2026-11-13T09:31:34.6095507Z         batch = {key: value[rows] for key, value in full_batch.items()}
+2026-11-13T09:31:34.6095878Z         count = (full_batch["labels"][:, 1:] != -100).sum()
+2026-11-13T09:31:34.6096273Z         denominator = None if denominator_kind == "local" else count.item()
+2026-11-13T09:31:34.6096665Z         if denominator_kind == "accumulated_tensor":
+2026-11-13T09:31:34.6096959Z             denominator = count
+2026-11-13T09:31:34.6097220Z         expected_model = deepcopy(trainer.model)
+2026-11-13T09:31:34.6097500Z         with torch.no_grad():
+2026-11-13T09:31:34.6097767Z             ref_logits = trainer.ref_model(**batch).logits
+2026-11-13T09:31:34.6098256Z         expected = _oracle(expected_model(**batch).logits, batch["labels"], ref_logits, alpha, denominator)
+2026-11-13T09:31:34.6098999Z         actual = trainer.compute_loss(trainer.model, batch, num_items_in_batch=denominator)
+2026-11-13T09:31:34.6099505Z >       torch.testing.assert_close(actual, expected, rtol=1e-5, atol=1e-7)
+2026-11-13T09:31:34.6099883Z E       AssertionError: Scalars are not close!
+2026-11-13T09:31:34.6100149Z E       
+2026-11-13T09:31:34.6100383Z E       Expected 0.05262695625424385 but got 0.14033855497837067.
+2026-11-13T09:31:34.6100767Z E       Absolute difference: 0.08771159872412682 (up to 1e-07 allowed)
+2026-11-13T09:31:34.6101164Z E       Relative difference: 1.6666667610489774 (up to 1e-05 allowed)
+2026-11-13T09:31:34.6101413Z 
+2026-11-13T09:31:34.6101578Z tests/train/test_asft_token_normalization.py:131: AssertionError
+2026-11-13T09:31:34.6102051Z _ test_asft_compute_loss_uses_supplied_token_count[rows1-accumulated_tensor-0.1] _
+2026-11-13T09:31:34.6102363Z 
+2026-11-13T09:31:34.6102606Z tmp_path = PosixPath('/tmp/pytest-of-runner/pytest-1/test_asft_compute_loss_uses_su16')
+2026-11-13T09:31:34.6103300Z alpha = 0.1, denominator_kind = 'accumulated_tensor', rows = [1, 2]
+2026-11-13T09:31:34.6103557Z 
+2026-11-13T09:31:34.6103686Z     @pytest.mark.parametrize("alpha", [0.0, 0.1, 0.7])
+2026-11-13T09:31:34.6104159Z     @pytest.mark.parametrize("denominator_kind", ["local", "accumulated_int", "accumulated_tensor"])
+2026-11-13T09:31:34.6104648Z     @pytest.mark.parametrize("rows", [[0], [1, 2]])
+2026-11-13T09:31:34.6105107Z     def test_asft_compute_loss_uses_supplied_token_count(tmp_path, alpha, denominator_kind, rows):
+2026-11-13T09:31:34.6105569Z         trainer = _trainer(tmp_path, alpha)
+2026-11-13T09:31:34.6105832Z         full_batch = _batch()
+2026-11-13T09:31:34.6106137Z         batch = {key: value[rows] for key, value in full_batch.items()}
+2026-11-13T09:31:34.6106504Z         count = (full_batch["labels"][:, 1:] != -100).sum()
+2026-11-13T09:31:34.6107017Z         denominator = None if denominator_kind == "local" else count.item()
+2026-11-13T09:31:34.6107417Z         if denominator_kind == "accumulated_tensor":
+2026-11-13T09:31:34.6107705Z             denominator = count
+2026-11-13T09:31:34.6107965Z         expected_model = deepcopy(trainer.model)
+2026-11-13T09:31:34.6108242Z         with torch.no_grad():
+2026-11-13T09:31:34.6108512Z             ref_logits = trainer.ref_model(**batch).logits
+2026-11-13T09:31:34.6109000Z         expected = _oracle(expected_model(**batch).logits, batch["labels"], ref_logits, alpha, denominator)
+2026-11-13T09:31:34.6109605Z         actual = trainer.compute_loss(trainer.model, batch, num_items_in_batch=denominator)
+2026-11-13T09:31:34.6110111Z >       torch.testing.assert_close(actual, expected, rtol=1e-5, atol=1e-7)
+2026-11-13T09:31:34.6110490Z E       AssertionError: Scalars are not close!
+2026-11-13T09:31:34.6110761Z E       
+2026-11-13T09:31:34.6110992Z E       Expected 0.05281660333275795 but got 0.14084428548812866.
+2026-11-13T09:31:34.6111377Z E       Absolute difference: 0.08802768215537071 (up to 1e-07 allowed)
+2026-11-13T09:31:34.6111787Z E       Relative difference: 1.6666668547534962 (up to 1e-05 allowed)
+2026-11-13T09:31:34.6112028Z 
+2026-11-13T09:31:34.6112199Z tests/train/test_asft_token_normalization.py:131: AssertionError
+2026-11-13T09:31:34.6112667Z _ test_asft_compute_loss_uses_supplied_token_count[rows1-accumulated_tensor-0.7] _
+2026-11-13T09:31:34.6113166Z 
+2026-11-13T09:31:34.6113412Z tmp_path = PosixPath('/tmp/pytest-of-runner/pytest-1/test_asft_compute_loss_uses_su17')
+2026-11-13T09:31:34.6113905Z alpha = 0.7, denominator_kind = 'accumulated_tensor', rows = [1, 2]
+2026-11-13T09:31:34.6114162Z 
+2026-11-13T09:31:34.6114293Z     @pytest.mark.parametrize("alpha", [0.0, 0.1, 0.7])
+2026-11-13T09:31:34.6114775Z     @pytest.mark.parametrize("denominator_kind", ["local", "accumulated_int", "accumulated_tensor"])
+2026-11-13T09:31:34.6115269Z     @pytest.mark.parametrize("rows", [[0], [1, 2]])
+2026-11-13T09:31:34.6115742Z     def test_asft_compute_loss_uses_supplied_token_count(tmp_path, alpha, denominator_kind, rows):
+2026-11-13T09:31:34.6116331Z         trainer = _trainer(tmp_path, alpha)
+2026-11-13T09:31:34.6116602Z         full_batch = _batch()
+2026-11-13T09:31:34.6116907Z         batch = {key: value[rows] for key, value in full_batch.items()}
+2026-11-13T09:31:34.6117282Z         count = (full_batch["labels"][:, 1:] != -100).sum()
+2026-11-13T09:31:34.6117677Z         denominator = None if denominator_kind == "local" else count.item()
+2026-11-13T09:31:34.6118063Z         if denominator_kind == "accumulated_tensor":
+2026-11-13T09:31:34.6118355Z             denominator = count
+2026-11-13T09:31:34.6118613Z         expected_model = deepcopy(trainer.model)
+2026-11-13T09:31:34.6118890Z         with torch.no_grad():
+2026-11-13T09:31:34.6119154Z             ref_logits = trainer.ref_model(**batch).logits
+2026-11-13T09:31:34.6119634Z         expected = _oracle(expected_model(**batch).logits, batch["labels"], ref_logits, alpha, denominator)
+2026-11-13T09:31:34.6120248Z         actual = trainer.compute_loss(trainer.model, batch, num_items_in_batch=denominator)
+2026-11-13T09:31:34.6120753Z >       torch.testing.assert_close(actual, expected, rtol=1e-5, atol=1e-7)
+2026-11-13T09:31:34.6121131Z E       AssertionError: Scalars are not close!
+2026-11-13T09:31:34.6121398Z E       
+2026-11-13T09:31:34.6121637Z E       Expected 0.05395448952913284 but got 0.14387863874435425.
+2026-11-13T09:31:34.6122018Z E       Absolute difference: 0.0899241492152214 (up to 1e-07 allowed)
+2026-11-13T09:31:34.6122406Z E       Relative difference: 1.6666666666666667 (up to 1e-05 allowed)
+2026-11-13T09:31:34.6122644Z 
+2026-11-13T09:31:34.6122816Z tests/train/test_asft_token_normalization.py:131: AssertionError
+2026-11-13T09:31:34.6123496Z _____ test_native_asft_training_matches_full_token_objective[1-3-sgd-0.0] ______
+2026-11-13T09:31:34.6123802Z 
+2026-11-13T09:31:34.6124032Z tmp_path = PosixPath('/tmp/pytest-of-runner/pytest-1/test_native_asft_training_matc0')
+2026-11-13T09:31:34.6124780Z alpha = 0.0, optimizer_name = 'sgd', micro_batch = 1, accumulation = 3
+2026-11-13T09:31:34.6125057Z 
+2026-11-13T09:31:34.6125189Z     @pytest.mark.parametrize("alpha", [0.0, 0.7])
+2026-11-13T09:31:34.6125552Z     @pytest.mark.parametrize("optimizer_name", ["sgd", "adamw"])
+2026-11-13T09:31:34.6125986Z     @pytest.mark.parametrize("micro_batch,accumulation", [(1, 3), (3, 1)])
+2026-11-13T09:31:34.6126616Z     def test_native_asft_training_matches_full_token_objective(tmp_path, alpha, optimizer_name, micro_batch, accumulation):
+2026-11-13T09:31:34.6127145Z         trainer = _trainer(
+2026-11-13T09:31:34.6127573Z             tmp_path, alpha, micro_batch=micro_batch, accumulation=accumulation, optimizer_name=optimizer_name
+2026-11-13T09:31:34.6128023Z         )
+2026-11-13T09:31:34.6128236Z         expected_model = deepcopy(trainer.model)
+2026-11-13T09:31:34.6128608Z         expected_optimizer = _optimizer(expected_model, optimizer_name)
+2026-11-13T09:31:34.6129063Z         torch.optim.lr_scheduler.LambdaLR(expected_optimizer, lambda _: 1.0)
+2026-11-13T09:31:34.6129443Z         trace = _GradientTrace()
+2026-11-13T09:31:34.6129695Z         trainer.add_callback(trace)
+2026-11-13T09:31:34.6129947Z         full_batch = _batch()
+2026-11-13T09:31:34.6130400Z         expected_losses = []
+2026-11-13T09:31:34.6130770Z         expected_gradients = []
+2026-11-13T09:31:34.6131079Z         for offset in (0, 3):
+2026-11-13T09:31:34.6131584Z             batch = {key: value[offset : offset + 3] for key, value in full_batch.items()}
+2026-11-13T09:31:34.6132126Z             expected_optimizer.zero_grad()
+2026-11-13T09:31:34.6132524Z             with torch.no_grad():
+2026-11-13T09:31:34.6133180Z                 ref_logits = trainer.ref_model(**batch).logits
+2026-11-13T09:31:34.6133746Z             loss = _oracle(expected_model(**batch).logits, batch["labels"], ref_logits, alpha)
+2026-11-13T09:31:34.6134362Z             loss.backward()
+2026-11-13T09:31:34.6187845Z             expected_losses.append(loss.detach())
+2026-11-13T09:31:34.6188771Z             expected_gradients.append([parameter.grad.detach().clone() for parameter in expected_model.parameters()])
+2026-11-13T09:31:34.6189887Z             expected_optimizer.step()
+2026-11-13T09:31:34.6190269Z     
+2026-11-13T09:31:34.6190562Z         result = trainer.train()
+2026-11-13T09:31:34.6190926Z     
+2026-11-13T09:31:34.6191230Z         assert result.global_step == 2
+2026-11-13T09:31:34.6191664Z         assert len(trace.gradients) == 2
+2026-11-13T09:31:34.6192419Z >       assert result.training_loss == pytest.approx(torch.stack(expected_losses).mean().item(), rel=1e-5, abs=1e-7)
+2026-11-13T09:31:34.6193829Z E       assert 0.4189700484275818 == 0.13957378268241882 ± 1.4e-06
+2026-11-13T09:31:34.6194291Z E         
+2026-11-13T09:31:34.6194608Z E         comparison failed
+2026-11-13T09:31:34.6195019Z E         Obtained: 0.4189700484275818
+2026-11-13T09:31:34.6195581Z E         Expected: 0.13957378268241882 ± 1.4e-06
+2026-11-13T09:31:34.6195914Z 
+2026-11-13T09:31:34.6196233Z tests/train/test_asft_token_normalization.py:189: AssertionError
+2026-11-13T09:31:34.6197009Z ----------------------------- Captured stdout call -----------------------------
+2026-11-13T09:31:34.6198164Z {'train_runtime': 0.0167, 'train_samples_per_second': 359.491, 'train_steps_per_second': 119.83, 'train_loss': 0.4189700484275818, 'epoch': 1.0}
+2026-11-13T09:31:34.6199353Z _____ test_native_asft_training_matches_full_token_objective[1-3-sgd-0.7] ______
+2026-11-13T09:31:34.6199885Z 
+2026-11-13T09:31:34.6200257Z tmp_path = PosixPath('/tmp/pytest-of-runner/pytest-1/test_native_asft_training_matc1')
+2026-11-13T09:31:34.6200958Z alpha = 0.7, optimizer_name = 'sgd', micro_batch = 1, accumulation = 3
+2026-11-13T09:31:34.6201224Z 
+2026-11-13T09:31:34.6201357Z     @pytest.mark.parametrize("alpha", [0.0, 0.7])
+2026-11-13T09:31:34.6201726Z     @pytest.mark.parametrize("optimizer_name", ["sgd", "adamw"])
+2026-11-13T09:31:34.6202159Z     @pytest.mark.parametrize("micro_batch,accumulation", [(1, 3), (3, 1)])
+2026-11-13T09:31:34.6203240Z     def test_native_asft_training_matches_full_token_objective(tmp_path, alpha, optimizer_name, micro_batch, accumulation):
+2026-11-13T09:31:34.6203833Z         trainer = _trainer(
+2026-11-13T09:31:34.6204288Z             tmp_path, alpha, micro_batch=micro_batch, accumulation=accumulation, optimizer_name=optimizer_name
+2026-11-13T09:31:34.6204756Z         )
+2026-11-13T09:31:34.6204980Z         expected_model = deepcopy(trainer.model)
+2026-11-13T09:31:34.6205358Z         expected_optimizer = _optimizer(expected_model, optimizer_name)
+2026-11-13T09:31:34.6205825Z         torch.optim.lr_scheduler.LambdaLR(expected_optimizer, lambda _: 1.0)
+2026-11-13T09:31:34.6206209Z         trace = _GradientTrace()
+2026-11-13T09:31:34.6206469Z         trainer.add_callback(trace)
+2026-11-13T09:31:34.6206723Z         full_batch = _batch()
+2026-11-13T09:31:34.6206963Z         expected_losses = []
+2026-11-13T09:31:34.6207206Z         expected_gradients = []
+2026-11-13T09:31:34.6207452Z         for offset in (0, 3):
+2026-11-13T09:31:34.6207842Z             batch = {key: value[offset : offset + 3] for key, value in full_batch.items()}
+2026-11-13T09:31:34.6208258Z             expected_optimizer.zero_grad()
+2026-11-13T09:31:34.6208541Z             with torch.no_grad():
+2026-11-13T09:31:34.6208831Z                 ref_logits = trainer.ref_model(**batch).logits
+2026-11-13T09:31:34.6209278Z             loss = _oracle(expected_model(**batch).logits, batch["labels"], ref_logits, alpha)
+2026-11-13T09:31:34.6209693Z             loss.backward()
+2026-11-13T09:31:34.6209952Z             expected_losses.append(loss.detach())
+2026-11-13T09:31:34.6210478Z             expected_gradients.append([parameter.grad.detach().clone() for parameter in expected_model.parameters()])
+2026-11-13T09:31:34.6211004Z             expected_optimizer.step()
+2026-11-13T09:31:34.6211253Z     
+2026-11-13T09:31:34.6211445Z         result = trainer.train()
+2026-11-13T09:31:34.6211670Z     
+2026-11-13T09:31:34.6211872Z         assert result.global_step == 2
+2026-11-13T09:31:34.6212151Z         assert len(trace.gradients) == 2
+2026-11-13T09:31:34.6212784Z >       assert result.training_loss == pytest.approx(torch.stack(expected_losses).mean().item(), rel=1e-5, abs=1e-7)
+2026-11-13T09:31:34.6213661Z E       assert 0.4302734136581421 == 0.1432538479566574 ± 1.4e-06
+2026-11-13T09:31:34.6213971Z E         
+2026-11-13T09:31:34.6214163Z E         comparison failed
+2026-11-13T09:31:34.6214403Z E         Obtained: 0.4302734136581421
+2026-11-13T09:31:34.6214715Z E         Expected: 0.1432538479566574 ± 1.4e-06
+2026-11-13T09:31:34.6214899Z 
+2026-11-13T09:31:34.6215081Z tests/train/test_asft_token_normalization.py:189: AssertionError
+2026-11-13T09:31:34.6215533Z ----------------------------- Captured stdout call -----------------------------
+2026-11-13T09:31:34.6216185Z {'train_runtime': 0.0167, 'train_samples_per_second': 358.743, 'train_steps_per_second': 119.581, 'train_loss': 0.4302734136581421, 'epoch': 1.0}
+2026-11-13T09:31:34.6216866Z ____ test_native_asft_training_matches_full_token_objective[1-3-adamw-0.0] _____
+2026-11-13T09:31:34.6217178Z 
+2026-11-13T09:31:34.6217416Z tmp_path = PosixPath('/tmp/pytest-of-runner/pytest-1/test_native_asft_training_matc2')
+2026-11-13T09:31:34.6217935Z alpha = 0.0, optimizer_name = 'adamw', micro_batch = 1, accumulation = 3
+2026-11-13T09:31:34.6218201Z 
+2026-11-13T09:31:34.6218333Z     @pytest.mark.parametrize("alpha", [0.0, 0.7])
+2026-11-13T09:31:34.6218700Z     @pytest.mark.parametrize("optimizer_name", ["sgd", "adamw"])
+2026-11-13T09:31:34.6219132Z     @pytest.mark.parametrize("micro_batch,accumulation", [(1, 3), (3, 1)])
+2026-11-13T09:31:34.6219759Z     def test_native_asft_training_matches_full_token_objective(tmp_path, alpha, optimizer_name, micro_batch, accumulation):
+2026-11-13T09:31:34.6220293Z         trainer = _trainer(
+2026-11-13T09:31:34.6220722Z             tmp_path, alpha, micro_batch=micro_batch, accumulation=accumulation, optimizer_name=optimizer_name
+2026-11-13T09:31:34.6221177Z         )
+2026-11-13T09:31:34.6221533Z         expected_model = deepcopy(trainer.model)
+2026-11-13T09:31:34.6221928Z         expected_optimizer = _optimizer(expected_model, optimizer_name)
+2026-11-13T09:31:34.6222384Z         torch.optim.lr_scheduler.LambdaLR(expected_optimizer, lambda _: 1.0)
+2026-11-13T09:31:34.6222757Z         trace = _GradientTrace()
+2026-11-13T09:31:34.6223248Z         trainer.add_callback(trace)
+2026-11-13T09:31:34.6223510Z         full_batch = _batch()
+2026-11-13T09:31:34.6223844Z         expected_losses = []
+2026-11-13T09:31:34.6224082Z         expected_gradients = []
+2026-11-13T09:31:34.6224322Z         for offset in (0, 3):
+2026-11-13T09:31:34.6224669Z             batch = {key: value[offset : offset + 3] for key, value in full_batch.items()}
+2026-11-13T09:31:34.6225075Z             expected_optimizer.zero_grad()
+2026-11-13T09:31:34.6225347Z             with torch.no_grad():
+2026-11-13T09:31:34.6225630Z                 ref_logits = trainer.ref_model(**batch).logits
+2026-11-13T09:31:34.6226070Z             loss = _oracle(expected_model(**batch).logits, batch["labels"], ref_logits, alpha)
+2026-11-13T09:31:34.6226624Z             loss.backward()
+2026-11-13T09:31:34.6227039Z             expected_losses.append(loss.detach())
+2026-11-13T09:31:34.6227698Z             expected_gradients.append([parameter.grad.detach().clone() for parameter in expected_model.parameters()])
+2026-11-13T09:31:34.6228262Z             expected_optimizer.step()
+2026-11-13T09:31:34.6228515Z     
+2026-11-13T09:31:34.6228705Z         result = trainer.train()
+2026-11-13T09:31:34.6228933Z     
+2026-11-13T09:31:34.6229127Z         assert result.global_step == 2
+2026-11-13T09:31:34.6229397Z         assert len(trace.gradients) == 2
+2026-11-13T09:31:34.6229883Z >       assert result.training_loss == pytest.approx(torch.stack(expected_losses).mean().item(), rel=1e-5, abs=1e-7)
+2026-11-13T09:31:34.6230516Z E       assert 0.42213040590286255 == 0.14095667004585266 ± 1.4e-06
+2026-11-13T09:31:34.6230829Z E         
+2026-11-13T09:31:34.6231019Z E         comparison failed
+2026-11-13T09:31:34.6231268Z E         Obtained: 0.42213040590286255
+2026-11-13T09:31:34.6231766Z E         Expected: 0.14095667004585266 ± 1.4e-06
+2026-11-13T09:31:34.6232001Z 
+2026-11-13T09:31:34.6232179Z tests/train/test_asft_token_normalization.py:189: AssertionError
+2026-11-13T09:31:34.6232611Z ----------------------------- Captured stdout call -----------------------------
+2026-11-13T09:31:34.6233463Z {'train_runtime': 0.0178, 'train_samples_per_second': 336.887, 'train_steps_per_second': 112.296, 'train_loss': 0.42213040590286255, 'epoch': 1.0}
+2026-11-13T09:31:34.6234138Z ____ test_native_asft_training_matches_full_token_objective[1-3-adamw-0.7] _____
+2026-11-13T09:31:34.6234443Z 
+2026-11-13T09:31:34.6234681Z tmp_path = PosixPath('/tmp/pytest-of-runner/pytest-1/test_native_asft_training_matc3')
+2026-11-13T09:31:34.6235180Z alpha = 0.7, optimizer_name = 'adamw', micro_batch = 1, accumulation = 3
+2026-11-13T09:31:34.6235450Z 
+2026-11-13T09:31:34.6235572Z     @pytest.mark.parametrize("alpha", [0.0, 0.7])
+2026-11-13T09:31:34.6235947Z     @pytest.mark.parametrize("optimizer_name", ["sgd", "adamw"])
+2026-11-13T09:31:34.6236381Z     @pytest.mark.parametrize("micro_batch,accumulation", [(1, 3), (3, 1)])
+2026-11-13T09:31:34.6237007Z     def test_native_asft_training_matches_full_token_objective(tmp_path, alpha, optimizer_name, micro_batch, accumulation):
+2026-11-13T09:31:34.6237536Z         trainer = _trainer(
+2026-11-13T09:31:34.6237969Z             tmp_path, alpha, micro_batch=micro_batch, accumulation=accumulation, optimizer_name=optimizer_name
+2026-11-13T09:31:34.6238474Z         )
+2026-11-13T09:31:34.6238694Z         expected_model = deepcopy(trainer.model)
+2026-11-13T09:31:34.6239068Z         expected_optimizer = _optimizer(expected_model, optimizer_name)
+2026-11-13T09:31:34.6239512Z         torch.optim.lr_scheduler.LambdaLR(expected_optimizer, lambda _: 1.0)
+2026-11-13T09:31:34.6239881Z         trace = _GradientTrace()
+2026-11-13T09:31:34.6240134Z         trainer.add_callback(trace)
+2026-11-13T09:31:34.6240527Z         full_batch = _batch()
+2026-11-13T09:31:34.6240784Z         expected_losses = []
+2026-11-13T09:31:34.6241024Z         expected_gradients = []
+2026-11-13T09:31:34.6241262Z         for offset in (0, 3):
+2026-11-13T09:31:34.6241613Z             batch = {key: value[offset : offset + 3] for key, value in full_batch.items()}
+2026-11-13T09:31:34.6242007Z             expected_optimizer.zero_grad()
+2026-11-13T09:31:34.6242275Z             with torch.no_grad():
+2026-11-13T09:31:34.6242554Z                 ref_logits = trainer.ref_model(**batch).logits
+2026-11-13T09:31:34.6243175Z             loss = _oracle(expected_model(**batch).logits, batch["labels"], ref_logits, alpha)
+2026-11-13T09:31:34.6243594Z             loss.backward()
+2026-11-13T09:31:34.6243858Z             expected_losses.append(loss.detach())
+2026-11-13T09:31:34.6244390Z             expected_gradients.append([parameter.grad.detach().clone() for parameter in expected_model.parameters()])
+2026-11-13T09:31:34.6244905Z             expected_optimizer.step()
+2026-11-13T09:31:34.6245159Z     
+2026-11-13T09:31:34.6245347Z         result = trainer.train()
+2026-11-13T09:31:34.6245573Z     
+2026-11-13T09:31:34.6245764Z         assert result.global_step == 2
+2026-11-13T09:31:34.6246032Z         assert len(trace.gradients) == 2
+2026-11-13T09:31:34.6246519Z >       assert result.training_loss == pytest.approx(torch.stack(expected_losses).mean().item(), rel=1e-5, abs=1e-7)
+2026-11-13T09:31:34.6247139Z E       assert 0.4332081973552704 == 0.14410161972045898 ± 1.4e-06
+2026-11-13T09:31:34.6247446Z E         
+2026-11-13T09:31:34.6247635Z E         comparison failed
+2026-11-13T09:31:34.6247862Z E         Obtained: 0.4332081973552704
+2026-11-13T09:31:34.6248170Z E         Expected: 0.14410161972045898 ± 1.4e-06
+2026-11-13T09:31:34.6248356Z 
+2026-11-13T09:31:34.6248540Z tests/train/test_asft_token_normalization.py:189: AssertionError
+2026-11-13T09:31:34.6248985Z ----------------------------- Captured stdout call -----------------------------
+2026-11-13T09:31:34.6249642Z {'train_runtime': 0.0176, 'train_samples_per_second': 340.663, 'train_steps_per_second': 113.554, 'train_loss': 0.4332081973552704, 'epoch': 1.0}
+2026-11-13T09:31:34.6250538Z _____ test_native_distributed_asft_matches_global_token_objective[1-3-sgd] _____
+2026-11-13T09:31:34.6250851Z 
+2026-11-13T09:31:34.6251099Z tmp_path = PosixPath('/tmp/pytest-of-runner/pytest-1/test_native_distributed_asft_m0')
+2026-11-13T09:31:34.6251576Z optimizer_name = 'sgd', micro_batch = 1, accumulation = 3
+2026-11-13T09:31:34.6251804Z 
+2026-11-13T09:31:34.6251969Z     @pytest.mark.parametrize("optimizer_name", ["sgd", "adamw"])
+2026-11-13T09:31:34.6252406Z     @pytest.mark.parametrize("micro_batch,accumulation", [(1, 3), (3, 1)])
+2026-11-13T09:31:34.6253305Z     def test_native_distributed_asft_matches_global_token_objective(tmp_path, optimizer_name, micro_batch, accumulation):
+2026-11-13T09:31:34.6253864Z         with socket.socket() as listener:
+2026-11-13T09:31:34.6254145Z             listener.bind(("127.0.0.1", 0))
+2026-11-13T09:31:34.6254451Z             port = listener.getsockname()[1]
+2026-11-13T09:31:34.6254748Z >       torch.multiprocessing.spawn(
+2026-11-13T09:31:34.6255020Z             _distributed_training_worker,
+2026-11-13T09:31:34.6255388Z             args=(2, port, str(tmp_path), optimizer_name, micro_batch, accumulation),
+2026-11-13T09:31:34.6255754Z             nprocs=2,
+2026-11-13T09:31:34.6255959Z             join=True,
+2026-11-13T09:31:34.6256160Z         )
+2026-11-13T09:31:34.6256265Z 
+2026-11-13T09:31:34.6256401Z tests/train/test_asft_token_normalization.py:260: 
+2026-11-13T09:31:34.6256760Z _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+2026-11-13T09:31:34.6257338Z /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/multiprocessing/spawn.py:364: in spawn
+2026-11-13T09:31:34.6257968Z     return start_processes(fn, args, nprocs, join, daemon, start_method="spawn")
+2026-11-13T09:31:34.6258505Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-11-13T09:31:34.6259091Z /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/multiprocessing/spawn.py:320: in start_processes
+2026-11-13T09:31:34.6259638Z     while not context.join():
+2026-11-13T09:31:34.6259872Z               ^^^^^^^^^^^^^^
+2026-11-13T09:31:34.6260140Z _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+2026-11-13T09:31:34.6260367Z 
+2026-11-13T09:31:34.6260586Z self = <torch.multiprocessing.spawn.ProcessContext object at 0x7192088f2db0>
+2026-11-13T09:31:34.6261002Z timeout = None, grace_period = None
+2026-11-13T09:31:34.6261173Z 
+2026-11-13T09:31:34.6261255Z     def join(
+2026-11-13T09:31:34.6261564Z         self, timeout: Optional[float] = None, grace_period: Optional[float] = None
+2026-11-13T09:31:34.6261932Z     ):
+2026-11-13T09:31:34.6262169Z         r"""Join one or more processes within spawn context.
+2026-11-13T09:31:34.6262462Z     
+2026-11-13T09:31:34.6262721Z         Attempt to join one or more processes in this spawn context.
+2026-11-13T09:31:34.6263273Z         If one of them exited with a non-zero exit status, this function
+2026-11-13T09:31:34.6263698Z         kills the remaining processes (optionally with a grace period)
+2026-11-13T09:31:34.6264160Z         and raises an exception with the cause of the first process exiting.
+2026-11-13T09:31:34.6264518Z     
+2026-11-13T09:31:34.6264794Z         Returns ``True`` if all processes have been joined successfully,
+2026-11-13T09:31:34.6265375Z         ``False`` if there are more processes that need to be joined.
+2026-11-13T09:31:34.6265860Z     
+2026-11-13T09:31:34.6266137Z         Args:
+2026-11-13T09:31:34.6266626Z             timeout (float): Wait this long (in seconds) before giving up on waiting.
+2026-11-13T09:31:34.6267442Z             grace_period (float): When any processes fail, wait this long (in seconds)
+2026-11-13T09:31:34.6268277Z                 for others to shutdown gracefully before terminating them. If they
+2026-11-13T09:31:34.6269043Z                 still don't exit, wait another grace period before killing them.
+2026-11-13T09:31:34.6269764Z         """
+2026-11-13T09:31:34.6270090Z         # Ensure this function can be called even when we're done.
+2026-11-13T09:31:34.6270587Z         if len(self.sentinels) == 0:
+2026-11-13T09:31:34.6270853Z             return True
+2026-11-13T09:31:34.6271058Z     
+2026-11-13T09:31:34.6271310Z         # Wait for any process to fail or all of them to succeed.
+2026-11-13T09:31:34.6271666Z         ready = multiprocessing.connection.wait(
+2026-11-13T09:31:34.6271977Z             self.sentinels.keys(),
+2026-11-13T09:31:34.6272242Z             timeout=timeout,
+2026-11-13T09:31:34.6272468Z         )
+2026-11-13T09:31:34.6272643Z     
+2026-11-13T09:31:34.6272825Z         error_index = None
+2026-11-13T09:31:34.6273301Z         for sentinel in ready:
+2026-11-13T09:31:34.6273571Z             index = self.sentinels.pop(sentinel)
+2026-11-13T09:31:34.6273870Z             process = self.processes[index]
+2026-11-13T09:31:34.6274196Z             process.join()
+2026-11-13T09:31:34.6274447Z             if process.exitcode != 0:
+2026-11-13T09:31:34.6274705Z                 error_index = index
+2026-11-13T09:31:34.6274943Z                 break
+2026-11-13T09:31:34.6275143Z     
+2026-11-13T09:31:34.6275331Z         # Return if there was no error.
+2026-11-13T09:31:34.6275589Z         if error_index is None:
+2026-11-13T09:31:34.6275886Z             # Return whether or not all processes have been joined.
+2026-11-13T09:31:34.6276229Z             return len(self.sentinels) == 0
+2026-11-13T09:31:34.6276571Z         # An error occurred. Clean-up all processes before returning.
+2026-11-13T09:31:34.6276992Z         # First, allow a grace period for processes to shutdown themselves.
+2026-11-13T09:31:34.6277353Z         if grace_period is not None:
+2026-11-13T09:31:34.6277641Z             self._join_procs_with_timeout(grace_period)
+2026-11-13T09:31:34.6278034Z         # Then, terminate processes that are still alive. Try SIGTERM first.
+2026-11-13T09:31:34.6278562Z         for process in self.processes:
+2026-11-13T09:31:34.6278841Z             if process.is_alive():
+2026-11-13T09:31:34.6279201Z                 log.warning("Terminating process %s via signal SIGTERM", process.pid)
+2026-11-13T09:31:34.6279589Z                 process.terminate()
+2026-11-13T09:31:34.6279820Z     
+2026-11-13T09:31:34.6280102Z         # Try SIGKILL if the process isn't going down after another grace_period.
+2026-11-13T09:31:34.6280537Z         # The reason is related to python signal handling is limited
+2026-11-13T09:31:34.6280947Z         # to main thread and if that is in c/c++ land and stuck it won't
+2026-11-13T09:31:34.6281376Z         # to handle it. We have seen processes getting stuck not handling
+2026-11-13T09:31:34.6281760Z         # SIGTERM for the above reason.
+2026-11-13T09:31:34.6282135Z         self._join_procs_with_timeout(30 if grace_period is None else grace_period)
+2026-11-13T09:31:34.6282529Z         for process in self.processes:
+2026-11-13T09:31:34.6282800Z             if process.is_alive():
+2026-11-13T09:31:34.6283233Z                 log.warning(
+2026-11-13T09:31:34.6283611Z                     "Unable to shutdown process %s via SIGTERM , forcefully exiting via SIGKILL",
+2026-11-13T09:31:34.6284023Z                     process.pid,
+2026-11-13T09:31:34.6284252Z                 )
+2026-11-13T09:31:34.6284462Z                 process.kill()
+2026-11-13T09:31:34.6284697Z             process.join()
+2026-11-13T09:31:34.6284908Z     
+2026-11-13T09:31:34.6285151Z         # The file will only be created if the process crashed.
+2026-11-13T09:31:34.6285502Z         failed_process = self.processes[error_index]
+2026-11-13T09:31:34.6285859Z         if not os.access(self.error_files[error_index], os.R_OK):
+2026-11-13T09:31:34.6286224Z             exitcode = self.processes[error_index].exitcode
+2026-11-13T09:31:34.6286528Z             if exitcode < 0:
+2026-11-13T09:31:34.6286748Z                 try:
+2026-11-13T09:31:34.6287002Z                     name = signal.Signals(-exitcode).name
+2026-11-13T09:31:34.6287304Z                 except ValueError:
+2026-11-13T09:31:34.6287705Z                     name = f"<Unknown signal {-exitcode}>"
+2026-11-13T09:31:34.6288016Z                 raise ProcessExitedException(
+2026-11-13T09:31:34.6288369Z                     f"process {error_index:d} terminated with signal {name}",
+2026-11-13T09:31:34.6288721Z                     error_index=error_index,
+2026-11-13T09:31:34.6289000Z                     error_pid=failed_process.pid,
+2026-11-13T09:31:34.6289279Z                     exit_code=exitcode,
+2026-11-13T09:31:34.6289533Z                     signal_name=name,
+2026-11-13T09:31:34.6289771Z                 )
+2026-11-13T09:31:34.6289954Z             else:
+2026-11-13T09:31:34.6290171Z                 raise ProcessExitedException(
+2026-11-13T09:31:34.6290537Z                     f"process {error_index:d} terminated with exit code {exitcode:d}",
+2026-11-13T09:31:34.6290913Z                     error_index=error_index,
+2026-11-13T09:31:34.6291191Z                     error_pid=failed_process.pid,
+2026-11-13T09:31:34.6291475Z                     exit_code=exitcode,
+2026-11-13T09:31:34.6291712Z                 )
+2026-11-13T09:31:34.6291892Z     
+2026-11-13T09:31:34.6292123Z         with open(self.error_files[error_index], "rb") as fh:
+2026-11-13T09:31:34.6292446Z             original_trace = pickle.load(fh)
+2026-11-13T09:31:34.6292826Z         msg = f"\n\n-- Process {error_index:d} terminated with the following error:\n"
+2026-11-13T09:31:34.6293409Z         msg += original_trace
+2026-11-13T09:31:34.6293745Z >       raise ProcessRaisedException(msg, error_index, failed_process.pid)
+2026-11-13T09:31:34.6294203Z E       torch.multiprocessing.spawn.ProcessRaisedException: 
+2026-11-13T09:31:34.6294533Z E       
+2026-11-13T09:31:34.6294780Z E       -- Process 1 terminated with the following error:
+2026-11-13T09:31:34.6295108Z E       Traceback (most recent call last):
+2026-11-13T09:31:34.6295807Z E         File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/multiprocessing/spawn.py", line 95, in _wrap
+2026-11-13T09:31:34.6296377Z E           fn(i, *args)
+2026-11-13T09:31:34.6296948Z E         File "/home/runner/work/LlamaFactory/LlamaFactory/tests/train/test_asft_token_normalization.py", line 240, in _distributed_training_worker
+2026-11-13T09:31:34.6297663Z E           torch.testing.assert_close(actual, expected, rtol=5e-5, atol=5e-7)
+2026-11-13T09:31:34.6298345Z E         File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/testing/_comparison.py", line 1589, in assert_close
+2026-11-13T09:31:34.6298935Z E           raise error_metas[0].to_error(msg)
+2026-11-13T09:31:34.6299241Z E       AssertionError: Tensor-likes are not close!
+2026-11-13T09:31:34.6299523Z E       
+2026-11-13T09:31:34.6299724Z E       Mismatched elements: 368 / 368 (100.0%)
+2026-11-13T09:31:34.6300160Z E       Greatest absolute difference: 0.04511361941695213 at index (6, 4) (up to 5e-07 allowed)
+2026-11-13T09:31:34.6300725Z E       Greatest relative difference: 153.03675842285156 at index (0, 15) (up to 5e-05 allowed)
+2026-11-13T09:31:34.6301058Z 
+2026-11-13T09:31:34.6301447Z /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/multiprocessing/spawn.py:220: ProcessRaisedException
+2026-11-13T09:31:34.6302106Z ----------------------------- Captured stdout call -----------------------------
+2026-11-13T09:31:34.6302612Z [Gloo] Rank 0 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+2026-11-13T09:31:34.6303333Z [Gloo] Rank 1 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+2026-11-13T09:31:34.6304022Z {'train_runtime': 0.0265, 'train_samples_per_second': 452.92, 'train_steps_per_second': 75.487, 'train_loss': 0.43452417850494385, 'epoch': 2.0}
+2026-11-13T09:31:34.6304655Z ----------------------------- Captured stderr call -----------------------------
+2026-11-13T09:31:34.6305219Z `loss_type=None` was set in the config but it is unrecognized. Using the default loss: `ForCausalLMLoss`.
+2026-11-13T09:31:34.6305874Z `loss_type=None` was set in the config but it is unrecognized. Using the default loss: `ForCausalLMLoss`.
+2026-11-13T09:31:34.6308124Z [rank1]:[W1113 09:31:11.557726480 reducer.cpp:1431] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+2026-11-13T09:31:34.6311684Z [rank0]:[W1113 09:31:11.557801916 reducer.cpp:1431] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+2026-11-13T09:31:34.6314113Z W1113 09:31:12.811000 2670 site-packages/torch/multiprocessing/spawn.py:174] Terminating process 2675 via signal SIGTERM
+2026-11-13T09:31:34.6314761Z ____ test_native_distributed_asft_matches_global_token_objective[1-3-adamw] ____
+2026-11-13T09:31:34.6315070Z 
+2026-11-13T09:31:34.6315316Z tmp_path = PosixPath('/tmp/pytest-of-runner/pytest-1/test_native_distributed_asft_m1')
+2026-11-13T09:31:34.6315797Z optimizer_name = 'adamw', micro_batch = 1, accumulation = 3
+2026-11-13T09:31:34.6316034Z 
+2026-11-13T09:31:34.6316204Z     @pytest.mark.parametrize("optimizer_name", ["sgd", "adamw"])
+2026-11-13T09:31:34.6316640Z     @pytest.mark.parametrize("micro_batch,accumulation", [(1, 3), (3, 1)])
+2026-11-13T09:31:34.6317389Z     def test_native_distributed_asft_matches_global_token_objective(tmp_path, optimizer_name, micro_batch, accumulation):
+2026-11-13T09:31:34.6317949Z         with socket.socket() as listener:
+2026-11-13T09:31:34.6318226Z             listener.bind(("127.0.0.1", 0))
+2026-11-13T09:31:34.6318510Z             port = listener.getsockname()[1]
+2026-11-13T09:31:34.6318809Z >       torch.multiprocessing.spawn(
+2026-11-13T09:31:34.6319078Z             _distributed_training_worker,
+2026-11-13T09:31:34.6319444Z             args=(2, port, str(tmp_path), optimizer_name, micro_batch, accumulation),
+2026-11-13T09:31:34.6319811Z             nprocs=2,
+2026-11-13T09:31:34.6320015Z             join=True,
+2026-11-13T09:31:34.6320211Z         )
+2026-11-13T09:31:34.6320314Z 
+2026-11-13T09:31:34.6320441Z tests/train/test_asft_token_normalization.py:260: 
+2026-11-13T09:31:34.6320796Z _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+2026-11-13T09:31:34.6321360Z /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/multiprocessing/spawn.py:364: in spawn
+2026-11-13T09:31:34.6321990Z     return start_processes(fn, args, nprocs, join, daemon, start_method="spawn")
+2026-11-13T09:31:34.6322394Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-11-13T09:31:34.6323164Z /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/multiprocessing/spawn.py:320: in start_processes
+2026-11-13T09:31:34.6323727Z     while not context.join():
+2026-11-13T09:31:34.6323964Z               ^^^^^^^^^^^^^^
+2026-11-13T09:31:34.6324237Z _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+2026-11-13T09:31:34.6324465Z 
+2026-11-13T09:31:34.6324681Z self = <torch.multiprocessing.spawn.ProcessContext object at 0x7192087441a0>
+2026-11-13T09:31:34.6325085Z timeout = None, grace_period = None
+2026-11-13T09:31:34.6325265Z 
+2026-11-13T09:31:34.6325342Z     def join(
+2026-11-13T09:31:34.6325649Z         self, timeout: Optional[float] = None, grace_period: Optional[float] = None
+2026-11-13T09:31:34.6326139Z     ):
+2026-11-13T09:31:34.6326372Z         r"""Join one or more processes within spawn context.
+2026-11-13T09:31:34.6326662Z     
+2026-11-13T09:31:34.6326914Z         Attempt to join one or more processes in this spawn context.
+2026-11-13T09:31:34.6327314Z         If one of them exited with a non-zero exit status, this function
+2026-11-13T09:31:34.6327738Z         kills the remaining processes (optionally with a grace period)
+2026-11-13T09:31:34.6328177Z         and raises an exception with the cause of the first process exiting.
+2026-11-13T09:31:34.6328521Z     
+2026-11-13T09:31:34.6328781Z         Returns ``True`` if all processes have been joined successfully,
+2026-11-13T09:31:34.6329196Z         ``False`` if there are more processes that need to be joined.
+2026-11-13T09:31:34.6329509Z     
+2026-11-13T09:31:34.6329677Z         Args:
+2026-11-13T09:31:34.6329980Z             timeout (float): Wait this long (in seconds) before giving up on waiting.
+2026-11-13T09:31:34.6330466Z             grace_period (float): When any processes fail, wait this long (in seconds)
+2026-11-13T09:31:34.6330946Z                 for others to shutdown gracefully before terminating them. If they
+2026-11-13T09:31:34.6331393Z                 still don't exit, wait another grace period before killing them.
+2026-11-13T09:31:34.6331731Z         """
+2026-11-13T09:31:34.6332019Z         # Ensure this function can be called even when we're done.
+2026-11-13T09:31:34.6332353Z         if len(self.sentinels) == 0:
+2026-11-13T09:31:34.6332599Z             return True
+2026-11-13T09:31:34.6332793Z     
+2026-11-13T09:31:34.6333293Z         # Wait for any process to fail or all of them to succeed.
+2026-11-13T09:31:34.6333651Z         ready = multiprocessing.connection.wait(
+2026-11-13T09:31:34.6333949Z             self.sentinels.keys(),
+2026-11-13T09:31:34.6334195Z             timeout=timeout,
+2026-11-13T09:31:34.6334409Z         )
+2026-11-13T09:31:34.6334578Z     
+2026-11-13T09:31:34.6334884Z         error_index = None
+2026-11-13T09:31:34.6335121Z         for sentinel in ready:
+2026-11-13T09:31:34.6335388Z             index = self.sentinels.pop(sentinel)
+2026-11-13T09:31:34.6335684Z             process = self.processes[index]
+2026-11-13T09:31:34.6335954Z             process.join()
+2026-11-13T09:31:34.6336186Z             if process.exitcode != 0:
+2026-11-13T09:31:34.6336442Z                 error_index = index
+2026-11-13T09:31:34.6336678Z                 break
+2026-11-13T09:31:34.6336870Z     
+2026-11-13T09:31:34.6337060Z         # Return if there was no error.
+2026-11-13T09:31:34.6337317Z         if error_index is None:
+2026-11-13T09:31:34.6337610Z             # Return whether or not all processes have been joined.
+2026-11-13T09:31:34.6337949Z             return len(self.sentinels) == 0
+2026-11-13T09:31:34.6338288Z         # An error occurred. Clean-up all processes before returning.
+2026-11-13T09:31:34.6338715Z         # First, allow a grace period for processes to shutdown themselves.
+2026-11-13T09:31:34.6339079Z         if grace_period is not None:
+2026-11-13T09:31:34.6339368Z             self._join_procs_with_timeout(grace_period)
+2026-11-13T09:31:34.6339758Z         # Then, terminate processes that are still alive. Try SIGTERM first.
+2026-11-13T09:31:34.6340133Z         for process in self.processes:
+2026-11-13T09:31:34.6340396Z             if process.is_alive():
+2026-11-13T09:31:34.6340753Z                 log.warning("Terminating process %s via signal SIGTERM", process.pid)
+2026-11-13T09:31:34.6341148Z                 process.terminate()
+2026-11-13T09:31:34.6341378Z     
+2026-11-13T09:31:34.6341658Z         # Try SIGKILL if the process isn't going down after another grace_period.
+2026-11-13T09:31:34.6342085Z         # The reason is related to python signal handling is limited
+2026-11-13T09:31:34.6342483Z         # to main thread and if that is in c/c++ land and stuck it won't
+2026-11-13T09:31:34.6343061Z         # to handle it. We have seen processes getting stuck not handling
+2026-11-13T09:31:34.6343570Z         # SIGTERM for the above reason.
+2026-11-13T09:31:34.6343951Z         self._join_procs_with_timeout(30 if grace_period is None else grace_period)
+2026-11-13T09:31:34.6344354Z         for process in self.processes:
+2026-11-13T09:31:34.6344614Z             if process.is_alive():
+2026-11-13T09:31:34.6344856Z                 log.warning(
+2026-11-13T09:31:34.6345221Z                     "Unable to shutdown process %s via SIGTERM , forcefully exiting via SIGKILL",
+2026-11-13T09:31:34.6345626Z                     process.pid,
+2026-11-13T09:31:34.6345848Z                 )
+2026-11-13T09:31:34.6346046Z                 process.kill()
+2026-11-13T09:31:34.6346275Z             process.join()
+2026-11-13T09:31:34.6346489Z     
+2026-11-13T09:31:34.6346726Z         # The file will only be created if the process crashed.
+2026-11-13T09:31:34.6347077Z         failed_process = self.processes[error_index]
+2026-11-13T09:31:34.6347430Z         if not os.access(self.error_files[error_index], os.R_OK):
+2026-11-13T09:31:34.6347792Z             exitcode = self.processes[error_index].exitcode
+2026-11-13T09:31:34.6348093Z             if exitcode < 0:
+2026-11-13T09:31:34.6348309Z                 try:
+2026-11-13T09:31:34.6348541Z                     name = signal.Signals(-exitcode).name
+2026-11-13T09:31:34.6348831Z                 except ValueError:
+2026-11-13T09:31:34.6349097Z                     name = f"<Unknown signal {-exitcode}>"
+2026-11-13T09:31:34.6349405Z                 raise ProcessExitedException(
+2026-11-13T09:31:34.6349754Z                     f"process {error_index:d} terminated with signal {name}",
+2026-11-13T09:31:34.6350109Z                     error_index=error_index,
+2026-11-13T09:31:34.6350390Z                     error_pid=failed_process.pid,
+2026-11-13T09:31:34.6350669Z                     exit_code=exitcode,
+2026-11-13T09:31:34.6350924Z                     signal_name=name,
+2026-11-13T09:31:34.6351162Z                 )
+2026-11-13T09:31:34.6351347Z             else:
+2026-11-13T09:31:34.6351681Z                 raise ProcessExitedException(
+2026-11-13T09:31:34.6352056Z                     f"process {error_index:d} terminated with exit code {exitcode:d}",
+2026-11-13T09:31:34.6352428Z                     error_index=error_index,
+2026-11-13T09:31:34.6352712Z                     error_pid=failed_process.pid,
+2026-11-13T09:31:34.6353176Z                     exit_code=exitcode,
+2026-11-13T09:31:34.6353417Z                 )
+2026-11-13T09:31:34.6353598Z     
+2026-11-13T09:31:34.6353835Z         with open(self.error_files[error_index], "rb") as fh:
+2026-11-13T09:31:34.6354155Z             original_trace = pickle.load(fh)
+2026-11-13T09:31:34.6354528Z         msg = f"\n\n-- Process {error_index:d} terminated with the following error:\n"
+2026-11-13T09:31:34.6354907Z         msg += original_trace
+2026-11-13T09:31:34.6355244Z >       raise ProcessRaisedException(msg, error_index, failed_process.pid)
+2026-11-13T09:31:34.6355699Z E       torch.multiprocessing.spawn.ProcessRaisedException: 
+2026-11-13T09:31:34.6356033Z E       
+2026-11-13T09:31:34.6356269Z E       -- Process 1 terminated with the following error:
+2026-11-13T09:31:34.6356592Z E       Traceback (most recent call last):
+2026-11-13T09:31:34.6357161Z E         File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/multiprocessing/spawn.py", line 95, in _wrap
+2026-11-13T09:31:34.6357728Z E           fn(i, *args)
+2026-11-13T09:31:34.6358290Z E         File "/home/runner/work/LlamaFactory/LlamaFactory/tests/train/test_asft_token_normalization.py", line 240, in _distributed_training_worker
+2026-11-13T09:31:34.6359001Z E           torch.testing.assert_close(actual, expected, rtol=5e-5, atol=5e-7)
+2026-11-13T09:31:34.6359682Z E         File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/testing/_comparison.py", line 1589, in assert_close
+2026-11-13T09:31:34.6360270Z E           raise error_metas[0].to_error(msg)
+2026-11-13T09:31:34.6360573Z E       AssertionError: Tensor-likes are not close!
+2026-11-13T09:31:34.6360982Z E       
+2026-11-13T09:31:34.6361188Z E       Mismatched elements: 368 / 368 (100.0%)
+2026-11-13T09:31:34.6361615Z E       Greatest absolute difference: 0.04511361941695213 at index (6, 4) (up to 5e-07 allowed)
+2026-11-13T09:31:34.6362175Z E       Greatest relative difference: 153.03675842285156 at index (0, 15) (up to 5e-05 allowed)
+2026-11-13T09:31:34.6362504Z 
+2026-11-13T09:31:34.6363057Z /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/multiprocessing/spawn.py:220: ProcessRaisedException
+2026-11-13T09:31:34.6363726Z ----------------------------- Captured stdout call -----------------------------
+2026-11-13T09:31:34.6364227Z [Gloo] Rank 1 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+2026-11-13T09:31:34.6364770Z [Gloo] Rank 0 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+2026-11-13T09:31:34.6365456Z {'train_runtime': 0.0272, 'train_samples_per_second': 441.42, 'train_steps_per_second': 73.57, 'train_loss': 0.4551539123058319, 'epoch': 2.0}
+2026-11-13T09:31:34.6366083Z ----------------------------- Captured stderr call -----------------------------
+2026-11-13T09:31:34.6366629Z `loss_type=None` was set in the config but it is unrecognized. Using the default loss: `ForCausalLMLoss`.
+2026-11-13T09:31:34.6367274Z `loss_type=None` was set in the config but it is unrecognized. Using the default loss: `ForCausalLMLoss`.
+2026-11-13T09:31:34.6369376Z [rank0]:[W1113 09:31:18.383847767 reducer.cpp:1431] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+2026-11-13T09:31:34.6373192Z [rank1]:[W1113 09:31:18.384426070 reducer.cpp:1431] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+2026-11-13T09:31:34.6375409Z W1113 09:31:19.661000 2670 site-packages/torch/multiprocessing/spawn.py:174] Terminating process 2687 via signal SIGTERM
+2026-11-13T09:31:34.6376057Z _____ test_native_distributed_asft_matches_global_token_objective[3-1-sgd] _____
+2026-11-13T09:31:34.6376357Z 
+2026-11-13T09:31:34.6376599Z tmp_path = PosixPath('/tmp/pytest-of-runner/pytest-1/test_native_distributed_asft_m2')
+2026-11-13T09:31:34.6377075Z optimizer_name = 'sgd', micro_batch = 3, accumulation = 1
+2026-11-13T09:31:34.6377312Z 
+2026-11-13T09:31:34.6377477Z     @pytest.mark.parametrize("optimizer_name", ["sgd", "adamw"])
+2026-11-13T09:31:34.6377918Z     @pytest.mark.parametrize("micro_batch,accumulation", [(1, 3), (3, 1)])
+2026-11-13T09:31:34.6378540Z     def test_native_distributed_asft_matches_global_token_objective(tmp_path, optimizer_name, micro_batch, accumulation):
+2026-11-13T09:31:34.6379084Z         with socket.socket() as listener:
+2026-11-13T09:31:34.6379368Z             listener.bind(("127.0.0.1", 0))
+2026-11-13T09:31:34.6379655Z             port = listener.getsockname()[1]
+2026-11-13T09:31:34.6379951Z >       torch.multiprocessing.spawn(
+2026-11-13T09:31:34.6380220Z             _distributed_training_worker,
+2026-11-13T09:31:34.6380588Z             args=(2, port, str(tmp_path), optimizer_name, micro_batch, accumulation),
+2026-11-13T09:31:34.6380960Z             nprocs=2,
+2026-11-13T09:31:34.6381166Z             join=True,
+2026-11-13T09:31:34.6381371Z         )
+2026-11-13T09:31:34.6381605Z 
+2026-11-13T09:31:34.6381739Z tests/train/test_asft_token_normalization.py:260: 
+2026-11-13T09:31:34.6382096Z _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+2026-11-13T09:31:34.6382657Z /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/multiprocessing/spawn.py:364: in spawn
+2026-11-13T09:31:34.6383454Z     return start_processes(fn, args, nprocs, join, daemon, start_method="spawn")
+2026-11-13T09:31:34.6383860Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-11-13T09:31:34.6384426Z /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/multiprocessing/spawn.py:320: in start_processes
+2026-11-13T09:31:34.6384968Z     while not context.join():
+2026-11-13T09:31:34.6385202Z               ^^^^^^^^^^^^^^
+2026-11-13T09:31:34.6385474Z _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+2026-11-13T09:31:34.6385697Z 
+2026-11-13T09:31:34.6385921Z self = <torch.multiprocessing.spawn.ProcessContext object at 0x719208746780>
+2026-11-13T09:31:34.6386328Z timeout = None, grace_period = None
+2026-11-13T09:31:34.6386493Z 
+2026-11-13T09:31:34.6386575Z     def join(
+2026-11-13T09:31:34.6386884Z         self, timeout: Optional[float] = None, grace_period: Optional[float] = None
+2026-11-13T09:31:34.6387255Z     ):
+2026-11-13T09:31:34.6387492Z         r"""Join one or more processes within spawn context.
+2026-11-13T09:31:34.6387787Z     
+2026-11-13T09:31:34.6388040Z         Attempt to join one or more processes in this spawn context.
+2026-11-13T09:31:34.6388453Z         If one of them exited with a non-zero exit status, this function
+2026-11-13T09:31:34.6388865Z         kills the remaining processes (optionally with a grace period)
+2026-11-13T09:31:34.6389299Z         and raises an exception with the cause of the first process exiting.
+2026-11-13T09:31:34.6389641Z     
+2026-11-13T09:31:34.6390062Z         Returns ``True`` if all processes have been joined successfully,
+2026-11-13T09:31:34.6390612Z         ``False`` if there are more processes that need to be joined.
+2026-11-13T09:31:34.6390926Z     
+2026-11-13T09:31:34.6391097Z         Args:
+2026-11-13T09:31:34.6391402Z             timeout (float): Wait this long (in seconds) before giving up on waiting.
+2026-11-13T09:31:34.6391896Z             grace_period (float): When any processes fail, wait this long (in seconds)
+2026-11-13T09:31:34.6392370Z                 for others to shutdown gracefully before terminating them. If they
+2026-11-13T09:31:34.6392817Z                 still don't exit, wait another grace period before killing them.
+2026-11-13T09:31:34.6393347Z         """
+2026-11-13T09:31:34.6393602Z         # Ensure this function can be called even when we're done.
+2026-11-13T09:31:34.6393934Z         if len(self.sentinels) == 0:
+2026-11-13T09:31:34.6394183Z             return True
+2026-11-13T09:31:34.6394382Z     
+2026-11-13T09:31:34.6394632Z         # Wait for any process to fail or all of them to succeed.
+2026-11-13T09:31:34.6394994Z         ready = multiprocessing.connection.wait(
+2026-11-13T09:31:34.6395292Z             self.sentinels.keys(),
+2026-11-13T09:31:34.6395540Z             timeout=timeout,
+2026-11-13T09:31:34.6395754Z         )
+2026-11-13T09:31:34.6395923Z     
+2026-11-13T09:31:34.6396101Z         error_index = None
+2026-11-13T09:31:34.6396326Z         for sentinel in ready:
+2026-11-13T09:31:34.6396578Z             index = self.sentinels.pop(sentinel)
+2026-11-13T09:31:34.6396870Z             process = self.processes[index]
+2026-11-13T09:31:34.6397138Z             process.join()
+2026-11-13T09:31:34.6397380Z             if process.exitcode != 0:
+2026-11-13T09:31:34.6397639Z                 error_index = index
+2026-11-13T09:31:34.6397878Z                 break
+2026-11-13T09:31:34.6398067Z     
+2026-11-13T09:31:34.6398252Z         # Return if there was no error.
+2026-11-13T09:31:34.6398512Z         if error_index is None:
+2026-11-13T09:31:34.6398812Z             # Return whether or not all processes have been joined.
+2026-11-13T09:31:34.6399284Z             return len(self.sentinels) == 0
+2026-11-13T09:31:34.6399631Z         # An error occurred. Clean-up all processes before returning.
+2026-11-13T09:31:34.6400052Z         # First, allow a grace period for processes to shutdown themselves.
+2026-11-13T09:31:34.6400419Z         if grace_period is not None:
+2026-11-13T09:31:34.6400707Z             self._join_procs_with_timeout(grace_period)
+2026-11-13T09:31:34.6401090Z         # Then, terminate processes that are still alive. Try SIGTERM first.
+2026-11-13T09:31:34.6401457Z         for process in self.processes:
+2026-11-13T09:31:34.6401718Z             if process.is_alive():
+2026-11-13T09:31:34.6402074Z                 log.warning("Terminating process %s via signal SIGTERM", process.pid)
+2026-11-13T09:31:34.6402462Z                 process.terminate()
+2026-11-13T09:31:34.6402689Z     
+2026-11-13T09:31:34.6403159Z         # Try SIGKILL if the process isn't going down after another grace_period.
+2026-11-13T09:31:34.6403604Z         # The reason is related to python signal handling is limited
+2026-11-13T09:31:34.6404006Z         # to main thread and if that is in c/c++ land and stuck it won't
+2026-11-13T09:31:34.6404416Z         # to handle it. We have seen processes getting stuck not handling
+2026-11-13T09:31:34.6404766Z         # SIGTERM for the above reason.
+2026-11-13T09:31:34.6405137Z         self._join_procs_with_timeout(30 if grace_period is None else grace_period)
+2026-11-13T09:31:34.6405528Z         for process in self.processes:
+2026-11-13T09:31:34.6405786Z             if process.is_alive():
+2026-11-13T09:31:34.6406028Z                 log.warning(
+2026-11-13T09:31:34.6406392Z                     "Unable to shutdown process %s via SIGTERM , forcefully exiting via SIGKILL",
+2026-11-13T09:31:34.6406802Z                     process.pid,
+2026-11-13T09:31:34.6407027Z                 )
+2026-11-13T09:31:34.6407229Z                 process.kill()
+2026-11-13T09:31:34.6407460Z             process.join()
+2026-11-13T09:31:34.6407791Z     
+2026-11-13T09:31:34.6408034Z         # The file will only be created if the process crashed.
+2026-11-13T09:31:34.6408386Z         failed_process = self.processes[error_index]
+2026-11-13T09:31:34.6408736Z         if not os.access(self.error_files[error_index], os.R_OK):
+2026-11-13T09:31:34.6409098Z             exitcode = self.processes[error_index].exitcode
+2026-11-13T09:31:34.6409408Z             if exitcode < 0:
+2026-11-13T09:31:34.6409628Z                 try:
+2026-11-13T09:31:34.6409861Z                     name = signal.Signals(-exitcode).name
+2026-11-13T09:31:34.6410153Z                 except ValueError:
+2026-11-13T09:31:34.6410420Z                     name = f"<Unknown signal {-exitcode}>"
+2026-11-13T09:31:34.6410730Z                 raise ProcessExitedException(
+2026-11-13T09:31:34.6411083Z                     f"process {error_index:d} terminated with signal {name}",
+2026-11-13T09:31:34.6411437Z                     error_index=error_index,
+2026-11-13T09:31:34.6411725Z                     error_pid=failed_process.pid,
+2026-11-13T09:31:34.6412014Z                     exit_code=exitcode,
+2026-11-13T09:31:34.6412274Z                     signal_name=name,
+2026-11-13T09:31:34.6412506Z                 )
+2026-11-13T09:31:34.6412687Z             else:
+2026-11-13T09:31:34.6413074Z                 raise ProcessExitedException(
+2026-11-13T09:31:34.6413453Z                     f"process {error_index:d} terminated with exit code {exitcode:d}",
+2026-11-13T09:31:34.6413827Z                     error_index=error_index,
+2026-11-13T09:31:34.6414102Z                     error_pid=failed_process.pid,
+2026-11-13T09:31:34.6414380Z                     exit_code=exitcode,
+2026-11-13T09:31:34.6414617Z                 )
+2026-11-13T09:31:34.6414795Z     
+2026-11-13T09:31:34.6415033Z         with open(self.error_files[error_index], "rb") as fh:
+2026-11-13T09:31:34.6415356Z             original_trace = pickle.load(fh)
+2026-11-13T09:31:34.6415735Z         msg = f"\n\n-- Process {error_index:d} terminated with the following error:\n"
+2026-11-13T09:31:34.6416237Z         msg += original_trace
+2026-11-13T09:31:34.6416576Z >       raise ProcessRaisedException(msg, error_index, failed_process.pid)
+2026-11-13T09:31:34.6417034Z E       torch.multiprocessing.spawn.ProcessRaisedException: 
+2026-11-13T09:31:34.6417361Z E       
+2026-11-13T09:31:34.6417593Z E       -- Process 0 terminated with the following error:
+2026-11-13T09:31:34.6417912Z E       Traceback (most recent call last):
+2026-11-13T09:31:34.6418485Z E         File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/multiprocessing/spawn.py", line 95, in _wrap
+2026-11-13T09:31:34.6419039Z E           fn(i, *args)
+2026-11-13T09:31:34.6419605Z E         File "/home/runner/work/LlamaFactory/LlamaFactory/tests/train/test_asft_token_normalization.py", line 240, in _distributed_training_worker
+2026-11-13T09:31:34.6420319Z E           torch.testing.assert_close(actual, expected, rtol=5e-5, atol=5e-7)
+2026-11-13T09:31:34.6420999Z E         File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/testing/_comparison.py", line 1589, in assert_close
+2026-11-13T09:31:34.6421597Z E           raise error_metas[0].to_error(msg)
+2026-11-13T09:31:34.6421902Z E       AssertionError: Tensor-likes are not close!
+2026-11-13T09:31:34.6422189Z E       
+2026-11-13T09:31:34.6422394Z E       Mismatched elements: 368 / 368 (100.0%)
+2026-11-13T09:31:34.6422825Z E       Greatest absolute difference: 0.001178746111690998 at index (3, 4) (up to 5e-07 allowed)
+2026-11-13T09:31:34.6423559Z E       Greatest relative difference: 198.97506713867188 at index (0, 15) (up to 5e-05 allowed)
+2026-11-13T09:31:34.6423889Z 
+2026-11-13T09:31:34.6424276Z /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/multiprocessing/spawn.py:220: ProcessRaisedException
+2026-11-13T09:31:34.6424928Z ----------------------------- Captured stdout call -----------------------------
+2026-11-13T09:31:34.6425549Z [Gloo] Rank 1 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+2026-11-13T09:31:34.6426114Z [Gloo] Rank 0 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+2026-11-13T09:31:34.6426817Z {'train_runtime': 0.0124, 'train_samples_per_second': 965.299, 'train_steps_per_second': 160.883, 'train_loss': 0.14498499035835266, 'epoch': 2.0}
+2026-11-13T09:31:34.6427455Z ----------------------------- Captured stderr call -----------------------------
+2026-11-13T09:31:34.6427994Z `loss_type=None` was set in the config but it is unrecognized. Using the default loss: `ForCausalLMLoss`.
+2026-11-13T09:31:34.6428630Z `loss_type=None` was set in the config but it is unrecognized. Using the default loss: `ForCausalLMLoss`.
+2026-11-13T09:31:34.6430734Z [rank1]:[W1113 09:31:25.197714092 reducer.cpp:1431] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+2026-11-13T09:31:34.6434478Z [rank0]:[W1113 09:31:25.197715522 reducer.cpp:1431] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+2026-11-13T09:31:34.6436487Z ____ test_native_distributed_asft_matches_global_token_objective[3-1-adamw] ____
+2026-11-13T09:31:34.6436790Z 
+2026-11-13T09:31:34.6437209Z tmp_path = PosixPath('/tmp/pytest-of-runner/pytest-1/test_native_distributed_asft_m3')
+2026-11-13T09:31:34.6437722Z optimizer_name = 'adamw', micro_batch = 3, accumulation = 1
+2026-11-13T09:31:34.6437958Z 
+2026-11-13T09:31:34.6438124Z     @pytest.mark.parametrize("optimizer_name", ["sgd", "adamw"])
+2026-11-13T09:31:34.6438555Z     @pytest.mark.parametrize("micro_batch,accumulation", [(1, 3), (3, 1)])
+2026-11-13T09:31:34.6439176Z     def test_native_distributed_asft_matches_global_token_objective(tmp_path, optimizer_name, micro_batch, accumulation):
+2026-11-13T09:31:34.6439711Z         with socket.socket() as listener:
+2026-11-13T09:31:34.6439985Z             listener.bind(("127.0.0.1", 0))
+2026-11-13T09:31:34.6440266Z             port = listener.getsockname()[1]
+2026-11-13T09:31:34.6440554Z >       torch.multiprocessing.spawn(
+2026-11-13T09:31:34.6440830Z             _distributed_training_worker,
+2026-11-13T09:31:34.6441197Z             args=(2, port, str(tmp_path), optimizer_name, micro_batch, accumulation),
+2026-11-13T09:31:34.6441564Z             nprocs=2,
+2026-11-13T09:31:34.6441770Z             join=True,
+2026-11-13T09:31:34.6441970Z         )
+2026-11-13T09:31:34.6442067Z 
+2026-11-13T09:31:34.6442200Z tests/train/test_asft_token_normalization.py:260: 
+2026-11-13T09:31:34.6442550Z _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+2026-11-13T09:31:34.6443293Z /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/multiprocessing/spawn.py:364: in spawn
+2026-11-13T09:31:34.6443915Z     return start_processes(fn, args, nprocs, join, daemon, start_method="spawn")
+2026-11-13T09:31:34.6444324Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-11-13T09:31:34.6444893Z /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/multiprocessing/spawn.py:320: in start_processes
+2026-11-13T09:31:34.6445435Z     while not context.join():
+2026-11-13T09:31:34.6445666Z               ^^^^^^^^^^^^^^
+2026-11-13T09:31:34.6446059Z _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+2026-11-13T09:31:34.6446293Z 
+2026-11-13T09:31:34.6446510Z self = <torch.multiprocessing.spawn.ProcessContext object at 0x719208745be0>
+2026-11-13T09:31:34.6446922Z timeout = None, grace_period = None
+2026-11-13T09:31:34.6447096Z 
+2026-11-13T09:31:34.6447173Z     def join(
+2026-11-13T09:31:34.6447495Z         self, timeout: Optional[float] = None, grace_period: Optional[float] = None
+2026-11-13T09:31:34.6447864Z     ):
+2026-11-13T09:31:34.6448103Z         r"""Join one or more processes within spawn context.
+2026-11-13T09:31:34.6448400Z     
+2026-11-13T09:31:34.6448654Z         Attempt to join one or more processes in this spawn context.
+2026-11-13T09:31:34.6449060Z         If one of them exited with a non-zero exit status, this function
+2026-11-13T09:31:34.6449478Z         kills the remaining processes (optionally with a grace period)
+2026-11-13T09:31:34.6449916Z         and raises an exception with the cause of the first process exiting.
+2026-11-13T09:31:34.6450268Z     
+2026-11-13T09:31:34.6450600Z         Returns ``True`` if all processes have been joined successfully,
+2026-11-13T09:31:34.6451003Z         ``False`` if there are more processes that need to be joined.
+2026-11-13T09:31:34.6451318Z     
+2026-11-13T09:31:34.6451485Z         Args:
+2026-11-13T09:31:34.6451785Z             timeout (float): Wait this long (in seconds) before giving up on waiting.
+2026-11-13T09:31:34.6452267Z             grace_period (float): When any processes fail, wait this long (in seconds)
+2026-11-13T09:31:34.6452743Z                 for others to shutdown gracefully before terminating them. If they
+2026-11-13T09:31:34.6453361Z                 still don't exit, wait another grace period before killing them.
+2026-11-13T09:31:34.6453710Z         """
+2026-11-13T09:31:34.6453964Z         # Ensure this function can be called even when we're done.
+2026-11-13T09:31:34.6454301Z         if len(self.sentinels) == 0:
+2026-11-13T09:31:34.6454552Z             return True
+2026-11-13T09:31:34.6454879Z     
+2026-11-13T09:31:34.6455126Z         # Wait for any process to fail or all of them to succeed.
+2026-11-13T09:31:34.6455477Z         ready = multiprocessing.connection.wait(
+2026-11-13T09:31:34.6455779Z             self.sentinels.keys(),
+2026-11-13T09:31:34.6456026Z             timeout=timeout,
+2026-11-13T09:31:34.6456244Z         )
+2026-11-13T09:31:34.6456414Z     
+2026-11-13T09:31:34.6456605Z         error_index = None
+2026-11-13T09:31:34.6456831Z         for sentinel in ready:
+2026-11-13T09:31:34.6457089Z             index = self.sentinels.pop(sentinel)
+2026-11-13T09:31:34.6457384Z             process = self.processes[index]
+2026-11-13T09:31:34.6457654Z             process.join()
+2026-11-13T09:31:34.6457888Z             if process.exitcode != 0:
+2026-11-13T09:31:34.6458148Z                 error_index = index
+2026-11-13T09:31:34.6458384Z                 break
+2026-11-13T09:31:34.6458574Z     
+2026-11-13T09:31:34.6458768Z         # Return if there was no error.
+2026-11-13T09:31:34.6470468Z         if error_index is None:
+2026-11-13T09:31:34.6470923Z             # Return whether or not all processes have been joined.
+2026-11-13T09:31:34.6471288Z             return len(self.sentinels) == 0
+2026-11-13T09:31:34.6471652Z         # An error occurred. Clean-up all processes before returning.
+2026-11-13T09:31:34.6472095Z         # First, allow a grace period for processes to shutdown themselves.
+2026-11-13T09:31:34.6472465Z         if grace_period is not None:
+2026-11-13T09:31:34.6472760Z             self._join_procs_with_timeout(grace_period)
+2026-11-13T09:31:34.6473461Z         # Then, terminate processes that are still alive. Try SIGTERM first.
+2026-11-13T09:31:34.6473847Z         for process in self.processes:
+2026-11-13T09:31:34.6474117Z             if process.is_alive():
+2026-11-13T09:31:34.6474487Z                 log.warning("Terminating process %s via signal SIGTERM", process.pid)
+2026-11-13T09:31:34.6474881Z                 process.terminate()
+2026-11-13T09:31:34.6475321Z     
+2026-11-13T09:31:34.6475623Z         # Try SIGKILL if the process isn't going down after another grace_period.
+2026-11-13T09:31:34.6476055Z         # The reason is related to python signal handling is limited
+2026-11-13T09:31:34.6476455Z         # to main thread and if that is in c/c++ land and stuck it won't
+2026-11-13T09:31:34.6476868Z         # to handle it. We have seen processes getting stuck not handling
+2026-11-13T09:31:34.6477225Z         # SIGTERM for the above reason.
+2026-11-13T09:31:34.6477603Z         self._join_procs_with_timeout(30 if grace_period is None else grace_period)
+2026-11-13T09:31:34.6477995Z         for process in self.processes:
+2026-11-13T09:31:34.6478258Z             if process.is_alive():
+2026-11-13T09:31:34.6478506Z                 log.warning(
+2026-11-13T09:31:34.6478876Z                     "Unable to shutdown process %s via SIGTERM , forcefully exiting via SIGKILL",
+2026-11-13T09:31:34.6479284Z                     process.pid,
+2026-11-13T09:31:34.6479515Z                 )
+2026-11-13T09:31:34.6479723Z                 process.kill()
+2026-11-13T09:31:34.6479958Z             process.join()
+2026-11-13T09:31:34.6480167Z     
+2026-11-13T09:31:34.6480414Z         # The file will only be created if the process crashed.
+2026-11-13T09:31:34.6480760Z         failed_process = self.processes[error_index]
+2026-11-13T09:31:34.6481110Z         if not os.access(self.error_files[error_index], os.R_OK):
+2026-11-13T09:31:34.6481468Z             exitcode = self.processes[error_index].exitcode
+2026-11-13T09:31:34.6481769Z             if exitcode < 0:
+2026-11-13T09:31:34.6481987Z                 try:
+2026-11-13T09:31:34.6482219Z                     name = signal.Signals(-exitcode).name
+2026-11-13T09:31:34.6482315Z                 except ValueError:
+2026-11-13T09:31:34.6482426Z                     name = f"<Unknown signal {-exitcode}>"
+2026-11-13T09:31:34.6482538Z                 raise ProcessExitedException(
+2026-11-13T09:31:34.6482705Z                     f"process {error_index:d} terminated with signal {name}",
+2026-11-13T09:31:34.6483058Z                     error_index=error_index,
+2026-11-13T09:31:34.6483171Z                     error_pid=failed_process.pid,
+2026-11-13T09:31:34.6483260Z                     exit_code=exitcode,
+2026-11-13T09:31:34.6483354Z                     signal_name=name,
+2026-11-13T09:31:34.6483428Z                 )
+2026-11-13T09:31:34.6483508Z             else:
+2026-11-13T09:31:34.6483613Z                 raise ProcessExitedException(
+2026-11-13T09:31:34.6483804Z                     f"process {error_index:d} terminated with exit code {exitcode:d}",
+2026-11-13T09:31:34.6483906Z                     error_index=error_index,
+2026-11-13T09:31:34.6484010Z                     error_pid=failed_process.pid,
+2026-11-13T09:31:34.6484104Z                     exit_code=exitcode,
+2026-11-13T09:31:34.6484178Z                 )
+2026-11-13T09:31:34.6484255Z     
+2026-11-13T09:31:34.6484395Z         with open(self.error_files[error_index], "rb") as fh:
+2026-11-13T09:31:34.6484508Z             original_trace = pickle.load(fh)
+2026-11-13T09:31:34.6484715Z         msg = f"\n\n-- Process {error_index:d} terminated with the following error:\n"
+2026-11-13T09:31:34.6484805Z         msg += original_trace
+2026-11-13T09:31:34.6485002Z >       raise ProcessRaisedException(msg, error_index, failed_process.pid)
+2026-11-13T09:31:34.6485172Z E       torch.multiprocessing.spawn.ProcessRaisedException: 
+2026-11-13T09:31:34.6485253Z E       
+2026-11-13T09:31:34.6485385Z E       -- Process 1 terminated with the following error:
+2026-11-13T09:31:34.6485495Z E       Traceback (most recent call last):
+2026-11-13T09:31:34.6485892Z E         File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/multiprocessing/spawn.py", line 95, in _wrap
+2026-11-13T09:31:34.6485977Z E           fn(i, *args)
+2026-11-13T09:31:34.6486421Z E         File "/home/runner/work/LlamaFactory/LlamaFactory/tests/train/test_asft_token_normalization.py", line 240, in _distributed_training_worker
+2026-11-13T09:31:34.6486746Z E           torch.testing.assert_close(actual, expected, rtol=5e-5, atol=5e-7)
+2026-11-13T09:31:34.6487154Z E         File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/testing/_comparison.py", line 1589, in assert_close
+2026-11-13T09:31:34.6487264Z E           raise error_metas[0].to_error(msg)
+2026-11-13T09:31:34.6487383Z E       AssertionError: Tensor-likes are not close!
+2026-11-13T09:31:34.6487461Z E       
+2026-11-13T09:31:34.6487563Z E       Mismatched elements: 368 / 368 (100.0%)
+2026-11-13T09:31:34.6487814Z E       Greatest absolute difference: 0.001178746111690998 at index (3, 4) (up to 5e-07 allowed)
+2026-11-13T09:31:34.6488053Z E       Greatest relative difference: 198.97506713867188 at index (0, 15) (up to 5e-05 allowed)
+2026-11-13T09:31:34.6488066Z 
+2026-11-13T09:31:34.6488457Z /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/multiprocessing/spawn.py:220: ProcessRaisedException
+2026-11-13T09:31:34.6488649Z ----------------------------- Captured stdout call -----------------------------
+2026-11-13T09:31:34.6488888Z [Gloo] Rank 0 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+2026-11-13T09:31:34.6489110Z [Gloo] Rank 1 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+2026-11-13T09:31:34.6489495Z {'train_runtime': 0.0179, 'train_samples_per_second': 671.778, 'train_steps_per_second': 111.963, 'train_loss': 0.14912232756614685, 'epoch': 2.0}
+2026-11-13T09:31:34.6489664Z ----------------------------- Captured stderr call -----------------------------
+2026-11-13T09:31:34.6489958Z `loss_type=None` was set in the config but it is unrecognized. Using the default loss: `ForCausalLMLoss`.
+2026-11-13T09:31:34.6490228Z `loss_type=None` was set in the config but it is unrecognized. Using the default loss: `ForCausalLMLoss`.
+2026-11-13T09:31:34.6491973Z [rank1]:[W1113 09:31:31.582205268 reducer.cpp:1431] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+2026-11-13T09:31:34.6493916Z [rank0]:[W1113 09:31:31.582205299 reducer.cpp:1431] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+2026-11-13T09:31:34.6494275Z W1113 09:31:32.867000 2670 site-packages/torch/multiprocessing/spawn.py:174] Terminating process 2712 via signal SIGTERM
+2026-11-13T09:31:34.6494422Z =========================== short test summary info ============================
+2026-11-13T09:31:34.6495092Z FAILED tests/train/test_asft_token_normalization.py::test_asft_compute_loss_uses_supplied_token_count[rows0-accumulated_int-0.0] - AssertionError: Scalars are not close!
+2026-11-13T09:31:34.6495099Z 
+2026-11-13T09:31:34.6495244Z Expected 0.009045972488820553 but got 0.14473555982112885.
+2026-11-13T09:31:34.6495406Z Absolute difference: 0.1356895873323083 (up to 1e-07 allowed)
+2026-11-13T09:31:34.6495528Z Relative difference: 15.0 (up to 1e-05 allowed)
+2026-11-13T09:31:34.6496060Z FAILED tests/train/test_asft_token_normalization.py::test_asft_compute_loss_uses_supplied_token_count[rows0-accumulated_int-0.1] - AssertionError: Scalars are not close!
+2026-11-13T09:31:34.6496065Z 
+2026-11-13T09:31:34.6496319Z Expected 0.009096461348235607 but got 0.14554338157176971.
+2026-11-13T09:31:34.6496471Z Absolute difference: 0.1364469202235341 (up to 1e-07 allowed)
+2026-11-13T09:31:34.6496589Z Relative difference: 15.0 (up to 1e-05 allowed)
+2026-11-13T09:31:34.6497111Z FAILED tests/train/test_asft_token_normalization.py::test_asft_compute_loss_uses_supplied_token_count[rows0-accumulated_int-0.7] - AssertionError: Scalars are not close!
+2026-11-13T09:31:34.6497116Z 
+2026-11-13T09:31:34.6497243Z Expected 0.009399393573403358 but got 0.15039026737213135.
+2026-11-13T09:31:34.6497392Z Absolute difference: 0.140990873798728 (up to 1e-07 allowed)
+2026-11-13T09:31:34.6497532Z Relative difference: 14.999996829335622 (up to 1e-05 allowed)
+2026-11-13T09:31:34.6498064Z FAILED tests/train/test_asft_token_normalization.py::test_asft_compute_loss_uses_supplied_token_count[rows0-accumulated_tensor-0.0] - AssertionError: Scalars are not close!
+2026-11-13T09:31:34.6498069Z 
+2026-11-13T09:31:34.6498204Z Expected 0.009045972488820553 but got 0.14473555982112885.
+2026-11-13T09:31:34.6498351Z Absolute difference: 0.1356895873323083 (up to 1e-07 allowed)
+2026-11-13T09:31:34.6498465Z Relative difference: 15.0 (up to 1e-05 allowed)
+2026-11-13T09:31:34.6498984Z FAILED tests/train/test_asft_token_normalization.py::test_asft_compute_loss_uses_supplied_token_count[rows0-accumulated_tensor-0.1] - AssertionError: Scalars are not close!
+2026-11-13T09:31:34.6498990Z 
+2026-11-13T09:31:34.6499125Z Expected 0.009096461348235607 but got 0.14554338157176971.
+2026-11-13T09:31:34.6499270Z Absolute difference: 0.1364469202235341 (up to 1e-07 allowed)
+2026-11-13T09:31:34.6499377Z Relative difference: 15.0 (up to 1e-05 allowed)
+2026-11-13T09:31:34.6500060Z FAILED tests/train/test_asft_token_normalization.py::test_asft_compute_loss_uses_supplied_token_count[rows0-accumulated_tensor-0.7] - AssertionError: Scalars are not close!
+2026-11-13T09:31:34.6500073Z 
+2026-11-13T09:31:34.6500218Z Expected 0.009399393573403358 but got 0.15039026737213135.
+2026-11-13T09:31:34.6500374Z Absolute difference: 0.140990873798728 (up to 1e-07 allowed)
+2026-11-13T09:31:34.6500656Z Relative difference: 14.999996829335622 (up to 1e-05 allowed)
+2026-11-13T09:31:34.6501176Z FAILED tests/train/test_asft_token_normalization.py::test_asft_compute_loss_uses_supplied_token_count[rows1-accumulated_int-0.0] - AssertionError: Scalars are not close!
+2026-11-13T09:31:34.6501181Z 
+2026-11-13T09:31:34.6501313Z Expected 0.05262695625424385 but got 0.14033855497837067.
+2026-11-13T09:31:34.6501458Z Absolute difference: 0.08771159872412682 (up to 1e-07 allowed)
+2026-11-13T09:31:34.6501601Z Relative difference: 1.6666667610489774 (up to 1e-05 allowed)
+2026-11-13T09:31:34.6502114Z FAILED tests/train/test_asft_token_normalization.py::test_asft_compute_loss_uses_supplied_token_count[rows1-accumulated_int-0.1] - AssertionError: Scalars are not close!
+2026-11-13T09:31:34.6502120Z 
+2026-11-13T09:31:34.6502244Z Expected 0.05281660333275795 but got 0.14084428548812866.
+2026-11-13T09:31:34.6502392Z Absolute difference: 0.08802768215537071 (up to 1e-07 allowed)
+2026-11-13T09:31:34.6502534Z Relative difference: 1.6666668547534962 (up to 1e-05 allowed)
+2026-11-13T09:31:34.6503259Z FAILED tests/train/test_asft_token_normalization.py::test_asft_compute_loss_uses_supplied_token_count[rows1-accumulated_int-0.7] - AssertionError: Scalars are not close!
+2026-11-13T09:31:34.6503266Z 
+2026-11-13T09:31:34.6503401Z Expected 0.05395448952913284 but got 0.14387863874435425.
+2026-11-13T09:31:34.6503539Z Absolute difference: 0.0899241492152214 (up to 1e-07 allowed)
+2026-11-13T09:31:34.6503681Z Relative difference: 1.6666666666666667 (up to 1e-05 allowed)
+2026-11-13T09:31:34.6504198Z FAILED tests/train/test_asft_token_normalization.py::test_asft_compute_loss_uses_supplied_token_count[rows1-accumulated_tensor-0.0] - AssertionError: Scalars are not close!
+2026-11-13T09:31:34.6504208Z 
+2026-11-13T09:31:34.6504332Z Expected 0.05262695625424385 but got 0.14033855497837067.
+2026-11-13T09:31:34.6504476Z Absolute difference: 0.08771159872412682 (up to 1e-07 allowed)
+2026-11-13T09:31:34.6504744Z Relative difference: 1.6666667610489774 (up to 1e-05 allowed)
+2026-11-13T09:31:34.6505270Z FAILED tests/train/test_asft_token_normalization.py::test_asft_compute_loss_uses_supplied_token_count[rows1-accumulated_tensor-0.1] - AssertionError: Scalars are not close!
+2026-11-13T09:31:34.6505276Z 
+2026-11-13T09:31:34.6505403Z Expected 0.05281660333275795 but got 0.14084428548812866.
+2026-11-13T09:31:34.6505543Z Absolute difference: 0.08802768215537071 (up to 1e-07 allowed)
+2026-11-13T09:31:34.6505684Z Relative difference: 1.6666668547534962 (up to 1e-05 allowed)
+2026-11-13T09:31:34.6506195Z FAILED tests/train/test_asft_token_normalization.py::test_asft_compute_loss_uses_supplied_token_count[rows1-accumulated_tensor-0.7] - AssertionError: Scalars are not close!
+2026-11-13T09:31:34.6506201Z 
+2026-11-13T09:31:34.6506330Z Expected 0.05395448952913284 but got 0.14387863874435425.
+2026-11-13T09:31:34.6506471Z Absolute difference: 0.0899241492152214 (up to 1e-07 allowed)
+2026-11-13T09:31:34.6506612Z Relative difference: 1.6666666666666667 (up to 1e-05 allowed)
+2026-11-13T09:31:34.6507425Z FAILED tests/train/test_asft_token_normalization.py::test_native_asft_training_matches_full_token_objective[1-3-sgd-0.0] - assert 0.4189700484275818 == 0.13957378268241882 ± 1.4e-06
+2026-11-13T09:31:34.6507504Z   
+2026-11-13T09:31:34.6507596Z   comparison failed
+2026-11-13T09:31:34.6507684Z   Obtained: 0.4189700484275818
+2026-11-13T09:31:34.6507833Z   Expected: 0.13957378268241882 ± 1.4e-06
+2026-11-13T09:31:34.6508494Z FAILED tests/train/test_asft_token_normalization.py::test_native_asft_training_matches_full_token_objective[1-3-sgd-0.7] - assert 0.4302734136581421 == 0.1432538479566574 ± 1.4e-06
+2026-11-13T09:31:34.6508566Z   
+2026-11-13T09:31:34.6508651Z   comparison failed
+2026-11-13T09:31:34.6508736Z   Obtained: 0.4302734136581421
+2026-11-13T09:31:34.6508873Z   Expected: 0.1432538479566574 ± 1.4e-06
+2026-11-13T09:31:34.6509534Z FAILED tests/train/test_asft_token_normalization.py::test_native_asft_training_matches_full_token_objective[1-3-adamw-0.0] - assert 0.42213040590286255 == 0.14095667004585266 ± 1.4e-06
+2026-11-13T09:31:34.6509776Z   
+2026-11-13T09:31:34.6509861Z   comparison failed
+2026-11-13T09:31:34.6509950Z   Obtained: 0.42213040590286255
+2026-11-13T09:31:34.6510090Z   Expected: 0.14095667004585266 ± 1.4e-06
+2026-11-13T09:31:34.6510736Z FAILED tests/train/test_asft_token_normalization.py::test_native_asft_training_matches_full_token_objective[1-3-adamw-0.7] - assert 0.4332081973552704 == 0.14410161972045898 ± 1.4e-06
+2026-11-13T09:31:34.6510815Z   
+2026-11-13T09:31:34.6510896Z   comparison failed
+2026-11-13T09:31:34.6510984Z   Obtained: 0.4332081973552704
+2026-11-13T09:31:34.6511121Z   Expected: 0.14410161972045898 ± 1.4e-06
+2026-11-13T09:31:34.6511682Z FAILED tests/train/test_asft_token_normalization.py::test_native_distributed_asft_matches_global_token_objective[1-3-sgd] - torch.multiprocessing.spawn.ProcessRaisedException: 
+2026-11-13T09:31:34.6511687Z 
+2026-11-13T09:31:34.6511827Z -- Process 1 terminated with the following error:
+2026-11-13T09:31:34.6511933Z Traceback (most recent call last):
+2026-11-13T09:31:34.6518273Z   File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/multiprocessing/spawn.py", line 95, in _wrap
+2026-11-13T09:31:34.6518412Z     fn(i, *args)
+2026-11-13T09:31:34.6518915Z   File "/home/runner/work/LlamaFactory/LlamaFactory/tests/train/test_asft_token_normalization.py", line 240, in _distributed_training_worker
+2026-11-13T09:31:34.6519109Z     torch.testing.assert_close(actual, expected, rtol=5e-5, atol=5e-7)
+2026-11-13T09:31:34.6519554Z   File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/testing/_comparison.py", line 1589, in assert_close
+2026-11-13T09:31:34.6519676Z     raise error_metas[0].to_error(msg)
+2026-11-13T09:31:34.6519799Z AssertionError: Tensor-likes are not close!
+2026-11-13T09:31:34.6519806Z 
+2026-11-13T09:31:34.6519909Z Mismatched elements: 368 / 368 (100.0%)
+2026-11-13T09:31:34.6520336Z Greatest absolute difference: 0.04511361941695213 at index (6, 4) (up to 5e-07 allowed)
+2026-11-13T09:31:34.6520585Z Greatest relative difference: 153.03675842285156 at index (0, 15) (up to 5e-05 allowed)
+2026-11-13T09:31:34.6521178Z FAILED tests/train/test_asft_token_normalization.py::test_native_distributed_asft_matches_global_token_objective[1-3-adamw] - torch.multiprocessing.spawn.ProcessRaisedException: 
+2026-11-13T09:31:34.6521191Z 
+2026-11-13T09:31:34.6521318Z -- Process 1 terminated with the following error:
+2026-11-13T09:31:34.6521425Z Traceback (most recent call last):
+2026-11-13T09:31:34.6521830Z   File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/multiprocessing/spawn.py", line 95, in _wrap
+2026-11-13T09:31:34.6521923Z     fn(i, *args)
+2026-11-13T09:31:34.6522396Z   File "/home/runner/work/LlamaFactory/LlamaFactory/tests/train/test_asft_token_normalization.py", line 240, in _distributed_training_worker
+2026-11-13T09:31:34.6522591Z     torch.testing.assert_close(actual, expected, rtol=5e-5, atol=5e-7)
+2026-11-13T09:31:34.6523213Z   File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/testing/_comparison.py", line 1589, in assert_close
+2026-11-13T09:31:34.6523341Z     raise error_metas[0].to_error(msg)
+2026-11-13T09:31:34.6523457Z AssertionError: Tensor-likes are not close!
+2026-11-13T09:31:34.6523462Z 
+2026-11-13T09:31:34.6523564Z Mismatched elements: 368 / 368 (100.0%)
+2026-11-13T09:31:34.6523791Z Greatest absolute difference: 0.04511361941695213 at index (6, 4) (up to 5e-07 allowed)
+2026-11-13T09:31:34.6524014Z Greatest relative difference: 153.03675842285156 at index (0, 15) (up to 5e-05 allowed)
+2026-11-13T09:31:34.6524587Z FAILED tests/train/test_asft_token_normalization.py::test_native_distributed_asft_matches_global_token_objective[3-1-sgd] - torch.multiprocessing.spawn.ProcessRaisedException: 
+2026-11-13T09:31:34.6524593Z 
+2026-11-13T09:31:34.6524716Z -- Process 0 terminated with the following error:
+2026-11-13T09:31:34.6524823Z Traceback (most recent call last):
+2026-11-13T09:31:34.6525354Z   File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/multiprocessing/spawn.py", line 95, in _wrap
+2026-11-13T09:31:34.6525443Z     fn(i, *args)
+2026-11-13T09:31:34.6525897Z   File "/home/runner/work/LlamaFactory/LlamaFactory/tests/train/test_asft_token_normalization.py", line 240, in _distributed_training_worker
+2026-11-13T09:31:34.6526081Z     torch.testing.assert_close(actual, expected, rtol=5e-5, atol=5e-7)
+2026-11-13T09:31:34.6526533Z   File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/testing/_comparison.py", line 1589, in assert_close
+2026-11-13T09:31:34.6526656Z     raise error_metas[0].to_error(msg)
+2026-11-13T09:31:34.6526772Z AssertionError: Tensor-likes are not close!
+2026-11-13T09:31:34.6526777Z 
+2026-11-13T09:31:34.6526874Z Mismatched elements: 368 / 368 (100.0%)
+2026-11-13T09:31:34.6527103Z Greatest absolute difference: 0.001178746111690998 at index (3, 4) (up to 5e-07 allowed)
+2026-11-13T09:31:34.6527324Z Greatest relative difference: 198.97506713867188 at index (0, 15) (up to 5e-05 allowed)
+2026-11-13T09:31:34.6527902Z FAILED tests/train/test_asft_token_normalization.py::test_native_distributed_asft_matches_global_token_objective[3-1-adamw] - torch.multiprocessing.spawn.ProcessRaisedException: 
+2026-11-13T09:31:34.6527907Z 
+2026-11-13T09:31:34.6528027Z -- Process 1 terminated with the following error:
+2026-11-13T09:31:34.6528127Z Traceback (most recent call last):
+2026-11-13T09:31:34.6528526Z   File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/multiprocessing/spawn.py", line 95, in _wrap
+2026-11-13T09:31:34.6528606Z     fn(i, *args)
+2026-11-13T09:31:34.6529055Z   File "/home/runner/work/LlamaFactory/LlamaFactory/tests/train/test_asft_token_normalization.py", line 240, in _distributed_training_worker
+2026-11-13T09:31:34.6529236Z     torch.testing.assert_close(actual, expected, rtol=5e-5, atol=5e-7)
+2026-11-13T09:31:34.6529761Z   File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/testing/_comparison.py", line 1589, in assert_close
+2026-11-13T09:31:34.6529885Z     raise error_metas[0].to_error(msg)
+2026-11-13T09:31:34.6529995Z AssertionError: Tensor-likes are not close!
+2026-11-13T09:31:34.6529999Z 
+2026-11-13T09:31:34.6530094Z Mismatched elements: 368 / 368 (100.0%)
+2026-11-13T09:31:34.6530316Z Greatest absolute difference: 0.001178746111690998 at index (3, 4) (up to 5e-07 allowed)
+2026-11-13T09:31:34.6530537Z Greatest relative difference: 198.97506713867188 at index (0, 15) (up to 5e-05 allowed)
+2026-11-13T09:31:34.6530641Z 20 failed, 13 passed in 29.75s
+2026-11-13T09:31:34.6530757Z {'errors': 0, 'failures': 20}
+2026-11-13T09:31:34.6559442Z ##[group]Run git checkout 1ed526d55e90de9dcca5916f6eba25a2de4e9272 -- src/llamafactory/train/sft/trainer.py src/llamafactory/train/trainer_utils.py
+2026-11-13T09:31:34.6559961Z [36;1mgit checkout 1ed526d55e90de9dcca5916f6eba25a2de4e9272 -- src/llamafactory/train/sft/trainer.py src/llamafactory/train/trainer_utils.py[0m
+2026-11-13T09:31:34.6560406Z [36;1mruff check src/llamafactory/train/sft/trainer.py src/llamafactory/train/trainer_utils.py tests/train/test_asft_token_normalization.py[0m
+2026-11-13T09:31:34.6560881Z [36;1mruff format --check --diff src/llamafactory/train/sft/trainer.py src/llamafactory/train/trainer_utils.py tests/train/test_asft_token_normalization.py[0m
+2026-11-13T09:31:34.6561051Z [36;1mgit diff --check 6d1059c727450a4f58e56ad204d01a71abad7781[0m
+2026-11-13T09:31:34.6609323Z shell: /usr/bin/bash -e {0}
+2026-11-13T09:31:34.6609405Z env:
+2026-11-13T09:31:34.6609504Z   PYTHONPATH: src
+2026-11-13T09:31:34.6609592Z   OMP_NUM_THREADS: 1
+2026-11-13T09:31:34.6609697Z   MKL_NUM_THREADS: 1
+2026-11-13T09:31:34.6609774Z   HF_HUB_OFFLINE: 1
+2026-11-13T09:31:34.6609866Z   TRANSFORMERS_OFFLINE: 1
+2026-11-13T09:31:34.6610028Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T09:31:34.6610232Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-13T09:31:34.6610380Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T09:31:34.6610671Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T09:31:34.6610816Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T09:31:34.6610966Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-13T09:31:34.6611053Z ##[endgroup]
+2026-11-13T09:31:34.6804862Z All checks passed!
+2026-11-13T09:31:34.6903279Z 3 files already formatted
+2026-11-13T09:31:34.7018543Z ##[group]Run actions/upload-artifact@v4
+2026-11-13T09:31:34.7018638Z with:
+2026-11-13T09:31:34.7018753Z   name: asft-native-before-after
+2026-11-13T09:31:34.7018905Z   path: *.log
+*results.xml
+installed-dependencies.txt
+
+2026-11-13T09:31:34.7019007Z   if-no-files-found: warn
+2026-11-13T09:31:34.7019094Z   compression-level: 6
+2026-11-13T09:31:34.7019181Z   overwrite: false
+2026-11-13T09:31:34.7019278Z   include-hidden-files: false
+2026-11-13T09:31:34.7019351Z env:
+2026-11-13T09:31:34.7019438Z   PYTHONPATH: src
+2026-11-13T09:31:34.7019533Z   OMP_NUM_THREADS: 1
+2026-11-13T09:31:34.7019616Z   MKL_NUM_THREADS: 1
+2026-11-13T09:31:34.7019693Z   HF_HUB_OFFLINE: 1
+2026-11-13T09:31:34.7019783Z   TRANSFORMERS_OFFLINE: 1
+2026-11-13T09:31:34.7019935Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T09:31:34.7020125Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-13T09:31:34.7020294Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T09:31:34.7020441Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T09:31:34.7020583Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-13T09:31:34.7020736Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-13T09:31:34.7020815Z ##[endgroup]
+2026-11-13T09:31:34.8770272Z (node:2754) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-13T09:31:34.8770694Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-13T09:31:34.8875174Z With the provided path, there will be 5 files uploaded
+2026-11-13T09:31:34.8876309Z Artifact name is valid!
+2026-11-13T09:31:34.8876868Z Root directory input is valid!
+2026-11-13T09:31:35.1910126Z Beginning upload of artifact content to blob storage
+2026-11-13T09:31:35.2280574Z (node:2754) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-11-13T09:31:35.3854047Z Uploaded bytes 13470
+2026-11-13T09:31:35.4245208Z Finished uploading artifact content to blob storage!
+2026-11-13T09:31:35.4246265Z SHA256 digest of uploaded artifact zip is 46d41304f707026ff0844083ab6c89f735bced0cb878dd0d1ac717b9bc2bcf35
+2026-11-13T09:31:35.4247714Z Finalizing artifact upload
+2026-11-13T09:31:35.8205149Z Artifact asft-native-before-after.zip successfully finalized. Artifact ID 14024659847
+2026-11-13T09:31:35.8206748Z Artifact asft-native-before-after has been successfully uploaded! Final size is 13470 bytes. Artifact ID is 14024659847
+2026-11-13T09:31:35.8212586Z Artifact download URL: https://github.com/Afloat16/LlamaFactory/actions/runs/43401400532/artifacts/14024659847
+2026-11-13T09:31:35.8421283Z Post job cleanup.
+2026-11-13T09:31:35.9629084Z (node:2766) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-13T09:31:35.9630045Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-13T09:31:35.9835580Z Post job cleanup.
+2026-11-13T09:31:36.0790071Z [command]/usr/bin/git version
+2026-11-13T09:31:36.0835750Z git version 2.56.0
+2026-11-13T09:31:36.0875923Z Temporarily overriding HOME='/home/runner/work/_temp/3e045592-1505-4e46-8924-0fcafafb4c5d' before making global git config changes
+2026-11-13T09:31:36.0877231Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-13T09:31:36.0881435Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/LlamaFactory/LlamaFactory
+2026-11-13T09:31:36.0926504Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-13T09:31:36.0971322Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-13T09:31:36.1276123Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-13T09:31:36.1305429Z http.https://github.com/.extraheader
+2026-11-13T09:31:36.1317554Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-13T09:31:36.1366271Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-13T09:31:36.1797770Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-13T09:31:36.1842491Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-13T09:31:36.2295343Z Cleaning up orphan processes
+2026-11-13T09:31:36.2772263Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
