@@ -1,0 +1,59 @@
+{
+  "repository": "hiyouga/LlamaFactory",
+  "stars": 76026,
+  "title": "Restore tied parameter aliases from standard v1 checkpoints",
+  "base": "6d1059c727450a4f58e56ad204d01a71abad7781",
+  "branch": "fix/v1-tied-checkpoint-resume-20261113",
+  "commit": "1985b7d6fe8b5ed7280ba55953dc85381ff35c15",
+  "tree": "305b2ad1475459313f01d5e8f329352ae9ef4614",
+  "commit_url": "https://github.com/Afloat16/LlamaFactory/commit/1985b7d6fe8b5ed7280ba55953dc85381ff35c15",
+  "body": "# What does this PR do?\n\nRestore valid standard v1 training checkpoints that contain tied model parameters. Hugging Face safe serialization saves one name for a shared tensor, so the standard loader receives a missing alias such as `lm_head.weight` even though its shared embedding has been restored. The current missing-key check rejects that checkpoint before optimizer state can be loaded.\n\nFilter missing parameter names only when another name for the exact same `Parameter` object was actually loaded according to the native loader's missing-key result. Missing independent parameters, an entirely absent tied group, and missing buffers still raise. Equal values in distinct parameters do not count as an alias.\n\n## Validation\n\nExact source: `1985b7d6fe8b5ed7280ba55953dc85381ff35c15`; upstream base: `6d1059c727450a4f58e56ad204d01a71abad7781`.\n\n[Successful native CPU before/after run](https://github.com/Afloat16/LlamaFactory/actions/runs/43406358494), Python 3.12.16, PyTorch 2.9.1+cpu and Transformers 4.57.1:\n\n- Identical 26 new tests on unchanged upstream: **10 failed, 16 passed**.\n- Fixed source: **26 passed** with the normal repository conftest.\n- Real GPT2 and Qwen3 models cover standard safe checkpoints, sharded safe checkpoints and legacy PyTorch checkpoints, with SGD momentum and AdamW.\n- After one update, checkpoints are written to disk and loaded into another model whose weights were deliberately changed. Two subsequent updates compare losses, every parameter gradient, model weights and optimizer state with uninterrupted training, with exact tensor equality.\n- The standard unsharded path uses the actual v1 saving function and an offline native tokenizer. Sharded and legacy controls use the model's real `save_pretrained`.\n- Tests also retain an output-head alias instead of its embedding alias, reject genuinely missing state, and reject an untied output parameter even when its values equal the embedding.\n- Real load pre-hooks that remove the only saved alias still raise and leave the shared weight unrestored.\n- Ruff 0.15.9 lint/format and `git diff --check` passed.\n\n```bash\npython -m pytest -q tests_v1/core/utils/test_standard_checkpoint_tied_weights.py\n```\n\nThe scope is the standard model/optimizer checkpoint path. GPU, DeepSpeed, FSDP, adapter checkpointing and the complete repository suite were not run. The validation workflow remains on a separate fork branch.\n\n## Prior work checked\n\nThe full four-commit history of this checkpoint module, all-state tied-weight/resume/missing-key proposals, relevant actual patches, and all existing fork branches were checked. #10280 introduces standard restoration and #10431 adds the current missing-key check. #10189 and #10210 concern FSDP initialization, while #10824 concerns legacy reward-model saving; none fixes this standard v1 restore path.\n\n## Before submitting\n\n- [x] Read the contributor guideline.\n- [x] Added the necessary regression tests.\n",
+  "validation": {
+    "run_url": "https://github.com/Afloat16/LlamaFactory/actions/runs/43406358494",
+    "run_id": 43406358494,
+    "job_id": 131821553319,
+    "validation_head": "29ecf3e98202c31be4c447dbb3140c0090251ddd",
+    "conclusion": "success",
+    "environment": "Python 3.12.16; torch 2.9.1+cpu; Transformers 4.57.1; Accelerate 1.11.0",
+    "before": {
+      "new_failed": 10,
+      "new_passed": 16,
+      "errors": 0,
+      "skips": 0
+    },
+    "after": {
+      "new_passed": 26,
+      "total_passed": 26
+    },
+    "style": "Ruff 0.15.9 lint and format; git diff --check",
+    "limits": [
+      "Native CPU standard checkpoint path; normal conftest",
+      "No GPU/DeepSpeed/FSDP/adapter/full-repository suite"
+    ],
+    "previous_attempt": {
+      "run_id": 43405436195,
+      "new_passed": 26,
+      "limitation": "Validation branch fetch depth omitted the upstream parent after the third production commit; final validation-only fetch-depth correction reran both sides successfully."
+    }
+  },
+  "peer_review": "Independent read-only review of the implementation and 26 native regressions passed, including the load pre-hook missing-alias negative controls.",
+  "deduplication": {
+    "actual_related_patches_read": [
+      10280,
+      10431,
+      10189,
+      10210,
+      10824
+    ],
+    "file_history_commits": 4,
+    "upstream_and_author_fork_branches_checked": true,
+    "new_contribution": true
+  },
+  "pr_created": false,
+  "pr_url": null,
+  "merged_at": null,
+  "status": "validated_branch_ready",
+  "maintainer_can_modify": false,
+  "prefilled_url": "https://github.com/hiyouga/LlamaFactory/compare/main...Afloat16:fix/v1-tied-checkpoint-resume-20261113?expand=1&title=Restore%20tied%20parameter%20aliases%20from%20standard%20v1%20checkpoints&body=%23%20What%20does%20this%20PR%20do%3F%0A%0ARestore%20valid%20standard%20v1%20training%20checkpoints%20that%20contain%20tied%20model%20parameters.%20Hugging%20Face%20safe%20serialization%20saves%20one%20name%20for%20a%20shared%20tensor%2C%20so%20the%20standard%20loader%20receives%20a%20missing%20alias%20such%20as%20%60lm_head.weight%60%20even%20though%20its%20shared%20embedding%20has%20been%20restored.%20The%20current%20missing-key%20check%20rejects%20that%20checkpoint%20before%20optimizer%20state%20can%20be%20loaded.%0A%0AFilter%20missing%20parameter%20names%20only%20when%20another%20name%20for%20the%20exact%20same%20%60Parameter%60%20object%20was%20actually%20loaded%20according%20to%20the%20native%20loader's%20missing-key%20result.%20Missing%20independent%20parameters%2C%20an%20entirely%20absent%20tied%20group%2C%20and%20missing%20buffers%20still%20raise.%20Equal%20values%20in%20distinct%20parameters%20do%20not%20count%20as%20an%20alias.%0A%0A%23%23%20Validation%0A%0AExact%20source%3A%20%601985b7d6fe8b5ed7280ba55953dc85381ff35c15%60%3B%20upstream%20base%3A%20%606d1059c727450a4f58e56ad204d01a71abad7781%60.%0A%0A%5BSuccessful%20native%20CPU%20before%2Fafter%20run%5D(https%3A%2F%2Fgithub.com%2FAfloat16%2FLlamaFactory%2Factions%2Fruns%2F43406358494)%2C%20Python%203.12.16%2C%20PyTorch%202.9.1%2Bcpu%20and%20Transformers%204.57.1%3A%0A%0A-%20Identical%2026%20new%20tests%20on%20unchanged%20upstream%3A%20**10%20failed%2C%2016%20passed**.%0A-%20Fixed%20source%3A%20**26%20passed**%20with%20the%20normal%20repository%20conftest.%0A-%20Real%20GPT2%20and%20Qwen3%20models%20cover%20standard%20safe%20checkpoints%2C%20sharded%20safe%20checkpoints%20and%20legacy%20PyTorch%20checkpoints%2C%20with%20SGD%20momentum%20and%20AdamW.%0A-%20After%20one%20update%2C%20checkpoints%20are%20written%20to%20disk%20and%20loaded%20into%20another%20model%20whose%20weights%20were%20deliberately%20changed.%20Two%20subsequent%20updates%20compare%20losses%2C%20every%20parameter%20gradient%2C%20model%20weights%20and%20optimizer%20state%20with%20uninterrupted%20training%2C%20with%20exact%20tensor%20equality.%0A-%20The%20standard%20unsharded%20path%20uses%20the%20actual%20v1%20saving%20function%20and%20an%20offline%20native%20tokenizer.%20Sharded%20and%20legacy%20controls%20use%20the%20model's%20real%20%60save_pretrained%60.%0A-%20Tests%20also%20retain%20an%20output-head%20alias%20instead%20of%20its%20embedding%20alias%2C%20reject%20genuinely%20missing%20state%2C%20and%20reject%20an%20untied%20output%20parameter%20even%20when%20its%20values%20equal%20the%20embedding.%0A-%20Real%20load%20pre-hooks%20that%20remove%20the%20only%20saved%20alias%20still%20raise%20and%20leave%20the%20shared%20weight%20unrestored.%0A-%20Ruff%200.15.9%20lint%2Fformat%20and%20%60git%20diff%20--check%60%20passed.%0A%0A%60%60%60bash%0Apython%20-m%20pytest%20-q%20tests_v1%2Fcore%2Futils%2Ftest_standard_checkpoint_tied_weights.py%0A%60%60%60%0A%0AThe%20scope%20is%20the%20standard%20model%2Foptimizer%20checkpoint%20path.%20GPU%2C%20DeepSpeed%2C%20FSDP%2C%20adapter%20checkpointing%20and%20the%20complete%20repository%20suite%20were%20not%20run.%20The%20validation%20workflow%20remains%20on%20a%20separate%20fork%20branch.%0A%0A%23%23%20Prior%20work%20checked%0A%0AThe%20full%20four-commit%20history%20of%20this%20checkpoint%20module%2C%20all-state%20tied-weight%2Fresume%2Fmissing-key%20proposals%2C%20relevant%20actual%20patches%2C%20and%20all%20existing%20fork%20branches%20were%20checked.%20%2310280%20introduces%20standard%20restoration%20and%20%2310431%20adds%20the%20current%20missing-key%20check.%20%2310189%20and%20%2310210%20concern%20FSDP%20initialization%2C%20while%20%2310824%20concerns%20legacy%20reward-model%20saving%3B%20none%20fixes%20this%20standard%20v1%20restore%20path.%0A%0A%23%23%20Before%20submitting%0A%0A-%20%5Bx%5D%20Read%20the%20contributor%20guideline.%0A-%20%5Bx%5D%20Added%20the%20necessary%20regression%20tests.%0A",
+  "audit_branch": "audit/v1-tied-checkpoint-resume-20261113"
+}
