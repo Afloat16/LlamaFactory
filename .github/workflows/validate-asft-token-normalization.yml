@@ -18,8 +18,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: 419ecfc77dd595f8851297d9d2b8e37f9fba7c57
-          fetch-depth: 5
+          ref: 1ed526d55e90de9dcca5916f6eba25a2de4e9272
+          fetch-depth: 6
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -31,7 +31,7 @@ jobs:
           python -m pip freeze > installed-dependencies.txt
       - name: Test the exact patched source with native Trainer and two-rank Gloo
         run: |
-          test "$(git rev-parse HEAD)" = "419ecfc77dd595f8851297d9d2b8e37f9fba7c57"
+          test "$(git rev-parse HEAD)" = "1ed526d55e90de9dcca5916f6eba25a2de4e9272"
           set +e
           python -m pytest -q tests/train/test_asft_token_normalization.py --junitxml=patched-results.xml > patched.log 2>&1
           result=$?
@@ -60,7 +60,7 @@ jobs:
       - name: Restore exact final source and check style
         if: always()
         run: |
-          git checkout 419ecfc77dd595f8851297d9d2b8e37f9fba7c57 -- src/llamafactory/train/sft/trainer.py src/llamafactory/train/trainer_utils.py
+          git checkout 1ed526d55e90de9dcca5916f6eba25a2de4e9272 -- src/llamafactory/train/sft/trainer.py src/llamafactory/train/trainer_utils.py
           ruff check src/llamafactory/train/sft/trainer.py src/llamafactory/train/trainer_utils.py tests/train/test_asft_token_normalization.py
           ruff format --check --diff src/llamafactory/train/sft/trainer.py src/llamafactory/train/trainer_utils.py tests/train/test_asft_token_normalization.py
           git diff --check 6d1059c727450a4f58e56ad204d01a71abad7781
