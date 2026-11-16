@@ -18,6 +18,8 @@ jobs:
       MKL_NUM_THREADS: "2"
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
       - uses: astral-sh/setup-uv@v7
         with:
           python-version: "3.11"
@@ -29,8 +31,8 @@ jobs:
           uv pip install -e . "transformers==4.57.1" "trl==0.24.0" pytest pre-commit
       - name: Verify exact candidate source
         run: |
-          test "$(git rev-parse HEAD^)" = "be88fc678a461a52bb67a94ea45d543809b87bfb"
-          git diff --exit-code HEAD^ -- src tests tests_v1 pyproject.toml
+          git merge-base --is-ancestor be88fc678a461a52bb67a94ea45d543809b87bfb HEAD
+          git diff --exit-code be88fc678a461a52bb67a94ea45d543809b87bfb -- src tests tests_v1 pyproject.toml
       - name: Run ORPO regressions and existing DPO precision tests
         run: uv run pytest -q --import-mode=importlib tests/train/test_log1mexp.py tests/train/test_orpo_stability.py tests_v1/trainers/test_dpo_loss_precision.py
       - name: Verify numerical regressions reject both mutations
