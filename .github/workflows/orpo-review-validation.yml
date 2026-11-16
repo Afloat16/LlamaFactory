@@ -1,0 +1,41 @@
+name: Validate ORPO review follow-up
+on:
+  push:
+    branches:
+      - validation/orpo-log1mexp-20261116
+permissions:
+  contents: read
+jobs:
+  orpo:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      WANDB_DISABLED: "true"
+      HF_HUB_OFFLINE: "1"
+      HF_DATASETS_OFFLINE: "1"
+      UV_NO_SYNC: "1"
+      OMP_NUM_THREADS: "2"
+      MKL_NUM_THREADS: "2"
+    steps:
+      - uses: actions/checkout@v6
+      - uses: astral-sh/setup-uv@v7
+        with:
+          python-version: "3.11"
+          enable-cache: false
+      - name: Install CPU training dependencies
+        run: |
+          uv venv
+          uv pip install torch==2.9.1 torchvision==0.24.1 torchaudio==2.9.1 --index-url https://download.pytorch.org/whl/cpu
+          uv pip install -e . "transformers==4.57.1" "trl==0.24.0" pytest pre-commit
+      - name: Verify exact candidate source
+        run: |
+          test "$(git rev-parse HEAD^)" = "be88fc678a461a52bb67a94ea45d543809b87bfb"
+          git diff --exit-code HEAD^ -- src tests tests_v1 pyproject.toml
+      - name: Run ORPO regressions and existing DPO precision tests
+        run: uv run pytest -q --import-mode=importlib tests/train/test_log1mexp.py tests/train/test_orpo_stability.py tests_v1/trainers/test_dpo_loss_precision.py
+      - name: Verify numerical regressions reject both mutations
+        run: uv run python .github/validation/orpo-tail-mutations.py
+      - name: Check applicable repository hooks
+        run: |
+          uv run pre-commit run --files src/llamafactory/train/trainer_utils.py src/llamafactory/train/dpo/trainer.py src/llamafactory/v1/utils/helper.py src/llamafactory/v1/trainers/dpo_trainer.py tests/train/test_orpo_stability.py tests/train/test_log1mexp.py
+          git diff --exit-code
